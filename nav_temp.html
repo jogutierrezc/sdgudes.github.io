@@ -1,39 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ODS 13 · Acción por el clima | Informe</title>
-  <meta name="description" content="Plantilla base para informes ODS 13. Encabezado y secciones en blanco para completar." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --sdg-accent: #3F7E44; --sdg-accent-light: rgba(63,126,68,0.12); --text-primary: #2c3e50; --text-secondary: #546e7a; --bg-white: #ffffff; --border-light: #e8eaed; --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);} * { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text-primary); background: var(--bg-white); } .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; } .lang-switch { position: fixed; top: 16px; right: 16px; z-index: 110; display:flex; gap:8px; background:#f6f7f8; padding:4px; border-radius:10px; } .lang-switch button { border:0; background:transparent; padding:8px 14px; border-radius:7px; font-weight:600; color:var(--text-secondary); cursor:pointer; } .lang-switch button.active { background:#fff; color:var(--sdg-accent); box-shadow: var(--shadow-sm); } .hero { padding: 88px 0 72px; background: radial-gradient(circle at 50% 0%, var(--sdg-accent-light) 0%, #ffffff 65%); border-bottom:1px solid var(--border-light); clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%); } .grid-2 { display:grid; grid-template-columns: 1.2fr 0.8fr; gap:32px; align-items:center; } .eyebrow { color: var(--sdg-accent); text-transform: uppercase; font-weight: 700; letter-spacing: .12em; font-size:12px; margin-bottom: 12px; display:inline-block; } h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.15; margin: 0 0 8px 0; } .hero-illustration { width:100%; height:auto; max-width:360px; margin:0 auto; display:block; border-radius:16px; } section { padding: 64px 0; } .section-title { font-size: clamp(24px, 3.5vw, 34px); margin-bottom: 8px; font-weight: 700; } .section-rule { height: 1px; background: var(--border-light); margin: 16px 0 24px; } footer { border-top:1px solid var(--border-light); padding: 28px 0; color:#6b7b86; }
-
-    /* Barra de navegación ODS (v2) */
-    .sdg-navbar { position: fixed; top: 0; left: 0; width: 100%; height: 5px; display: flex; z-index: 1000; background: transparent; }
-    .sdg-nav-item { flex: 1; height: 5px; cursor: pointer; position: relative; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); text-decoration: none; display: block; overflow: hidden; }
-    .sdg-nav-item:hover { height: 320px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
-    .sdg-card { width: 100%; height: 100%; background: #fff; display: flex; flex-direction: column; opacity: 0; transition: opacity 0.3s ease 0.15s; }
-    .sdg-nav-item:hover .sdg-card { opacity: 1; }
-    .sdg-card-image { width: 100%; height: 220px; object-fit: contain; display: block; background: #fff; padding: 8px; }
-    .sdg-card-content { padding: 16px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px; }
-    .sdg-card-number { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; }
-    .sdg-card-title { font-size: 14px; font-weight: 600; color: #1a1a1a; margin: 0; line-height: 1.3; }
-    /* Bilingüe para la barra */
-    html[lang="es"] .lang-en { display: none !important; }
-    html[lang="en"] .lang-es { display: none !important; }
-    /* Paleta ODS */
-    .sdg-1{background:#E5243B}.sdg-2{background:#DDA63A}.sdg-3{background:#4C9F38}.sdg-4{background:#C5192D}.sdg-5{background:#FF3A21}.sdg-6{background:#26BDE2}.sdg-7{background:#FCC30B}.sdg-8{background:#A21942}.sdg-9{background:#FD6925}.sdg-10{background:#DD1367}.sdg-11{background:#FD9D24}.sdg-12{background:#BF8B2E}.sdg-13{background:#3F7E44}.sdg-14{background:#0A97D9}.sdg-15{background:#56C02B}.sdg-16{background:#00689D}.sdg-17{background:#19486A}
-    /* Utilidad bilingüe genérica */
-    [data-lang-content]{display:none} [data-lang-content][data-visible="true"]{display:block}
-    @media (max-width:768px){.sdg-nav-item:hover{height:280px}.sdg-card-image{height:180px;padding:6px}.sdg-card-content{padding:12px}.sdg-card-number{font-size:11px}.sdg-card-title{font-size:12px}}
-  </style>
-</head>
-<body>
   <!-- Barra de Navegación ODS Interactiva -->
   <nav class="sdg-navbar" role="navigation" aria-label="Navegación ODS">
     <!-- ODS 1 -->
-  <a href="ods1_informe.html" class="sdg-nav-item sdg-1" data-sdg="1">
+    <a href="ods1_informe.html" class="sdg-nav-item sdg-1 active" data-sdg="1">
       <div class="sdg-card">
         <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/1.png" 
              alt="ODS 1" 
@@ -58,14 +26,8 @@
                class="sdg-card-image"
                onerror="this.src='https://placehold.co/240x180/DDA63A/ffffff?text=ODS+2'">
           <div class="sdg-card-content">
-            <div class="sdg-card-number" style="color: #DDA63A;">
-              <span class="lang-es">ODS 2</span>
-              <span class="lang-en">SDG 2</span>
-            </div>
-            <h3 class="sdg-card-title">
-              <span class="lang-es">Hambre Cero</span>
-              <span class="lang-en">Zero Hunger</span>
-            </h3>
+            <div class="sdg-card-number" style="color: #DDA63A;">ODS 2</div>
+            <h3 class="sdg-card-title">Hambre Cero</h3>
           </div>
         </div>
       </a>
@@ -96,14 +58,8 @@
                class="sdg-card-image"
                onerror="this.src='https://placehold.co/240x180/C5192D/ffffff?text=ODS+4'">
           <div class="sdg-card-content">
-            <div class="sdg-card-number" style="color: #C5192D;">
-              <span class="lang-es">ODS 4</span>
-              <span class="lang-en">SDG 4</span>
-            </div>
-            <h3 class="sdg-card-title">
-              <span class="lang-es">Educación de Calidad</span>
-              <span class="lang-en">Quality Education</span>
-            </h3>
+            <div class="sdg-card-number" style="color: #C5192D;">ODS 4</div>
+            <h3 class="sdg-card-title">Educación de Calidad</h3>
           </div>
         </div>
       </a>
@@ -275,60 +231,3 @@
         </div>
       </a>
   </nav>
-  
-  <div class="lang-switch" aria-label="Selector de idioma">
-    <button type="button" data-lang-btn="es" class="active" aria-pressed="true">ES</button>
-    <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
-  </div>
-  <div class="hero">
-    <div class="container grid-2">
-      <div>
-        <div class="eyebrow" data-lang-content data-lang="es" data-visible="true">Objetivos de Desarrollo Sostenible</div>
-        <div class="eyebrow" data-lang-content data-lang="en">Sustainable Development Goals</div>
-        <h1 data-lang-content data-lang="es">ODS 13: Acción por el clima</h1>
-        <h1 data-lang-content data-lang="en">SDG 13: Climate Action</h1>
-      </div>
-      <div style="display:flex;align-items:center;justify-content:center;">
-  <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/13.png" alt="Logo ODS 13" class="hero-illustration" onerror="this.onerror=null; this.src='https://placehold.co/320x320/3F7E44/ffffff?text=ODS+13';"/>
-      </div>
-    </div>
-  </div>
-  <main>
-    <section id="contenido"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Contenido</h2><h2 class="section-title" data-lang-content data-lang="en">Content</h2><div class="section-rule"></div></div></section>
-    <section id="noticias"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Noticias Relacionadas</h2><h2 class="section-title" data-lang-content data-lang="en">Related News</h2><div class="section-rule"></div></div></section>
-  </main>
-  <footer role="contentinfo"><div class="container"><div data-lang-content data-lang="es">© 2025 · Informe ODS 13 · Versión para uso académico.</div><div data-lang-content data-lang="en">© 2025 · SDG 13 Report · Academic use version.</div></div></footer>
-  <script>
-    // Conmutación de idioma con persistencia
-    (function(){
-      const KEY='ods-lang';
-      const es=document.querySelector('[data-lang-btn="es"]');
-      const en=document.querySelector('[data-lang-btn="en"]');
-      const blocks=document.querySelectorAll('[data-lang-content]');
-      function apply(lang){
-        document.documentElement.setAttribute('lang',lang);
-        blocks.forEach(el=>{
-          const vis = el.getAttribute('data-lang')===lang;
-          el.setAttribute('data-visible', vis?'true':'false');
-        });
-        es.classList.toggle('active',lang==='es');
-        en.classList.toggle('active',lang==='en');
-        es.setAttribute('aria-pressed',lang==='es');
-        en.setAttribute('aria-pressed',lang==='en');
-        localStorage.setItem(KEY,lang);
-      }
-      apply(localStorage.getItem(KEY) || 'es');
-      es.addEventListener('click',()=>apply('es'));
-      en.addEventListener('click',()=>apply('en'));
-    })();
-    // Activa automáticamente el ODS actual en la barra
-    (function(){
-      const m=(location.pathname||'').match(/ods(\d+)_informe\.html$/);
-      const current=m?m[1]:null; if(!current) return;
-      document.querySelectorAll('.sdg-nav-item').forEach(a=>{
-        a.classList.toggle('active', a.getAttribute('data-sdg')===current);
-      });
-    })();
-  </script>
-</body>
-</html>

@@ -11,6 +11,664 @@
   </style>
 </head>
 <body>
+  <style>
+    /* Barra de Navegación ODS - Línea delgada que se expande */
+    .sdg-navbar { position: fixed; top: 0; left: 0; width: 100%; height: 5px; display: flex; z-index: 1000; background: transparent; }
+    .sdg-nav-item { flex: 1; height: 5px; cursor: pointer; position: relative; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); text-decoration: none; display: block; overflow: hidden; }
+    .sdg-nav-item:hover { height: 320px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); }
+    .sdg-card { width: 100%; height: 100%; background: white; display: flex; flex-direction: column; opacity: 0; transition: opacity 0.3s ease 0.15s; }
+    .sdg-nav-item:hover .sdg-card { opacity: 1; }
+    .sdg-card-image { width: 100%; height: 220px; object-fit: contain; display: block; background: white; padding: 8px; }
+    .sdg-card-content { padding: 16px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px; }
+    .sdg-card-number { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; }
+    .sdg-card-title { font-size: 14px; font-weight: 600; color: #1a1a1a; margin: 0; line-height: 1.3; }
+    html[lang="es"] .lang-en { display: none !important; }
+    html[lang="en"] .lang-es { display: none !important; }
+    .sdg-1 { background: #E5243B; } .sdg-2 { background: #DDA63A; } .sdg-3 { background: #4C9F38; } .sdg-4 { background: #C5192D; }
+    .sdg-5 { background: #FF3A21; } .sdg-6 { background: #26BDE2; } .sdg-7 { background: #FCC30B; } .sdg-8 { background: #A21942; }
+    .sdg-9 { background: #FD6925; } .sdg-10 { background: #DD1367; } .sdg-11 { background: #FD9D24; } .sdg-12 { background: #BF8B2E; }
+    .sdg-13 { background: #3F7E44; } .sdg-14 { background: #0A97D9; } .sdg-15 { background: #56C02B; } .sdg-16 { background: #00689D; } .sdg-17 { background: #19486A; }
+    @media (max-width: 768px) { .sdg-nav-item:hover { height: 280px; } .sdg-card-image { height: 180px; padding: 6px; } .sdg-card-content { padding: 12px; } .sdg-card-number { font-size: 11px; } .sdg-card-title { font-size: 12px; } }
+  </style>
+  <!-- Barra de Navegación ODS Interactiva -->
+  <nav class="sdg-navbar" role="navigation" aria-label="Navegación ODS">
+    <!-- ODS 1 -->
+    <a href="ods1_informe.html" class="sdg-nav-item sdg-1" data-sdg="1">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/1.png" alt="ODS 1" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/E5243B/ffffff?text=ODS+1'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #E5243B;"><span class="lang-es">ODS 1</span><span class="lang-en">SDG 1</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Fin de la Pobreza</span><span class="lang-en">No Poverty</span></h3>
+        </div>
+      </div>
+    </a>
+    <!-- ODS 2 -->
+    <a href="ods2_informe.html" class="sdg-nav-item sdg-2" data-sdg="2">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/2.png" alt="ODS 2" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/DDA63A/ffffff?text=ODS+2'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #DDA63A;"><span class="lang-es">ODS 2</span><span class="lang-en">SDG 2</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Hambre Cero</span><span class="lang-en">Zero Hunger</span></h3>
+        </div>
+      </div>
+    </a>
+    <!-- ODS 3 -->
+    <a href="ods3_informe.html" class="sdg-nav-item sdg-3" data-sdg="3">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/3.png" alt="ODS 3" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/4C9F38/ffffff?text=ODS+3'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #4C9F38;"><span class="lang-es">ODS 3</span><span class="lang-en">SDG 3</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Salud y Bienestar</span><span class="lang-en">Good Health</span></h3>
+        </div>
+      </div>
+    </a>
+    <!-- ODS 4 -->
+    <a href="ods4_informe.html" class="sdg-nav-item sdg-4" data-sdg="4">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/4.png" alt="ODS 4" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/C5192D/ffffff?text=ODS+4'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #C5192D;"><span class="lang-es">ODS 4</span><span class="lang-en">SDG 4</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Educación de Calidad</span><span class="lang-en">Quality Education</span></h3>
+        </div>
+      </div>
+    </a>
+    <!-- ODS 5 -->
+    <a href="ods5_informe.html" class="sdg-nav-item sdg-5" data-sdg="5">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/5.png" alt="ODS 5" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/FF3A21/ffffff?text=ODS+5'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #FF3A21;"><span class="lang-es">ODS 5</span><span class="lang-en">SDG 5</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Igualdad de Género</span><span class="lang-en">Gender Equality</span></h3>
+        </div>
+      </div>
+    </a>
+    <!-- ODS 6 -->
+    <a href="ods6_informe.html" class="sdg-nav-item sdg-6 active" data-sdg="6">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/6.png" alt="ODS 6" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/26BDE2/ffffff?text=ODS+6'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #26BDE2;"><span class="lang-es">ODS 6</span><span class="lang-en">SDG 6</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Agua Limpia</span><span class="lang-en">Clean Water</span></h3>
+        </div>
+      </div>
+    </a>
+    <!-- ODS 7 -->
+    <a href="ods7_informe.html" class="sdg-nav-item sdg-7" data-sdg="7">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/7.png" alt="ODS 7" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/FCC30B/ffffff?text=ODS+7'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #FCC30B;"><span class="lang-es">ODS 7</span><span class="lang-en">SDG 7</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Energía Asequible</span><span class="lang-en">Clean Energy</span></h3>
+        </div>
+      </div>
+    </a>
+    <!-- ODS 8 -->
+    <a href="ods8_informe.html" class="sdg-nav-item sdg-8" data-sdg="8">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/8.png" alt="ODS 8" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/A21942/ffffff?text=ODS+8'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #A21942;"><span class="lang-es">ODS 8</span><span class="lang-en">SDG 8</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Trabajo Decente</span><span class="lang-en">Decent Work</span></h3>
+        </div>
+      </div>
+    </a>
+    <!-- ODS 9 -->
+    <a href="ods9_informe.html" class="sdg-nav-item sdg-9" data-sdg="9">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/9.png" alt="ODS 9" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/FD6925/ffffff?text=ODS+9'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #FD6925;"><span class="lang-es">ODS 9</span><span class="lang-en">SDG 9</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Industria e Innovación</span><span class="lang-en">Industry &amp; Innovation</span></h3>
+        </div>
+      </div>
+    </a>
+    <!-- ODS 10 -->
+    <a href="ods10_informe.html" class="sdg-nav-item sdg-10" data-sdg="10">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/10.png" alt="ODS 10" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/DD1367/ffffff?text=ODS+10'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #DD1367;"><span class="lang-es">ODS 10</span><span class="lang-en">SDG 10</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Reducción Desigualdades</span><span class="lang-en">Reduced Inequalities</span></h3>
+        </div>
+      </div>
+    </a>
+    <!-- ODS 11 -->
+    <a href="ods11_informe.html" class="sdg-nav-item sdg-11" data-sdg="11">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/11.png" alt="ODS 11" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/FD9D24/ffffff?text=ODS+11'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #FD9D24;"><span class="lang-es">ODS 11</span><span class="lang-en">SDG 11</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Ciudades Sostenibles</span><span class="lang-en">Sustainable Cities</span></h3>
+        </div>
+      </div>
+    </a>
+    <!-- ODS 12 -->
+    <a href="ods12_informe.html" class="sdg-nav-item sdg-12" data-sdg="12">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/12.png" alt="ODS 12" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/BF8B2E/ffffff?text=ODS+12'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #BF8B2E;"><span class="lang-es">ODS 12</span><span class="lang-en">SDG 12</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Producción Responsable</span><span class="lang-en">Responsible Consumption</span></h3>
+        </div>
+      </div>
+    </a>
+    <!-- ODS 13 -->
+    <a href="ods13_informe.html" class="sdg-nav-item sdg-13" data-sdg="13">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/13.png" alt="ODS 13" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/3F7E44/ffffff?text=ODS+13'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #3F7E44;"><span class="lang-es">ODS 13</span><span class="lang-en">SDG 13</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Acción por el Clima</span><span class="lang-en">Climate Action</span></h3>
+        </div>
+      </div>
+    </a>
+    <!-- ODS 14 -->
+    <a href="ods14_informe.html" class="sdg-nav-item sdg-14" data-sdg="14">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/14.png" alt="ODS 14" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/0A97D9/ffffff?text=ODS+14'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #0A97D9;"><span class="lang-es">ODS 14</span><span class="lang-en">SDG 14</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Vida Submarina</span><span class="lang-en">Life Below Water</span></h3>
+        </div>
+      </div>
+    </a>
+    <!-- ODS 15 -->
+    <a href="ods15_informe.html" class="sdg-nav-item sdg-15" data-sdg="15">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/15.png" alt="ODS 15" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/56C02B/ffffff?text=ODS+15'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #56C02B;"><span class="lang-es">ODS 15</span><span class="lang-en">SDG 15</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Vida de Ecosistemas</span><span class="lang-en">Life on Land</span></h3>
+        </div>
+      </div>
+    </a>
+    <!-- ODS 16 -->
+    <a href="ods16_informe.html" class="sdg-nav-item sdg-16" data-sdg="16">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/16.png" alt="ODS 16" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/00689D/ffffff?text=ODS+16'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #00689D;"><span class="lang-es">ODS 16</span><span class="lang-en">SDG 16</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Paz y Justicia</span><span class="lang-en">Peace &amp; Justice</span></h3>
+        </div>
+      </div>
+    </a>
+    <!-- ODS 17 -->
+    <a href="ods17_informe.html" class="sdg-nav-item sdg-17" data-sdg="17">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/17.png" alt="ODS 17" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/19486A/ffffff?text=ODS+17'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #19486A;"><span class="lang-es">ODS 17</span><span class="lang-en">SDG 17</span></div>
+          <h3 class="sdg-card-title"><span class="lang-es">Alianzas para Objetivos</span><span class="lang-en">Partnerships</span></h3>
+        </div>
+      </div>
+    </a>
+  </nav>
+  <!-- Barra de Navegación ODS Interactiva -->
+  <nav class="sdg-navbar" role="navigation" aria-label="Navegación ODS">
+    <!-- ODS 1 -->
+    <a href="ods1_informe.html" class="sdg-nav-item sdg-1 active" data-sdg="1">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/1.png" 
+             alt="ODS 1" 
+             class="sdg-card-image"
+             onerror="this.src='https://placehold.co/240x180/E5243B/ffffff?text=ODS+1'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #E5243B;">
+            <span class="lang-es">ODS 1</span>
+            <span class="lang-en">SDG 1</span>
+          </div>
+          <h3 class="sdg-card-title">
+            <span class="lang-es">Fin de la Pobreza</span>
+            <span class="lang-en">No Poverty</span>
+          </h3>
+        </div>
+      </div>
+    </a>      <!-- ODS 2 -->
+      <a href="ods2_informe.html" class="sdg-nav-item sdg-2" data-sdg="2">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/2.png" 
+               alt="ODS 2" 
+               class="sdg-card-image"
+               onerror="this.src='https://placehold.co/240x180/DDA63A/ffffff?text=ODS+2'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #DDA63A;">ODS 2</div>
+            <h3 class="sdg-card-title">Hambre Cero</h3>
+          </div>
+        </div>
+      </a>
+
+    <!-- ODS 3 -->
+    <a href="ods3_informe.html" class="sdg-nav-item sdg-3" data-sdg="3">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/3.png" 
+             alt="ODS 3" 
+             class="sdg-card-image"
+             onerror="this.src='https://placehold.co/240x180/4C9F38/ffffff?text=ODS+3'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #4C9F38;">
+            <span class="lang-es">ODS 3</span>
+            <span class="lang-en">SDG 3</span>
+          </div>
+          <h3 class="sdg-card-title">
+            <span class="lang-es">Salud y Bienestar</span>
+            <span class="lang-en">Good Health</span>
+          </h3>
+        </div>
+      </div>
+    </a>      <!-- ODS 4 -->
+      <a href="ods4_informe.html" class="sdg-nav-item sdg-4" data-sdg="4">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/4.png" 
+               alt="ODS 4" 
+               class="sdg-card-image"
+               onerror="this.src='https://placehold.co/240x180/C5192D/ffffff?text=ODS+4'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #C5192D;">ODS 4</div>
+            <h3 class="sdg-card-title">Educación de Calidad</h3>
+          </div>
+        </div>
+      </a>
+
+    <!-- ODS 5 -->
+    <a href="ods5_informe.html" class="sdg-nav-item sdg-5" data-sdg="5">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/5.png" alt="ODS 5" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/FF3A21/ffffff?text=ODS+5'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #FF3A21;">
+            <span class="lang-es">ODS 5</span>
+            <span class="lang-en">SDG 5</span>
+          </div>
+          <h3 class="sdg-card-title">
+            <span class="lang-es">Igualdad de Género</span>
+            <span class="lang-en">Gender Equality</span>
+          </h3>
+        </div>
+      </div>
+    </a>      <!-- ODS 6 -->
+      <a href="ods6_informe.html" class="sdg-nav-item sdg-6" data-sdg="6">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/6.png" alt="ODS 6" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/26BDE2/ffffff?text=ODS+6'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #26BDE2;"><span class="lang-es">ODS 6</span><span class="lang-en">SDG 6</span></div>
+            <h3 class="sdg-card-title"><span class="lang-es">Agua Limpia</span><span class="lang-en">Clean Water</span></h3>
+          </div>
+        </div>
+      </a>
+
+    <!-- ODS 7 -->
+    <a href="ods7_informe.html" class="sdg-nav-item sdg-7" data-sdg="7">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/7.png" alt="ODS 7" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/FCC30B/ffffff?text=ODS+7'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #FCC30B;">
+            <span class="lang-es">ODS 7</span>
+            <span class="lang-en">SDG 7</span>
+          </div>
+          <h3 class="sdg-card-title">
+            <span class="lang-es">Energía Asequible</span>
+            <span class="lang-en">Clean Energy</span>
+          </h3>
+        </div>
+      </div>
+    </a>      <!-- ODS 8 -->
+      <a href="ods8_informe.html" class="sdg-nav-item sdg-8" data-sdg="8">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/8.png" alt="ODS 8" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/A21942/ffffff?text=ODS+8'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #A21942;"><span class="lang-es">ODS 8</span><span class="lang-en">SDG 8</span></div>
+            <h3 class="sdg-card-title"><span class="lang-es">Trabajo Decente</span><span class="lang-en">Decent Work</span></h3>
+          </div>
+        </div>
+      </a>
+
+    <!-- ODS 9 -->
+    <a href="ods9_informe.html" class="sdg-nav-item sdg-9" data-sdg="9">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/9.png" alt="ODS 9" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/FD6925/ffffff?text=ODS+9'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #FD6925;">
+            <span class="lang-es">ODS 9</span>
+            <span class="lang-en">SDG 9</span>
+          </div>
+          <h3 class="sdg-card-title">
+            <span class="lang-es">Industria e Innovación</span>
+            <span class="lang-en">Industry & Innovation</span>
+          </h3>
+        </div>
+      </div>
+    </a>      <!-- ODS 10 -->
+      <a href="ods10_informe.html" class="sdg-nav-item sdg-10" data-sdg="10">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/10.png" alt="ODS 10" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/DD1367/ffffff?text=ODS+10'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #DD1367;"><span class="lang-es">ODS 10</span><span class="lang-en">SDG 10</span></div>
+            <h3 class="sdg-card-title"><span class="lang-es">Reducción Desigualdades</span><span class="lang-en">Reduced Inequalities</span></h3>
+          </div>
+        </div>
+      </a>
+
+    <!-- ODS 11 -->
+    <a href="ods11_informe.html" class="sdg-nav-item sdg-11" data-sdg="11">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/11.png" alt="ODS 11" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/FD9D24/ffffff?text=ODS+11'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #FD9D24;">
+            <span class="lang-es">ODS 11</span>
+            <span class="lang-en">SDG 11</span>
+          </div>
+          <h3 class="sdg-card-title">
+            <span class="lang-es">Ciudades Sostenibles</span>
+            <span class="lang-en">Sustainable Cities</span>
+          </h3>
+        </div>
+      </div>
+    </a>      <!-- ODS 12 -->
+      <a href="ods12_informe.html" class="sdg-nav-item sdg-12" data-sdg="12">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/12.png" alt="ODS 12" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/BF8B2E/ffffff?text=ODS+12'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #BF8B2E;"><span class="lang-es">ODS 12</span><span class="lang-en">SDG 12</span></div>
+            <h3 class="sdg-card-title"><span class="lang-es">Producción Responsable</span><span class="lang-en">Responsible Consumption</span></h3>
+          </div>
+        </div>
+      </a>
+
+    <!-- ODS 13 -->
+    <a href="ods13_informe.html" class="sdg-nav-item sdg-13" data-sdg="13">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/13.png" alt="ODS 13" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/3F7E44/ffffff?text=ODS+13'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #3F7E44;">
+            <span class="lang-es">ODS 13</span>
+            <span class="lang-en">SDG 13</span>
+          </div>
+          <h3 class="sdg-card-title">
+            <span class="lang-es">Acción por el Clima</span>
+            <span class="lang-en">Climate Action</span>
+          </h3>
+        </div>
+      </div>
+    </a>      <!-- ODS 14 -->
+      <a href="ods14_informe.html" class="sdg-nav-item sdg-14" data-sdg="14">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/14.png" alt="ODS 14" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/0A97D9/ffffff?text=ODS+14'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #0A97D9;"><span class="lang-es">ODS 14</span><span class="lang-en">SDG 14</span></div>
+            <h3 class="sdg-card-title"><span class="lang-es">Vida Submarina</span><span class="lang-en">Life Below Water</span></h3>
+          </div>
+        </div>
+      </a>
+
+    <!-- ODS 15 -->
+    <a href="ods15_informe.html" class="sdg-nav-item sdg-15" data-sdg="15">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/15.png" alt="ODS 15" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/56C02B/ffffff?text=ODS+15'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #56C02B;">
+            <span class="lang-es">ODS 15</span>
+            <span class="lang-en">SDG 15</span>
+          </div>
+          <h3 class="sdg-card-title">
+            <span class="lang-es">Vida de Ecosistemas</span>
+            <span class="lang-en">Life on Land</span>
+          </h3>
+        </div>
+      </div>
+    </a>      <!-- ODS 16 -->
+      <a href="ods16_informe.html" class="sdg-nav-item sdg-16" data-sdg="16">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/16.png" alt="ODS 16" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/00689D/ffffff?text=ODS+16'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #00689D;"><span class="lang-es">ODS 16</span><span class="lang-en">SDG 16</span></div>
+            <h3 class="sdg-card-title"><span class="lang-es">Paz y Justicia</span><span class="lang-en">Peace &amp; Justice</span></h3>
+          </div>
+        </div>
+      </a>
+
+      <!-- ODS 17 -->
+      <a href="ods17_informe.html" class="sdg-nav-item sdg-17" data-sdg="17">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/17.png" alt="ODS 17" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/19486A/ffffff?text=ODS+17'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #19486A;"><span class="lang-es">ODS 17</span><span class="lang-en">SDG 17</span></div>
+            <h3 class="sdg-card-title"><span class="lang-es">Alianzas para Objetivos</span><span class="lang-en">Partnerships</span></h3>
+          </div>
+        </div>
+      </a>
+  </nav>
+  <!-- Barra de Navegación ODS Interactiva -->
+  <nav class="sdg-navbar" role="navigation" aria-label="Navegación ODS">
+    <!-- ODS 1 -->
+    <a href="ods1_informe.html" class="sdg-nav-item sdg-1 active" data-sdg="1">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/1.png" 
+             alt="ODS 1" 
+             class="sdg-card-image"
+             onerror="this.src='https://placehold.co/240x180/E5243B/ffffff?text=ODS+1'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #E5243B;">
+            <span class="lang-es">ODS 1</span>
+            <span class="lang-en">SDG 1</span>
+          </div>
+          <h3 class="sdg-card-title">
+            <span class="lang-es">Fin de la Pobreza</span>
+            <span class="lang-en">No Poverty</span>
+          </h3>
+        </div>
+      </div>
+    </a>      <!-- ODS 2 -->
+      <a href="ods2_informe.html" class="sdg-nav-item sdg-2" data-sdg="2">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/2.png" 
+               alt="ODS 2" 
+               class="sdg-card-image"
+               onerror="this.src='https://placehold.co/240x180/DDA63A/ffffff?text=ODS+2'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #DDA63A;">ODS 2</div>
+            <h3 class="sdg-card-title">Hambre Cero</h3>
+          </div>
+        </div>
+      </a>
+
+    <!-- ODS 3 -->
+    <a href="ods3_informe.html" class="sdg-nav-item sdg-3" data-sdg="3">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/3.png" 
+             alt="ODS 3" 
+             class="sdg-card-image"
+             onerror="this.src='https://placehold.co/240x180/4C9F38/ffffff?text=ODS+3'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #4C9F38;">
+            <span class="lang-es">ODS 3</span>
+            <span class="lang-en">SDG 3</span>
+          </div>
+          <h3 class="sdg-card-title">
+            <span class="lang-es">Salud y Bienestar</span>
+            <span class="lang-en">Good Health</span>
+          </h3>
+        </div>
+      </div>
+    </a>      <!-- ODS 4 -->
+      <a href="ods4_informe.html" class="sdg-nav-item sdg-4" data-sdg="4">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/4.png" 
+               alt="ODS 4" 
+               class="sdg-card-image"
+               onerror="this.src='https://placehold.co/240x180/C5192D/ffffff?text=ODS+4'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #C5192D;">ODS 4</div>
+            <h3 class="sdg-card-title">Educación de Calidad</h3>
+          </div>
+        </div>
+      </a>
+
+    <!-- ODS 5 -->
+    <a href="ods5_informe.html" class="sdg-nav-item sdg-5" data-sdg="5">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/5.png" alt="ODS 5" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/FF3A21/ffffff?text=ODS+5'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #FF3A21;">
+            <span class="lang-es">ODS 5</span>
+            <span class="lang-en">SDG 5</span>
+          </div>
+          <h3 class="sdg-card-title">
+            <span class="lang-es">Igualdad de Género</span>
+            <span class="lang-en">Gender Equality</span>
+          </h3>
+        </div>
+      </div>
+    </a>      <!-- ODS 6 -->
+      <a href="ods6_informe.html" class="sdg-nav-item sdg-6" data-sdg="6">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/6.png" alt="ODS 6" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/26BDE2/ffffff?text=ODS+6'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #26BDE2;"><span class="lang-es">ODS 6</span><span class="lang-en">SDG 6</span></div>
+            <h3 class="sdg-card-title"><span class="lang-es">Agua Limpia</span><span class="lang-en">Clean Water</span></h3>
+          </div>
+        </div>
+      </a>
+
+    <!-- ODS 7 -->
+    <a href="ods7_informe.html" class="sdg-nav-item sdg-7" data-sdg="7">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/7.png" alt="ODS 7" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/FCC30B/ffffff?text=ODS+7'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #FCC30B;">
+            <span class="lang-es">ODS 7</span>
+            <span class="lang-en">SDG 7</span>
+          </div>
+          <h3 class="sdg-card-title">
+            <span class="lang-es">Energía Asequible</span>
+            <span class="lang-en">Clean Energy</span>
+          </h3>
+        </div>
+      </div>
+    </a>      <!-- ODS 8 -->
+      <a href="ods8_informe.html" class="sdg-nav-item sdg-8" data-sdg="8">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/8.png" alt="ODS 8" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/A21942/ffffff?text=ODS+8'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #A21942;"><span class="lang-es">ODS 8</span><span class="lang-en">SDG 8</span></div>
+            <h3 class="sdg-card-title"><span class="lang-es">Trabajo Decente</span><span class="lang-en">Decent Work</span></h3>
+          </div>
+        </div>
+      </a>
+
+    <!-- ODS 9 -->
+    <a href="ods9_informe.html" class="sdg-nav-item sdg-9" data-sdg="9">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/9.png" alt="ODS 9" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/FD6925/ffffff?text=ODS+9'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #FD6925;">
+            <span class="lang-es">ODS 9</span>
+            <span class="lang-en">SDG 9</span>
+          </div>
+          <h3 class="sdg-card-title">
+            <span class="lang-es">Industria e Innovación</span>
+            <span class="lang-en">Industry & Innovation</span>
+          </h3>
+        </div>
+      </div>
+    </a>      <!-- ODS 10 -->
+      <a href="ods10_informe.html" class="sdg-nav-item sdg-10" data-sdg="10">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/10.png" alt="ODS 10" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/DD1367/ffffff?text=ODS+10'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #DD1367;"><span class="lang-es">ODS 10</span><span class="lang-en">SDG 10</span></div>
+            <h3 class="sdg-card-title"><span class="lang-es">Reducción Desigualdades</span><span class="lang-en">Reduced Inequalities</span></h3>
+          </div>
+        </div>
+      </a>
+
+    <!-- ODS 11 -->
+    <a href="ods11_informe.html" class="sdg-nav-item sdg-11" data-sdg="11">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/11.png" alt="ODS 11" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/FD9D24/ffffff?text=ODS+11'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #FD9D24;">
+            <span class="lang-es">ODS 11</span>
+            <span class="lang-en">SDG 11</span>
+          </div>
+          <h3 class="sdg-card-title">
+            <span class="lang-es">Ciudades Sostenibles</span>
+            <span class="lang-en">Sustainable Cities</span>
+          </h3>
+        </div>
+      </div>
+    </a>      <!-- ODS 12 -->
+      <a href="ods12_informe.html" class="sdg-nav-item sdg-12" data-sdg="12">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/12.png" alt="ODS 12" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/BF8B2E/ffffff?text=ODS+12'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #BF8B2E;"><span class="lang-es">ODS 12</span><span class="lang-en">SDG 12</span></div>
+            <h3 class="sdg-card-title"><span class="lang-es">Producción Responsable</span><span class="lang-en">Responsible Consumption</span></h3>
+          </div>
+        </div>
+      </a>
+
+    <!-- ODS 13 -->
+    <a href="ods13_informe.html" class="sdg-nav-item sdg-13" data-sdg="13">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/13.png" alt="ODS 13" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/3F7E44/ffffff?text=ODS+13'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #3F7E44;">
+            <span class="lang-es">ODS 13</span>
+            <span class="lang-en">SDG 13</span>
+          </div>
+          <h3 class="sdg-card-title">
+            <span class="lang-es">Acción por el Clima</span>
+            <span class="lang-en">Climate Action</span>
+          </h3>
+        </div>
+      </div>
+    </a>      <!-- ODS 14 -->
+      <a href="ods14_informe.html" class="sdg-nav-item sdg-14" data-sdg="14">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/14.png" alt="ODS 14" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/0A97D9/ffffff?text=ODS+14'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #0A97D9;"><span class="lang-es">ODS 14</span><span class="lang-en">SDG 14</span></div>
+            <h3 class="sdg-card-title"><span class="lang-es">Vida Submarina</span><span class="lang-en">Life Below Water</span></h3>
+          </div>
+        </div>
+      </a>
+
+    <!-- ODS 15 -->
+    <a href="ods15_informe.html" class="sdg-nav-item sdg-15" data-sdg="15">
+      <div class="sdg-card">
+        <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/15.png" alt="ODS 15" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/56C02B/ffffff?text=ODS+15'">
+        <div class="sdg-card-content">
+          <div class="sdg-card-number" style="color: #56C02B;">
+            <span class="lang-es">ODS 15</span>
+            <span class="lang-en">SDG 15</span>
+          </div>
+          <h3 class="sdg-card-title">
+            <span class="lang-es">Vida de Ecosistemas</span>
+            <span class="lang-en">Life on Land</span>
+          </h3>
+        </div>
+      </div>
+    </a>      <!-- ODS 16 -->
+      <a href="ods16_informe.html" class="sdg-nav-item sdg-16" data-sdg="16">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/16.png" alt="ODS 16" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/00689D/ffffff?text=ODS+16'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #00689D;"><span class="lang-es">ODS 16</span><span class="lang-en">SDG 16</span></div>
+            <h3 class="sdg-card-title"><span class="lang-es">Paz y Justicia</span><span class="lang-en">Peace &amp; Justice</span></h3>
+          </div>
+        </div>
+      </a>
+
+      <!-- ODS 17 -->
+      <a href="ods17_informe.html" class="sdg-nav-item sdg-17" data-sdg="17">
+        <div class="sdg-card">
+          <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/17.png" alt="ODS 17" class="sdg-card-image" onerror="this.src='https://placehold.co/240x180/19486A/ffffff?text=ODS+17'">
+          <div class="sdg-card-content">
+            <div class="sdg-card-number" style="color: #19486A;"><span class="lang-es">ODS 17</span><span class="lang-en">SDG 17</span></div>
+            <h3 class="sdg-card-title"><span class="lang-es">Alianzas para Objetivos</span><span class="lang-en">Partnerships</span></h3>
+          </div>
+        </div>
+      </a>
+  </nav>
   <div class="lang-switch" aria-label="Selector de idioma">
     <button type="button" data-lang-btn="es" class="active" aria-pressed="true">ES</button>
     <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
