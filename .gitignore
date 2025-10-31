@@ -1,0 +1,18 @@
+# Archivos temporales
+temp_*.html
+temp_*.txt
+*_backup.html
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Notas temporales
+*_note.txt

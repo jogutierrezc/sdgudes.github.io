@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Objetivos de Desarrollo Sostenible (ODS)</title>
+    
+    <!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Font: Inter --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Lottie Web Component --><script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+    
+    <style>
+        /* Definición de los colores oficiales de los ODS */
+        :root {
+            --ods1-color: #E5243B;
+            --ods2-color: #DDA63A;
+            --ods3-color: #4C9F38;
+            --ods4-color: #C5192D;
+            --ods5-color: #FF3A21;
+            --ods6-color: #26BDE2;
+            --ods7-color: #FCC30B;
+            --ods8-color: #A21942;
+            --ods9-color: #FD6925;
+            --ods10-color: #DD1367;
+            --ods11-color: #FD9D24;
+            --ods12-color: #BF8B2E;
+            --ods13-color: #3F7E44;
+            --ods14-color: #0A97D9;
+            --ods15-color: #56C02B;
+            --ods16-color: #00689D;
+            --ods17-color: #19486A;
+            
+            /* Tonalidades de azul institucional para el título principal */
+            --udes-blue-dark: #004a99;
+            --udes-blue-light: #007bff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc; /* Fondo limpio como en el reporte ODS 1 */
+        }
+
+        /* Estilo para el título con degradado azul institucional */
+        .institutional-gradient-text {
+            background: linear-gradient(90deg, var(--udes-blue-dark), var(--udes-blue-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        /* Estilo base para las tarjetas de ODS, replicando la profundidad del ODS 1 */
+        .ods-card {
+            background-color: white;
+            border-radius: 0.75rem; /* 12px */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            border-bottom-width: 4px; /* Borde inferior coloreado */
+            display: flex; /* Para controlar la imagen y el texto */
+            flex-direction: column; /* Apila imagen y texto */
+            align-items: center; /* Centra el contenido horizontalmente */
+            justify-content: center; /* Centra el contenido verticalmente */
+        }
+
+        .ods-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Ajuste para las imágenes: más compactas */
+        .ods-card img {
+            width: 100%;
+            height: 90px; /* Altura más pequeña para hacerlas más compactas */
+            object-fit: contain; /* Asegura que la imagen completa sea visible y no se recorte */
+            padding: 5px; /* Pequeño padding para que no toquen los bordes si es 'contain' */
+        }
+
+        /* Estilo para el contenedor de texto dentro de las tarjetas */
+        .ods-card .p-4 {
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Estilo para los títulos dentro de las tarjetas */
+        .ods-card .p-4 h3 {
+            text-align: center;
+            font-size: 1.125rem; /* text-lg en Tailwind = 18px */
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* Clases de borde para cada ODS */
+        .ods-border-1  { border-color: var(--ods1-color); }
+        .ods-border-2  { border-color: var(--ods2-color); }
+        .ods-border-3  { border-color: var(--ods3-color); }
+        .ods-border-4  { border-color: var(--ods4-color); }
+        .ods-border-5  { border-color: var(--ods5-color); }
+        .ods-border-6  { border-color: var(--ods6-color); }
+        .ods-border-7  { border-color: var(--ods7-color); }
+        .ods-border-8  { border-color: var(--ods8-color); }
+        .ods-border-9  { border-color: var(--ods9-color); }
+        .ods-border-10 { border-color: var(--ods10-color); }
+        .ods-border-11 { border-color: var(--ods11-color); }
+        .ods-border-12 { border-color: var(--ods12-color); }
+        .ods-border-13 { border-color: var(--ods13-color); }
+        .ods-border-14 { border-color: var(--ods14-color); }
+        .ods-border-15 { border-color: var(--ods15-color); }
+        .ods-border-16 { border-color: var(--ods16-color); }
+        .ods-border-17 { border-color: var(--ods17-color); }
+
+        /* Estilo para la línea divisoria con bloques de colores ODS */
+        .ods-gradient-divider {
+            display: flex;
+            width: 80%; /* Ancho, puedes ajustarlo */
+            height: 8px; /* Altura de la línea */
+            margin: 40px auto; /* Centrar y dar espacio */
+            gap: 2px; /* Pequeño espacio entre bloques */
+            border-radius: 4px; /* Bordes ligeramente redondeados */
+            overflow: hidden;
+        }
+        
+        .ods-gradient-divider .color-block {
+            flex: 1;
+            height: 100%;
+        }
+        
+        .ods-gradient-divider .color-block:nth-child(1)  { background-color: var(--ods1-color); }
+        .ods-gradient-divider .color-block:nth-child(2)  { background-color: var(--ods2-color); }
+        .ods-gradient-divider .color-block:nth-child(3)  { background-color: var(--ods3-color); }
+        .ods-gradient-divider .color-block:nth-child(4)  { background-color: var(--ods4-color); }
+        .ods-gradient-divider .color-block:nth-child(5)  { background-color: var(--ods5-color); }
+        .ods-gradient-divider .color-block:nth-child(6)  { background-color: var(--ods6-color); }
+        .ods-gradient-divider .color-block:nth-child(7)  { background-color: var(--ods7-color); }
+        .ods-gradient-divider .color-block:nth-child(8)  { background-color: var(--ods8-color); }
+        .ods-gradient-divider .color-block:nth-child(9)  { background-color: var(--ods9-color); }
+        .ods-gradient-divider .color-block:nth-child(10) { background-color: var(--ods10-color); }
+        .ods-gradient-divider .color-block:nth-child(11) { background-color: var(--ods11-color); }
+        .ods-gradient-divider .color-block:nth-child(12) { background-color: var(--ods12-color); }
+        .ods-gradient-divider .color-block:nth-child(13) { background-color: var(--ods13-color); }
+        .ods-gradient-divider .color-block:nth-child(14) { background-color: var(--ods14-color); }
+        .ods-gradient-divider .color-block:nth-child(15) { background-color: var(--ods15-color); }
+        .ods-gradient-divider .color-block:nth-child(16) { background-color: var(--ods16-color); }
+        .ods-gradient-divider .color-block:nth-child(17) { background-color: var(--ods17-color); }
+        
+        /* Borde especial para Salud Planetaria con degradado */
+        .ods-border-planetary {
+            border-color: #26BDE2; /* Color azul agua representativo */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto py-16 px-4">
+
+        <!-- Encabezado Institucional con Logo --><header class="text-center mb-6">
+            <div class="flex items-center justify-center mb-4">
+                <img src="https://udes.edu.co/images/logo/logo-con-acreditada-color.png" alt="Logo UDES" class="h-16 mr-4">
+                <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight institutional-gradient-text">
+                    Impacto UDES
+                </h1>
+            </div>
+            <h2 class="mt-2 text-xl md:text-2xl font-light text-gray-700 max-w-3xl mx-auto">
+                Compromiso con la Agenda 2030: Transformando realidades a través de los Objetivos de Desarrollo Sostenible (ODS).
+            </h2>
+        </header>
+
+        <!-- Línea Divisoria de ODS --><div class="ods-gradient-divider">
+            <div class="color-block"></div>
+            <div class="color-block"></div>
+            <div class="color-block"></div>
+            <div class="color-block"></div>
+            <div class="color-block"></div>
+            <div class="color-block"></div>
+            <div class="color-block"></div>
+            <div class="color-block"></div>
+            <div class="color-block"></div>
+            <div class="color-block"></div>
+            <div class="color-block"></div>
+            <div class="color-block"></div>
+            <div class="color-block"></div>
+            <div class="color-block"></div>
+            <div class="color-block"></div>
+            <div class="color-block"></div>
+            <div class="color-block"></div>
+        </div>
+
+        <!-- Cuadrícula de ODS (Ajustada para 1, 3, y 5 columnas) --><main class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+
+            <!-- Salud Planetaria - Eje Articulador --><a href="salud_planetaria.html" class="ods-card ods-border-planetary group">
+                <div style="width: 100%; height: 90px; display: flex; align-items: center; justify-content: center; padding: 5px;">
+                    <dotlottie-wc src="https://lottie.host/795b8609-daa1-4a18-8737-5a104bab61fc/lmv3mibCky.lottie" style="width: 90px; height: 90px;" autoplay loop></dotlottie-wc>
+                </div>
+                <div class="p-4">
+                    <h3>UDES: Salud Planetaria como eje articulador</h3>
+                </div>
+            </a>
+
+            <!-- ODS 1 --><a href="ods1_informe.html" class="ods-card ods-border-1 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/1.png" alt="ODS 1: Fin de la Pobreza" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 1: Fin de la Pobreza</h3>
+                </div>
+            </a>
+
+            <!-- ODS 2 --><a href="ods2_informe.html" class="ods-card ods-border-2 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/2.png" alt="ODS 2: Hambre Cero" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 2: Hambre Cero</h3>
+                </div>
+            </a>
+
+            <!-- ODS 3 --><a href="ods3_informe.html" class="ods-card ods-border-3 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/3.png" alt="ODS 3: Salud y Bienestar" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 3: Salud y Bienestar</h3>
+                </div>
+            </a>
+
+            <!-- ODS 4 --><a href="ods4_informe.html" class="ods-card ods-border-4 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/4.png" alt="ODS 4: Educación de Calidad" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 4: Educación de Calidad</h3>
+                </div>
+            </a>
+
+            <!-- ODS 5 --><a href="ods5_informe.html" class="ods-card ods-border-5 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/5.png" alt="ODS 5: Igualdad de Género" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 5: Igualdad de Género</h3>
+                </div>
+            </a>
+
+            <!-- ODS 6 --><a href="ods6_informe.html" class="ods-card ods-border-6 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/6.png" alt="ODS 6: Agua Limpia y Saneamiento" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 6: Agua Limpia y Saneamiento</h3>
+                </div>
+            </a>
+
+            <!-- ODS 7 --><a href="ods7_informe.html" class="ods-card ods-border-7 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/7.png" alt="ODS 7: Energía Asequible y No Contaminante" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 7: Energía Asequible</h3>
+                </div>
+            </a>
+
+            <!-- ODS 8 --><a href="ods8_informe.html" class="ods-card ods-border-8 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/8.png" alt="ODS 8: Trabajo Decente y Crecimiento Económico" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 8: Trabajo Decente</h3>
+                </div>
+            </a>
+
+            <!-- ODS 9 --><a href="ods9_informe.html" class="ods-card ods-border-9 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/9.png" alt="ODS 9: Industria, Innovación e Infraestructura" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 9: Innovación</h3>
+                </div>
+            </a>
+
+            <!-- ODS 10 --><a href="ods10_informe.html" class="ods-card ods-border-10 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/10.png" alt="ODS 10: Reducción de las Desigualdades" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 10: Reducción Desigualdades</h3>
+                </div>
+            </a>
+
+            <!-- ODS 11 --><a href="ods11_informe.html" class="ods-card ods-border-11 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/11.png" alt="ODS 11: Ciudades y Comunidades Sostenibles" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 11: Ciudades Sostenibles</h3>
+                </div>
+            </a>
+
+            <!-- ODS 12 --><a href="ods12_informe.html" class="ods-card ods-border-12 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/12.png" alt="ODS 12: Producción y Consumo Responsables" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 12: Consumo Responsable</h3>
+                </div>
+            </a>
+
+            <!-- ODS 13 --><a href="ods13_informe.html" class="ods-card ods-border-13 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/13.png" alt="ODS 13: Acción por el Clima" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 13: Acción por el Clima</h3>
+                </div>
+            </a>
+
+            <!-- ODS 14 --><a href="ods14_informe.html" class="ods-card ods-border-14 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/14.png" alt="ODS 14: Vida Submarina" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 14: Vida Submarina</h3>
+                </div>
+            </a>
+
+            <!-- ODS 15 --><a href="ods15_informe.html" class="ods-card ods-border-15 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/15.png" alt="ODS 15: Vida de Ecosistemas Terrestres" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 15: Ecosistemas Terrestres</h3>
+                </div>
+            </a>
+
+            <!-- ODS 16 --><a href="ods16_informe.html" class="ods-card ods-border-16 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/16.png" alt="ODS 16: Paz, Justicia e Instituciones Sólidas" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 16: Paz y Justicia</h3>
+                </div>
+            </a>
+
+            <!-- ODS 17 --><a href="ods17_informe.html" class="ods-card ods-border-17 group">
+                <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/17.png" alt="ODS 17: Alianzas para lograr los Objetivos" class="object-contain">
+                <div class="p-4">
+                    <h3>ODS 17: Alianzas Estratégicas</h3>
+                </div>
+            </a>
+
+        </main>
+
+        <footer class="text-center mt-16 text-gray-600">
+            <p>&copy; 2024 Universidad de Santander (UDES)</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

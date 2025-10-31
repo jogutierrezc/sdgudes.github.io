@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salud Planetaria | UDES</title>
+  <meta name="description" content="La Visión UDES: Salud Planetaria como Eje Articulador de los Objetivos de Desarrollo Sostenible." />
+  
+  <!-- Fuente Inter para un look moderno -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lottie Web Component -->
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+  
+  <style>
+    :root {
+      --planetary-blue: #26BDE2;
+      --planetary-green: #56C02B;
+      --planetary-teal: #00689D;
+      --planetary-light: #e3f6fd;
+      --text-primary: #2c3e50;
+      --text-secondary: #546e7a;
+      --text-muted: #7f8c9a;
+      --bg-light: #fafbfc;
+      --bg-white: #ffffff;
+      --border-light: #e8eaed;
+      --border-subtle: #f1f3f5;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+      --shadow-lg: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    /* Reset & Base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { 
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: var(--bg-white);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 { 
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+    
+    p { 
+      text-align: justify;
+      hyphens: auto;
+      word-spacing: 0.05em;
+      margin-bottom: 1em;
+    }
+    
+    p:last-child { margin-bottom: 0; }
+
+    .container { 
+      max-width: 1160px; 
+      margin: 0 auto; 
+      padding: 0 28px; 
+    }
+
+    /* Language Switch - Fixed Position */
+    .lang-switch { 
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 110;
+      display: flex; 
+      align-items: center; 
+      gap: 8px;
+      background: var(--bg-light);
+      padding: 4px;
+      border-radius: 10px;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .lang-switch button {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      padding: 8px 16px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s ease;
+      letter-spacing: 0.3px;
+    }
+    
+    .lang-switch button:hover { background: rgba(0,0,0,0.04); }
+    .lang-switch button.active { 
+      background: var(--bg-white);
+      color: var(--planetary-blue);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Hero Section */
+    .hero { 
+      padding: 88px 0 72px;
+      background: radial-gradient(circle at 50% 0%, var(--planetary-light) 0%, #ffffff 65%);
+      border-bottom: 1px solid var(--border-light);
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
+      margin-bottom: 80px;
+    }
+    
+    .hero-content { 
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    
+    .eyebrow { 
+      color: var(--planetary-teal);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    
+    .hero h1 { 
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.15;
+      margin: 0 0 20px 0;
+      color: var(--text-primary);
+    }
+    
+    .subtitle { 
+      color: var(--text-secondary);
+      font-size: 19px;
+      line-height: 1.6;
+    }
+    
+    .hero-illustration { 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Main Content */
+    main { 
+      padding: 0 0 64px;
+    }
+
+    section { 
+      margin-bottom: 80px;
+    }
+
+    .section-title { 
+      font-size: clamp(26px, 3.8vw, 36px);
+      margin: 0 0 8px 0;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .section-rule { 
+      width: 64px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--planetary-blue) 0%, var(--planetary-green) 100%);
+      margin: 0 0 28px 0;
+      border-radius: 2px;
+    }
+    
+    .section-intro { 
+      font-size: 18px;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    /* Content Blocks */
+    .content-block {
+      margin-bottom: 32px;
+    }
+    
+    .content-block h3 {
+      font-size: 22px;
+      color: var(--planetary-teal);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    
+    .content-block p {
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* Signature Block */
+    .signature-block {
+      background: linear-gradient(135deg, var(--planetary-light) 0%, #ffffff 100%);
+      border-left: 4px solid var(--planetary-blue);
+      padding: 32px;
+      border-radius: 14px;
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    
+    .signature-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: var(--shadow-md);
+      border: 3px solid var(--bg-white);
+    }
+    
+    .signature-content p {
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    
+    .signature-name {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    
+    .signature-title {
+      color: var(--text-secondary);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    footer { 
+      border-top: 1px solid var(--border-light);
+      padding: 40px 0 56px;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .container { padding: 0 24px; }
+      .hero-content { 
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero { 
+        padding: 48px 0 36px;
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%);
+        margin-bottom: 48px;
+      }
+      
+      .hero h1 { font-size: clamp(28px, 7vw, 36px); }
+      .subtitle { font-size: 17px; }
+      
+      section { margin-bottom: 56px; }
+      .section-title { font-size: clamp(22px, 5vw, 28px); }
+      
+      .signature-block { 
+        padding: 24px;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      
+      .signature-photo {
+        width: 160px;
+        height: 160px;
+        margin: 0 auto;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .container { padding: 0 20px; }
+      .lang-switch button { 
+        padding: 7px 14px;
+        font-size: 13px;
+      }
+      .hero { padding: 36px 0 28px; }
+      .eyebrow { font-size: 11px; }
+    }
+
+    /* Bilingual Utility */
+    [data-lang-content] { display: none; }
+    [data-lang-content][data-visible="true"] { display: block; }
+
+    /* Intro Overlay */
+    #intro-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      /* Fondo con degradado suave más elegante */
+      background: linear-gradient(135deg, #00689D 0%, #26BDE2 50%, #56C02B 100%);
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+    }
+    
+    #intro-overlay .intro-inner { 
+      text-align: center; 
+      animation: introText 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both; 
+      /* Sin glassmorphism - solo contenedor limpio */
+      padding: 32px 40px;
+    }
+    
+    #intro-overlay .intro-logo {
+      width: 240px;
+      height: 240px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: introLogo 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both 150ms;
+    }
+    
+    #intro-overlay .intro-mark {
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      font-size: clamp(36px, 7vw, 72px);
+      line-height: 1.1;
+    }
+    
+    #intro-overlay .intro-sub {
+      margin-top: 8px;
+      font-weight: 700;
+      font-size: clamp(18px, 3.5vw, 28px);
+      opacity: 0.95;
+      letter-spacing: 0.06em;
+    }
+    
+    #intro-overlay.hide { 
+      animation: introOut 650ms cubic-bezier(0.4, 0, 0.2, 1) forwards; 
+    }
+    
+    @keyframes introText {
+      from { opacity: 0; transform: translateY(8px) scale(0.985); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    
+    @keyframes introLogo {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    
+    @keyframes introOut {
+      to { opacity: 0; transform: translateY(-12%); }
+    }
+    
+    @keyframes dropIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
+    
+    body.intro-playing { overflow: hidden; }
+    body.intro-playing .lang-switch { opacity: 0; pointer-events: none; }
+    body.intro-playing .hero,
+    body.intro-playing main,
+    body.intro-playing footer { opacity: 0; transform: translateY(12px); }
+    body.intro-done .hero { animation: dropIn 600ms cubic-bezier(0.2, 0.8, 0.2, 1) both 50ms; }
+    body.intro-done main { animation: dropIn 650ms cubic-bezier(0.2, 0.8, 0.2, 1) both 100ms; }
+    body.intro-done footer { animation: dropIn 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both 180ms; }
+
+    @media (prefers-reduced-motion: reduce) {
+      #intro-overlay { display: none !important; }
+      body.intro-playing .hero,
+      body.intro-playing main,
+      body.intro-playing footer { opacity: 1; transform: none; }
+      body.intro-done .hero,
+      body.intro-done main,
+      body.intro-done footer { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Intro Animation -->
+  <div id="intro-overlay" aria-hidden="true">
+    <div class="intro-inner">
+      <div class="intro-logo">
+        <dotlottie-wc src="https://lottie.host/795b8609-daa1-4a18-8737-5a104bab61fc/lmv3mibCky.lottie" style="width: 180px; height: 180px;" autoplay loop></dotlottie-wc>
+      </div>
+      <div class="intro-mark">UDES</div>
+      <div class="intro-sub" data-lang-content data-lang="es" data-visible="true">Salud Planetaria</div>
+      <div class="intro-sub" data-lang-content data-lang="en">Planetary Health</div>
+    </div>
+  </div>
+
+  <!-- Language Switch -->
+  <div class="lang-switch" aria-label="Selector de idioma">
+    <button type="button" data-lang-btn="es" class="active" aria-pressed="true">ES</button>
+    <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div>
+          <div class="eyebrow" data-lang-content data-lang="es" data-visible="true">Universidad de Santander</div>
+          <div class="eyebrow" data-lang-content data-lang="en">Universidad de Santander</div>
+
+          <h1 data-lang-content data-lang="es">Salud Planetaria como Eje Articulador</h1>
+          <h1 data-lang-content data-lang="en">Planetary Health as a Guiding Framework</h1>
+
+          <p class="subtitle" data-lang-content data-lang="es">
+            La salud de la civilización humana es absolutamente indivisible de la salud de los sistemas naturales. No puede haber personas sanas en un planeta enfermo.
+          </p>
+          <p class="subtitle" data-lang-content data-lang="en">
+            The health of human civilization is absolutely inseparable from the health of natural systems. There can be no healthy people on a sick planet.
+          </p>
+        </div>
+        
+        <div class="hero-illustration">
+          <dotlottie-wc src="https://lottie.host/795b8609-daa1-4a18-8737-5a104bab61fc/lmv3mibCky.lottie" style="width: 320px; height: 320px;" autoplay loop></dotlottie-wc>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <!-- Introduction Section -->
+      <section id="vision">
+        <h2 class="section-title" data-lang-content data-lang="es" data-visible="true">La Visión UDES</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">The UDES Vision</h2>
+        <div class="section-rule"></div>
+
+        <div data-lang-content data-lang="es" data-visible="true">
+          <p class="section-intro">
+            Mi visión, y por ende la visión que impulsa a la UDES, se articula a través de un concepto que considero fundamental para el siglo XXI: la Salud Planetaria.
+          </p>
+
+          <p class="section-intro">
+            Este enfoque reconoce una verdad científica irrefutable: la salud de la civilización humana es absolutamente indivisible de la salud de los sistemas naturales de los que dependemos. No puede haber personas sanas en un planeta enfermo.
+          </p>
+
+          <p class="section-intro">
+            Esta visión de Salud Planetaria es el lente a través del cual enfocamos nuestras tres funciones misionales (formación, investigación y extensión) para contribuir a la Agenda 2030, poniendo especial énfasis en la interconexión de objetivos como el ODS 3 (Salud y Bienestar), ODS 13 (Acción por el Clima) y ODS 15 (Vida de Ecosistemas Terrestres).
+          </p>
+        </div>
+
+        <div data-lang-content data-lang="en">
+          <p class="section-intro">
+            My vision, and therefore the vision that drives UDES, is articulated through a concept I consider fundamental for the 21st century: Planetary Health.
+          </p>
+
+          <p class="section-intro">
+            This approach recognizes an irrefutable scientific truth: the health of human civilization is absolutely inseparable from the health of the natural systems on which we depend. There can be no healthy people on a sick planet.
+          </p>
+
+          <p class="section-intro">
+            This vision of Planetary Health is the lens through which we focus our three core functions (education, research, and outreach) to contribute to the 2030 Agenda, with particular emphasis on the interconnection of goals such as SDG 3 (Good Health and Well-being), SDG 13 (Climate Action), and SDG 15 (Life on Land).
+          </p>
+        </div>
+      </section>
+
+      <!-- Implementation Section -->
+      <section id="implementation">
+        <h2 class="section-title" data-lang-content data-lang="es" data-visible="true">Así lo Materializamos</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">How We Implement This</h2>
+        <div class="section-rule"></div>
+
+        <div data-lang-content data-lang="es" data-visible="true">
+          <div class="content-block">
+            <h3>Formación para la Sostenibilidad</h3>
+            <p>
+              No estamos simplemente formando médicos, ingenieros o abogados. Estamos formando líderes globales y agentes de cambio con una profunda conciencia de los determinantes sociales, económicos y, crucialmente, ambientales de la salud. Nuestros estudiantes aprenden que un diagnóstico clínico está incompleto si no se considera el contexto de la calidad del aire, la seguridad hídrica o la justicia ambiental.
+            </p>
+          </div>
+
+          <div class="content-block">
+            <h3>Investigación con Propósito</h3>
+            <p>
+              Como científico, estoy convencido de que la investigación debe responder a los problemas más urgentes. En la UDES, impulsamos la ciencia que genera evidencia sobre la interdependencia entre los ecosistemas y la salud humana. Nuestra investigación, particularmente en el área de la salud, no se limita al laboratorio; sale al territorio a estudiar el impacto del cambio climático en las enfermedades tropicales, a diseñar soluciones de saneamiento sostenibles y a entender cómo la pérdida de biodiversidad afecta nuestro bienestar.
+            </p>
+          </div>
+
+          <div class="content-block">
+            <h3>Extensión como Transferencia de Vida</h3>
+            <p>
+              El conocimiento generado no puede permanecer enclaustrado. A través de nuestros programas de extensión y proyección social, transferimos esta evidencia científica a las comunidades, a los tomadores de decisiones y al sector productivo. Nos convertimos en socios estratégicos del territorio, ayudando a las comunidades a ser más resilientes y a los gobiernos a diseñar políticas públicas basadas en la evidencia de la Salud Planetaria.
+            </p>
+          </div>
+        </div>
+
+        <div data-lang-content data-lang="en">
+          <div class="content-block">
+            <h3>Education for Sustainability</h3>
+            <p>
+              We are not simply training doctors, engineers, or lawyers. We are training global leaders and agents of change with a deep awareness of the social, economic, and crucially, environmental determinants of health. Our students learn that a clinical diagnosis is incomplete if it does not consider the context of air quality, water security, or environmental justice.
+            </p>
+          </div>
+
+          <div class="content-block">
+            <h3>Purpose-Driven Research</h3>
+            <p>
+              As a scientist, I am convinced that research must respond to the most urgent problems. At UDES, we promote science that generates evidence about the interdependence between ecosystems and human health. Our research, particularly in the area of health, is not limited to the laboratory; it goes out into the field to study the impact of climate change on tropical diseases, to design sustainable sanitation solutions, and to understand how biodiversity loss affects our well-being.
+            </p>
+          </div>
+
+          <div class="content-block">
+            <h3>Outreach as Life Transfer</h3>
+            <p>
+              The knowledge generated cannot remain confined. Through our outreach and social engagement programs, we transfer this scientific evidence to communities, decision-makers, and the productive sector. We become strategic partners of the territory, helping communities become more resilient and governments design public policies based on Planetary Health evidence.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Commitment Section -->
+      <section id="commitment">
+        <h2 class="section-title" data-lang-content data-lang="es" data-visible="true">Nuestro Compromiso</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Our Commitment</h2>
+        <div class="section-rule"></div>
+
+        <div data-lang-content data-lang="es" data-visible="true">
+          <p class="section-intro">
+            La Universidad de Santander, por tanto, no es una espectadora de la Agenda 2030; es una protagonista activa y comprometida. Asumimos nuestro rol como motor de conocimiento, innovación y conciencia, con la convicción de que la única forma de garantizar un futuro próspero y saludable para la humanidad es asegurando primero la salud de nuestro planeta.
+          </p>
+
+          <div class="signature-block">
+            <img src="/Users/jogutierrez/Downloads/image.png" alt="Dr. Patricio López Jaramillo" class="signature-photo">
+            <div class="signature-content">
+              <p>Atentamente,</p>
+              <div class="signature-name">Dr. Patricio López Jaramillo</div>
+              <div class="signature-title">Rector General</div>
+              <div class="signature-title">Universidad de Santander</div>
+            </div>
+          </div>
+        </div>
+
+        <div data-lang-content data-lang="en">
+          <p class="section-intro">
+            The Universidad de Santander is therefore not a spectator of the 2030 Agenda; it is an active and committed protagonist. We assume our role as a driving force for knowledge, innovation, and awareness, with the conviction that the only way to guarantee a prosperous and healthy future for humanity is by first ensuring the health of our planet.
+          </p>
+
+          <div class="signature-block">
+            <img src="/Users/jogutierrez/Downloads/image.png" alt="Dr. Patricio López Jaramillo" class="signature-photo">
+            <div class="signature-content">
+              <p>Sincerely,</p>
+              <div class="signature-name">Dr. Patricio López Jaramillo</div>
+              <div class="signature-title">General Rector</div>
+              <div class="signature-title">Universidad de Santander</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div data-lang-content data-lang="es" data-visible="true">© 2025 · Universidad de Santander (UDES) · Salud Planetaria</div>
+      <div data-lang-content data-lang="en">© 2025 · Universidad de Santander (UDES) · Planetary Health</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Intro overlay controller
+    (function() {
+      const overlay = document.getElementById('intro-overlay');
+      if (!overlay) return;
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      
+      function done() {
+        document.body.classList.remove('intro-playing');
+        document.body.classList.add('intro-done');
+        if (overlay && overlay.parentNode) overlay.parentNode.removeChild(overlay);
+      }
+      
+      if (prefersReduced) { done(); return; }
+      
+      document.body.classList.add('intro-playing');
+      setTimeout(() => {
+        overlay.classList.add('hide');
+        overlay.addEventListener('animationend', done, { once: true });
+      }, 1200);
+    })();
+
+    // Language toggle with localStorage persistence
+    (function() {
+      const LANG_KEY = 'ods-lang';
+      const btnEs = document.querySelector('[data-lang-btn="es"]');
+      const btnEn = document.querySelector('[data-lang-btn="en"]');
+      const langEls = document.querySelectorAll('[data-lang-content]');
+
+      function applyLang(lang) {
+        document.documentElement.setAttribute('lang', lang);
+        langEls.forEach(el => {
+          const isVisible = el.getAttribute('data-lang') === lang;
+          el.setAttribute('data-visible', isVisible ? 'true' : 'false');
+        });
+        btnEs.classList.toggle('active', lang === 'es');
+        btnEn.classList.toggle('active', lang === 'en');
+        btnEs.setAttribute('aria-pressed', lang === 'es');
+        btnEn.setAttribute('aria-pressed', lang === 'en');
+        localStorage.setItem(LANG_KEY, lang);
+      }
+
+      const initial = localStorage.getItem(LANG_KEY) || 'es';
+      applyLang(initial);
+      btnEs.addEventListener('click', () => applyLang('es'));
+      btnEn.addEventListener('click', () => applyLang('en'));
+    })();
+  </script>
+</body>
+</html>

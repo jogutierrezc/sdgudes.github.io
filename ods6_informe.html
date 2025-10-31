@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ODS 6 · Agua limpia y saneamiento | Informe</title>
+  <meta name="description" content="Plantilla base para informes ODS 6. Encabezado y secciones en blanco para completar." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --sdg-accent: #26BDE2; --sdg-accent-light: rgba(38,189,226,0.12); --text-primary: #2c3e50; --text-secondary: #546e7a; --bg-white: #ffffff; --border-light: #e8eaed; --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);} * { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text-primary); background: var(--bg-white); } .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; } .lang-switch { position: fixed; top: 16px; right: 16px; z-index: 110; display:flex; gap:8px; background:#f6f7f8; padding:4px; border-radius:10px; } .lang-switch button { border:0; background:transparent; padding:8px 14px; border-radius:7px; font-weight:600; color:var(--text-secondary); cursor:pointer; } .lang-switch button.active { background:#fff; color:var(--sdg-accent); box-shadow: var(--shadow-sm); } .hero { padding: 88px 0 72px; background: radial-gradient(circle at 50% 0%, var(--sdg-accent-light) 0%, #ffffff 65%); border-bottom:1px solid var(--border-light); clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%); } .grid-2 { display:grid; grid-template-columns: 1.2fr 0.8fr; gap:32px; align-items:center; } .eyebrow { color: var(--sdg-accent); text-transform: uppercase; font-weight: 700; letter-spacing: .12em; font-size:12px; margin-bottom: 12px; display:inline-block; } h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.15; margin: 0 0 8px 0; } .hero-illustration { width:100%; height:auto; max-width:360px; margin:0 auto; display:block; border-radius:16px; } section { padding: 64px 0; } .section-title { font-size: clamp(24px, 3.5vw, 34px); margin-bottom: 8px; font-weight: 700; } .section-rule { height: 1px; background: var(--border-light); margin: 16px 0 24px; } footer { border-top:1px solid var(--border-light); padding: 28px 0; color:#6b7b86; }
+  </style>
+</head>
+<body>
+  <div class="lang-switch" aria-label="Selector de idioma">
+    <button type="button" data-lang-btn="es" class="active" aria-pressed="true">ES</button>
+    <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+  </div>
+  <div class="hero">
+    <div class="container grid-2">
+      <div>
+        <div class="eyebrow" data-lang-content data-lang="es" data-visible="true">Objetivos de Desarrollo Sostenible</div>
+        <div class="eyebrow" data-lang-content data-lang="en">Sustainable Development Goals</div>
+        <h1 data-lang-content data-lang="es">ODS 6: Agua limpia y saneamiento</h1>
+        <h1 data-lang-content data-lang="en">SDG 6: Clean Water and Sanitation</h1>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;">
+  <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/6.png" alt="Logo ODS 6" class="hero-illustration" onerror="this.onerror=null; this.src='https://placehold.co/320x320/26BDE2/ffffff?text=ODS+6';"/>
+      </div>
+    </div>
+  </div>
+  <main>
+    <section id="contenido"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Contenido</h2><h2 class="section-title" data-lang-content data-lang="en">Content</h2><div class="section-rule"></div></div></section>
+    <section id="noticias"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Noticias Relacionadas</h2><h2 class="section-title" data-lang-content data-lang="en">Related News</h2><div class="section-rule"></div></div></section>
+  </main>
+  <footer role="contentinfo"><div class="container"><div data-lang-content data-lang="es">© 2025 · Informe ODS 6 · Versión para uso académico.</div><div data-lang-content data-lang="en">© 2025 · SDG 6 Report · Academic use version.</div></div></footer>
+  <script>(function(){const e=document.querySelector('[data-lang-btn="es"]'),t=document.querySelector('[data-lang-btn="en"]'),n=document.querySelectorAll('[data-lang-content]');function a(a){document.documentElement.setAttribute('lang',a),n.forEach(e=>{const t=e.getAttribute('data-lang')===a;e.setAttribute('data-visible',t?'true':'false'),e.style.display=t?'':'none'}),e.classList.toggle('active','es'===a),t.classList.toggle('active','en'===a),e.setAttribute('aria-pressed','es'===a),t.setAttribute('aria-pressed','en'===a)}e.addEventListener('click',(()=>a('es'))),t.addEventListener('click',(()=>a('en'))),a('es')})();</script>
+</body>
+</html>

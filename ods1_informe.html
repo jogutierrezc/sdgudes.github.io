@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ODS 1 · Fin de la Pobreza | Informe</title>
+  <meta name="description" content="Informe profesional ODS 1 (Fin de la Pobreza) con cifras dinámicas, aliados y noticias. Español e Inglés." />
+  <!-- Fuente Inter para un look moderno -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sdg1-red: #E5243B;
+      --sdg1-dark: #C4152E;
+      --sdg1-light: #f9d8db;
+      --text-primary: #2c3e50;
+      --text-secondary: #546e7a;
+      --text-muted: #7f8c9a;
+      --bg-light: #fafbfc;
+      --bg-white: #ffffff;
+      --border-light: #e8eaed;
+      --border-subtle: #f1f3f5;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+      --shadow-lg: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    /* Reset & Base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { 
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: var(--bg-white);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 { 
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+    
+    p { 
+      text-align: justify;
+      hyphens: auto;
+      word-spacing: 0.05em;
+      margin-bottom: 1em;
+    }
+    
+    p:last-child { margin-bottom: 0; }
+    
+    ul, ol { 
+      text-align: justify;
+      padding-left: 1.5em;
+      margin-bottom: 1em;
+    }
+    
+    li { margin-bottom: 0.5em; line-height: 1.7; }
+    li:last-child { margin-bottom: 0; }
+
+    .container { 
+      max-width: 1160px; 
+      margin: 0 auto; 
+      padding: 0 28px; 
+    }
+
+    /* Header Institucional */
+    .topbar { 
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.95);
+    }
+    
+    .topbar-inner { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      padding: 16px 0;
+      gap: 20px;
+    }
+    
+    .brand { 
+      display: flex; 
+      align-items: center; 
+      gap: 16px;
+    }
+    
+    .brand img { 
+      height: 44px; 
+      width: auto;
+      transition: opacity 0.2s ease;
+    }
+    
+    .brand img:hover { opacity: 0.85; }
+    
+    .brand-title { 
+      font-weight: 600; 
+      letter-spacing: 0.3px;
+      font-size: 15px;
+      color: var(--text-secondary);
+    }
+
+    .lang-switch { 
+      display: flex; 
+      align-items: center; 
+      gap: 8px;
+      background: var(--bg-light);
+      padding: 4px;
+      border-radius: 10px;
+    }
+    
+    .lang-switch button {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      padding: 8px 16px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s ease;
+      letter-spacing: 0.3px;
+    }
+    
+    .lang-switch button:hover { background: rgba(0,0,0,0.04); }
+    .lang-switch button.active { 
+      background: var(--bg-white);
+      color: var(--sdg1-red);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Hero Section */
+    .hero { 
+      padding: 88px 0 72px;
+      background: radial-gradient(circle at 50% 0%, var(--sdg1-light) 0%, #ffffff 65%);
+      border-bottom: 1px solid var(--border-light);
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
+    }
+    
+    .eyebrow { 
+      color: var(--sdg1-red);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    
+    .hero h1 { 
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.15;
+      margin: 0 0 16px 0;
+      color: var(--text-primary);
+    }
+    
+    .subtitle { 
+      color: var(--text-secondary);
+      font-size: 19px;
+      line-height: 1.6;
+      max-width: 720px;
+      text-align: justify;
+    }
+    
+    .hero-illustration {
+      width: 100%;
+      height: auto;
+      max-width: 360px;
+      margin: 0 auto;
+      border-radius: 16px;
+      display: block;
+    }
+
+    /* Section Styling */
+    section { 
+      padding: 64px 0;
+      background: transparent;
+    }
+    
+    section:nth-child(even) { background: transparent; }
+    
+    .section-title { 
+      font-size: clamp(26px, 3.8vw, 36px);
+      margin: 0 0 8px 0;
+      font-weight: 700;
+    }
+    .section-title .icon {
+      width: 28px;
+      height: 28px;
+      vertical-align: -4px;
+      margin-right: 10px;
+    }
+    .section-title .icon circle,
+    .section-title .icon line,
+    .section-title .icon path {
+      stroke: var(--sdg1-red);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    
+    .section-rule { 
+      width: 64px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--sdg1-red) 0%, var(--sdg1-dark) 100%);
+      margin-bottom: 32px;
+      border-radius: 2px;
+    }
+    
+    .subsection-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 24px 0 12px 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    /* Layouts */
+    .grid-2 { 
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    
+    .grid-3 { 
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    /* Card Styling */
+    .card { 
+      background: var(--bg-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover { 
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-light);
+    }
+    
+    .muted { 
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
+    /* Cifras Dinámicas */
+    .stats { 
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 8px;
+    }
+    
+    .stat { 
+      background: transparent;
+      border: none;
+      border-left: 5px solid var(--sdg1-red);
+      border-radius: 0;
+      padding: 12px 0 12px 16px;
+      transition: transform 0.3s ease;
+      box-shadow: none;
+    }
+    
+    .stat:hover {
+      transform: translateY(-2px);
+      border-left-color: var(--sdg1-dark);
+    }
+    
+    .stat .value { 
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--sdg1-red);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    
+    .stat .label { 
+      color: var(--text-secondary);
+      margin-top: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    /* Bloques de Imagen */
+    .figure { 
+      border: none;
+      border-radius: 0;
+      overflow: hidden;
+      background: transparent;
+      box-shadow: none;
+    }
+    
+    .figure img { 
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .figure figcaption { 
+      padding: 16px 20px;
+      color: var(--text-muted);
+      font-size: 14px;
+      background: var(--bg-light);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    /* Carrusel de Aliados */
+    .carousel { 
+      position: relative;
+      margin-top: 8px;
+    }
+    
+    .carousel-viewport { 
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      background: var(--bg-white);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .carousel-track { 
+      display: flex;
+      transition: transform 450ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .slide { 
+      flex: 0 0 25%;
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid var(--border-subtle);
+      transition: background 0.2s ease;
+    }
+    
+    .slide:hover { background: var(--bg-light); }
+    .slide:last-child { border-right: 0; }
+    
+    .slide img { 
+      max-height: 64px;
+      width: auto;
+      opacity: 0.85;
+      filter: grayscale(10%);
+      transition: all 0.3s ease;
+    }
+    
+    .slide:hover img {
+      opacity: 1;
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+
+    .carousel-controls { 
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    
+    .carousel-btn { 
+      appearance: none;
+      border: 1px solid var(--border-light);
+      background: var(--bg-white);
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-secondary);
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .carousel-btn:hover { 
+      background: var(--sdg1-red);
+      color: white;
+      border-color: var(--sdg1-red);
+      transform: translateY(-1px);
+    }
+    
+    .carousel-btn:active { transform: translateY(0); }
+    
+    .dots { 
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    
+    .dot { 
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border-light);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .dot:hover { background: var(--text-muted); }
+    .dot.active { 
+      background: var(--sdg1-red);
+      transform: scale(1.2);
+    }
+
+    /* Noticias - Diseño Moderno y Minimalista */
+    .news-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+      gap: 32px; 
+      margin-top: 40px;
+    }
+    
+    .news-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: transparent;
+      border: none;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: none;
+    }
+    
+    .news-card:hover {
+      transform: translateY(-6px);
+    }
+    
+    .news-image {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--bg-light) 0%, #e8eaed 100%);
+    }
+    
+    .news-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .news-card:hover .news-image img {
+      transform: scale(1.08);
+    }
+    
+    .news-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(44, 62, 80, 0.85) 0%, transparent 100%);
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+    
+    .news-card:hover .news-overlay {
+      opacity: 1;
+    }
+    
+    .news-badge {
+      display: inline-block;
+      background: var(--sdg1-red);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 24px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      box-shadow: 0 4px 12px rgba(229, 36, 59, 0.3);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    
+    .news-content {
+      padding: 28px;
+    }
+    
+    .news-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+      margin: 0 0 14px 0;
+      font-family: 'Georgia', serif;
+      transition: color 0.2s ease;
+    }
+    
+    .news-card:hover .news-title {
+      color: var(--sdg1-red);
+    }
+    
+    .news-excerpt {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin: 0;
+      text-align: justify;
+      hyphens: auto;
+    }
+    
+    /* Responsive para noticias */
+    @media (max-width: 1024px) {
+      .news-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 28px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .news-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+      }
+      
+      .news-image {
+        height: 210px;
+      }
+      
+      .news-content {
+        padding: 24px;
+      }
+      
+      .news-title {
+        font-size: 17px;
+      }
+      
+      .news-excerpt {
+        font-size: 14px;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .news-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 32px;
+      }
+      
+      .news-image {
+        height: 200px;
+      }
+      
+      .news-content {
+        padding: 20px;
+      }
+      
+      .news-title {
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+      
+      .news-excerpt {
+        font-size: 14px;
+      }
+      
+      .news-badge {
+        font-size: 12px;
+        padding: 6px 14px;
+      }
+    }
+
+    /* Footer */
+    footer { 
+      border-top: none;
+      padding: 40px 0 56px;
+      color: var(--text-muted);
+      font-size: 14px;
+      background: transparent;
+      text-align: center;
+    }
+    
+    footer .container { 
+      max-width: 800px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .container { padding: 0 24px; }
+      .grid-2 { gap: 36px; }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      section { padding: 52px 0; }
+    }
+    
+    @media (max-width: 768px) {
+      .grid-2 { 
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      
+      .grid-3 { 
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .slide { flex: 0 0 33.3333%; }
+      
+      .hero { padding: 48px 0 36px; }
+      .hero h1 { font-size: clamp(28px, 7vw, 36px); }
+      .subtitle { font-size: 17px; }
+      
+      section { padding: 44px 0; }
+      .section-title { font-size: clamp(22px, 5vw, 28px); }
+      
+      .card { padding: 24px; }
+      .stat { padding: 20px 18px; }
+      .stat .value { font-size: 36px; }
+      
+      .news-grid { gap: 20px; }
+    }
+    
+    @media (max-width: 640px) {
+      .container { padding: 0 20px; }
+      
+      .topbar-inner { padding: 12px 0; }
+      .brand img { height: 38px; }
+      .brand-title { display: none; }
+      
+      .lang-switch button { 
+        padding: 7px 14px;
+        font-size: 13px;
+      }
+      
+      .slide { flex: 0 0 50%; padding: 24px 16px; }
+      .slide img { max-height: 50px; }
+      
+      .hero { padding: 36px 0 28px; }
+      .eyebrow { font-size: 11px; }
+      
+      section { padding: 36px 0; }
+      .card { padding: 20px; }
+      
+      .stats { gap: 16px; }
+      .stat { padding: 18px 16px; }
+      .stat .value { font-size: 32px; }
+      .stat .label { font-size: 14px; }
+      
+      .carousel-btn { 
+        padding: 8px 14px;
+        font-size: 13px;
+      }
+      
+      footer { padding: 32px 0 44px; }
+    }
+    
+    /* Print Styles */
+    @media print {
+      .topbar { position: static; }
+      .lang-switch { display: none; }
+      .carousel-controls { display: none; }
+      .dots { display: none; }
+      section { page-break-inside: avoid; }
+    }
+
+    /* Utilidad bilingüe */
+    [data-lang-content] { display: none; }
+    [data-lang-content][data-visible="true"] { display: block; }
+
+    /* Intro overlay */
+    #intro-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      /* Fondo con degradado suave más elegante */
+      background: linear-gradient(135deg, #c41e3a 0%, #e5243b 50%, #ff6b81 100%);
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+    }
+    #intro-overlay .intro-inner { 
+      text-align: center; 
+      animation: introText 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both; 
+      /* Sin glassmorphism - solo contenedor limpio */
+      padding: 20px 24px;
+    }
+    #intro-overlay .intro-logo {
+      display: block;
+      width: clamp(120px, 18vw, 200px);
+      height: auto;
+      margin: 0 auto 14px auto;
+      background: rgba(255,255,255,0.92);
+      border-radius: 14px;
+      padding: 10px;
+      border: 1px solid rgba(0,0,0,0.04);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+      animation: introLogo 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both 40ms;
+    }
+    #intro-overlay .intro-mark {
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      font-size: clamp(36px, 7vw, 72px);
+      line-height: 1.1;
+    }
+    #intro-overlay .intro-sub {
+      margin-top: 8px;
+      font-weight: 700;
+      font-size: clamp(18px, 3.5vw, 28px);
+      opacity: 0.95;
+      letter-spacing: 0.06em;
+    }
+    #intro-overlay.hide { 
+      animation: introOut 650ms cubic-bezier(0.4, 0, 0.2, 1) forwards; 
+    }
+    @keyframes introText {
+      from { opacity: 0; transform: translateY(8px) scale(0.985); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes introOut {
+      to { opacity: 0; transform: translateY(-12%); }
+    }
+    @keyframes introLogo {
+      from { opacity: 0; transform: translateY(8px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes dropIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
+    body.intro-playing { overflow: hidden; }
+    body.intro-playing .lang-switch { opacity: 0; pointer-events: none; }
+    body.intro-playing .hero,
+    body.intro-playing main,
+    body.intro-playing footer { opacity: 0; transform: translateY(12px); }
+    body.intro-done .hero { animation: dropIn 600ms cubic-bezier(0.2, 0.8, 0.2, 1) both 50ms; }
+    body.intro-done main { animation: dropIn 650ms cubic-bezier(0.2, 0.8, 0.2, 1) both 100ms; }
+    body.intro-done footer { animation: dropIn 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both 180ms; }
+
+    @media (prefers-reduced-motion: reduce) {
+      #intro-overlay { display: none !important; }
+      body.intro-playing .hero,
+      body.intro-playing main,
+      body.intro-playing footer { opacity: 1; transform: none; }
+      body.intro-done .hero,
+      body.intro-done main,
+      body.intro-done footer { animation: none; }
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Intro de entrada -->
+  <div id="intro-overlay" aria-hidden="true">
+    <div class="intro-inner">
+      <img 
+        class="intro-logo"
+        src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/1.png"
+        alt="Logotipo ODS 1: Fin de la Pobreza"
+        onerror="this.onerror=null; this.src='https://placehold.co/160x160/e5243b/ffffff?text=ODS+1';"
+      />
+      <div class="intro-mark">UDES</div>
+      <div class="intro-sub" data-lang-content data-lang="es" data-visible="true">ODS 1</div>
+      <div class="intro-sub" data-lang-content data-lang="en">SDG 1</div>
+    </div>
+  </div>
+  
+  <!-- Barra de navegación eliminada por solicitud -->
+  <!-- Conmutador de idioma flotante -->
+  <div class="lang-switch" aria-label="Selector de idioma" style="position:fixed; top:16px; right:16px; z-index:110;">
+    <button type="button" data-lang-btn="es" class="active" aria-pressed="true">ES</button>
+    <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+  </div>
+
+  <div class="hero">
+    <div class="container grid-2">
+      <div>
+        <div class="eyebrow" data-lang-content data-lang="es" data-visible="true">Objetivos de Desarrollo Sostenible</div>
+        <div class="eyebrow" data-lang-content data-lang="en">Sustainable Development Goals</div>
+
+        <h1 data-lang-content data-lang="es">ODS 1: Fin de la Pobreza</h1>
+        <h1 data-lang-content data-lang="en">SDG 1: No Poverty</h1>
+
+        <p class="subtitle" data-lang-content data-lang="es">El reto global de poner Fin a la Pobreza (ODS 1) es un pilar fundamental en el compromiso institucional de la Universidad de Santander (UDES) [HC]. La UDES aborda este objetivo de forma multidimensional, alineándose con la dimensión "Personas" de la Agenda 2030, y enfocándose en la promoción de la dignidad y la igualdad entre todas las personas. Esto se logra mediante la generación de conocimiento aplicado para resolver problemas, utilizando la investigación y la extensión social como herramientas para impulsar el bienestar y construir una sociedad donde la equidad es fundamental para el desarrollo sustentable y la paz</p>
+        <p class="subtitle" data-lang-content data-lang="en">The global challenge of achieving No Poverty (SDG 1) is a fundamental pillar of the institutional commitment of the Universidad de Santander (UDES) [HC]. The UDES addresses this objective multi-dimensionally, aligning with the "People" dimension of the 2030 Agenda, focusing on the promotion of dignity and equality among all people. This is achieved through the generation of applied knowledge to solve problems, utilizing research and social outreach as tools to promote well-being and build a society where equity is fundamental for sustainable development and peace.
+</p>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;">
+        <img 
+          src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/1.png" 
+          alt="Logo oficial del Objetivo de Desarrollo Sostenible 1: Fin de la Pobreza"
+          class="hero-illustration"
+          onerror="this.onerror=null; this.src='https://placehold.co/320x320/e5243b/ffffff?text=ODS+1';"
+        />
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section id="resumen">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Compromiso UDES con el ODS 1: Educación, Inclusión y Desarrollo Económico para el Fin de la Pobreza</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">UDES Commitment to SDG 1: Education, Inclusion, and Economic Development to End Poverty</h2>
+        <div class="section-rule"></div>
+        <div data-lang-content data-lang="es">
+          <p>La Universidad de Santander (UDES) demuestra un compromiso central con el Objetivo de Desarrollo Sostenible (ODS) 1, Fin de la Pobreza, articulando sus funciones sustantivas para impulsar la transformación social en sus áreas de influencia. Este compromiso se materializa en estrategias que buscan la inclusión de comunidades vulnerables y el desarrollo económico regional. La UDES utiliza la educación y la extensión como herramientas clave, por ejemplo, mediante la Escuela Empresarial Udeista, que ofrece el Diplomado de Economía Popular para fortalecer unidades productivas. Asimismo, el proyecto "Maquilando Felicidad" busca el empoderamiento económico de jóvenes y mujeres de Piedecuesta a través de programas de formación integral.</p>
+          <p>La estrategia de UDES para el ODS 1 abarca la dignificación a través de la inclusión social, la equidad y el bienestar comunitario. El Modelo Interprofesional (MIUDES), por ejemplo, apoya directamente a poblaciones vulnerables, incluyendo acciones cruciales de salud, prevención (como la promoción de la lactancia materna para la seguridad alimentaria y nutricional), y estructurando planes de apoyo para fortalecer los componentes alimentario e higiénico en las familias. Además, la UDES ha desarrollado su Política de Inclusión, Equidad y Diversidad, y forma líderes a través de alianzas con la Universidad para la Paz (UPEACE), incluyendo módulos sobre la lucha contra la pobreza, reconociendo que la equidad y la no discriminación son fundamentales para el desarrollo sustentable y la paz.</p>
+        </div>
+        <div data-lang-content data-lang="en">
+          <p>The Universidad de Santander (UDES) demonstrates a core commitment to Sustainable Development Goal (SDG) 1, No Poverty, aligning its substantive functions to drive social transformation in its areas of influence. This commitment materializes through strategies aimed at including vulnerable communities and promoting regional economic development. Education and outreach serve as key tools—for example, the Udeista Business School’s Popular Economy Diploma strengthens productive units. Likewise, the "Maquilando Felicidad" project fosters the economic empowerment of young people and women in Piedecuesta through comprehensive training programs.</p>
+          <p>UDES’s SDG 1 strategy encompasses dignity through social inclusion, equity, and community well-being. The Interprofessional Model (MIUDES) directly supports vulnerable populations with crucial health and prevention actions (such as promoting breastfeeding for food and nutrition security) and by structuring support plans to strengthen food and hygiene components in families. Additionally, UDES has developed its Policy of Inclusion, Equity, and Diversity and trains leaders through alliances with the University for Peace (UPEACE), including modules on the fight against poverty, recognizing that equity and non-discrimination are fundamental to sustainable development and peace.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cifras">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Cifras Clave</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Key Figures</h2>
+        <div class="section-rule"></div>
+
+        <div class="stats" aria-live="polite">
+          <div class="stat" role="group" aria-label="Personas en situación de pobreza">
+            <div class="value" data-counter data-target="1250000">0</div>
+            <div class="label" data-lang-content data-lang="es">Personas en situación de pobreza</div>
+            <div class="label" data-lang-content data-lang="en">People living in poverty</div>
+          </div>
+          <div class="stat" role="group" aria-label="Reducción anual">
+            <div class="value" data-counter data-target="12">0</div>
+            <div class="label" data-lang-content data-lang="es">Reducción anual (%)</div>
+            <div class="label" data-lang-content data-lang="en">Annual reduction (%)</div>
+          </div>
+          <div class="stat" role="group" aria-label="Cobertura de programas">
+            <div class="value" data-counter data-target="78">0</div>
+            <div class="label" data-lang-content data-lang="es">Cobertura de programas (%)</div>
+            <div class="label" data-lang-content data-lang="en">Program coverage (%)</div>
+          </div>
+          <div class="stat" role="group" aria-label="Alianzas activas">
+            <div class="value" data-counter data-target="24">0</div>
+            <div class="label" data-lang-content data-lang="es">Alianzas activas</div>
+            <div class="label" data-lang-content data-lang="en">Active partnerships</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos-extension">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Proyectos de Extensión y Servicio Comunitario</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Outreach Projects and Community Service</h2>
+        <div class="section-rule"></div>
+
+        <div data-lang-content data-lang="es">
+          <p>
+            La UDES utiliza su extensión social para impactar directamente a comunidades en situación de vulnerabilidad, abordando múltiples dimensiones de la pobreza:
+          </p>
+          <h3 class="subsection-title">1. Modelo Interprofesional de la UDES (MIUDES)</h3>
+          <ul>
+            <li>Realiza acciones a nivel familiar, individual y comunitario en barrios como Los Colorados, en la comuna 1 del norte de Bucaramanga.</li>
+            <li>Basado en la metodología Investigación Acción Participativa, ofrece acompañamiento interprofesional a poblaciones vulnerables.</li>
+            <li>Demostró un impacto crucial durante la emergencia sanitaria por COVID-19 (2020-2021), diseñando estrategias que incluyeron consulta médica, primeros auxilios psicológicos, pedagogía de prevención y un plan padrino para fortalecer el componente alimentario e higiénico.</li>
+            <li>Sus mesas de trabajo abordan salud, saneamiento y ambiente, gobernanza, habilidades, y tecnología y comunicaciones.</li>
+            <li>Los estudiantes realizan proyectos de construcción de paz y tejido social en la comunidad.</li>
+          </ul>
+
+          <h3 class="subsection-title">2. Proyecto "Maquilando Felicidad" (Piedecuesta)</h3>
+          <ul>
+            <li>Liderado por la UDES en colaboración con la Fundación Marie Poussepin en comunidades vulnerables de Piedecuesta (sector Barro Blanco).</li>
+            <li>Enfoque directo en la mitigación de la pobreza mediante el empoderamiento económico, capacitando a 25 jóvenes y mujeres en panadería y chocolatería para generar ingresos y emprender negocios.</li>
+            <li>Incluye servicios de Salud Integral (atención a población infantil, madres gestantes, adultos mayores) y talleres de bienestar emocional y prevención de violencias de género.</li>
+            <li>Involucra programas de Ingenierías, Ciencias Médicas y de la Salud, Ciencias Administrativas y Sociales.</li>
+          </ul>
+
+          <h3 class="subsection-title">3. Apoyo a Población en Situación de Vulnerabilidad Social</h3>
+          <ul>
+            <li>Estudiantes de la UDES contribuyen a mejorar la calidad de vida de habitantes de calle y sus familias en Bucaramanga a través de la Fundación Posada del Peregrino, proporcionando alimento, vestido y educación para los niños.</li>
+            <li>El proyecto "El Recolector" en Hogares Crea (rehabilitación por consumo de sustancias) fomenta la seguridad alimentaria y el emprendimiento mediante huertas caseras, funcionando también como terapia ocupacional.</li>
+          </ul>
+        </div>
+
+        <div data-lang-content data-lang="en">
+          <p>
+            UDES uses its social outreach to directly impact communities in vulnerable situations, addressing multiple dimensions of poverty:
+          </p>
+          <h3 class="subsection-title">1. UDES Interprofessional Model (MIUDES)</h3>
+          <ul>
+            <li>Conducts actions at family, individual, and community levels in neighborhoods such as Los Colorados, in commune 1 of northern Bucaramanga.</li>
+            <li>Based on Participatory Action Research methodology, offers interprofessional support to vulnerable populations.</li>
+            <li>Demonstrated crucial impact during the COVID-19 health emergency (2020-2021), designing strategies including medical consultation, psychological first aid, prevention pedagogy, and a sponsor plan to strengthen food and hygiene components.</li>
+            <li>Working groups address health, sanitation and environment, governance, skills, and technology and communications.</li>
+            <li>Students carry out peace-building and social fabric projects in the community.</li>
+          </ul>
+
+          <h3 class="subsection-title">2. "Maquilando Felicidad" Project (Piedecuesta)</h3>
+          <ul>
+            <li>Led by UDES in collaboration with the Marie Poussepin Foundation in vulnerable communities of Piedecuesta (Barro Blanco sector).</li>
+            <li>Direct focus on poverty mitigation through economic empowerment, training 25 young people and women in bakery and chocolate-making to generate income and start businesses.</li>
+            <li>Includes Comprehensive Health services (care for children, pregnant mothers, elderly) and workshops on emotional well-being and prevention of gender-based violence.</li>
+            <li>Involves programs from Engineering, Medical and Health Sciences, Administrative and Social Sciences.</li>
+          </ul>
+
+          <h3 class="subsection-title">3. Support for Socially Vulnerable Populations</h3>
+          <ul>
+            <li>UDES students contribute to improving the quality of life of homeless people and their families in Bucaramanga through the Posada del Peregrino Foundation, providing food, clothing, and education for children.</li>
+            <li>"El Recolector" project at Hogares Crea (substance abuse rehabilitation) promotes food security and entrepreneurship through home gardens, also functioning as occupational therapy.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="desarrollo-economico">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Desarrollo Económico y Formación para la Prosperidad</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Economic Development and Training for Prosperity</h2>
+        <div class="section-rule"></div>
+
+        <div data-lang-content data-lang="es">
+          <p>
+            La UDES promueve el crecimiento económico inclusivo y el emprendimiento como herramientas clave para salir de la pobreza:
+          </p>
+          <h3 class="subsection-title">1. Diplomado de Economía Popular</h3>
+          <ul>
+            <li>La Escuela Empresarial Udeista ofrece un diplomado en economía popular para fortalecer unidades productivas.</li>
+            <li>Beneficia a participantes que han firmado el acuerdo de paz o se han acogido a la Ley de Justicia y Paz, incluyendo personas de Santander y el Magdalena Medio.</li>
+          </ul>
+
+          <h3 class="subsection-title">2. Impulso Empresarial y Mipyme</h3>
+          <ul>
+            <li>Organización de ferias internacionales de emprendimiento ("Yo Emprendo") para fortalecer habilidades y potenciar el alcance de iniciativas.</li>
+            <li>Alianzas para fortalecer el sector empresarial y las Mipyme, como el convenio con la Cámara de Comercio de Bucaramanga para capacitar tenderos.</li>
+            <li>VI Congreso Internacional de la Facultad de Ciencias Económicas, enfocado en innovación empresarial para potenciar las Mipyme de la región.</li>
+            <li>Apoyo a artesanos y emprendedores mediante eventos como la Feria Homenaje al Artesano, que buscan el desarrollo sostenible económico y social en la región.</li>
+          </ul>
+
+          <h3 class="subsection-title">3. Articulación con Gobiernos Locales</h3>
+          <ul>
+            <li>La UDES es miembro del Consejo Territorial de Planeación (CTP) en Bucaramanga, aportando propuestas, metas e indicadores para el Plan de Desarrollo.</li>
+            <li>Alianzas estratégicas con la Gobernación de Santander y las Alcaldías de Bucaramanga, Piedecuesta y Girón para alinear proyectos en el Plan de Desarrollo Municipal y Departamental.</li>
+            <li>Proyectos estratégicos que impulsan el desarrollo económico, como el fortalecimiento de clústeres productivos y la masificación de la educación.</li>
+          </ul>
+        </div>
+
+        <div data-lang-content data-lang="en">
+          <p>
+            UDES promotes inclusive economic growth and entrepreneurship as key tools to overcome poverty:
+          </p>
+          <h3 class="subsection-title">1. Popular Economy Diploma Program</h3>
+          <ul>
+            <li>The Udeista Business School offers a diploma in popular economy to strengthen productive units.</li>
+            <li>Benefits participants who have signed the peace agreement or have availed themselves of the Justice and Peace Law, including people from Santander and the Magdalena Medio.</li>
+          </ul>
+
+          <h3 class="subsection-title">2. Business Promotion and SMEs</h3>
+          <ul>
+            <li>Organization of international entrepreneurship fairs ("Yo Emprendo") to strengthen skills and enhance the reach of initiatives.</li>
+            <li>Alliances to strengthen the business sector and SMEs, such as the agreement with the Bucaramanga Chamber of Commerce to train shopkeepers.</li>
+            <li>VI International Congress of the Faculty of Economic Sciences, focused on business innovation to boost regional SMEs.</li>
+            <li>Support for artisans and entrepreneurs through events such as the Artisan Tribute Fair, seeking sustainable economic and social development in the region.</li>
+          </ul>
+
+          <h3 class="subsection-title">3. Local Government Coordination</h3>
+          <ul>
+            <li>UDES is a member of the Territorial Planning Council (CTP) in Bucaramanga, contributing proposals, goals, and indicators for the Development Plan.</li>
+            <li>Strategic alliances with the Government of Santander and the municipalities of Bucaramanga, Piedecuesta, and Girón to align projects in the Municipal and Departmental Development Plan.</li>
+            <li>Strategic projects that promote economic development, such as strengthening productive clusters and expanding education.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="inclusion">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Inclusión y No Discriminación</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Inclusion and Non-Discrimination</h2>
+        <div class="section-rule"></div>
+
+        <div data-lang-content data-lang="es">
+          <p>
+            La UDES trabaja activamente para eliminar las barreras de exclusión que perpetúan la pobreza y la desigualdad:
+          </p>
+          <ul>
+            <li><strong>Inclusión Social:</strong> Implementación de la Política de Inclusión, Equidad y Diversidad.</li>
+            <li><strong>Atención a la Discapacidad:</strong> Eventos de sensibilización y apoyo integral, como la Cabalgata Inclusiva con futuros fisioterapeutas, que refuerza el apoyo emocional y social a personas con discapacidad y sus familias.</li>
+            <li><strong>Investigación Aplicada:</strong> Proyecto destacado en congreso internacional al co-diseñar soluciones de Accesibilidad Comunicativa Universal con personas con discapacidad visual, física y auditiva en Valledupar. Investigación del programa de Fisioterapia sobre barreras para la inclusión de estudiantes con discapacidad obtuvo el primer puesto en simposio regional.</li>
+            <li><strong>Formación de Líderes para la Paz:</strong> Alianza con la Universidad para la Paz (UPEACE) para formar líderes con enfoque en desarrollo humano integral, transformación pacífica de conflictos, desarrollo sustentable y sostenible, con elementos de equidad de género y no discriminación, incluyendo temáticas sobre la lucha contra la pobreza.</li>
+          </ul>
+        </div>
+
+        <div data-lang-content data-lang="en">
+          <p>
+            UDES actively works to eliminate exclusion barriers that perpetuate poverty and inequality:
+          </p>
+          <ul>
+            <li><strong>Social Inclusion:</strong> Implementation of the Policy of Inclusion, Equity, and Diversity.</li>
+            <li><strong>Disability Care:</strong> Awareness events and comprehensive support, such as the Inclusive Horseback Ride with future physical therapists, which reinforces emotional and social support for people with disabilities and their families.</li>
+            <li><strong>Applied Research:</strong> Project featured at international congress co-designing Universal Communicative Accessibility solutions with people with visual, physical, and hearing disabilities in Valledupar. Research from the Physical Therapy program on barriers to inclusion of students with disabilities won first place at a regional symposium.</li>
+            <li><strong>Training Leaders for Peace:</strong> Alliance with the University for Peace (UPEACE) to train leaders with a focus on integral human development, peaceful transformation of conflicts, sustainable development, with elements of gender equity and non-discrimination, including themes on the fight against poverty.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="financiamiento">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Asequibilidad y Financiamiento Educativo</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Affordability and Educational Financing</h2>
+        <div class="section-rule"></div>
+
+        <div data-lang-content data-lang="es">
+          <p>
+            Para garantizar que la falta de recursos no sea una barrera, la UDES ofrece diversas facilidades financieras, fundamentales para la movilidad social y la mitigación de la pobreza futura:
+          </p>
+          <ul>
+            <li>Diversidad de entidades financieras aliadas y portafolios de crédito educativo para impulsar y facilitar el acceso a una educación de calidad.</li>
+            <li>Promoción de la inclusión financiera y crediticia y apoyo al emprendimiento local mediante alianzas estratégicas, como la fortalecida con el Fondo Nacional de Garantías (FNG).</li>
+            <li>Convenios interinstitucionales con beneficios, como el acuerdo con el SENA para que sus graduados continúen su formación en la UDES con descuentos y homologaciones.</li>
+            <li>Descuentos a miembros de entidades aliadas como CORDEINCALS y Campuslands.</li>
+          </ul>
+        </div>
+
+        <div data-lang-content data-lang="en">
+          <p>
+            To ensure that lack of resources is not a barrier, UDES offers various financial facilities, fundamental for social mobility and the mitigation of future poverty:
+          </p>
+          <ul>
+            <li>Diversity of allied financial institutions and educational credit portfolios to promote and facilitate access to quality education.</li>
+            <li>Promotion of financial and credit inclusion and support for local entrepreneurship through strategic alliances, such as the strengthened one with the National Guarantee Fund (FNG).</li>
+            <li>Interinstitutional agreements with benefits, such as the agreement with SENA for its graduates to continue their education at UDES with discounts and course equivalencies.</li>
+            <li>Discounts for members of allied entities such as CORDEINCALS and Campuslands.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="reconocimiento">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Reconocimiento Global</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Global Recognition</h2>
+        <div class="section-rule"></div>
+
+        <div data-lang-content data-lang="es">
+          <p>
+            El compromiso de la UDES con la sostenibilidad y la calidad, aspectos que refuerzan su lucha contra la pobreza al asegurar una formación pertinente, ha sido reconocido internacionalmente:
+          </p>
+          <ul>
+            <li>Acreditación institucional internacional multicampus otorgada por la Education Quality Accreditation Agency (EQUAA), que evalúa la inclusión social como aspecto clave.</li>
+            <li>Destacada en rankings internacionales, incluyendo reconocimientos por su trabajo hacia el logro de los Objetivos de Desarrollo Sostenible (ODS).</li>
+            <li>Seleccionada como socio en el proyecto ACT4SDGS para incorporar los ODS en la enseñanza y los planes de estudio en universidades latinoamericanas, promoviendo la inclusión, la igualdad y la educación de calidad.</li>
+          </ul>
+        </div>
+
+        <div data-lang-content data-lang="en">
+          <p>
+            UDES's commitment to sustainability and quality, aspects that reinforce its fight against poverty by ensuring relevant education, has been internationally recognized:
+          </p>
+          <ul>
+            <li>International multicampus institutional accreditation granted by the Education Quality Accreditation Agency (EQUAA), which evaluates social inclusion as a key aspect.</li>
+            <li>Featured in international rankings, including recognitions for its work toward achieving the Sustainable Development Goals (SDGs).</li>
+            <li>Selected as a partner in the ACT4SDGS project to incorporate SDGs in teaching and curricula in Latin American universities, promoting inclusion, equality, and quality education.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="acciones">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="5" cy="5" r="3"></circle>
+            <circle cx="19" cy="5" r="3"></circle>
+            <circle cx="12" cy="19" r="3"></circle>
+            <line x1="8" y1="6.5" x2="16" y2="6.5"></line>
+            <line x1="6.5" y1="8" x2="10.5" y2="16"></line>
+            <line x1="17.5" y1="8" x2="13.5" y2="16"></line>
+          </svg>
+          Tres Ejes de Impacto UDES: Fin a la Pobreza (ODS 1)
+        </h2>
+        <h2 class="section-title" data-lang-content data-lang="en">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="5" cy="5" r="3"></circle>
+            <circle cx="19" cy="5" r="3"></circle>
+            <circle cx="12" cy="19" r="3"></circle>
+            <line x1="8" y1="6.5" x2="16" y2="6.5"></line>
+            <line x1="6.5" y1="8" x2="10.5" y2="16"></line>
+            <line x1="17.5" y1="8" x2="13.5" y2="16"></line>
+          </svg>
+          Three UDES Impact Pillars: Ending Poverty (SDG 1)
+        </h2>
+        <div class="section-rule"></div>
+
+        <div data-lang-content data-lang="es">
+          <h3 class="subsection-title">1. Extensión Social y Bienestar Básico</h3>
+          <p>El programa MIUDES ofrece apoyo integral a comunidades vulnerables (Los Colorados) mediante Investigación Acción Participativa. Sus acciones incluyen planes padrino para seguridad alimentaria e higiene, consulta médica, primeros auxilios psicológicos y promoción de lactancia materna.</p>
+
+          <h3 class="subsection-title">2. Empoderamiento Económico y Capacitación</h3>
+          <p>UDES fortalece unidades productivas y promueve el emprendimiento. Esto incluye el Diplomado de Economía Popular para unidades productivas vulnerables y el proyecto "Maquilando Felicidad" en Piedecuesta, capacitando a jóvenes y mujeres en oficios para generar ingresos sostenibles [136, 459, 464, HC].</p>
+
+          <h3 class="subsection-title">3. Inclusión y Acceso a la Educación</h3>
+          <p>UDES implementa su Política de Inclusión, Equidad y Diversidad para eliminar barreras. Fomenta la accesibilidad (ej. Braille) y forma líderes con UPEACE en temas de paz, no discriminación y lucha contra la pobreza, esenciales para el desarrollo humano, sustentable y la movilidad social.</p>
+        </div>
+
+        <div data-lang-content data-lang="en">
+          <h3 class="subsection-title">1. Social Outreach and Basic Well-being</h3>
+          <p>The MIUDES program provides comprehensive support to vulnerable communities (Los Colorados) through Participatory Action Research. Its actions include sponsor plans for food and hygiene security, medical consultation, psychological first aid, and breastfeeding promotion.</p>
+
+          <h3 class="subsection-title">2. Economic Empowerment and Training</h3>
+          <p>UDES strengthens productive units and promotes entrepreneurship. This includes the Popular Economy Diploma for vulnerable productive units and the "Maquilando Felicidad" project in Piedecuesta, training youth and women in trades to generate sustainable incomes [136, 459, 464, HC].</p>
+
+          <h3 class="subsection-title">3. Inclusion and Access to Education</h3>
+          <p>UDES implements its Policy of Inclusion, Equity, and Diversity to remove barriers. It promotes accessibility (e.g., Braille) and trains leaders with UPEACE on peace, non-discrimination, and the fight against poverty—essential for human development, sustainability, and social mobility.</p>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section id="noticias">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Conoce Más: Noticias Relacionadas</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Learn More: Related News</h2>
+        <div class="section-rule"></div>
+        
+        <div class="news-grid">
+          <!-- Noticia 1: Maquilando Felicidad -->
+          <a href="https://udes.edu.co/extension/noticias/udes-lidera-el-proyecto-maquilando-felicidad-para-impulsar-la-transformacion-social-en-piedecuesta" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-image">
+              <img src="https://udes.edu.co/media/k2/items/cache/0fe256496d8c5f086b0c7fbacf571783_XL.jpg" alt="Proyecto Maquilando Felicidad" />
+              <div class="news-overlay">
+                <span class="news-badge" data-lang-content data-lang="es">Ver noticia completa →</span>
+                <span class="news-badge" data-lang-content data-lang="en">Read full article →</span>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title" data-lang-content data-lang="es">UDES lidera el proyecto "Maquilando Felicidad"</h3>
+              <h3 class="news-title" data-lang-content data-lang="en">UDES leads the "Maquilando Felicidad" project</h3>
+              <p class="news-excerpt" data-lang-content data-lang="es">
+                Transformación social en Piedecuesta mediante capacitación técnica, emprendimiento y salud integral para comunidades vulnerables.
+              </p>
+              <p class="news-excerpt" data-lang-content data-lang="en">
+                Social transformation in Piedecuesta through technical training, entrepreneurship, and comprehensive health for vulnerable communities.
+              </p>
+            </div>
+          </a>
+
+          <!-- Noticia 2: MIUDES y USAID -->
+          <a href="https://udes.edu.co/extension/noticias/usaid-exalta-al-programa-miudes-por-acompanar-a-poblacion-vulnerable-de-bucaramanga-durante-la-pandemia-de-covid-19" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-image">
+              <img src="https://udes.edu.co/media/k2/items/cache/3a763d2ba4f6e3848d1847c1281e1e08_XL.jpg" alt="Programa MIUDES" />
+              <div class="news-overlay">
+                <span class="news-badge" data-lang-content data-lang="es">Ver noticia completa →</span>
+                <span class="news-badge" data-lang-content data-lang="en">Read full article →</span>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title" data-lang-content data-lang="es">USAID exalta al programa MIUDES</h3>
+              <h3 class="news-title" data-lang-content data-lang="en">USAID recognizes the MIUDES program</h3>
+              <p class="news-excerpt" data-lang-content data-lang="es">
+                Reconocimiento por el acompañamiento interprofesional a población vulnerable durante la pandemia de COVID-19 en Bucaramanga.
+              </p>
+              <p class="news-excerpt" data-lang-content data-lang="en">
+                Recognition for interprofessional support to vulnerable populations during the COVID-19 pandemic in Bucaramanga.
+              </p>
+            </div>
+          </a>
+
+          <!-- Noticia 3: Economía Popular -->
+          <a href="https://udes.edu.co/extension/noticias/diplomado-de-economia-popular-de-la-escuela-empresarial-udeista-impacta-a-mas-de-100-estudiantes-en-la-region" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-image">
+              <img src="https://udes.edu.co/media/k2/items/cache/faaeb76fc0ce80c59260f57f2c72064b_XL.jpg" alt="Diplomado Economía Popular" />
+              <div class="news-overlay">
+                <span class="news-badge" data-lang-content data-lang="es">Ver noticia completa →</span>
+                <span class="news-badge" data-lang-content data-lang="en">Read full article →</span>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title" data-lang-content data-lang="es">Diplomado de Economía Popular impacta a más de 100 estudiantes</h3>
+              <h3 class="news-title" data-lang-content data-lang="en">Popular Economy Diploma impacts over 100 students</h3>
+              <p class="news-excerpt" data-lang-content data-lang="es">
+                Fortalecimiento de unidades productivas para población adscrita a la ARN y comunidades en proceso de reincorporación.
+              </p>
+              <p class="news-excerpt" data-lang-content data-lang="en">
+                Strengthening productive units for populations registered with the ARN and communities in the reintegration process.
+              </p>
+            </div>
+          </a>
+
+          <!-- Noticia 4: Inclusión -->
+          <a href="https://udes.edu.co/bienestar-institucional/educacion-inclusiva/noticias/udes-bucaramanga-avanza-en-la-implementacion-y-ejecucion-de-la-politica-de-inclusion-equidad-y-diversidad" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-image">
+              <img src="https://udes.edu.co/media/k2/items/cache/4023ed1d4f20a29171b6a52ad9542122_XL.jpg" alt="Política de Inclusión" />
+              <div class="news-overlay">
+                <span class="news-badge" data-lang-content data-lang="es">Ver noticia completa →</span>
+                <span class="news-badge" data-lang-content data-lang="en">Read full article →</span>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title" data-lang-content data-lang="es">UDES avanza en Política de Inclusión, Equidad y Diversidad</h3>
+              <h3 class="news-title" data-lang-content data-lang="en">UDES advances in Inclusion, Equity and Diversity Policy</h3>
+              <p class="news-excerpt" data-lang-content data-lang="es">
+                Implementación de acciones concretas para eliminar barreras de exclusión que perpetúan la pobreza y la desigualdad.
+              </p>
+              <p class="news-excerpt" data-lang-content data-lang="en">
+                Implementation of concrete actions to eliminate exclusion barriers that perpetuate poverty and inequality.
+              </p>
+            </div>
+          </a>
+
+          <!-- Noticia 5: ACT4SDGS -->
+          <a href="https://udes.edu.co/internacional/noticias/udes-se-suma-al-proyecto-act4sd-para-incorporar-los-objetivos-de-desarrollo-sostenible-en-universidades-latinoamericanas" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-image">
+              <img src="https://udes.edu.co/media/k2/items/cache/5df7ec2b16601c610a36c645dae7a828_XL.jpg" alt="Proyecto ACT4SDGS" />
+              <div class="news-overlay">
+                <span class="news-badge" data-lang-content data-lang="es">Ver noticia completa →</span>
+                <span class="news-badge" data-lang-content data-lang="en">Read full article →</span>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title" data-lang-content data-lang="es">UDES se suma al proyecto ACT4SDGS</h3>
+              <h3 class="news-title" data-lang-content data-lang="en">UDES joins the ACT4SDGS project</h3>
+              <p class="news-excerpt" data-lang-content data-lang="es">
+                Incorporación de los ODS en la enseñanza y planes de estudio, promoviendo inclusión, igualdad y educación de calidad.
+              </p>
+              <p class="news-excerpt" data-lang-content data-lang="en">
+                Incorporating SDGs in teaching and curricula, promoting inclusion, equality, and quality education.
+              </p>
+            </div>
+          </a>
+
+          <!-- Noticia 6: Estudiantes apoyan a habitantes de calle -->
+          <a href="https://udes.edu.co/extension/noticias/estudiantes-udes-contribuyen-a-mejorar-la-calidad-de-vida-de-habitantes-de-calle-y-sus-familias-en-bucaramanga" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-image">
+              <img src="https://via.placeholder.com/400x300/E5243B/ffffff?text=Apoyo+Social" alt="Apoyo a Habitantes de Calle" />
+              <div class="news-overlay">
+                <span class="news-badge" data-lang-content data-lang="es">Ver noticia completa →</span>
+                <span class="news-badge" data-lang-content data-lang="en">Read full article →</span>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title" data-lang-content data-lang="es">Estudiantes UDES mejoran calidad de vida de habitantes de calle</h3>
+              <h3 class="news-title" data-lang-content data-lang="en">UDES students improve quality of life for homeless</h3>
+              <p class="news-excerpt" data-lang-content data-lang="es">
+                Trabajo con la Fundación Posada del Peregrino proporcionando alimento, vestido y educación para los niños.
+              </p>
+              <p class="news-excerpt" data-lang-content data-lang="en">
+                Work with Posada del Peregrino Foundation providing food, clothing, and education for children.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div data-lang-content data-lang="es">© 2025 · Informe ODS 1 · Versión para uso académico.</div>
+      <div data-lang-content data-lang="en">© 2025 · SDG 1 Report · Academic use version.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Intro overlay: muestra UDES y ODS/SDG 1 y revela el contenido con animación
+    (function() {
+      const overlay = document.getElementById('intro-overlay');
+      const siteBg = document.getElementById('site-bg');
+      if (!overlay) return;
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function done() {
+        document.body.classList.remove('intro-playing');
+        document.body.classList.add('intro-done');
+        if (overlay && overlay.parentNode) overlay.parentNode.removeChild(overlay);
+        enableParallax();
+      }
+      if (prefersReduced) { done(); return; }
+      document.body.classList.add('intro-playing');
+      // Oculta el overlay después de una breve pausa para permitir leer el título
+      setTimeout(() => {
+        overlay.classList.add('hide');
+        overlay.addEventListener('animationend', done, { once: true });
+      }, 1200);
+
+      function enableParallax() {
+        if (!siteBg) return;
+        if (prefersReduced) return;
+        let mouseX = 0, mouseY = 0;
+        let scrollY = 0;
+        let ticking = false;
+        const maxMouse = 14;  // px
+        const maxScroll = 10; // px
+
+        function onMove(e) {
+          const x = (e.clientX / window.innerWidth) - 0.5;
+          const y = (e.clientY / window.innerHeight) - 0.5;
+          mouseX = x * maxMouse;
+          mouseY = y * maxMouse;
+          requestTick();
+        }
+        function onScroll() {
+          // Desplazamiento vertical sutil según scroll
+          const p = Math.min(1, window.scrollY / (window.innerHeight * 2));
+          scrollY = (p * 2 - 1) * maxScroll; // de -maxScroll a +maxScroll
+          requestTick();
+        }
+        function requestTick() {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(update);
+          }
+        }
+        function update() {
+          ticking = false;
+          siteBg.style.transform = `translate3d(${mouseX.toFixed(1)}px, ${(mouseY/2 + scrollY).toFixed(1)}px, 0)`;
+        }
+        window.addEventListener('mousemove', onMove, { passive: true });
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+    })();
+
+    // Conmutación de idioma ES/EN con persistencia
+    (function() {
+      const LANG_KEY = 'ods-lang';
+      const btnEs = document.querySelector('[data-lang-btn="es"]');
+      const btnEn = document.querySelector('[data-lang-btn="en"]');
+      const langEls = document.querySelectorAll('[data-lang-content]');
+
+      function applyLang(lang) {
+        document.documentElement.setAttribute('lang', lang);
+        langEls.forEach(el => {
+          const isVisible = el.getAttribute('data-lang') === lang;
+          el.setAttribute('data-visible', isVisible ? 'true' : 'false');
+        });
+        btnEs.classList.toggle('active', lang === 'es');
+        btnEn.classList.toggle('active', lang === 'en');
+        btnEs.setAttribute('aria-pressed', lang === 'es');
+        btnEn.setAttribute('aria-pressed', lang === 'en');
+        localStorage.setItem(LANG_KEY, lang);
+      }
+
+      const initial = localStorage.getItem(LANG_KEY) || 'es';
+      applyLang(initial);
+      btnEs.addEventListener('click', () => applyLang('es'));
+      btnEn.addEventListener('click', () => applyLang('en'));
+    })();
+
+    // Contadores dinámicos al entrar en viewport
+    (function() {
+      const counters = document.querySelectorAll('[data-counter]');
+      if (!('IntersectionObserver' in window)) {
+        counters.forEach(el => el.textContent = Number(el.dataset.target).toLocaleString());
+        return;
+      }
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = Number(el.dataset.target);
+            const duration = 1200; // ms
+            const start = performance.now();
+            const startVal = 0;
+            function tick(now) {
+              const p = Math.min(1, (now - start) / duration);
+              const eased = 1 - Math.pow(1 - p, 3);
+              const val = Math.round(startVal + (target - startVal) * eased);
+              el.textContent = val.toLocaleString();
+              if (p < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+            obs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.4 });
+      counters.forEach(el => obs.observe(el));
+    })();
+
+    // Carrusel simple de aliados
+    (function() {
+      const track = document.querySelector('[data-carousel-track]');
+      if (!track) return;
+      const slides = Array.from(track.children);
+      const btnPrev = document.querySelector('[data-prev]');
+      const btnNext = document.querySelector('[data-next]');
+      const dotsWrap = document.querySelector('[data-dots]');
+
+      const visiblePerView = () => {
+        const w = window.innerWidth;
+        if (w < 640) return 2;
+        if (w < 960) return 3;
+        return 4;
+      };
+
+      let index = 0;
+      let perView = visiblePerView();
+      let pages = Math.max(1, Math.ceil(slides.length / perView));
+
+      function buildDots() {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < pages; i++) {
+          const d = document.createElement('div');
+          d.className = 'dot' + (i === 0 ? ' active' : '');
+          d.addEventListener('click', () => goTo(i));
+          dotsWrap.appendChild(d);
+        }
+      }
+
+      function update() {
+        perView = visiblePerView();
+        pages = Math.max(1, Math.ceil(slides.length / perView));
+        const slideWidthPct = 100 / perView;
+        slides.forEach(s => s.style.flex = `0 0 ${slideWidthPct}%`);
+        index = Math.min(index, pages - 1);
+        track.style.transform = `translateX(-${index * 100}%)`;
+        [...dotsWrap.children].forEach((d, i) => d.classList.toggle('active', i === index));
+      }
+
+      function goTo(i) { index = (i + pages) % pages; update(); }
+      function prev() { goTo(index - 1); }
+      function next() { goTo(index + 1); }
+
+      btnPrev.addEventListener('click', prev);
+      btnNext.addEventListener('click', next);
+      window.addEventListener('resize', () => { const old = pages; update(); if (pages !== old) buildDots(); });
+
+      buildDots();
+      update();
+
+      let timer = setInterval(next, 4000);
+      track.closest('.carousel-viewport').addEventListener('mouseenter', () => clearInterval(timer));
+      track.closest('.carousel-viewport').addEventListener('mouseleave', () => timer = setInterval(next, 4000));
+    })();
+  </script>
+</body>
+</html>
