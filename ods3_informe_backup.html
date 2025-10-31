@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ODS 3 · Salud y Bienestar | Informe</title>
+  <meta name="description" content="Informe profesional ODS 3 (Salud y Bienestar) con cifras dinámicas, aliados y noticias. Español e Inglés." />
+  <style>
+    :root {
+      --sdg3-green: #4C9F38; /* ODS 3 */
+      --text: #1f2d3d;
+      --muted: #6b7c93;
+      --line: #e6e9ee;
+      --bg: #ffffff;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+  body { font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.65; -webkit-hyphens: auto; hyphens: auto; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header institucional */
+    .topbar { border-bottom: 1px solid var(--line); background: #fff; }
+    .topbar-inner { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand img { height: 42px; width: auto; }
+    .brand-title { font-weight: 600; letter-spacing: .2px; }
+
+    .lang-switch { display: flex; align-items: center; gap: 8px; }
+    .lang-switch button {
+      appearance: none; border: 1px solid var(--line); background: #fff; color: var(--text);
+      padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px;
+    }
+    .lang-switch button.active { border-color: var(--sdg3-green); color: var(--sdg3-green); }
+
+    /* Hero */
+    .hero { padding: 56px 0 32px; border-bottom: 2px solid var(--line); background: #fff; }
+    .eyebrow { color: var(--sdg3-green); text-transform: uppercase; font-weight: 700; letter-spacing: .08em; font-size: 13px; }
+    .hero h1 { margin: 8px 0 10px; font-size: clamp(28px, 4.5vw, 44px); line-height: 1.2; }
+    .subtitle { color: var(--muted); font-size: 18px; margin-top: 6px; }
+
+    /* Secciones base */
+    section { padding: 48px 0; }
+    .section-title { font-size: clamp(22px, 3.5vw, 30px); margin: 0 0 18px; }
+    .section-rule { width: 72px; height: 3px; background: var(--sdg3-green); margin-bottom: 24px; border-radius: 2px; }
+
+    /* Layouts */
+    .grid-2 { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: start; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+  .card { background: transparent; border: none; border-radius: 0; padding: 20px; }
+    .muted { color: var(--muted); }
+  .card ol { padding-left: 18px; margin: 10px 0 0; }
+  .card li { margin: 10px 0; }
+  .card .subsection-title { color: var(--sdg3-green); margin: 14px 0 6px; font-weight: 700; font-size: 1.05em; }
+  p, li, figcaption, .subtitle, .label { text-align: justify; text-justify: inter-word; }
+  .figure.inline { margin: 14px 0; }
+
+    /* Cifras dinámicas */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+  .stat { border: none; border-left: 4px solid var(--sdg3-green); border-radius: 0; padding: 18px; background: #fff; }
+    .stat .value { font-size: 36px; font-weight: 800; color: var(--sdg3-green); line-height: 1; }
+    .stat .label { color: var(--muted); margin-top: 6px; }
+
+    /* Bloques de imagen */
+  .figure { border: none; border-radius: 0; overflow: hidden; background: transparent; }
+    .figure img { width: 100%; height: auto; display: block; }
+    .figure figcaption { padding: 12px 16px; color: var(--muted); font-size: 14px; }
+
+    /* Carrusel de aliados */
+    .carousel { position: relative; }
+  .carousel-viewport { overflow: hidden; border: none; border-radius: 0; background: transparent; }
+    .carousel-track { display: flex; transition: transform 400ms ease; }
+  .slide { flex: 0 0 25%; padding: 24px; display: flex; align-items: center; justify-content: center; border-right: 0; }
+    .slide:last-child { border-right: 0; }
+    .slide img { max-height: 60px; width: auto; opacity: .9; filter: grayscale(20%); }
+
+    .carousel-controls { display: flex; justify-content: center; gap: 10px; margin-top: 12px; }
+    .carousel-btn { appearance: none; border: 1px solid var(--line); background: #fff; padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+    .dots { display: flex; justify-content: center; gap: 6px; margin-top: 8px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #cfd6df; }
+    .dot.active { background: var(--sdg3-green); }
+
+  /* Carrusel de prácticas (override de estilos de imagen) */
+  .carousel.practices .slide { padding: 12px; }
+  .carousel.practices .slide img { max-height: 220px; height: 220px; width: 100%; object-fit: cover; opacity: 1; filter: none; border-radius: 8px; }
+
+    /* Noticias - Nuevo diseño de tarjetas */
+    .news-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+      gap: 28px; 
+      margin-top: 32px;
+    }
+    
+    .news-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(76, 159, 56, 0.15);
+    }
+    
+    .news-image {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    }
+    
+    .news-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    
+    .news-card:hover .news-image img {
+      transform: scale(1.05);
+    }
+    
+    .news-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+      padding: 16px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .news-card:hover .news-overlay {
+      opacity: 1;
+    }
+    
+    .news-badge {
+      display: inline-block;
+      background: var(--sdg3-green);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    
+    .news-content {
+      padding: 20px;
+    }
+    
+    .news-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1a1d29;
+      line-height: 1.4;
+      margin: 0 0 12px 0;
+      font-family: Georgia, serif;
+    }
+    
+    .news-excerpt {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+      text-align: justify;
+    }
+    
+    /* Responsive para noticias */
+    @media (max-width: 960px) {
+      .news-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+      }
+      .news-image {
+        height: 200px;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .news-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .news-image {
+        height: 180px;
+      }
+      .news-content {
+        padding: 16px;
+      }
+    }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--muted); font-size: 14px; }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .slide { flex: 0 0 33.3333%; }
+    }
+    @media (max-width: 640px) {
+      .brand img { height: 36px; }
+      .slide { flex: 0 0 50%; }
+      .hero { padding: 40px 0 20px; }
+    }
+
+    /* Utilidad bilingüe */
+    [data-lang-content] { display: none; }
+    [data-lang-content][data-visible="true"] { display: block; }
+  </style>
+</head>
+<body>
+  <header class="topbar" role="banner">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <img src="https://udes.edu.co/images/logo/logo-con-acreditada-color.png" alt="Logo UDES acreditada" loading="lazy" />
+        <img src="https://temas.sld.cu/psicobienestarsalud/files/2022/02/ODS-3-bienestar-salud-banner.jpg" alt="Logo ODS 3" />
+        <div class="brand-title">Informe ODS 3 · Salud y Bienestar</div>
+      </div>
+      <div class="lang-switch" aria-label="Selector de idioma">
+        <button type="button" data-lang-btn="es" class="active" aria-pressed="true">ES</button>
+        <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="container">
+      <div class="eyebrow" data-lang-content data-lang="es" data-visible="true">Objetivos de Desarrollo Sostenible</div>
+      <div class="eyebrow" data-lang-content data-lang="en">Sustainable Development Goals</div>
+
+      <h1 data-lang-content data-lang="es">ODS 3: Salud y Bienestar</h1>
+      <h1 data-lang-content data-lang="en">SDG 3: Good Health and Well-Being</h1>
+
+      <p class="subtitle" data-lang-content data-lang="es">Informe profesional con cifras clave, aliados estratégicos e integración de noticias.</p>
+      <p class="subtitle" data-lang-content data-lang="en">Professional report with key figures, strategic partners, and integrated news.</p>
+    </div>
+  </div>
+
+  <main>
+    <section id="resumen">
+      <div class="container grid-2">
+        <div>
+          <h2 class="section-title" data-lang-content data-lang="es">Resumen Ejecutivo</h2>
+          <h2 class="section-title" data-lang-content data-lang="en">Executive Summary</h2>
+          <div class="section-rule"></div>
+          <div class="card" data-lang-content data-lang="es">
+            <p>
+              La UDES se erige como una fuerza transformadora en la salud pública, cumpliendo su función misional de interacción permanente entre la academia y la sociedad, y formando profesionales con un profundo sentido altruista, filantrópico y ciudadano. Nuestro compromiso se materializa en tres pilares fundamentales:
+            </p>
+          </div>
+
+          <div class="card" data-lang-content data-lang="en">
+            <p>
+              UDES stands as a transformative force in public health, fulfilling its mission of continuous interaction between academia and society, and educating professionals with a deep altruistic, philanthropic, and civic vocation. Our commitment is embodied in three fundamental pillars:
+            </p>
+          </div>
+        </div>
+        <div>
+          <figure class="figure">
+            <img src="https://udes.edu.co/images/micrositios/udes-sostenible/ods-informe-2023/ods-3/ods-3.webp" alt="Imagen principal del informe" loading="lazy" decoding="async" />
+            <figcaption data-lang-content data-lang="es">Imagen principal del informe (reemplazar).</figcaption>
+            <figcaption data-lang-content data-lang="en">Main report image (replace).</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pilares ubicados debajo del Executive Summary -->
+    <section id="pilar-formacion-crisis">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Formación de Alto Impacto y Respuesta a Crisis</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">High‑Impact Training and Crisis Response</h2>
+        <div class="section-rule"></div>
+
+        <div class="card" data-lang-content data-lang="es">
+          <ul>
+            <li><strong>Formación de talento humano:</strong> En 2021, la UDES graduó a 721 profesionales en Ciencias Médicas y de la Salud.</li>
+            <li><strong>Respuesta pandémica:</strong> Participación activa en el Puesto de Mando Unificado (PMU) de Santander, en articulación con la Gobernación y otras universidades, brindando apoyo y vigilancia durante la emergencia por Covid‑19.</li>
+            <li><strong>Investigación vital:</strong> Contribuciones analíticas que resaltan la importancia del diagnóstico oportuno (antes del séptimo día) para reducir significativamente la transmisión y la letalidad del Covid‑19.</li>
+          </ul>
+        </div>
+        <div class="card" data-lang-content data-lang="en">
+          <ul>
+            <li><strong>Health workforce training:</strong> In 2021, UDES graduated 721 professionals in Medical and Health Sciences.</li>
+            <li><strong>Pandemic response:</strong> Active participation in Santander’s Unified Command Post (PMU) with the Governor’s Office and other universities, providing support and surveillance during the Covid‑19 emergency.</li>
+            <li><strong>Vital research:</strong> Analytical contributions highlighting that timely diagnosis (before day seven) significantly reduces Covid‑19 transmission and lethality.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="pilar-proyeccion-alianzas">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Proyección Social y Alianzas Estratégicas</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Social Outreach and Strategic Partnerships</h2>
+        <div class="section-rule"></div>
+
+        <div class="card" data-lang-content data-lang="es">
+          <ul>
+            <li><strong>Alcance comunitario:</strong> “MI UDES” interviene en comunidades afectadas por la violencia y en condición de vulnerabilidad, promoviendo salud integral y desarrollo humano (APS; apoyo a comunidades como la Nación Wayúu).</li>
+            <li><strong>Investigación global de vanguardia:</strong> Selección por el NIH (EE. UU.) para el proyecto internacional CATCH (Control de Hipertensión), con seis años de duración y financiamiento global de 6 millones de dólares.</li>
+            <li><strong>Centros de atención:</strong> La Sede 1 de Bucaramanga aloja a personas de escasos recursos con enfermedades terminales, crónicas y huérfanas, así como a migrantes que requieren tratamiento y no cuentan con recursos para su sostenimiento.</li>
+          </ul>
+        </div>
+        <div class="card" data-lang-content data-lang="en">
+          <ul>
+            <li><strong>Community outreach:</strong> “MI UDES” intervenes in communities affected by violence and vulnerability, promoting comprehensive health and human development (PHC; support for communities such as the Wayúu Nation).</li>
+            <li><strong>Cutting‑edge global research:</strong> Selected by the U.S. NIH for the international CATCH (Hypertension Control) project, lasting six years with global funding of 6 million USD.</li>
+            <li><strong>Care centers:</strong> Bucaramanga Site 1 hosts low‑income people with terminal, chronic, and orphan diseases, as well as migrants requiring treatment who lack financial means.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="pilar-campus-saludable">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Cuidado Integral del Campus (Entorno Saludable)</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Comprehensive Campus Care (Healthy Environment)</h2>
+        <div class="section-rule"></div>
+
+        <div class="card" data-lang-content data-lang="es">
+          <ul>
+            <li><strong>Salud mental 24/7:</strong> “Línea amiga” brinda consultas e intervenciones gratuitas en psicología clínica; actividades como la “Sembratón psicoeducativa” para pacientes en rehabilitación por consumo de SPA.</li>
+            <li><strong>Campus libre de humo:</strong> Política de Prevención frente al consumo de Tabaco, Alcohol y SPA (Res. No. 009 de 2017) y política ambiental libre de humo en sedes (Res. No. 018‑A de 2018).</li>
+            <li><strong>Deporte y bienestar físico:</strong> Acceso gratuito a instalaciones deportivas para comunidad local, docentes, administrativos y graduados, fomentando el desarrollo físico y mental.</li>
+          </ul>
+        </div>
+        <div class="card" data-lang-content data-lang="en">
+          <ul>
+            <li><strong>Mental health 24/7:</strong> “Línea amiga” offers free clinical psychology consultations and interventions; activities such as the “Psycho‑educational tree planting” for patients in rehabilitation for psychoactive substance use.</li>
+            <li><strong>Smoke‑free campus:</strong> Prevention Policy on Tobacco, Alcohol, and Psychoactive Substances (Res. No. 009 of 2017) and smoke‑free environmental policy across campuses (Res. No. 018‑A of 2018).</li>
+            <li><strong>Sports and physical well‑being:</strong> Free access to sports facilities for the local community, faculty, staff, and graduates, fostering physical and mental development.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="cifras">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Cifras Clave</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Key Figures</h2>
+        <div class="section-rule"></div>
+
+        <div class="stats" aria-live="polite">
+          <div class="stat" role="group" aria-label="Cobertura universal de salud">
+            <div class="value" data-counter data-target="87">0</div>
+            <div class="label" data-lang-content data-lang="es">Cobertura universal de salud (%)</div>
+            <div class="label" data-lang-content data-lang="en">Universal health coverage (%)</div>
+          </div>
+          <div class="stat" role="group" aria-label="Reducción mortalidad infantil">
+            <div class="value" data-counter data-target="15">0</div>
+            <div class="label" data-lang-content data-lang="es">Reducción mortalidad infantil (%)</div>
+            <div class="label" data-lang-content data-lang="en">Child mortality reduction (%)</div>
+          </div>
+          <div class="stat" role="group" aria-label="Esperanza de vida">
+            <div class="value" data-counter data-target="76">0</div>
+            <div class="label" data-lang-content data-lang="es">Esperanza de vida (años)</div>
+            <div class="label" data-lang-content data-lang="en">Life expectancy (years)</div>
+          </div>
+          <div class="stat" role="group" aria-label="Programas de prevención">
+            <div class="value" data-counter data-target="32">0</div>
+            <div class="label" data-lang-content data-lang="es">Programas de prevención activos</div>
+            <div class="label" data-lang-content data-lang="en">Active prevention programs</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contexto">
+      <div class="container grid-2">
+        <div>
+          <h2 class="section-title" data-lang-content data-lang="es">Contexto y Enfoque</h2>
+          <h2 class="section-title" data-lang-content data-lang="en">Context and Approach</h2>
+          <div class="section-rule"></div>
+          <div class="card" data-lang-content data-lang="es">
+            <p>Introduce el contexto local de salud y bienestar, determinantes clave, enfermedades prevalentes y el enfoque analítico del informe.</p>
+          </div>
+          <div class="card" data-lang-content data-lang="en">
+            <p>Introduce the local health and well-being context, key determinants, prevalent diseases, and the analytical approach of the report.</p>
+          </div>
+        </div>
+        <div>
+          <figure class="figure">
+            <img src="https://via.placeholder.com/960x600/ffffff/4C9F38?text=Imagen+contexto" alt="Contexto ODS 3" />
+            <figcaption class="muted" data-lang-content data-lang="es">Espacio para imagen de contexto (reemplazar).</figcaption>
+            <figcaption class="muted" data-lang-content data-lang="en">Context image slot (replace).</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="politica-libre-de-humo">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">La Base de un Campus Saludable: Políticas Libres de Humo</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">The Foundation of a Healthy Campus: Smoke‑Free Policies</h2>
+        <div class="section-rule"></div>
+
+        <div class="card" data-lang-content data-lang="es">
+          <p>
+            Uno de los pilares fundamentales para proteger la salud de nuestros estudiantes, profesores y funcionarios es la implementación rigurosa de nuestra Política Libre de Humo. Este compromiso se alinea directamente con los criterios globales de promoción de la salud pública y prevención de riesgos, y se soporta en un marco normativo sólido.
+          </p>
+          <ol>
+            <li>
+              <strong>Política y Marco Legal:</strong> La UDES ha establecido formalmente la Política de Prevención frente al consumo de Tabaco, Alcohol y Sustancias Psicoactivas. Esta política fue oficializada mediante la "Resolución No. 009 de 2017" y se integra como parte esencial del reglamento interno de trabajo y del Sistema de Gestión Seguridad y Salud en el Trabajo. Nuestra normativa es coherente y respeta la legislación colombiana vigente en la materia, incluyendo la "Ley 1335 de 2009" del Congreso de Colombia, la "Resolución 1956 de 2008", la "Circular 038 de 2010" y la "Resolución 4225 de 1992".
+            </li>
+            <li>
+              <strong>Campus Libre de Humo y Abstinencia:</strong> El objetivo principal de esta política es claro: propender porque todos los trabajadores y la comunidad académica se abstengan de fumar, consumir sustancias psicoactivas o alcohol en las instalaciones de la Universidad. Reforzando esta postura, la UDES ha asumido el compromiso, con responsabilidad y ética, de incorporar una política ambiental libre de humo en sus diferentes sedes, una actualización realizada conforme a la Resolución No. 018-A del 2018. Para garantizar su cumplimiento, el reglamento académico estudiantil clasifica el acto de fumar como una falta leve, según lo consignado en el Artículo 123.
+            </li>
+            <li>
+              <strong>Promoción y Prevención:</strong> La política se complementa con acciones proactivas. La institución se compromete a realizar campañas y actividades de prevención a través de Programas de Gestión que buscan la promoción de estilos de vida saludable dirigidos a los funcionarios. Este enfoque garantiza que la UDES no solo prohíba el consumo, sino que también eduque y promueva el autocuidado.
+            </li>
+          </ol>
+        </div>
+
+        <div class="card" data-lang-content data-lang="en">
+          <p>
+            One of the fundamental pillars to protect the health of our students, faculty, and staff is the rigorous implementation of our Smoke‑Free Policy. This commitment aligns with global standards for public health promotion and risk prevention and is supported by a solid regulatory framework.
+          </p>
+          <ol>
+            <li>
+              <strong>Policy and Legal Framework:</strong> UDES has formally established the Prevention Policy regarding the consumption of Tobacco, Alcohol, and Psychoactive Substances. This policy was enacted through “Resolution No. 009 of 2017” and is an essential part of the internal work regulations and the Occupational Health and Safety Management System. Our regulations comply with current Colombian legislation, including “Law 1335 of 2009,” “Resolution 1956 of 2008,” “Circular 038 of 2010,” and “Resolution 4225 of 1992.”
+            </li>
+            <li>
+              <strong>Smoke‑Free Campus and Abstinence:</strong> The main objective is clear: to encourage all staff and the academic community to refrain from smoking, consuming psychoactive substances, or alcohol on University premises. Reinforcing this stance, UDES has committed—responsibly and ethically—to adopt a smoke‑free environmental policy across its campuses, updated under Resolution No. 018‑A of 2018. To ensure compliance, the student academic regulations classify smoking as a minor offense, as stated in Article 123.
+            </li>
+            <li>
+              <strong>Health Promotion and Prevention:</strong> The policy is complemented by proactive actions. The institution carries out campaigns and prevention activities through Management Programs aimed at promoting healthy lifestyles among staff. This approach ensures that UDES not only prohibits consumption but also educates and fosters self‑care.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrusel de buenas prácticas dentro de la sección de campus saludable -->
+    <div class="container">
+      <h3 class="section-title" data-lang-content data-lang="es">Buenas prácticas en campus saludable</h3>
+      <h3 class="section-title" data-lang-content data-lang="en">Good practices on a healthy campus</h3>
+      <div class="section-rule" style="width:56px"></div>
+
+      <div class="carousel practices" role="region" aria-roledescription="carousel" aria-label="Carrusel de buenas prácticas">
+        <div class="carousel-viewport" tabindex="0">
+          <div class="carousel-track" data-practices-track>
+            <div class="slide"><img src="https://udes.edu.co/images/micrositios/udesverde/img/buenas-practicas/cero-pitillos.jpg" alt="Buenas prácticas - Cero pitillos" /></div>
+            <div class="slide"><img src="https://udes.edu.co/images/micrositios/udesverde/img/buenas-practicas/ecotermo.jpg" alt="Buenas prácticas - Ecotermo" /></div>
+            <div class="slide"><img src="https://udes.edu.co/images/micrositios/udesverde/img/buenas-practicas/me-tomo-en-serio-el-planeta-2.jpg" alt="Buenas prácticas - Me tomo en serio el planeta 2" /></div>
+            <div class="slide"><img src="https://udes.edu.co/images/micrositios/udesverde/img/buenas-practicas/me-tomo-en-serio-el-planeta-3.jpg" alt="Buenas prácticas - Me tomo en serio el planeta 3" /></div>
+            <div class="slide"><img src="https://udes.edu.co/images/micrositios/udesverde/img/buenas-practicas/senalizacion.jpg" alt="Buenas prácticas - Señalización" /></div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" data-practices-prev aria-label="Anterior">‹</button>
+          <button class="carousel-btn" data-practices-next aria-label="Siguiente">›</button>
+        </div>
+        <div class="dots" data-practices-dots aria-hidden="true"></div>
+      </div>
+    </div>
+
+    
+
+    <section id="acciones">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Líneas de Acción</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Lines of Action</h2>
+        <div class="section-rule"></div>
+        <div class="grid-3">
+          <figure class="figure">
+            <img src="https://via.placeholder.com/600x400/ffffff/4C9F38?text=Accion+1" alt="Acción 1" />
+            <figcaption data-lang-content data-lang="es">Acción 1: Prevención y promoción de la salud.</figcaption>
+            <figcaption data-lang-content data-lang="en">Action 1: Health prevention and promotion.</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="https://via.placeholder.com/600x400/ffffff/4C9F38?text=Accion+2" alt="Acción 2" />
+            <figcaption data-lang-content data-lang="es">Acción 2: Acceso a servicios de salud.</figcaption>
+            <figcaption data-lang-content data-lang="en">Action 2: Access to health services.</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="https://via.placeholder.com/600x400/ffffff/4C9F38?text=Accion+3" alt="Acción 3" />
+            <figcaption data-lang-content data-lang="es">Acción 3: Salud mental y bienestar.</figcaption>
+            <figcaption data-lang-content data-lang="en">Action 3: Mental health and well-being.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="aliados">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Aliados Estratégicos</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Strategic Partners</h2>
+        <div class="section-rule"></div>
+
+        <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Carrusel de aliados">
+          <div class="carousel-viewport" tabindex="0">
+            <div class="carousel-track" data-carousel-track>
+              <!-- Sustituye las imágenes por los logos de tus aliados -->
+              <div class="slide"><img src="https://via.placeholder.com/180x60?text=Aliado+1" alt="Aliado 1" /></div>
+              <div class="slide"><img src="https://via.placeholder.com/180x60?text=Aliado+2" alt="Aliado 2" /></div>
+              <div class="slide"><img src="https://via.placeholder.com/180x60?text=Aliado+3" alt="Aliado 3" /></div>
+              <div class="slide"><img src="https://via.placeholder.com/180x60?text=Aliado+4" alt="Aliado 4" /></div>
+              <div class="slide"><img src="https://via.placeholder.com/180x60?text=Aliado+5" alt="Aliado 5" /></div>
+              <div class="slide"><img src="https://via.placeholder.com/180x60?text=Aliado+6" alt="Aliado 6" /></div>
+              <div class="slide"><img src="https://via.placeholder.com/180x60?text=Aliado+7" alt="Aliado 7" /></div>
+              <div class="slide"><img src="https://via.placeholder.com/180x60?text=Aliado+8" alt="Aliado 8" /></div>
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-btn" data-prev aria-label="Anterior">‹</button>
+            <button class="carousel-btn" data-next aria-label="Siguiente">›</button>
+          </div>
+          <div class="dots" data-dots aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="noticias">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Conoce Más: Noticias Relacionadas</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Learn More: Related News</h2>
+        <div class="section-rule"></div>
+        
+        <div class="news-grid">
+          <!-- Noticia 1: Política Libre de Humo -->
+          <a href="https://udes.edu.co/udes-verde/noticias/udes-se-adhiere-a-la-comunidad-cero-de-agi-ambiental-empresas-santandereanas-se-unen-contra-el-cambio-climatico" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-image">
+              <img src="https://via.placeholder.com/400x300/4C9F38/ffffff?text=Campus+Saludable" alt="Campus Saludable UDES" />
+              <div class="news-overlay">
+                <span class="news-badge" data-lang-content data-lang="es">Ver noticia completa →</span>
+                <span class="news-badge" data-lang-content data-lang="en">Read full article →</span>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title" data-lang-content data-lang="es">UDES se adhiere a la Comunidad Cero contra el cambio climático</h3>
+              <h3 class="news-title" data-lang-content data-lang="en">UDES joins the Zero Community against climate change</h3>
+              <p class="news-excerpt" data-lang-content data-lang="es">
+                Compromiso institucional con ambientes saludables y sostenibles, promoviendo el bienestar de la comunidad universitaria.
+              </p>
+              <p class="news-excerpt" data-lang-content data-lang="en">
+                Institutional commitment to healthy and sustainable environments, promoting the well-being of the university community.
+              </p>
+            </div>
+          </a>
+
+          <!-- Noticia 2: Programa AIRE -->
+          <a href="https://udes.edu.co/extension/noticias/programa-aire-de-la-udes-promueve-la-prevencion-de-infecciones-respiratorias-agudas-en-ninos" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-image">
+              <img src="https://via.placeholder.com/400x300/4C9F38/ffffff?text=Programa+AIRE" alt="Programa AIRE UDES" />
+              <div class="news-overlay">
+                <span class="news-badge" data-lang-content data-lang="es">Ver noticia completa →</span>
+                <span class="news-badge" data-lang-content data-lang="en">Read full article →</span>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title" data-lang-content data-lang="es">Programa AIRE promueve prevención de infecciones respiratorias</h3>
+              <h3 class="news-title" data-lang-content data-lang="en">AIRE Program promotes prevention of respiratory infections</h3>
+              <p class="news-excerpt" data-lang-content data-lang="es">
+                Iniciativa de extensión social enfocada en la prevención de infecciones respiratorias agudas en niños de comunidades vulnerables.
+              </p>
+              <p class="news-excerpt" data-lang-content data-lang="en">
+                Social outreach initiative focused on preventing acute respiratory infections in children from vulnerable communities.
+              </p>
+            </div>
+          </a>
+
+          <!-- Noticia 3: Sin Quemaduras Vivo Feliz -->
+          <a href="https://udes.edu.co/extension/noticias/en-alianza-con-world-vision-programa-sin-quemaduras-vivo-feliz-de-la-udes-aborda-a-comunidades-vulnerables-de-giron" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-image">
+              <img src="https://via.placeholder.com/400x300/4C9F38/ffffff?text=Sin+Quemaduras" alt="Programa Sin Quemaduras Vivo Feliz" />
+              <div class="news-overlay">
+                <span class="news-badge" data-lang-content data-lang="es">Ver noticia completa →</span>
+                <span class="news-badge" data-lang-content data-lang="en">Read full article →</span>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title" data-lang-content data-lang="es">Programa "Sin Quemaduras Vivo Feliz" en alianza con World Vision</h3>
+              <h3 class="news-title" data-lang-content data-lang="en">"Living Happily Without Burns" program with World Vision</h3>
+              <p class="news-excerpt" data-lang-content data-lang="es">
+                Prevención de quemaduras en comunidades vulnerables de Girón, educando sobre riesgos y primeros auxilios.
+              </p>
+              <p class="news-excerpt" data-lang-content data-lang="en">
+                Prevention of burns in vulnerable communities of Girón, educating about risks and first aid.
+              </p>
+            </div>
+          </a>
+
+          <!-- Noticia 4: Salud Auditiva -->
+          <a href="https://udes.edu.co/extension/noticias/udes-y-el-colegio-nino-de-jesus-de-praga-unen-esfuerzos-por-la-salud-auditiva-y-comunicativa-de-la-primera-infancia" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-image">
+              <img src="https://via.placeholder.com/400x300/4C9F38/ffffff?text=Salud+Auditiva" alt="Salud Auditiva Infantil" />
+              <div class="news-overlay">
+                <span class="news-badge" data-lang-content data-lang="es">Ver noticia completa →</span>
+                <span class="news-badge" data-lang-content data-lang="en">Read full article →</span>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title" data-lang-content data-lang="es">UDES promueve salud auditiva y comunicativa en primera infancia</h3>
+              <h3 class="news-title" data-lang-content data-lang="en">UDES promotes hearing and communication health in early childhood</h3>
+              <p class="news-excerpt" data-lang-content data-lang="es">
+                Alianza para diagnóstico temprano y cuidado auditivo en niños de 2 a 5 años, detectando alteraciones oportunamente.
+              </p>
+              <p class="news-excerpt" data-lang-content data-lang="en">
+                Alliance for early diagnosis and hearing care in children aged 2 to 5, detecting alterations promptly.
+              </p>
+            </div>
+          </a>
+
+          <!-- Noticia 5: Clínica Veterinaria -->
+          <a href="https://udes.edu.co/extension/noticias/udes-promueve-tenencia-responsable-de-mascotas-en-bucaramanga" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-image">
+              <img src="https://via.placeholder.com/400x300/4C9F38/ffffff?text=Salud+Animal" alt="Clínica Veterinaria UDES" />
+              <div class="news-overlay">
+                <span class="news-badge" data-lang-content data-lang="es">Ver noticia completa →</span>
+                <span class="news-badge" data-lang-content data-lang="en">Read full article →</span>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title" data-lang-content data-lang="es">UDES promueve tenencia responsable de mascotas</h3>
+              <h3 class="news-title" data-lang-content data-lang="en">UDES promotes responsible pet ownership</h3>
+              <p class="news-excerpt" data-lang-content data-lang="es">
+                Educación en salud animal y bienestar, fortaleciendo el vínculo humano-animal y la salud pública.
+              </p>
+              <p class="news-excerpt" data-lang-content data-lang="en">
+                Education in animal health and welfare, strengthening the human-animal bond and public health.
+              </p>
+            </div>
+          </a>
+
+          <!-- Noticia 6: Cabalgata Inclusiva -->
+          <a href="https://udes.edu.co/bienestar-institucional/educacion-inclusiva/noticias/cabalgata-inclusiva-udes-y-alcaldia-de-bucaramanga-unidos-por-la-equidad-social" target="_blank" rel="noopener noreferrer" class="news-card">
+            <div class="news-image">
+              <img src="https://via.placeholder.com/400x300/4C9F38/ffffff?text=Cabalgata+Inclusiva" alt="Cabalgata Inclusiva" />
+              <div class="news-overlay">
+                <span class="news-badge" data-lang-content data-lang="es">Ver noticia completa →</span>
+                <span class="news-badge" data-lang-content data-lang="en">Read full article →</span>
+              </div>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title" data-lang-content data-lang="es">Cabalgata Inclusiva: unidos por la equidad social y el bienestar</h3>
+              <h3 class="news-title" data-lang-content data-lang="en">Inclusive Horseback Ride: united for social equity and well-being</h3>
+              <p class="news-excerpt" data-lang-content data-lang="es">
+                Apoyo emocional y social a personas con discapacidad y sus familias, promoviendo salud mental y bienestar integral.
+              </p>
+              <p class="news-excerpt" data-lang-content data-lang="en">
+                Emotional and social support for people with disabilities and their families, promoting mental health and comprehensive well-being.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div data-lang-content data-lang="es">© 2025 · Informe ODS 3 · Versión para uso académico.</div>
+      <div data-lang-content data-lang="en">© 2025 · SDG 3 Report · Academic use version.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Conmutación de idioma ES/EN con persistencia
+    (function() {
+      const LANG_KEY = 'ods-lang';
+      const btnEs = document.querySelector('[data-lang-btn="es"]');
+      const btnEn = document.querySelector('[data-lang-btn="en"]');
+      const langEls = document.querySelectorAll('[data-lang-content]');
+
+      function applyLang(lang) {
+        document.documentElement.setAttribute('lang', lang);
+        langEls.forEach(el => {
+          const isVisible = el.getAttribute('data-lang') === lang;
+          el.setAttribute('data-visible', isVisible ? 'true' : 'false');
+        });
+        btnEs.classList.toggle('active', lang === 'es');
+        btnEn.classList.toggle('active', lang === 'en');
+        btnEs.setAttribute('aria-pressed', lang === 'es');
+        btnEn.setAttribute('aria-pressed', lang === 'en');
+        localStorage.setItem(LANG_KEY, lang);
+      }
+
+      const initial = localStorage.getItem(LANG_KEY) || 'es';
+      applyLang(initial);
+      btnEs.addEventListener('click', () => applyLang('es'));
+      btnEn.addEventListener('click', () => applyLang('en'));
+    })();
+
+    // Contadores dinámicos al entrar en viewport
+    (function() {
+      const counters = document.querySelectorAll('[data-counter]');
+      if (!('IntersectionObserver' in window)) {
+        counters.forEach(el => el.textContent = Number(el.dataset.target).toLocaleString());
+        return;
+      }
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = Number(el.dataset.target);
+            const duration = 1200; // ms
+            const start = performance.now();
+            const startVal = 0;
+            function tick(now) {
+              const p = Math.min(1, (now - start) / duration);
+              const eased = 1 - Math.pow(1 - p, 3);
+              const val = Math.round(startVal + (target - startVal) * eased);
+              el.textContent = val.toLocaleString();
+              if (p < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+            obs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.4 });
+      counters.forEach(el => obs.observe(el));
+    })();
+
+    // Carrusel simple de aliados
+    (function() {
+      const track = document.querySelector('[data-carousel-track]');
+      if (!track) return;
+      const slides = Array.from(track.children);
+      const btnPrev = document.querySelector('[data-prev]');
+      const btnNext = document.querySelector('[data-next]');
+      const dotsWrap = document.querySelector('[data-dots]');
+
+      const visiblePerView = () => {
+        const w = window.innerWidth;
+        if (w < 640) return 2;
+        if (w < 960) return 3;
+        return 4;
+      };
+
+      let index = 0;
+      let perView = visiblePerView();
+      let pages = Math.max(1, Math.ceil(slides.length / perView));
+
+      function buildDots() {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < pages; i++) {
+          const d = document.createElement('div');
+          d.className = 'dot' + (i === 0 ? ' active' : '');
+          d.addEventListener('click', () => goTo(i));
+          dotsWrap.appendChild(d);
+        }
+      }
+
+      function update() {
+        perView = visiblePerView();
+        pages = Math.max(1, Math.ceil(slides.length / perView));
+        const slideWidthPct = 100 / perView;
+        slides.forEach(s => s.style.flex = `0 0 ${slideWidthPct}%`);
+        index = Math.min(index, pages - 1);
+        track.style.transform = `translateX(-${index * 100}%)`;
+        [...dotsWrap.children].forEach((d, i) => d.classList.toggle('active', i === index));
+      }
+
+      function goTo(i) { index = (i + pages) % pages; update(); }
+      function prev() { goTo(index - 1); }
+      function next() { goTo(index + 1); }
+
+      btnPrev.addEventListener('click', prev);
+      btnNext.addEventListener('click', next);
+      window.addEventListener('resize', () => { const old = pages; update(); if (pages !== old) buildDots(); });
+
+      buildDots();
+      update();
+
+      let timer = setInterval(next, 4000);
+      track.closest('.carousel-viewport').addEventListener('mouseenter', () => clearInterval(timer));
+      track.closest('.carousel-viewport').addEventListener('mouseleave', () => timer = setInterval(next, 4000));
+    })();
+
+    // Carrusel de buenas prácticas (independiente)
+    (function() {
+      const root = document.querySelector('.carousel.practices');
+      if (!root) return;
+      const track = root.querySelector('[data-practices-track]');
+      const slides = Array.from(track.children);
+      const btnPrev = root.querySelector('[data-practices-prev]');
+      const btnNext = root.querySelector('[data-practices-next]');
+      const dotsWrap = root.querySelector('[data-practices-dots]');
+
+      const visiblePerView = () => {
+        const w = window.innerWidth;
+        if (w < 640) return 1;
+        if (w < 960) return 2;
+        return 3;
+      };
+
+      let index = 0;
+      let perView = visiblePerView();
+      let pages = Math.max(1, Math.ceil(slides.length / perView));
+
+      function buildDots() {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < pages; i++) {
+          const d = document.createElement('div');
+          d.className = 'dot' + (i === 0 ? ' active' : '');
+          d.addEventListener('click', () => goTo(i));
+          dotsWrap.appendChild(d);
+        }
+      }
+
+      function update() {
+        perView = visiblePerView();
+        pages = Math.max(1, Math.ceil(slides.length / perView));
+        const slideWidthPct = 100 / perView;
+        slides.forEach(s => s.style.flex = `0 0 ${slideWidthPct}%`);
+        index = Math.min(index, pages - 1);
+        track.style.transform = `translateX(-${index * 100}%)`;
+        [...dotsWrap.children].forEach((d, i) => d.classList.toggle('active', i === index));
+      }
+
+      function goTo(i) { index = (i + pages) % pages; update(); }
+      function prev() { goTo(index - 1); }
+      function next() { goTo(index + 1); }
+
+      btnPrev.addEventListener('click', prev);
+      btnNext.addEventListener('click', next);
+      window.addEventListener('resize', () => { const old = pages; update(); if (pages !== old) buildDots(); });
+
+      buildDots();
+      update();
+
+      let timer = setInterval(next, 4500);
+      const viewport = root.querySelector('.carousel-viewport');
+      viewport.addEventListener('mouseenter', () => clearInterval(timer));
+      viewport.addEventListener('mouseleave', () => timer = setInterval(next, 4500));
+    })();
+  </script>
+</body>
+</html>
