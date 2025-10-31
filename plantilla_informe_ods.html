@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe ODS - Objetivos de Desarrollo Sostenible | Universidad</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            box-shadow: 0 0 40px rgba(0,0,0,0.08);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, #1a237e 0%, #283593 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 40px;
+            margin: -40px -20px 50px -20px;
+            position: relative;
+            border-bottom: 5px solid #c9a961;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: #c9a961;
+        }
+
+        header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1.2em;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* Sección de introducción */
+        .intro-section {
+            background: #ffffff;
+            padding: 50px 60px;
+            margin-bottom: 50px;
+            border-left: 5px solid #1a237e;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .intro-section h2 {
+            color: #1a237e;
+            font-family: 'Georgia', serif;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .intro-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: #c9a961;
+        }
+
+        .intro-section p {
+            font-size: 1.05em;
+            line-height: 2;
+            text-align: justify;
+            color: #34495e;
+        }
+
+        /* Sección con imagen y texto */
+        .content-section {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: #fafafa;
+            padding: 50px 60px;
+            margin-bottom: 50px;
+            border-top: 3px solid #e8e8e8;
+            border-bottom: 3px solid #e8e8e8;
+            animation: slideIn 0.8s ease-in;
+        }
+
+        .content-section.reverse {
+            flex-direction: row-reverse;
+            background: white;
+        }
+
+        .content-section img {
+            width: 45%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            transition: box-shadow 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .content-section img:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .content-text {
+            flex: 1;
+        }
+
+        .content-text h3 {
+            color: #1a237e;
+            font-family: 'Georgia', serif;
+            font-size: 1.9em;
+            margin-bottom: 20px;
+            font-weight: 600;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .content-text h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 100%;
+            background: #c9a961;
+        }
+
+        .content-text p {
+            font-size: 1.05em;
+            line-height: 2;
+            text-align: justify;
+            color: #34495e;
+        }
+
+        /* Grid de ODS */
+        .ods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
+            margin-bottom: 50px;
+            padding: 30px 0;
+        }
+
+        .ods-card {
+            background: white;
+            padding: 0;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .ods-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .ods-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 3px solid #c9a961;
+        }
+
+        .ods-card-content {
+            padding: 25px;
+        }
+
+        .ods-card h4 {
+            color: #1a237e;
+            font-family: 'Georgia', serif;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .ods-card p {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Sección de estadísticas */
+        .stats-section {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+            padding: 60px 60px;
+            margin-bottom: 50px;
+            border-top: 5px solid #c9a961;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .stats-section h2 {
+            font-family: 'Georgia', serif;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(201,169,97,0.3);
+            transition: background 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: #c9a961;
+        }
+
+        .stat-item h3 {
+            font-family: 'Georgia', serif;
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: #c9a961;
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1.1em;
+            letter-spacing: 0.5px;
+            font-weight: 300;
+        }
+
+        /* Sección de llamada a la acción */
+        .cta-section {
+            background: #fafafa;
+            color: #2c3e50;
+            text-align: center;
+            padding: 60px 60px;
+            margin-bottom: 50px;
+            border: 2px solid #e0e0e0;
+            border-left: 5px solid #1a237e;
+        }
+
+        .cta-section h2 {
+            font-family: 'Georgia', serif;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #1a237e;
+            font-weight: 600;
+        }
+
+        .cta-section p {
+            font-size: 1.15em;
+            margin-bottom: 35px;
+            color: #34495e;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 45px;
+            background: #1a237e;
+            color: white;
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1.05em;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: background 0.3s ease, transform 0.2s ease;
+            border: 2px solid #1a237e;
+        }
+
+        .cta-button:hover {
+            background: #283593;
+            border-color: #283593;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a237e;
+            color: white;
+            text-align: center;
+            padding: 40px 40px;
+            margin: 50px -20px -40px -20px;
+            border-top: 5px solid #c9a961;
+        }
+
+        footer p {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1em;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .content-section {
+                flex-direction: column;
+            }
+
+            .content-section.reverse {
+                flex-direction: column;
+            }
+
+            .content-section img {
+                width: 100%;
+            }
+
+            .intro-section h2,
+            .cta-section h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Informe ODS 2025</h1>
+            <p>Objetivos de Desarrollo Sostenible | Investigación Universitaria</p>
+        </header>
+
+        <!-- Sección de Introducción -->
+        <section class="intro-section">
+            <h2>Introducción</h2>
+            <p>
+                Los Objetivos de Desarrollo Sostenible (ODS) son un llamado universal a la acción para poner fin a la pobreza, 
+                proteger el planeta y garantizar que todas las personas gocen de paz y prosperidad para 2030. Este informe 
+                presenta un análisis detallado del progreso y los desafíos en la implementación de estos objetivos fundamentales.
+            </p>
+            <p style="margin-top: 15px;">
+                <strong>Reemplaza este texto con tu contenido introductorio personalizado.</strong>
+            </p>
+        </section>
+
+        <!-- Sección con Imagen y Texto 1 -->
+        <section class="content-section">
+            <img src="https://via.placeholder.com/600x400/1a237e/ffffff?text=Imagen+ODS+1" alt="ODS Imagen 1">
+            <div class="content-text">
+                <h3>Contexto Global</h3>
+                <p>
+                    El desarrollo sostenible es esencial para garantizar un futuro próspero para las generaciones venideras. 
+                    Los 17 Objetivos de Desarrollo Sostenible abordan los desafíos más urgentes de nuestro tiempo, desde 
+                    la erradicación de la pobreza hasta la acción climática.
+                </p>
+                <p style="margin-top: 15px;">
+                    <strong>Reemplaza esta imagen y texto con tu contenido específico. Para cambiar la imagen, 
+                    sustituye el atributo src con la ruta de tu imagen.</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección con Imagen y Texto 2 (Invertida) -->
+        <section class="content-section reverse">
+            <img src="https://via.placeholder.com/600x400/283593/ffffff?text=Imagen+ODS+2" alt="ODS Imagen 2">
+            <div class="content-text">
+                <h3>Nuestra Misión</h3>
+                <p>
+                    Trabajamos incansablemente para promover la implementación efectiva de los ODS a través de iniciativas 
+                    innovadoras, colaboración intersectorial y un compromiso firme con la transparencia y la responsabilidad.
+                </p>
+                <p style="margin-top: 15px;">
+                    <strong>Añade tu contenido aquí. Puedes duplicar estas secciones tantas veces como necesites.</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- Grid de ODS -->
+        <h2 style="text-align: center; color: #1a237e; font-family: Georgia, serif; font-size: 2.2em; margin-bottom: 15px; font-weight: 600;">
+            Objetivos Destacados
+        </h2>
+        <div style="text-align: center; margin-bottom: 40px;">
+            <div style="display: inline-block; width: 80px; height: 3px; background: #c9a961;"></div>
+        </div>
+        <div class="ods-grid">
+            <div class="ods-card">
+                <img src="https://via.placeholder.com/300x200/1a237e/ffffff?text=ODS+1" alt="ODS 1">
+                <div class="ods-card-content">
+                    <h4>Fin de la Pobreza</h4>
+                    <p>Erradicar la pobreza en todas sus formas y en todo el mundo.</p>
+                </div>
+            </div>
+            <div class="ods-card">
+                <img src="https://via.placeholder.com/300x200/283593/ffffff?text=ODS+2" alt="ODS 2">
+                <div class="ods-card-content">
+                    <h4>Hambre Cero</h4>
+                    <p>Poner fin al hambre, lograr la seguridad alimentaria y promover la agricultura sostenible.</p>
+                </div>
+            </div>
+            <div class="ods-card">
+                <img src="https://via.placeholder.com/300x200/3f51b5/ffffff?text=ODS+3" alt="ODS 3">
+                <div class="ods-card-content">
+                    <h4>Salud y Bienestar</h4>
+                    <p>Garantizar una vida sana y promover el bienestar para todos en todas las edades.</p>
+                </div>
+            </div>
+            <div class="ods-card">
+                <img src="https://via.placeholder.com/300x200/5c6bc0/ffffff?text=ODS+4" alt="ODS 4">
+                <div class="ods-card-content">
+                    <h4>Educación de Calidad</h4>
+                    <p>Garantizar una educación inclusiva, equitativa y de calidad.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Estadísticas -->
+        <section class="stats-section">
+            <h2 style="text-align: center; font-size: 2.2em; font-weight: 600;">
+                Impacto en Números
+            </h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h3>193</h3>
+                    <p>Países Comprometidos</p>
+                </div>
+                <div class="stat-item">
+                    <h3>17</h3>
+                    <p>Objetivos Globales</p>
+                </div>
+                <div class="stat-item">
+                    <h3>169</h3>
+                    <p>Metas Específicas</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2030</h3>
+                    <p>Año Meta</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección adicional con texto -->
+        <section class="intro-section">
+            <h2>Conclusiones y Próximos Pasos</h2>
+            <p>
+                El camino hacia el logro de los ODS requiere un esfuerzo conjunto de gobiernos, sector privado, 
+                sociedad civil y ciudadanos. Cada acción cuenta y cada contribución suma hacia un futuro más sostenible 
+                y equitativo para todos.
+            </p>
+            <p style="margin-top: 15px;">
+                <strong>Personaliza esta sección con tus conclusiones y recomendaciones específicas.</strong>
+            </p>
+        </section>
+
+        <!-- Llamada a la Acción -->
+        <section class="cta-section">
+            <h2>¡Únete a la Acción!</h2>
+            <p>Juntos podemos construir un mundo más sostenible y equitativo para las futuras generaciones.</p>
+            <a href="#" class="cta-button">Más Información</a>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Informes ODS | Comprometidos con el Desarrollo Sostenible</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                Plantilla creada para informes visuales sobre los Objetivos de Desarrollo Sostenible
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
