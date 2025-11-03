@@ -10,7 +10,24 @@
     :root { --sdg-accent: #FCC30B; --sdg-accent-light: rgba(252,195,11,0.12); --text-primary: #2c3e50; --text-secondary: #546e7a; --bg-white: #ffffff; --border-light: #e8eaed; --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);} * { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text-primary); background: var(--bg-white); } .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; } .lang-switch { position: fixed; top: 16px; right: 16px; z-index: 110; display:flex; gap:8px; background:#f6f7f8; padding:4px; border-radius:10px; } .lang-switch button { border:0; background:transparent; padding:8px 14px; border-radius:7px; font-weight:600; color:var(--text-secondary); cursor:pointer; } .lang-switch button.active { background:#fff; color:var(--sdg-accent); box-shadow: var(--shadow-sm); } .hero { padding: 88px 0 72px; background: radial-gradient(circle at 50% 0%, var(--sdg-accent-light) 0%, #ffffff 65%); border-bottom:1px solid var(--border-light); clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%); } .grid-2 { display:grid; grid-template-columns: 1.2fr 0.8fr; gap:32px; align-items:center; } .eyebrow { color: var(--sdg-accent); text-transform: uppercase; font-weight: 700; letter-spacing: .12em; font-size:12px; margin-bottom: 12px; display:inline-block; } h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.15; margin: 0 0 8px 0; } .hero-illustration { width:100%; height:auto; max-width:360px; margin:0 auto; display:block; border-radius:16px; } section { padding: 64px 0; } .section-title { font-size: clamp(24px, 3.5vw, 34px); margin-bottom: 8px; font-weight: 700; } .section-rule { height: 1px; background: var(--border-light); margin: 16px 0 24px; } footer { border-top:1px solid var(--border-light); padding: 28px 0; color:#6b7b86; }
     /* Light yellow divider background for the Eficiencia & Innovación section */
     #eficiencia-innovacion { background: linear-gradient(180deg, rgba(252,195,11,0.08) 0%, rgba(252,195,11,0.04) 100%); }
+    /* Justify textual content site-wide for paragraphs, lists and captions */
+    p, li, figcaption { text-align: justify; }
+  /* Full-width video section for Carbono Neutro (responsive) */
+  .video-full { width:100%; background: rgba(243,247,250,0.9); padding: 36px 0; }
+  .video-full .video-wrapper { display:flex; gap:24px; align-items:center; justify-content:center; flex-direction:column; }
+  .video-full .video-wrapper .video-frame { width:100%; max-width:920px; }
+  .video-full .video-caption { text-align:center; margin-top:12px; }
+  @media (min-width: 769px) { .video-full .video-wrapper { flex-direction:column; } }
   </style>
+    <style>
+      /* Carbon neutral layout: image left, text right; stack on small screens */
+      .carbon-neutral { display:flex; gap:28px; align-items:flex-start; margin-top:18px; }
+      .carbon-neutral .carbon-figure { flex: 0 0 240px; }
+      .carbon-neutral .carbon-figure img { width:100%; height:auto; display:block; border-radius:8px; }
+      .carbon-neutral .carbon-text { flex: 1; }
+      .carbon-neutral figcaption { font-size:13px; color:var(--text-secondary); margin-top:6px; }
+      @media (max-width: 768px) { .carbon-neutral { flex-direction:column; } .carbon-neutral .carbon-figure { width:100%; max-width:320px; } }
+    </style>
 </head>
 <body>
   <style>
@@ -232,6 +249,8 @@
         <p class="lead justified" data-lang-content data-lang="en" data-visible="false">Our strategy is comprehensive: we act as a key connector between the State and industry, drive efficiency through applied research, and—above all—place humanism at the center of innovation, ensuring that the benefits of energy reach those who need them most.</p>
       </div>
     </section>
+
+  
     <section id="conexion-estrategica">
       <div class="container">
         <h2 class="section-title" data-lang-content data-lang="es">Conexión Estratégica: Articulando el Ecosistema Energético</h2>
@@ -258,6 +277,30 @@
         <h4 class="muted" data-lang-content data-lang="en">Industry Partnership</h4>
         <p class="lead justified" data-lang-content data-lang="es">Pasamos del diálogo a la acción mediante alianzas estratégicas, como el convenio firmado con la empresa Energía y Ambiente, para desarrollar soluciones conjuntas y aplicadas que respondan a las demandas reales de la industria.</p>
         <p class="lead justified" data-lang-content data-lang="en" data-visible="false">We move from dialogue to action through strategic partnerships, such as the agreement signed with Energía y Ambiente, to develop joint, applied solutions that respond to the real demands of industry.</p>
+
+        <div class="carbon-neutral">
+          <figure class="carbon-figure">
+            <img src="https://udes.edu.co/images/micrositios/udesverde/carbono-neutro/sello-carbono-UDES.png" alt="Sello Carbono Neutro UDES" />
+            <figcaption>
+              <span data-lang-content data-lang="es">Sello Carbono Neutro · UDES</span>
+              <span data-lang-content data-lang="en" data-visible="false">UDES Carbon Neutral Seal</span>
+            </figcaption>
+          </figure>
+
+          <div class="carbon-text">
+            <h3 class="section-title" data-lang-content data-lang="es">Certificación Carbono Neutro en los campus UDES</h3>
+            <h3 class="section-title" data-lang-content data-lang="en" data-visible="false">Carbon Neutral Certification across UDES campuses</h3>
+
+            <p class="lead justified" data-lang-content data-lang="es">Pero esta eficiencia no se limita a la innovación que exportamos al mundo; se demuestra primero con el ejemplo, en nuestra propia casa. La UDES ha materializado su compromiso con la acción climática (ODS 13) y la gestión energética (ODS 7) al alcanzar un hito: la Certificación Carbono Neutro para nuestros tres campus (Bucaramanga, Cúcuta y Valledupar).</p>
+            <p class="lead justified" data-lang-content data-lang="en" data-visible="false">But this efficiency is not limited to the innovation we export to the world; it is first demonstrated by example, at home. UDES has materialized its commitment to climate action (SDG 13) and energy management (SDG 7) by reaching a milestone: Carbon Neutral Certification for our three campuses (Bucaramanga, Cúcuta and Valledupar).</p>
+
+            <p class="lead justified" data-lang-content data-lang="es">Este no es un reconocimiento simbólico. Es el resultado tangible de nuestra política institucional "UDES Verde". Siguiendo un riguroso proceso verificado por entes externos, hemos medido nuestra huella de carbono, implementado estrategias de reducción (como la mejora de la eficiencia energética y el uso de renovables) y compensado las emisiones restantes a través de proyectos de reforestación y conservación.</p>
+            <p class="lead justified" data-lang-content data-lang="en" data-visible="false">This is not a symbolic recognition. It is the tangible result of our institutional policy "UDES Verde." Following a rigorous process verified by external entities, we have measured our carbon footprint, implemented reduction strategies (such as improving energy efficiency and using renewables) and offset the remaining emissions through reforestation and conservation projects.</p>
+
+            <p class="lead justified" data-lang-content data-lang="es">Alcanzar la neutralidad de carbono es una declaración de nuestra coherencia. Refleja una profunda responsabilidad social, posiciona a la UDES como un referente internacional en sostenibilidad y, fundamentalmente, transforma nuestros campus en aulas vivas de conciencia ambiental para toda nuestra comunidad. Estamos estableciendo el modelo a seguir para la región, probando que el camino hacia el Desarrollo Sostenible se construye con acciones decisivas.</p>
+            <p class="lead justified" data-lang-content data-lang="en" data-visible="false">Achieving carbon neutrality is a declaration of our coherence. It reflects deep social responsibility, positions UDES as an international benchmark in sustainability and, fundamentally, transforms our campuses into living classrooms of environmental awareness for our entire community. We are setting the model to follow for the region, proving that the path to Sustainable Development is built with decisive actions.</p>
+          </div>
+        </div>
       </div>
     </section>
 
