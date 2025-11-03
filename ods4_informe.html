@@ -28,11 +28,35 @@
     .sdg-5 { background: #FF3A21; } .sdg-6 { background: #26BDE2; } .sdg-7 { background: #FCC30B; } .sdg-8 { background: #A21942; }
     .sdg-9 { background: #FD6925; } .sdg-10 { background: #DD1367; } .sdg-11 { background: #FD9D24; } .sdg-12 { background: #BF8B2E; }
     .sdg-13 { background: #3F7E44; } .sdg-14 { background: #0A97D9; } .sdg-15 { background: #56C02B; } .sdg-16 { background: #00689D; } .sdg-17 { background: #19486A; }
-    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
-    a[href*="sigiip.udes.edu.co"]:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(197,25,45,0.4) !important; }
-    @media (max-width: 768px) { .sdg-nav-item:hover { height: 280px; } .sdg-card-image { height: 180px; padding: 6px; } .sdg-card-content { padding: 12px; } .sdg-card-number { font-size: 11px; } .sdg-card-title { font-size: 12px; } }
-    @media (max-width: 992px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 576px) { .grid-4 { grid-template-columns: 1fr; } }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  /* New: 5-column grid for news/evidence cards */
+  .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
+  /* News cards: center image and caption for better presentation in the grid */
+  .grid-5 .card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 16px; }
+  .grid-5 .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; display: block; }
+  .grid-5 .card > div { margin: 0; font-weight: 700; color: var(--text-primary); }
+  .grid-5 .card:hover { transform: translateY(-4px); }
+  a[href*="sigiip.udes.edu.co"]:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(197,25,45,0.4) !important; }
+  /* Responsive breakpoints for grid-5 and grid-4 */
+  @media (max-width: 1200px) { .grid-5 { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 992px) { .grid-4, .grid-5 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 576px) { .grid-4, .grid-5 { grid-template-columns: 1fr; } }
+  @media (max-width: 768px) { .sdg-nav-item:hover { height: 280px; } .sdg-card-image { height: 180px; padding: 6px; } .sdg-card-content { padding: 12px; } .sdg-card-number { font-size: 11px; } .sdg-card-title { font-size: 12px; } }
+  /* Enlaces de interés (botones dinámicos) */
+  .btn-group { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; align-items:center; align-content:center; margin: 18px 0 8px; }
+  .btn-link { display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:700; color:#fff; background:var(--sdg-accent); box-shadow: 0 6px 18px rgba(197,25,45,0.12); transition: transform .15s ease, box-shadow .15s ease; }
+  .btn-link .icon { font-size:18px; display:inline-block; line-height:1; }
+  .btn-link.secondary { background:#fff; color:var(--sdg-accent); border:1px solid var(--border-light); box-shadow:none; }
+  .btn-link:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,0.08); }
+  @media (max-width: 600px) { .btn-group { justify-content: center; } .btn-link { padding:10px 12px; font-size:14px; } }
+
+  /* Ensure btn-group is centered within .container and does not hug a side */
+  .container > .btn-group { display:flex; justify-content:center; align-items:center; margin-left:auto; margin-right:auto; }
+  .container > .btn-group .btn-link { margin: 4px 6px; }
+
+  /* Utility bar to host the buttons and force full-width centering */
+  .utility-bar { width:100%; background: linear-gradient(180deg, rgba(197,25,45,0.02), rgba(255,255,255,0)); padding: 10px 0; display:flex; justify-content:center; box-shadow: inset 0 -1px 0 rgba(0,0,0,0.02); }
+  .utility-bar .container { display:flex; justify-content:center; }
   </style>
   <!-- Barra de Navegación ODS Interactiva -->
   <nav class="sdg-navbar" role="navigation" aria-label="Navegación ODS">
@@ -242,7 +266,39 @@
         </p>
       </div>
     </section>
-    
+
+    <!-- Enlaces de interés: colocados entre secciones -->
+    <div class="utility-bar">
+      <div class="container" style="margin:12px 0 0;">
+        <div class="btn-group" role="group" aria-label="Enlaces de interés UDES">
+        <a class="btn-link" href="https://udes.edu.co/images/micrositios/biblioteca/reglamento-biblioteca-udes.pdf" target="_blank" rel="noopener noreferrer">
+          <span class="icon">📄</span>
+          <span>Reglamento Biblioteca</span>
+        </a>
+        <a class="btn-link secondary" href="https://es-la.facebook.com/Bibliotecaudesbucaramanga/" target="_blank" rel="noopener noreferrer">
+          <span class="icon">📘</span>
+          <span>Facebook Biblioteca UDES</span>
+        </a>
+        <a class="btn-link" href="https://aulaextendida.udes.edu.co/login/index.php" target="_blank" rel="noopener noreferrer">
+          <span class="icon">🎓</span>
+          <span>Aula Extendida</span>
+        </a>
+        <a class="btn-link secondary" href="https://udes.edu.co/educacion-continua/portafolio/programas-de-formacion-para-toda-la-vida" target="_blank" rel="noopener noreferrer">
+          <span class="icon">📚</span>
+          <span>Portafolio Educación Continua</span>
+        </a>
+        <a class="btn-link" href="https://udes.edu.co/estudia/educacion-continua" target="_blank" rel="noopener noreferrer">
+          <span class="icon">🧭</span>
+          <span>Cursos Educación Continua</span>
+        </a>
+        <a class="btn-link secondary" href="https://vlib.unired.edu.co/opac/#indice" target="_blank" rel="noopener noreferrer">
+          <span class="icon">🌐</span>
+          <span>UNIRED (OPAC)</span>
+        </a>
+        </div>
+      </div>
+    </div>
+
     <!-- Sección 1: Formación de Calidad Docente -->
     <section id="cifras-docentes" style="background: linear-gradient(135deg, rgba(197,25,45,0.03) 0%, rgba(197,25,45,0.08) 100%);">
       <div class="container">
@@ -270,6 +326,8 @@
             This means that 20.09% of our graduates are qualified for teaching, a substantial contribution that strengthens the foundation of national education with the highest quality standards. By training the nation's teachers, UDES directly impacts the quality and equity of education that future generations will receive, ensuring a multiplier effect of our commitment to SDG 4.
           </p>
         </div>
+
+        
 
         <div class="grid-3" style="margin-top: 32px;">
           <!-- Tarjeta 1: Total Graduados -->
@@ -885,6 +943,151 @@
               Our graduates are testimony to UDES excellence. Professionals such as Wendy Lorena Ríos Guzmán (Bacteriologist) and Flor Elvira García Peñaranda (decorated with the Luis Antonio Robles Suárez medal by the Departmental Assembly) demonstrate how the training received at our institution translates into valuable contributions to society.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+    <!-- Sección: Evidencia de Acciones UDES (Noticias relacionadas con ODS 4) -->
+    <section style="padding: 64px 0; background: linear-gradient(180deg, #fff 0%, rgba(197,25,45,0.02) 100%);">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">📰 Evidencia de Acciones UDES (ODS 4) — Noticias</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">📰 Evidence of UDES Actions (SDG 4) — News</h2>
+        <div class="section-rule"></div>
+
+        <p data-lang-content data-lang="es" style="color:var(--text-secondary); line-height:1.7; margin-bottom:20px; text-align:justify;">Como soporte a este informe, presentamos una recopilación de noticias y acciones institucionales clasificadas por su aporte estratégico al ODS 4. Haga clic en cualquier tarjeta para abrir la noticia en una pestaña nueva.</p>
+        <p data-lang-content data-lang="en" style="color:var(--text-secondary); line-height:1.7; margin-bottom:20px; text-align:justify;">As supporting material for this report, we present a compilation of institutional news and actions classified by their strategic contribution to SDG 4. Click any card to open the article in a new tab.</p>
+
+        <!-- 1. Innovación Pedagógica y EIP -->
+        <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-top:18px;" data-lang-content data-lang="es">1. Innovación Pedagógica y Educación Interprofesional (EIP)</h3>
+        <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-top:18px;" data-lang-content data-lang="en">1. Pedagogical Innovation and Interprofessional Education (IPE)</h3>
+        <div class="grid-5" style="margin-top:16px;">
+          <a class="card" href="https://udes.edu.co/ensenanza/noticias/estudiantes-de-la-facultad-de-ciencias-medicas-y-de-la-salud-udes-realizaron-su-ii-practica-de-educacion-interprofesional" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/C5192D/ffffff?text=EIP" alt="EIP noticia" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">Estudiantes de la Facultad de Ciencias Médicas y de la Salud UDES realizaron su II Práctica de Educación Interprofesional</div>
+          </a>
+
+          <a class="card" href="https://udes.edu.co/ensenanza/noticias/alianza-universitaria-udes-umb-evaluacion-e-intervencion-de-la-voz" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/C5192D/ffffff?text=EIP" alt="Alianza UDES-UMB" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">Alianza universitaria UDES - UMB: "Evaluación e intervención de la voz"</div>
+          </a>
+
+          <a class="card" href="https://udes.edu.co/extension/noticias/udes-realizo-jornada-de-practica-colaborativa-interprofesional-sobre-comunicacion-de-malas-noticias" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/C5192D/ffffff?text=EIP" alt="Comunicacion malas noticias" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">UDES realizó jornada de Práctica Colaborativa Interprofesional sobre comunicación de malas noticias</div>
+          </a>
+        </div>
+
+        <!-- 2. Internacionalización y Formación Global -->
+        <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-top:28px;" data-lang-content data-lang="es">2. Internacionalización y Formación Global</h3>
+        <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-top:28px;" data-lang-content data-lang="en">2. Internationalization and Global Training</h3>
+        <div class="grid-5" style="margin-top:16px;">
+          <a class="card" href="https://udes.edu.co/internacional/noticias/estudiantes-de-medicina-veterinaria-de-la-udes-hacen-movilidad-internacional-a-la-universidad-de-pisa-en-italia" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/0A97D9/ffffff?text=Internacional" alt="Movilidad Pisa" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">Estudiantes de Medicina Veterinaria de la UDES hacen movilidad internacional a la Universidad de Pisa en Italia</div>
+          </a>
+
+          <a class="card" href="https://udes.edu.co/investigacion/noticias/profesora-udes-realiza-estancia-en-peru-para-fortalecer-investigacion-sobre-resistencia-antimicrobiana" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/0A97D9/ffffff?text=Internacional" alt="Estancia Peru" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">Profesora UDES realiza estancia en Perú para fortalecer investigación sobre resistencia antimicrobiana</div>
+          </a>
+
+          <a class="card" href="https://udes.edu.co/extension/noticias/estudiantes-de-intercambio-trabajan-en-un-desarrollo-web-para-la-clinica-veterinaria-de-la-udes" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/0A97D9/ffffff?text=Internacional" alt="Intercambio desarrollo web" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">Estudiantes de intercambio trabajan en un desarrollo web para la Clínica Veterinaria de la UDES</div>
+          </a>
+
+          <a class="card" href="https://udes.edu.co/comunicaciones/noticias/udes-apuesta-por-la-formacion-global-clase-de-mercadeo-estrategico-con-profesor-internacional" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/0A97D9/ffffff?text=Internacional" alt="Clase internacional" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">UDES apuesta por la formación global: clase de mercadeo estratégico con profesor internacional</div>
+          </a>
+
+          <a class="card" href="https://udes.edu.co/internacional/noticias/investigador-udes-realiza-entrenamiento-en-programacion-para-ciencia-de-datos-en-la-universidad-politecnica-de-madrid" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/0A97D9/ffffff?text=Internacional" alt="Entrenamiento UPM" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">Investigador UDES realiza entrenamiento en Programación para Ciencia de Datos en la Universidad Politécnica de Madrid</div>
+          </a>
+        </div>
+
+        <!-- 3. Fomento de la Investigación y Aprendizaje Permanente -->
+        <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-top:28px;" data-lang-content data-lang="es">3. Fomento de la Investigación y Aprendizaje Permanente</h3>
+        <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-top:28px;" data-lang-content data-lang="en">3. Promoting Research and Lifelong Learning</h3>
+        <div class="grid-5" style="margin-top:16px;">
+          <a class="card" href="https://udes.edu.co/investigacion/noticias/estudio-busca-mejorar-la-funcion-cerebral-de-adultos-mayores-en-bucaramanga-conozca-como-participar" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/3F7E44/ffffff?text=Investigaci%C3%B3n" alt="Estudio adultos mayores" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">Estudio busca mejorar la función cerebral de adultos mayores en Bucaramanga</div>
+          </a>
+
+          <a class="card" href="https://udes.edu.co/investigacion/noticias/doctoranda-en-enfermedades-infecciosas-udes-explora-nuevos-antimicrobianos-con-modelos-de-aprendizaje-automatico" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/3F7E44/ffffff?text=Investigaci%C3%B3n" alt="Doctoranda antimicrobianos" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">Doctoranda en Enfermedades Infecciosas UDES explora nuevos antimicrobianos</div>
+          </a>
+
+          <a class="card" href="https://udes.edu.co/comunicaciones/noticias/estudiantes-y-profesores-de-la-udes-se-actualizaron-en-las-ultimas-tendencias-de-inmunonutricion-y-probioticos" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/3F7E44/ffffff?text=Investigaci%C3%B3n" alt="Inmunonutricion" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">Estudiantes y profesores se actualizaron en inmunonutrición y probióticos</div>
+          </a>
+        </div>
+
+        <!-- 4. Inclusión, Equidad y Extensión Comunitaria -->
+        <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-top:28px;" data-lang-content data-lang="es">4. Inclusión, Equidad y Extensión Comunitaria</h3>
+        <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-top:28px;" data-lang-content data-lang="en">4. Inclusion, Equity and Community Outreach</h3>
+        <div class="grid-5" style="margin-top:16px;">
+          <a class="card" href="https://udes.edu.co/ensenanza/noticias/convocatoria-banco-de-elegibles-para-programa-de-fonoaudiologia-arauca" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/FD9D24/ffffff?text=Inclusi%C3%B3n" alt="Convocatoria Fonoaudiologia" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">Convocatoria Banco de Elegibles para programa de Fonoaudiología – Arauca</div>
+          </a>
+
+          <a class="card" href="https://udes.edu.co/ensenanza/noticias/convocatoria-banco-de-elegibles-para-programa-de-terapia-ocupacional-arauca" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/FD9D24/ffffff?text=Inclusi%C3%B3n" alt="Convocatoria Terapia Ocupacional" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">Convocatoria Banco de Elegibles para programa de Terapia Ocupacional – Arauca</div>
+          </a>
+
+          <a class="card" href="https://udes.edu.co/extension/noticias/udes-entre-los-protagonistas-del-vi-encuentro-nacional-de-educacion-superior-inclusiva" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/FD9D24/ffffff?text=Inclusi%C3%B3n" alt="Encuentro Nacional Inclusiva" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">UDES, entre los protagonistas del VI Encuentro Nacional de Educación Superior Inclusiva</div>
+          </a>
+
+          <a class="card" href="https://udes.edu.co/extension/noticias/programa-de-educacion-interprofesional-udes-beneficio-a-3-000-pacientes-en-zonas-urbanas-y-rurales" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/FD9D24/ffffff?text=Inclusi%C3%B3n" alt="Programa benefició 3000 pacientes" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">Programa de Educación Interprofesional UDES benefició a 3.000 pacientes en zonas urbanas y rurales</div>
+          </a>
+
+          <a class="card" href="https://udes.edu.co/extension/noticias/maquilando-felicidad-presente-en-el-colegio-luis-enrique-figueroa-rey" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/FD9D24/ffffff?text=Inclusi%C3%B3n" alt="Maquilando Felicidad" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">Maquilando Felicidad presente en el Colegio Luis Enrique Figueroa Rey</div>
+          </a>
+        </div>
+
+        <!-- 5. Impacto y Reconocimiento -->
+        <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-top:28px;" data-lang-content data-lang="es">5. Impacto y Reconocimiento de la Calidad Educativa</h3>
+        <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-top:28px;" data-lang-content data-lang="en">5. Impact and Recognition of Educational Quality</h3>
+        <div class="grid-5" style="margin-top:16px; margin-bottom:28px;">
+          <a class="card" href="https://udes.edu.co/internacional/noticias/la-udes-aporta-al-logro-de-los-objetivos-del-desarrollo-sostenible-segun-ranking-the" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/19486A/ffffff?text=Impacto" alt="Ranking THE" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">La UDES aporta al logro de los ODS, según ranking THE</div>
+          </a>
+
+          <a class="card" href="https://udes.edu.co/ensenanza/noticias/donde-se-graduan-los-mejores-medicos-en-colombia-ranking-publico-las-universidades" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/19486A/ffffff?text=Impacto" alt="Ranking medicos" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">¿Dónde se gradúan los mejores médicos en Colombia? Ranking publicó las universidades</div>
+          </a>
+
+          <a class="card" href="https://udes.edu.co/internacional/noticias/udes-se-destaca-como-universidad-lider-en-el-campo-de-bacteriologia-y-laboratorio-clinico-en-america-latina" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/19486A/ffffff?text=Impacto" alt="Liderazgo bacteriologia" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">UDES se destaca como universidad líder en Bacteriología y Laboratorio Clínico en América Latina</div>
+          </a>
+
+          <a class="card" href="https://udes.edu.co/graduados/experiencias-exitosas/bacteriologa-wendy-rios-ejemplo-de-la-excelencia-academica-udes" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/19486A/ffffff?text=Impacto" alt="Wendy Rios" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">Bacterióloga Wendy Ríos, ejemplo de la excelencia académica UDES</div>
+          </a>
+
+          <a class="card" href="https://udes.edu.co/graduados/experiencias-exitosas/graduada-de-la-universidad-de-santander-condecorada-con-la-medalla-luis-antonio-roles-suarez" target="_blank" rel="noopener noreferrer">
+            <img src="https://placehold.co/480x320/19486A/ffffff?text=Impacto" alt="Medalla Luis Antonio" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;"/>
+            <div style="font-weight:700; color:var(--text-primary);">Graduada UDES condecorada con la medalla Luis Antonio Robles Suárez</div>
+          </a>
+        </div>
+
+        <div style="text-align:center; margin-top:12px;">
+          <a href="https://udes.edu.co/noticias" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:10px 18px; background:var(--sdg-accent); color:#fff; border-radius:8px; text-decoration:none; font-weight:700;">Ver todas las noticias en UDES</a>
         </div>
       </div>
     </section>
