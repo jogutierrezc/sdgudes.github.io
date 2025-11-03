@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+en u<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -28,7 +28,11 @@
     .sdg-5 { background: #FF3A21; } .sdg-6 { background: #26BDE2; } .sdg-7 { background: #FCC30B; } .sdg-8 { background: #A21942; }
     .sdg-9 { background: #FD6925; } .sdg-10 { background: #DD1367; } .sdg-11 { background: #FD9D24; } .sdg-12 { background: #BF8B2E; }
     .sdg-13 { background: #3F7E44; } .sdg-14 { background: #0A97D9; } .sdg-15 { background: #56C02B; } .sdg-16 { background: #00689D; } .sdg-17 { background: #19486A; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+    a[href*="sigiip.udes.edu.co"]:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(197,25,45,0.4) !important; }
     @media (max-width: 768px) { .sdg-nav-item:hover { height: 280px; } .sdg-card-image { height: 180px; padding: 6px; } .sdg-card-content { padding: 12px; } .sdg-card-number { font-size: 11px; } .sdg-card-title { font-size: 12px; } }
+    @media (max-width: 992px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 576px) { .grid-4 { grid-template-columns: 1fr; } }
   </style>
   <!-- Barra de Navegación ODS Interactiva -->
   <nav class="sdg-navbar" role="navigation" aria-label="Navegación ODS">
@@ -214,6 +218,12 @@
         <div class="eyebrow" data-lang-content data-lang="en">Sustainable Development Goals</div>
         <h1 data-lang-content data-lang="es">ODS 4: Educación de Calidad</h1>
         <h1 data-lang-content data-lang="en">SDG 4: Quality Education</h1>
+        <p style="margin-top: 24px; font-size: 16px; line-height: 1.7; color: var(--text-secondary); max-width: 700px;" data-lang-content data-lang="es">
+          El Objetivo de Desarrollo Sostenible 4 (ODS 4): Educación de Calidad busca "garantizar una educación inclusiva, equitativa y de calidad y promover oportunidades de aprendizaje durante toda la vida para todos". Este objetivo es la piedra angular para el desarrollo sostenible, la erradicación de la pobreza y la mejora de la calidad de vida.
+        </p>
+        <p style="margin-top: 24px; font-size: 16px; line-height: 1.7; color: var(--text-secondary); max-width: 700px;" data-lang-content data-lang="en">
+          Sustainable Development Goal 4 (SDG 4): Quality Education seeks to "ensure inclusive, equitable and quality education and promote lifelong learning opportunities for all." This goal is the cornerstone for sustainable development, poverty eradication and improving quality of life.
+        </p>
       </div>
       <div style="display:flex;align-items:center;justify-content:center;">
   <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/4.png" alt="Logo ODS 4" class="hero-illustration" onerror="this.onerror=null; this.src='https://placehold.co/320x320/C5192D/ffffff?text=ODS+4';"/>
@@ -221,6 +231,18 @@
     </div>
   </div>
   <main>
+    <!-- Introducción UDES -->
+    <section style="padding: 72px 0 48px; background: var(--bg-white);">
+      <div class="container">
+        <p style="font-size: 18px; line-height: 1.8; color: var(--text-primary); text-align: justify;" data-lang-content data-lang="es">
+          La Universidad de Santander (UDES) ha integrado este principio en su núcleo misional. Como lo destaca el propio Impact Rankings de THE para 2024, la UDES contribuye significativamente a la "educación de calidad y excelencia". Nuestro enfoque no se limita a la transmisión de conocimiento, sino a la creación de un ecosistema de aprendizaje permanente, innovador, interprofesional e internacionalizado que responde directamente a las metas de este ODS.
+        </p>
+        <p style="font-size: 18px; line-height: 1.8; color: var(--text-primary); text-align: justify;" data-lang-content data-lang="en">
+          The University of Santander (UDES) has integrated this principle into its core mission. As highlighted by THE's Impact Rankings for 2024, UDES significantly contributes to "quality education and excellence." Our approach is not limited to knowledge transmission, but to creating a permanent, innovative, interprofessional and internationalized learning ecosystem that directly responds to the goals of this SDG.
+        </p>
+      </div>
+    </section>
+    
     <!-- Sección 1: Formación de Calidad Docente -->
     <section id="cifras-docentes" style="background: linear-gradient(135deg, rgba(197,25,45,0.03) 0%, rgba(197,25,45,0.08) 100%);">
       <div class="container">
@@ -232,14 +254,20 @@
         </h2>
         <div class="section-rule"></div>
         
-        <div data-lang-content data-lang="es" style="margin-bottom: 48px;">
-          <p style="font-size: 18px; color: var(--text-secondary); max-width: 900px;">
-            La UDES es una <strong>máquina de talento</strong> dedicada a transformar la educación del país formando educadores de excelencia.
+        <div data-lang-content data-lang="es" style="margin-bottom: 32px;">
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify; margin-bottom: 16px;">
+            La UDES funciona como un motor de talento dedicado a transformar la educación del país. Nuestro impacto es medible: de un total de 4,849 graduados en el período analizado, 974 obtuvieron una titulación que los faculta para la docencia en enseñanza primaria.
+          </p>
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+            Esto significa que un 20.09% de nuestros egresados están calificados para la enseñanza, un aporte sustancial que refuerza la base de la educación nacional con los más altos estándares de calidad. Al formar a los maestros de la nación, la UDES impacta directamente en la calidad y equidad de la educación que recibirán las futuras generaciones, asegurando un efecto multiplicador de nuestro compromiso con el ODS 4.
           </p>
         </div>
-        <div data-lang-content data-lang="en" style="margin-bottom: 48px;">
-          <p style="font-size: 18px; color: var(--text-secondary); max-width: 900px;">
-            UDES is a <strong>talent machine</strong> dedicated to transforming the country's education by training teachers of excellence.
+        <div data-lang-content data-lang="en" style="margin-bottom: 32px;">
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify; margin-bottom: 16px;">
+            UDES functions as a talent engine dedicated to transforming the country's education. Our impact is measurable: out of a total of 4,849 graduates in the analyzed period, 974 obtained a degree that qualifies them for primary school teaching.
+          </p>
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+            This means that 20.09% of our graduates are qualified for teaching, a substantial contribution that strengthens the foundation of national education with the highest quality standards. By training the nation's teachers, UDES directly impacts the quality and equity of education that future generations will receive, ensuring a multiplier effect of our commitment to SDG 4.
           </p>
         </div>
 
@@ -310,25 +338,116 @@
       </div>
     </section>
 
+    <!-- Nueva Sección: Innovación Pedagógica y EIP -->
+    <section style="padding: 64px 0; background: var(--bg-white);">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">
+          <span style="display:inline-block;margin-right:8px;">🔬</span>Innovación Pedagógica y Educación Interprofesional (EIP)
+        </h2>
+        <h2 class="section-title" data-lang-content data-lang="en">
+          <span style="display:inline-block;margin-right:8px;">🔬</span>Pedagogical Innovation and Interprofessional Education (IPE)
+        </h2>
+        <div class="section-rule"></div>
+        
+        <div data-lang-content data-lang="es">
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify; margin-bottom: 32px;">
+            La UDES ha implementado un modelo de Educación Interprofesional (EIP) como pilar de la calidad educativa, asegurando que nuestros estudiantes aprendan con, de y sobre otras disciplinas para mejorar la colaboración.
+          </p>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Prácticas Formativas Colaborativas
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              Realizamos eventos periódicos como la "II Práctica de Educación Interprofesional: Conciliación y Adecuación Terapéutica" y la "4ª Práctica Interprofesional: Marketing de servicios". Estas jornadas reúnen a estudiantes de múltiples programas (Medicina, Bacteriología, Fisioterapia, etc.) para resolver desafíos reales en escenarios aliados, como el Neurotrauma Center.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Desarrollo de Habilidades Clave
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              Reconocemos que la calidad educativa incluye habilidades blandas. Por ello, organizamos la "1ª Práctica Interprofesional: Mala Noticia", una jornada innovadora enfocada en desarrollar competencias cruciales para la comunicación y el trabajo en equipo en el sector salud.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Impacto Comunitario Tangible
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              Nuestro "Programa de Educación Interprofesional y Práctica Colaborativa", liderado desde la Escuela de Medicina, ha demostrado su impacto directo, beneficiando a más de 3.000 pacientes en zonas urbanas y rurales durante el ejercicio 2024.
+            </p>
+          </div>
+        </div>
+        
+        <div data-lang-content data-lang="en">
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify; margin-bottom: 32px;">
+            UDES has implemented an Interprofessional Education (IPE) model as a pillar of educational quality, ensuring that our students learn with, from and about other disciplines to improve collaboration.
+          </p>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Collaborative Training Practices
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              We conduct periodic events such as the "2nd Interprofessional Education Practice: Conciliation and Therapeutic Adequacy" and the "4th Interprofessional Practice: Service Marketing". These sessions bring together students from multiple programs (Medicine, Bacteriology, Physical Therapy, etc.) to solve real challenges in partner scenarios, such as the Neurotrauma Center.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Key Skills Development
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              We recognize that educational quality includes soft skills. Therefore, we organized the "1st Interprofessional Practice: Breaking Bad News", an innovative session focused on developing crucial competencies for communication and teamwork in the health sector.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Tangible Community Impact
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              Our "Interprofessional Education and Collaborative Practice Program", led by the School of Medicine, has demonstrated its direct impact, benefiting more than 3,000 patients in urban and rural areas during 2024.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Sección 2: Equidad e Inclusión -->
     <section id="cifras-inclusion" style="background: var(--bg-white);">
       <div class="container">
         <h2 class="section-title" data-lang-content data-lang="es">
-          <span style="display:inline-block;margin-right:8px;">🎓</span>Equidad e Inclusión: Primera Generación
+          <span style="display:inline-block;margin-right:8px;">🎓</span>Rompiendo Barreras: Acceso para la Primera Generación
         </h2>
         <h2 class="section-title" data-lang-content data-lang="en">
-          <span style="display:inline-block;margin-right:8px;">🎓</span>Equity and Inclusion: First Generation
+          <span style="display:inline-block;margin-right:8px;">🎓</span>Breaking Barriers: Access for First Generation
         </h2>
         <div class="section-rule"></div>
         
-        <div data-lang-content data-lang="es" style="margin-bottom: 48px;">
-          <p style="font-size: 18px; color: var(--text-secondary); max-width: 900px;">
-            La UDES es una <strong>plataforma de movilidad social</strong>, transformando historias a través de la educación y rompiendo barreras generacionales.
+        <div data-lang-content data-lang="es" style="margin-bottom: 32px;">
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify; margin-bottom: 16px;">
+            La UDES se consolida como una verdadera plataforma de movilidad social, comprometida directamente con la meta de "asegurar el acceso igualitario" del ODS 4. Nuestro enfoque no solo busca atraer estudiantes, sino transformar activamente historias de vida y romper barreras generacionales.
+          </p>
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify; margin-bottom: 16px;">
+            Las cifras lo demuestran: de los 1,287 nuevos estudiantes que iniciaron su carrera, 308 son los pioneros en sus familias en acceder a la educación superior.
+          </p>
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+            Esto significa que un impresionante 23.93% de nuestros nuevos ingresos son estudiantes de primera generación. Este dato reafirma nuestro rol como agentes de equidad social, brindando una educación de calidad que cambia el destino de familias enteras y enriquece nuestra comunidad universitaria con nuevas perspectivas.
           </p>
         </div>
-        <div data-lang-content data-lang="en" style="margin-bottom: 48px;">
-          <p style="font-size: 18px; color: var(--text-secondary); max-width: 900px;">
-            UDES is a <strong>social mobility platform</strong>, transforming lives through education and breaking generational barriers.
+        <div data-lang-content data-lang="en" style="margin-bottom: 32px;">
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify; margin-bottom: 16px;">
+            UDES consolidates as a true social mobility platform, directly committed to the goal of "ensuring equal access" of SDG 4. Our approach not only seeks to attract students, but to actively transform life stories and break down generational barriers.
+          </p>
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify; margin-bottom: 16px;">
+            The figures demonstrate this: of the 1,287 new students who started their careers, 308 are pioneers in their families in accessing higher education.
+          </p>
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+            This means that an impressive 23.93% of our new enrollments are first-generation students. This data reaffirms our role as agents of social equity, providing quality education that changes the destiny of entire families and enriches our university community with new perspectives.
           </p>
         </div>
 
@@ -394,6 +513,377 @@
                 An impressive <strong>23.93%</strong> of our new students are first-generation (≈0.2393). This reaffirms our role as agents of social equity, providing quality education that changes lives and families.
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 3: Internacionalización y Formación Global -->
+    <section style="padding: 64px 0; background: linear-gradient(135deg, rgba(197,25,45,0.03) 0%, rgba(197,25,45,0.08) 100%);">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">
+          <span style="display:inline-block;margin-right:8px;">🌎</span>Internacionalización y Formación Global
+        </h2>
+        <h2 class="section-title" data-lang-content data-lang="en">
+          <span style="display:inline-block;margin-right:8px;">🌎</span>Internationalization and Global Training
+        </h2>
+        <div class="section-rule"></div>
+        
+        <div data-lang-content data-lang="es">
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify; margin-bottom: 32px;">
+            Fomentamos una perspectiva global (Meta ODS 4.7) integrando oportunidades internacionales en todos los niveles, tanto para estudiantes como para docentes.
+          </p>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Movilidad Estudiantil Saliente
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              Nuestros estudiantes de pregrado, como los de Medicina Veterinaria, realizan movilidades académicas en instituciones de prestigio mundial, como la Universidad de Pisa en Italia, donde llevan a cabo sus prácticas formativas.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Movilidad Docente y de Investigación
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              Fomentamos la actualización de nuestro cuerpo docente en centros de excelencia. Ejemplo de ello es la estancia de la profesora Juanita Trejos en la Universidad Científica del Sur de Lima (Perú) para fortalecer la investigación en resistencia antimicrobiana, y la admisión del profesor Jorge Alexander Silva Sayago en el programa "Experto en Programación para la Ciencia de Datos" de la Universidad Politécnica de Madrid.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Internacionalización en Casa
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              Recibimos talento global, como los estudiantes de la Universidad Politécnica de Pachuca (México), quienes realizan sus prácticas en la UDES desarrollando soluciones web para nuestra Clínica Veterinaria. Además, fortalecemos nuestros posgrados, como la Especialización en Gerencia de Instituciones de Salud, con clases magistrales impartidas por profesores internacionales, como el Dr. José Luis Galdón de la Universidad Politécnica de Valencia.
+            </p>
+          </div>
+        </div>
+        
+        <div data-lang-content data-lang="en">
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify; margin-bottom: 32px;">
+            We foster a global perspective (SDG Target 4.7) by integrating international opportunities at all levels, for both students and faculty.
+          </p>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Outbound Student Mobility
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              Our undergraduate students, such as those in Veterinary Medicine, participate in academic exchanges at world-renowned institutions, such as the University of Pisa in Italy, where they carry out their training practices.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Faculty and Research Mobility
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              We encourage our faculty to update their skills at centers of excellence. Examples include Professor Juanita Trejos' stay at the Scientific University of the South in Lima (Peru) to strengthen research on antimicrobial resistance, and Professor Jorge Alexander Silva Sayago's admission to the "Expert in Programming for Data Science" program at the Polytechnic University of Madrid.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Internationalization at Home
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              We receive global talent, such as students from the Polytechnic University of Pachuca (Mexico), who carry out their internships at UDES developing web solutions for our Veterinary Clinic. Additionally, we strengthen our graduate programs, such as the Specialization in Health Institution Management, with master classes taught by international professors, such as Dr. José Luis Galdón from the Polytechnic University of Valencia.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Visualización Tableau: Compartida para ambos idiomas -->
+        <div style="margin-top: 48px;">
+          <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 24px; text-align: center;" data-lang-content data-lang="es">
+            <em>La UDES Internacional</em>
+          </h3>
+          <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 24px; text-align: center;" data-lang-content data-lang="en">
+            <em>UDES International</em>
+          </h3>
+          <div class='tableauPlaceholder' id='viz1762184528090' style='position: relative'><noscript><a href='https:&#47;&#47;udes.edu.co&#47;'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;Internacionalizacion2022&#47;EstudiantessalientesUDES&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Internacionalizacion2022&#47;EstudiantessalientesUDES' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;In&#47;Internacionalizacion2022&#47;EstudiantessalientesUDES&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1762184528090');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='2350px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 4: Fomento de la Investigación y Aprendizaje Permanente -->
+    <section style="padding: 64px 0; background: var(--bg-white);">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">
+          <span style="display:inline-block;margin-right:8px;">🔍</span>Fomento de la Investigación y Aprendizaje Permanente
+        </h2>
+        <h2 class="section-title" data-lang-content data-lang="en">
+          <span style="display:inline-block;margin-right:8px;">🔍</span>Promoting Research and Lifelong Learning
+        </h2>
+        <div class="section-rule"></div>
+        
+        <div data-lang-content data-lang="es">
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify; margin-bottom: 32px;">
+            El ODS 4 promueve el aprendizaje durante toda la vida. La UDES materializa esto a través de una sólida infraestructura de investigación que permea desde el pregrado hasta el doctorado.
+          </p>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Formación de Alto Nivel (Doctorado)
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              Nuestros programas de doctorado están a la vanguardia. La doctoranda en Enfermedades Infecciosas, Juanita Trejos Suárez, es un ejemplo al desarrollar modelos de predicción basados en aprendizaje automático (machine learning) para explorar nuevos antimicrobianos.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Liderazgo como Sede de Conocimiento Global
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              La UDES ha sido seleccionada como sede de la 12ª Conferencia Internacional sobre Educación Interprofesional y Práctica Colaborativa (ATBH). Ser anfitriones de este encuentro mundial en 2025 nos posiciona como un referente regional en la transformación de la educación en salud.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Alianzas para la Investigación
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              Colaboramos activamente con otras instituciones (UMB, Clínica FOSCAL) en estudios de alto impacto, como la investigación financiada para mejorar la función cerebral de adultos mayores en Bucaramanga.
+            </p>
+          </div>
+          
+          <!-- Cifras de Investigación -->
+          <div style="margin-top: 48px;">
+            <h3 style="font-size: 22px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 24px; text-align: center;">
+              Nuestra Infraestructura de Investigación
+            </h3>
+            <div class="grid-4">
+              <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+                <div style="text-align: center;">
+                  <div style="font-size: 48px; font-weight: 800; color: var(--sdg-accent); line-height: 1; margin-bottom: 12px;">9</div>
+                  <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sdg-accent-dark);">Grupos de Investigación</div>
+                </div>
+              </div>
+              <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+                <div style="text-align: center;">
+                  <div style="font-size: 48px; font-weight: 800; color: var(--sdg-accent); line-height: 1; margin-bottom: 12px;">2</div>
+                  <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sdg-accent-dark);">Productos</div>
+                </div>
+              </div>
+              <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+                <div style="text-align: center;">
+                  <div style="font-size: 48px; font-weight: 800; color: var(--sdg-accent); line-height: 1; margin-bottom: 12px;">104</div>
+                  <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sdg-accent-dark);">Proyectos</div>
+                </div>
+              </div>
+              <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+                <div style="text-align: center;">
+                  <div style="font-size: 48px; font-weight: 800; color: var(--sdg-accent); line-height: 1; margin-bottom: 12px;">36</div>
+                  <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sdg-accent-dark);">Semilleros de Investigación</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Enlace a SIGIIP -->
+            <div style="text-align: center; margin-top: 32px;">
+              <a href="https://sigiip.udes.edu.co/?returnUrl=%2F" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: var(--sdg-accent); color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(197,25,45,0.3);">
+                📊 Conoce todas nuestras cifras de investigación →
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div data-lang-content data-lang="en">
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify; margin-bottom: 32px;">
+            SDG 4 promotes lifelong learning. UDES materializes this through a solid research infrastructure that permeates from undergraduate to doctoral levels.
+          </p>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              High-Level Training (Doctorate)
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              Our doctoral programs are at the forefront. PhD candidate in Infectious Diseases, Juanita Trejos Suárez, exemplifies this by developing prediction models based on machine learning to explore new antimicrobials.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Leadership as a Global Knowledge Hub
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              UDES has been selected as the host of the 12th International Conference on Interprofessional Education and Collaborative Practice (ATBH). Hosting this global meeting in 2025 positions us as a regional benchmark in the transformation of health education.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Research Partnerships
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              We actively collaborate with other institutions (UMB, FOSCAL Clinic) in high-impact studies, such as funded research to improve brain function in older adults in Bucaramanga.
+            </p>
+          </div>
+          
+          <!-- Research Figures -->
+          <div style="margin-top: 48px;">
+            <h3 style="font-size: 22px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 24px; text-align: center;">
+              Our Research Infrastructure
+            </h3>
+            <div class="grid-4">
+              <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+                <div style="text-align: center;">
+                  <div style="font-size: 48px; font-weight: 800; color: var(--sdg-accent); line-height: 1; margin-bottom: 12px;">9</div>
+                  <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sdg-accent-dark);">Research Groups</div>
+                </div>
+              </div>
+              <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+                <div style="text-align: center;">
+                  <div style="font-size: 48px; font-weight: 800; color: var(--sdg-accent); line-height: 1; margin-bottom: 12px;">2</div>
+                  <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sdg-accent-dark);">Products</div>
+                </div>
+              </div>
+              <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+                <div style="text-align: center;">
+                  <div style="font-size: 48px; font-weight: 800; color: var(--sdg-accent); line-height: 1; margin-bottom: 12px;">104</div>
+                  <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sdg-accent-dark);">Projects</div>
+                </div>
+              </div>
+              <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+                <div style="text-align: center;">
+                  <div style="font-size: 48px; font-weight: 800; color: var(--sdg-accent); line-height: 1; margin-bottom: 12px;">36</div>
+                  <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sdg-accent-dark);">Research Seedbeds</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Link to SIGIIP -->
+            <div style="text-align: center; margin-top: 32px;">
+              <a href="https://sigiip.udes.edu.co/?returnUrl=%2F" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: var(--sdg-accent); color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(197,25,45,0.3);">
+                📊 Explore all our research data →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 5: Educación Inclusiva y Acceso Regional -->
+    <section style="padding: 64px 0; background: linear-gradient(135deg, rgba(197,25,45,0.03) 0%, rgba(197,25,45,0.08) 100%);">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">
+          <span style="display:inline-block;margin-right:8px;">🤝</span>Educación Inclusiva y Acceso Regional
+        </h2>
+        <h2 class="section-title" data-lang-content data-lang="en">
+          <span style="display:inline-block;margin-right:8px;">🤝</span>Inclusive Education and Regional Access
+        </h2>
+        <div class="section-rule"></div>
+        
+        <div data-lang-content data-lang="es">
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify; margin-bottom: 32px;">
+            Garantizar una educación "inclusiva y equitativa" (Meta ODS 4.5) es central en nuestra misión.
+          </p>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Participación en el Diálogo Nacional
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              La UDES es protagonista activa en el "VI Encuentro Nacional de Experiencias en Educación Superior Inclusiva". Nuestro estudiante de Fisioterapia, Jhon Alexis Calderón, participó como panelista, llevando "las voces de los actores educativos" al debate nacional sobre los desafíos de la inclusión.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Expansión de Oportunidades Regionales
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              Extendemos activamente nuestra oferta de calidad a nuevas regiones. Las convocatorias para el "Banco de Elegibles" de programas como Fonoaudiología y Terapia Ocupacional en el campus de Arauca son una prueba de nuestro compromiso por ampliar el acceso a la formación profesional en todo el país.
+            </p>
+          </div>
+        </div>
+        
+        <div data-lang-content data-lang="en">
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify; margin-bottom: 32px;">
+            Ensuring "inclusive and equitable" education (SDG Target 4.5) is central to our mission.
+          </p>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Participation in National Dialogue
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              UDES is an active protagonist in the "6th National Meeting of Experiences in Inclusive Higher Education." Our Physical Therapy student, Jhon Alexis Calderón, participated as a panelist, bringing "the voices of educational actors" to the national debate on inclusion challenges.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Expansion of Regional Opportunities
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              We actively extend our quality offerings to new regions. The calls for the "Eligible Bank" for programs such as Speech Therapy and Occupational Therapy at the Arauca campus are proof of our commitment to expanding access to professional training throughout the country.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 6: Impacto y Reconocimiento de la Calidad Educativa -->
+    <section style="padding: 64px 0; background: var(--bg-white);">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">
+          <span style="display:inline-block;margin-right:8px;">🏆</span>Impacto y Reconocimiento de la Calidad Educativa
+        </h2>
+        <h2 class="section-title" data-lang-content data-lang="en">
+          <span style="display:inline-block;margin-right:8px;">🏆</span>Impact and Recognition of Educational Quality
+        </h2>
+        <div class="section-rule"></div>
+        
+        <div data-lang-content data-lang="es">
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify; margin-bottom: 32px;">
+            El éxito de nuestro modelo educativo se refleja en el reconocimiento externo y el impacto de nuestros graduados.
+          </p>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Liderazgo Académico Reconocido
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              La UDES fue un actor destacado en el "I Encuentro Latinoamericano y del Caribe de Entidades Académicas y Profesionales", consolidando nuestro liderazgo en el campo de Bacteriología y Laboratorio Clínico a nivel continental.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Egresados de Alto Impacto
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              Nuestros graduados son testimonio de la excelencia UDES. Profesionales como Wendy Lorena Ríos Guzmán (Bacterióloga) y Flor Elvira García Peñaranda (condecorada con la medalla Luis Antonio Robles Suárez por la Asamblea Departamental) demuestran cómo la formación recibida en nuestra institución se traduce en contribuciones valiosas a la sociedad.
+            </p>
+          </div>
+        </div>
+        
+        <div data-lang-content data-lang="en">
+          <p style="font-size: 17px; line-height: 1.8; color: var(--text-primary); text-align: justify; margin-bottom: 32px;">
+            The success of our educational model is reflected in external recognition and the impact of our graduates.
+          </p>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              Recognized Academic Leadership
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              UDES was a prominent actor at the "1st Latin American and Caribbean Meeting of Academic and Professional Entities," consolidating our leadership in the field of Bacteriology and Clinical Laboratory at the continental level.
+            </p>
+          </div>
+          
+          <div style="margin-bottom: 28px;">
+            <h3 style="font-size: 20px; font-weight: 700; color: var(--sdg-accent); margin-bottom: 12px;">
+              High-Impact Graduates
+            </h3>
+            <p style="font-size: 16px; line-height: 1.8; color: var(--text-primary); text-align: justify;">
+              Our graduates are testimony to UDES excellence. Professionals such as Wendy Lorena Ríos Guzmán (Bacteriologist) and Flor Elvira García Peñaranda (decorated with the Luis Antonio Robles Suárez medal by the Departmental Assembly) demonstrate how the training received at our institution translates into valuable contributions to society.
+            </p>
           </div>
         </div>
       </div>
