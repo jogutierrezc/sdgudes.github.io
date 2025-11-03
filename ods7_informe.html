@@ -8,6 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root { --sdg-accent: #FCC30B; --sdg-accent-light: rgba(252,195,11,0.12); --text-primary: #2c3e50; --text-secondary: #546e7a; --bg-white: #ffffff; --border-light: #e8eaed; --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);} * { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text-primary); background: var(--bg-white); } .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; } .lang-switch { position: fixed; top: 16px; right: 16px; z-index: 110; display:flex; gap:8px; background:#f6f7f8; padding:4px; border-radius:10px; } .lang-switch button { border:0; background:transparent; padding:8px 14px; border-radius:7px; font-weight:600; color:var(--text-secondary); cursor:pointer; } .lang-switch button.active { background:#fff; color:var(--sdg-accent); box-shadow: var(--shadow-sm); } .hero { padding: 88px 0 72px; background: radial-gradient(circle at 50% 0%, var(--sdg-accent-light) 0%, #ffffff 65%); border-bottom:1px solid var(--border-light); clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%); } .grid-2 { display:grid; grid-template-columns: 1.2fr 0.8fr; gap:32px; align-items:center; } .eyebrow { color: var(--sdg-accent); text-transform: uppercase; font-weight: 700; letter-spacing: .12em; font-size:12px; margin-bottom: 12px; display:inline-block; } h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.15; margin: 0 0 8px 0; } .hero-illustration { width:100%; height:auto; max-width:360px; margin:0 auto; display:block; border-radius:16px; } section { padding: 64px 0; } .section-title { font-size: clamp(24px, 3.5vw, 34px); margin-bottom: 8px; font-weight: 700; } .section-rule { height: 1px; background: var(--border-light); margin: 16px 0 24px; } footer { border-top:1px solid var(--border-light); padding: 28px 0; color:#6b7b86; }
+    /* Light yellow divider background for the Eficiencia & Innovación section */
+    #eficiencia-innovacion { background: linear-gradient(180deg, rgba(252,195,11,0.08) 0%, rgba(252,195,11,0.04) 100%); }
   </style>
 </head>
 <body>
@@ -212,8 +214,10 @@
       <div>
         <div class="eyebrow" data-lang-content data-lang="es" data-visible="true">Objetivos de Desarrollo Sostenible</div>
         <div class="eyebrow" data-lang-content data-lang="en">Sustainable Development Goals</div>
-        <h1 data-lang-content data-lang="es">ODS 7: Energía asequible y no contaminante</h1>
-        <h1 data-lang-content data-lang="en">SDG 7: Affordable and Clean Energy</h1>
+  <h1 data-lang-content data-lang="es">ODS 7: Energía asequible y no contaminante</h1>
+  <h1 data-lang-content data-lang="en">SDG 7: Affordable and Clean Energy</h1>
+  <p class="lead justified" data-lang-content data-lang="es" data-visible="true">El Objetivo de Desarrollo Sostenible 7 no es simplemente un mandato técnico; es un imperativo humano. Garantizar el acceso a una energía asequible, fiable, sostenible y moderna para todos es la piedra angular de la equidad social, el desarrollo económico y la acción climática. Para la Universidad de Santander (UDES), este objetivo representa un compromiso central con la "Transición Energética Justa".</p>
+  <p class="lead justified" data-lang-content data-lang="en" data-visible="false">Sustainable Development Goal 7 is not just a technical mandate; it is a human imperative. Ensuring access to affordable, reliable, sustainable and modern energy for all is the cornerstone of social equity, economic development and climate action. For the Universidad de Santander (UDES), this goal represents a core commitment to a "Just Energy Transition".</p>
       </div>
       <div style="display:flex;align-items:center;justify-content:center;">
   <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/7.png" alt="Logo ODS 7" class="hero-illustration" onerror="this.onerror=null; this.src='https://placehold.co/320x320/FCC30B/ffffff?text=ODS+7';"/>
@@ -221,8 +225,71 @@
     </div>
   </div>
   <main>
-    <section id="contenido"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Contenido</h2><h2 class="section-title" data-lang-content data-lang="en">Content</h2><div class="section-rule"></div></div></section>
-    <section id="noticias"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Noticias Relacionadas</h2><h2 class="section-title" data-lang-content data-lang="en">Related News</h2><div class="section-rule"></div></div></section>
+    <section id="estrategia-energia">
+      <div class="container">
+        <div class="section-rule" style="margin-bottom:18px"></div>
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">Nuestra estrategia es integral: actuamos como un conector clave entre el Estado y la industria, generamos eficiencia a través de la investigación aplicada y, sobre todo, situamos el humanismo en el centro de la innovación, asegurando que los beneficios de la energía lleguen a quienes más los necesitan.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">Our strategy is comprehensive: we act as a key connector between the State and industry, drive efficiency through applied research, and—above all—place humanism at the center of innovation, ensuring that the benefits of energy reach those who need them most.</p>
+      </div>
+    </section>
+    <section id="conexion-estrategica">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Conexión Estratégica: Articulando el Ecosistema Energético</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Strategic Connectivity: Articulating the Energy Ecosystem</h2>
+        <div class="section-rule"></div>
+
+        <p class="lead justified" data-lang-content data-lang="es">La UDES entiende que la transición energética no se logra en aislamiento. Por ello, hemos asumido un rol de liderazgo como articuladores estratégicos del sector. Nuestra participación activa en la creación del Pacto por la Planeación Minero-Energética demuestra nuestra capacidad para influir y co-crear la hoja de ruta nacional.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">UDES understands that the energy transition cannot be achieved in isolation. For this reason, we have taken on a leadership role as strategic conveners of the sector. Our active participation in the creation of the Pact for Mining-Energy Planning demonstrates our ability to influence and co-create the national roadmap.</p>
+
+        <p class="lead justified" data-lang-content data-lang="es">Esta vocación de conector se materializa en múltiples niveles:</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">This convening role materializes across multiple levels:</p>
+
+        <h4 class="muted" data-lang-content data-lang="es">Conexión Global</h4>
+        <h4 class="muted" data-lang-content data-lang="en">Global Connectivity</h4>
+        <p class="lead justified" data-lang-content data-lang="es">Nuestra reciente inclusión como "afiliado adherente" al Consejo Mundial de Energía (WEC), un reconocimiento directo a nuestros proyectos de hidrógeno verde, nos sitúa en la red global de colaboración energética.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">Our recent inclusion as an "adherent affiliate" to the World Energy Council (WEC)—a direct recognition of our green hydrogen projects—places us within the global network for energy collaboration.</p>
+
+        <h4 class="muted" data-lang-content data-lang="es">Conexión Estado-Empresa</h4>
+        <h4 class="muted" data-lang-content data-lang="en">State–Industry Connection</h4>
+        <p class="lead justified" data-lang-content data-lang="es">Servimos como el foro de diálogo esencial. El Simposio "Desafíos de la Transición Energética Justa" es un claro ejemplo, donde convocamos a la academia, la empresa y el Estado, contando con la participación de la alta dirección de la Agencia Nacional de Hidrocarburos (ANH) para socializar avances.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">We serve as the essential forum for dialogue. The symposium "Challenges of the Just Energy Transition" is one clear example, where we convene academia, industry and government, including senior leadership from the National Hydrocarbons Agency (ANH), to share progress.</p>
+
+        <h4 class="muted" data-lang-content data-lang="es">Conexión con la Industria</h4>
+        <h4 class="muted" data-lang-content data-lang="en">Industry Partnership</h4>
+        <p class="lead justified" data-lang-content data-lang="es">Pasamos del diálogo a la acción mediante alianzas estratégicas, como el convenio firmado con la empresa Energía y Ambiente, para desarrollar soluciones conjuntas y aplicadas que respondan a las demandas reales de la industria.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">We move from dialogue to action through strategic partnerships, such as the agreement signed with Energía y Ambiente, to develop joint, applied solutions that respond to the real demands of industry.</p>
+      </div>
+    </section>
+
+    <section id="eficiencia-innovacion">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Eficiencia e Innovación: De la Investigación a la Solución Tangible</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Efficiency and Innovation: From Research to Tangible Solutions</h2>
+        <div class="section-rule"></div>
+
+        <p class="lead justified" data-lang-content data-lang="es">Nuestra eficiencia se mide en resultados. La UDES es un epicentro de investigación aplicada, como lo demuestra nuestra activa participación en la socialización y promoción de la Convocatoria 951 de MinCiencias y la ANH, destinada a fortalecer el conocimiento en fuentes no convencionales y la captura de dióxido de carbono (CO₂).</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">We measure our efficiency by results. UDES is a hub for applied research, as demonstrated by our active role in promoting Call 951 from MinCiencias and the ANH, aimed at strengthening knowledge in unconventional sources and carbon dioxide (CO₂) capture.</p>
+
+        <p class="lead justified" data-lang-content data-lang="es">Esta investigación genera soluciones disruptivas. La innovadora estufa de hidrógeno de la UDES, que superó con éxito las pruebas en el escenario global de la COP16, es la materialización de nuestra eficiencia. No es solo un prototipo; es una solución real capaz de proveer energía para cocinar a una familia de cinco personas durante tres meses con un solo galón de agua.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">This research produces disruptive solutions. UDES's innovative hydrogen stove, which successfully passed tests on the global stage at COP16, embodies our efficiency. It is not just a prototype; it is a real solution capable of providing cooking energy for a family of five for three months using only a single gallon of water.</p>
+      </div>
+    </section>
+
+    <section id="humanismo-transicion">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Humanismo: El Rostro de la "Transición Justa"</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Humanism: The Face of the "Just Transition"</h2>
+        <div class="section-rule"></div>
+
+        <p class="lead justified" data-lang-content data-lang="es">El fin último de nuestra estrategia es el bienestar humano. La eficiencia tecnológica solo tiene sentido si se traduce en equidad social. Por ello, nuestro enfoque conceptual y práctico se centra en el fomento de las Comunidades Energéticas como el vehículo para una "Transición Energética Justa", asegurando que los usuarios sean participantes activos en la generación y gestión de la energía renovable.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">The ultimate aim of our strategy is human well-being. Technological efficiency only makes sense when it translates into social equity. Therefore, our conceptual and practical approach focuses on fostering Energy Communities as the vehicle for a "Just Energy Transition", ensuring that users are active participants in the generation and management of renewable energy.</p>
+
+        <p class="lead justified" data-lang-content data-lang="es">Este compromiso con lo "Justo" es un compromiso con lo humano. Esta filosofía impregna nuestra cultura institucional, donde promovemos la resiliencia y la inclusión. Eventos como la charla de Carolina Gutiérrez ("El no puedo no existe") refuerzan la mentalidad de superación y la convicción de que los desafíos más complejos, incluida la transición energética, se superan con voluntad y un enfoque centrado en la dignidad de la persona.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">This commitment to what is "just" is a commitment to what is humane. This philosophy permeates our institutional culture, where we promote resilience and inclusion. Events such as Carolina Gutiérrez's talk ("'I can't' does not exist") reinforce the mindset of overcoming and the conviction that the most complex challenges, including the energy transition, are overcome with determination and a dignity-centered approach.</p>
+      </div>
+    </section>
+
+    
   </main>
   <footer role="contentinfo"><div class="container"><div data-lang-content data-lang="es">© 2025 · Informe ODS 7 · Versión para uso académico.</div><div data-lang-content data-lang="en">© 2025 · SDG 7 Report · Academic use version.</div></div></footer>
   <script>(function(){const e=document.querySelector('[data-lang-btn="es"]'),t=document.querySelector('[data-lang-btn="en"]'),n=document.querySelectorAll('[data-lang-content]');function a(a){document.documentElement.setAttribute('lang',a),n.forEach(e=>{const t=e.getAttribute('data-lang')===a;e.setAttribute('data-visible',t?'true':'false'),e.style.display=t?'':'none'}),e.classList.toggle('active','es'===a),t.classList.toggle('active','en'===a),e.setAttribute('aria-pressed','es'===a),t.setAttribute('aria-pressed','en'===a)}e.addEventListener('click',(()=>a('es'))),t.addEventListener('click',(()=>a('en'))),a('es')})();</script>
