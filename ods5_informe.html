@@ -8,6 +8,71 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root { --sdg-accent: #FF3A21; --sdg-accent-light: rgba(255,58,33,0.12); --text-primary: #2c3e50; --text-secondary: #546e7a; --bg-white: #ffffff; --border-light: #e8eaed; --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);} * { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text-primary); background: var(--bg-white); } .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; } .lang-switch { position: fixed; top: 16px; right: 16px; z-index: 110; display:flex; gap:8px; background:#f6f7f8; padding:4px; border-radius:10px; } .lang-switch button { border:0; background:transparent; padding:8px 14px; border-radius:7px; font-weight:600; color:var(--text-secondary); cursor:pointer; } .lang-switch button.active { background:#fff; color:var(--sdg-accent); box-shadow: var(--shadow-sm); } .hero { padding: 88px 0 72px; background: radial-gradient(circle at 50% 0%, var(--sdg-accent-light) 0%, #ffffff 65%); border-bottom:1px solid var(--border-light); clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%); } .grid-2 { display:grid; grid-template-columns: 1.2fr 0.8fr; gap:32px; align-items:center; } .eyebrow { color: var(--sdg-accent); text-transform: uppercase; font-weight: 700; letter-spacing: .12em; font-size:12px; margin-bottom: 12px; display:inline-block; } h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.15; margin: 0 0 8px 0; } .hero-illustration { width:100%; height:auto; max-width:360px; margin:0 auto; display:block; border-radius:16px; } section { padding: 64px 0; } .section-title { font-size: clamp(24px, 3.5vw, 34px); margin-bottom: 8px; font-weight: 700; } .section-rule { height: 1px; background: var(--border-light); margin: 16px 0 24px; } footer { border-top:1px solid var(--border-light); padding: 28px 0; color:#6b7b86; }
+
+    /* Cards/grid used for indicador cifras (copiado de ODS4, adaptado a ODS5) */
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 24px; }
+    .card { background: linear-gradient(135deg, #ffffff 0%, rgba(255,58,33,0.04) 100%); border-top: 4px solid var(--sdg-accent); border: 1px solid var(--border-light); border-radius: 12px; padding: 28px; box-shadow: var(--shadow-sm); transition: all 0.25s ease; }
+    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.08); transform: translateY(-4px); }
+    .card .kpi-number { font-size: 48px; font-weight: 800; color: var(--sdg-accent); line-height: 1; margin-bottom: 12px; }
+    .card .kpi-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(0,0,0,0.75); margin-bottom: 10px; }
+    .card .kpi-desc { font-size: 14px; line-height: 1.6; color: var(--text-secondary); }
+    @media (max-width: 992px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 576px) { .grid-4 { grid-template-columns: 1fr; } }
+
+    /* --- Overrides and additional patterns copied from ODS4 for consistent section styling --- */
+    /* stronger section rule */
+    .section-rule { height: 4px; background: linear-gradient(90deg, var(--sdg-accent) 0%, rgba(0,0,0,0.12) 100%); margin: 16px 0 32px; border-radius: 2px; width: 64px; }
+
+    /* normalize card base so content and news cards match ODS4; KPI-specific looks are applied inline or via .kpi-* helpers */
+    .card { background: var(--bg-white); border: 1px solid var(--border-light); border-radius: 12px; padding: 32px; box-shadow: var(--shadow-sm); transition: all 0.3s ease; }
+    .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-color: var(--sdg-accent-light); }
+
+    /* KPI helpers (keep prominent numbers) */
+    .card .kpi-number { font-size: 48px; font-weight: 800; color: var(--sdg-accent); line-height: 1; margin-bottom: 12px; }
+    .card .kpi-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(0,0,0,0.75); margin-bottom: 10px; }
+    .card .kpi-desc { font-size: 14px; line-height: 1.6; color: var(--text-secondary); }
+
+    /* news / evidence grid */
+    .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
+    .grid-5 .card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 16px; }
+    .grid-5 .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; display: block; }
+    .grid-5 .card > div { margin: 0; font-weight: 700; color: var(--text-primary); }
+    .grid-5 .card:hover { transform: translateY(-4px); }
+
+    /* buttons / utility bar */
+    .btn-group { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; align-items:center; align-content:center; margin: 18px 0 8px; }
+    .btn-link { display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:700; color:#fff; background:var(--sdg-accent); box-shadow: 0 6px 18px rgba(0,0,0,0.04); transition: transform .15s ease, box-shadow .15s ease; }
+    .btn-link .icon { font-size:18px; display:inline-block; line-height:1; }
+    .btn-link.secondary { background:#fff; color:var(--sdg-accent); border:1px solid var(--border-light); box-shadow:none; }
+    .btn-link:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,0.08); }
+    .utility-bar { width:100%; background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(255,255,255,0)); padding: 10px 0; display:flex; justify-content:center; box-shadow: inset 0 -1px 0 rgba(0,0,0,0.02); }
+    .utility-bar .container { display:flex; justify-content:center; }
+
+    @media (max-width: 1200px) { .grid-5 { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 992px) { .grid-4, .grid-5 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 576px) { .grid-4, .grid-5 { grid-template-columns: 1fr; } }
+
+    /* Decorative separators between sections */
+    /* Uses a pseudo-element on the following section so the decoration appears between
+       sections without changing inline background styles already present in the HTML. */
+    section { position: relative; overflow: visible; }
+    section + section::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -36px;
+      height: 72px;
+      background: linear-gradient(180deg, rgba(255,58,33,0.08), rgba(255,255,255,0.00));
+      transform: skewY(-2.5deg);
+      pointer-events: none;
+      z-index: 0;
+    }
+    /* Ensure section content sits above the decorative band */
+    section > .container { position: relative; z-index: 1; }
+    @media (max-width: 768px) {
+      section + section::before { top: -24px; height: 48px; transform: skewY(-1.5deg); }
+    }
   </style>
 </head>
 <body>
@@ -447,18 +512,204 @@
       <div>
         <div class="eyebrow" data-lang-content data-lang="es" data-visible="true">Objetivos de Desarrollo Sostenible</div>
         <div class="eyebrow" data-lang-content data-lang="en">Sustainable Development Goals</div>
-        <h1 data-lang-content data-lang="es">ODS 5: Igualdad de Género</h1>
-        <h1 data-lang-content data-lang="en">SDG 5: Gender Equality</h1>
+  <h1 data-lang-content data-lang="es">ODS 5: Igualdad de Género</h1>
+  <h1 data-lang-content data-lang="en">SDG 5: Gender Equality</h1>
+  <p style="margin-top: 24px; font-size: 16px; line-height: 1.7; color: var(--text-secondary); text-align: justify;" data-lang-content data-lang="es">El Objetivo de Desarrollo Sostenible 5 (ODS 5) busca "lograr la igualdad entre los géneros y empoderar a todas las mujeres y las niñas", eliminando la discriminación y la violencia.</p>
+  <p style="margin-top: 24px; font-size: 16px; line-height: 1.7; color: var(--text-secondary); text-align: justify;" data-lang-content data-lang="en">Sustainable Development Goal 5 (SDG 5) seeks to "achieve gender equality and empower all women and girls," eliminating discrimination and violence.</p>
       </div>
       <div style="display:flex;align-items:center;justify-content:center;">
   <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/5.png" alt="Logo ODS 5" class="hero-illustration" onerror="this.onerror=null; this.src='https://placehold.co/320x320/FF3A21/ffffff?text=ODS+5';"/>
       </div>
     </div>
   </div>
-  <main>
-    <section id="contenido"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Contenido</h2><h2 class="section-title" data-lang-content data-lang="en">Content</h2><div class="section-rule"></div></div></section>
-    <section id="noticias"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Noticias Relacionadas</h2><h2 class="section-title" data-lang-content data-lang="en">Related News</h2><div class="section-rule"></div></div></section>
-  </main>
+    <!-- Sección: Inclusión con enfoque de género (añadida) -->
+    <section id="inclusion-genero" style="background: var(--bg-white);">
+      <div class="container">
+      
+        <div>
+          <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:12px;" data-lang-content data-lang="en">
+            Our "Inclusion Policy" has a deliberate, gender-focused approach that produces tangible results. In 2024 we welcomed 16 new students who are the first in their families to access higher education. Each one represents the breaking of a cycle and the materialization of UDES as a true platform of social mobility for women in the region.
+          </p>
+
+        <!-- Indicadores (cifras) moved to a dedicated section below -->
+          <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:12px;" data-lang-content data-lang="en">
+            At the University of Santander, our commitment to gender equality goes beyond metrics; it is a daily practice reflected in our community, culture and academia. We not only recognize the value of the women who "make UDES great" on International Women's Day, but we actively promote their leadership, highlight entrepreneurial stories like that of artisan Janeth Viviescas, and create spaces for critical dialogue about the realities they face, as shown by the release of the documentary ‘Al final del silencio’. From the Nursing program to cultural events, we foster an environment where female talent takes center stage.
+          </p>
+
+          <!-- Cifras 2024 -->
+          <div style="margin-top:8px; margin-bottom:12px;">
+            <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:8px;" data-lang-content data-lang="es">La Universidad de Santander (UDES) es un agente activo en este propósito, utilizando su plataforma educativa, sus medios de comunicación y sus programas de extensión para fomentar la equidad, visibilizar el aporte femenino y combatir activamente la violencia de género.</p>
+            <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:8px;" data-lang-content data-lang="en">The University of Santander (UDES) is an active agent in this purpose, using its educational platform, media and outreach programs to promote equity, highlight women's contributions and actively combat gender-based violence.</p>
+
+            <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:8px;" data-lang-content data-lang="es"><strong>Este compromiso se fundamenta en acciones concretas y se refleja en nuestras cifras de 2024:</strong></p>
+            <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:6px;" data-lang-content data-lang="es"><strong>Acceso y Oportunidad:</strong> Dimos la bienvenida a 16 nuevas estudiantes que, además de iniciar su carrera, son pioneras al ser la primera generación de sus familias en acceder a la educación superior.</p>
+            <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:6px;" data-lang-content data-lang="es"><strong>Liderazgo Académico:</strong> Nuestro cuerpo docente se fortalece con el talento de 5 ingenieras de alto nivel (Ingeniería Química, Industrial, Agroindustrial, de Producción y Mecánica), varias de ellas con títulos de maestría, quienes forman a las futuras generaciones con innovación y excelencia.</p>
+            <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:6px;" data-lang-content data-lang="es"><strong>Impacto Profesional (Campus Cúcuta):</strong> En 2024, celebramos la graduación de 522 mujeres que obtuvieron sus títulos profesionales en nuestros diversos programas.</p>
+            <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:6px;" data-lang-content data-lang="es"><strong>Avance en Áreas STEM:</strong> Demostrando la creciente participación femenina en campos estratégicos, 3 de los 12 nuevos graduados en programas STEM clave (como Ingeniería Industrial) fueron mujeres, representando un 25% de esa cohorte específica.</p>
+
+            <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-top:10px; margin-bottom:8px;" data-lang-content data-lang="en"><strong>This commitment is grounded in concrete actions and is reflected in our 2024 figures:</strong></p>
+            <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:6px;" data-lang-content data-lang="en"><strong>Access & Opportunity:</strong> We welcomed 16 new students who, in addition to starting their studies, are pioneers as the first generation in their families to access higher education.</p>
+            <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:6px;" data-lang-content data-lang="en"><strong>Academic Leadership:</strong> Our faculty is strengthened by the talent of five high-level female engineers (Chemical, Industrial, Agroindustrial, Production and Mechanical Engineering), several holding master's degrees, who train future generations with innovation and excellence.</p>
+            <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:6px;" data-lang-content data-lang="en"><strong>Professional Impact (Cúcuta Campus):</strong> In 2024 we celebrated the graduation of 522 women who earned professional degrees across our programs.</p>
+            <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:6px;" data-lang-content data-lang="en"><strong>STEM Progress:</strong> Demonstrating growing female participation in strategic fields, 3 of the 12 new graduates in key STEM programs (such as Industrial Engineering) were women, representing 25% of that specific cohort.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección separada: Cifras / Indicadores 2024 (debajo de la primera sección) -->
+    <section id="cifras-inclusion" aria-label="Cifras 2024" style="background: var(--bg-white);">
+      <div class="container">
+        <div class="grid-4" aria-hidden="false" style="margin-top:6px;">
+          <div class="card">
+            <div style="text-align:center;">
+              <div class="kpi-number">16</div>
+              <div class="kpi-label" data-lang-content data-lang="es">Acceso y Oportunidad</div>
+              <div class="kpi-label" data-lang-content data-lang="en">Access & Opportunity</div>
+              <div class="kpi-desc" data-lang-content data-lang="es">Dimos la bienvenida a 16 nuevas estudiantes que son la primera generación de sus familias en acceder a la educación superior.</div>
+              <div class="kpi-desc" data-lang-content data-lang="en">We welcomed 16 new students who are the first in their families to access higher education.</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="text-align:center;">
+              <div class="kpi-number">5</div>
+              <div class="kpi-label" data-lang-content data-lang="es">Liderazgo Académico</div>
+              <div class="kpi-label" data-lang-content data-lang="en">Academic Leadership</div>
+              <div class="kpi-desc" data-lang-content data-lang="es">Nuestro cuerpo docente incluye 5 ingenieras de alto nivel que forman a las futuras generaciones con innovación y excelencia.</div>
+              <div class="kpi-desc" data-lang-content data-lang="en">Our faculty includes 5 high-level female engineers who train future generations with innovation and excellence.</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="text-align:center;">
+              <div class="kpi-number">522</div>
+              <div class="kpi-label" data-lang-content data-lang="es">Impacto Profesional (Cúcuta)</div>
+              <div class="kpi-label" data-lang-content data-lang="en">Professional Impact (Cúcuta)</div>
+              <div class="kpi-desc" data-lang-content data-lang="es">En 2024 celebramos la graduación de 522 mujeres que obtuvieron sus títulos profesionales en nuestros diversos programas.</div>
+              <div class="kpi-desc" data-lang-content data-lang="en">In 2024 we celebrated the graduation of 522 women who earned professional degrees across our programs.</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="text-align:center;">
+              <div class="kpi-number">3 (25%)</div>
+              <div class="kpi-label" data-lang-content data-lang="es">Avance en Áreas STEM</div>
+              <div class="kpi-label" data-lang-content data-lang="en">STEM Progress</div>
+              <div class="kpi-desc" data-lang-content data-lang="es">3 de los 12 nuevos graduados en programas STEM clave fueron mujeres, representando un 25% de la cohorte.</div>
+              <div class="kpi-desc" data-lang-content data-lang="en">3 of the 12 new graduates in key STEM programs were women, representing 25% of that cohort.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Lucha Activa contra la Violencia de Género (Meta ODS 5.2) -->
+    <section id="lucha-violencia" aria-label="Lucha Activa contra la Violencia de Género (Meta ODS 5.2)" style="background: var(--bg-white);">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Lucha Activa contra la Violencia de Género (Meta ODS 5.2)</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Active Fight Against Gender-Based Violence (SDG Target 5.2)</h2>
+        <div class="section-rule"></div>
+
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:12px;" data-lang-content data-lang="es">La UDES utiliza sus recursos de comunicación para investigar, documentar y exponer una de las barreras más graves para la equidad: la violencia de género.</p>
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:12px;" data-lang-content data-lang="en">UDES uses its communication resources to research, document and expose one of the most serious barriers to equity: gender-based violence.</p>
+
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:8px;" data-lang-content data-lang="es"><strong>Producción y Difusión de Contenido Crítico:</strong> Nuestro canal institucional, Canal UTV, produjo el documental "Al final del silencio". Esta pieza audiovisual investiga y expone las duras realidades que enfrentan las mujeres en Santander a causa de la violencia de género.</p>
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:8px;" data-lang-content data-lang="en"><strong>Production and Dissemination of Critical Content:</strong> Our institutional channel, Canal UTV, produced the documentary "Al final del silencio". This audiovisual piece investigates and exposes the harsh realities that women in Santander face as a result of gender-based violence.</p>
+
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:12px;" data-lang-content data-lang="es"><strong>Plataforma de Diálogo:</strong> La Universidad no solo produce este contenido, sino que genera el debate público. El lanzamiento del documental se realizó en nuestro Auditorio Yariguíes, propiciando un conversatorio necesario y dando voz a esta problemática crítica.</p>
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:12px;" data-lang-content data-lang="en"><strong>Platform for Dialogue:</strong> The University not only produces this content but also generates public debate. The documentary's premiere took place in our Yariguíes Auditorium, fostering a necessary conversation and giving voice to this critical issue.</p>
+      </div>
+    </section>
+
+    <!-- Sección: Promoción del Liderazgo y Empoderamiento Femenino (Meta ODS 5.5) -->
+    <section id="liderazgo-empoderamiento" aria-label="Promoción del Liderazgo y Empoderamiento Femenino (Meta ODS 5.5)" style="background: var(--bg-white);">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Promoción del Liderazgo y Empoderamiento Femenino (Meta ODS 5.5)</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Promotion of Women's Leadership and Empowerment (SDG Target 5.5)</h2>
+        <div class="section-rule"></div>
+
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:12px;" data-lang-content data-lang="es">Reconocemos y promovemos activamente la participación plena y efectiva de las mujeres en todos los ámbitos, celebrando sus logros como motor de cambio social y económico.</p>
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:12px;" data-lang-content data-lang="en">We actively recognize and promote the full and effective participation of women in all spheres, celebrating their achievements as drivers of social and economic change.</p>
+
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:8px;" data-lang-content data-lang="es"><strong>Visibilidad del Emprendimiento Femenino:</strong> La UDES sirve como plataforma para destacar a mujeres líderes. Tal es el caso de Janeth Viviescas, artesana de Barichara, quien compartió en la UDES su experiencia de dos décadas de emprendimiento con "Arte de Plátano". Al hacerlo, visibilizamos el "espíritu emprendedor de la mujer santandereana" como un testimonio de pujanza e inspiración.</p>
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:8px;" data-lang-content data-lang="en"><strong>Visibility of Women's Entrepreneurship:</strong> UDES serves as a platform to highlight women leaders. Such is the case of Janeth Viviescas, an artisan from Barichara, who shared at UDES her two-decade entrepreneurial experience with "Arte de Plátano". In doing so, we showcase the "entrepreneurial spirit of Santanderean women" as a testament to resilience and inspiration.</p>
+
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:12px;" data-lang-content data-lang="es"><strong>Reconocimiento Institucional:</strong> En el marco del Día Internacional de la Mujer, la UDES rinde homenaje a los "rostros de las mujeres que hacen grande" a nuestra institución. Reconocemos formalmente el valor, esfuerzo y dedicación de nuestras estudiantes, profesoras y trabajadoras administrativas, destacando su rol integral en la excelencia académica.</p>
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:12px;" data-lang-content data-lang="en"><strong>Institutional Recognition:</strong> On International Women's Day, UDES pays tribute to the "faces of the women who make our institution great." We formally acknowledge the value, effort, and dedication of our students, faculty, and administrative staff, highlighting their integral role in academic excellence.</p>
+      </div>
+    </section>
+
+    <!-- Sección: Inclusión, Equidad y Apoyo Comunitario (Meta ODS 5.4) -->
+    <section id="inclusion-equidad-apoyo" aria-label="Inclusión, Equidad y Apoyo Comunitario (Meta ODS 5.4)" style="background: var(--bg-white);">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Inclusión, Equidad y Apoyo Comunitario (Meta ODS 5.4)</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Inclusion, Equity and Community Support (SDG Target 5.4)</h2>
+        <div class="section-rule"></div>
+
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:12px;" data-lang-content data-lang="es">Nuestro compromiso con la equidad se extiende más allá del campus, con programas de proyección social que apoyan a mujeres en roles cruciales pero a menudo invisibilizados.</p>
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:12px;" data-lang-content data-lang="en">Our commitment to equity extends beyond the campus, with outreach programs that support women in crucial but often overlooked roles.</p>
+
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:8px;" data-lang-content data-lang="es"><strong>Apoyo a Mujeres Cuidadoras:</strong> El programa de Enfermería, a través de su proyecto de Proyección Social "Cuidemos", conmemoró el Día Internacional de la Mujer con una jornada de integración dirigida a cuidadores de personas en situación de cronicidad. Esta acción reconoce y brinda apoyo directo a un rol desempeñado de manera desproporcionada por mujeres, valorando su contribución fundamental al bienestar social.</p>
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:8px;" data-lang-content data-lang="en"><strong>Support for Women Caregivers:</strong> The Nursing program, through its outreach project "Cuidemos", commemorated International Women's Day with an integration day aimed at caregivers of people with chronic conditions. This action recognizes and provides direct support to a role disproportionately performed by women, valuing their fundamental contribution to social wellbeing.</p>
+
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:12px;" data-lang-content data-lang="es"><strong>Una Política de Inclusión Integral:</strong> El compromiso de la UDES con la igualdad de género es parte de una "Política de Inclusión" más amplia. Esta política se materializa en acciones concretas, como la implementación de recursos de accesibilidad web, que promueven la "inclusión, la igualdad y la equidad" para toda la comunidad, asegurando que nadie se quede atrás.</p>
+        <p style="font-size:16px; line-height:1.8; color:var(--text-primary); text-align:justify; margin-bottom:12px;" data-lang-content data-lang="en"><strong>A Comprehensive Inclusion Policy:</strong> UDES's commitment to gender equality is part of a broader "Inclusion Policy." This policy is realized in concrete actions, such as implementing web accessibility resources that promote "inclusion, equality and equity" for the entire community, ensuring that no one is left behind.</p>
+      </div>
+    </section>
+
+    <main>
+      <section id="noticias">
+        <div class="container">
+          <h2 class="section-title" data-lang-content data-lang="es">📰 Anexo de Evidencias Verificables (ODS 5)</h2>
+          <h2 class="section-title" data-lang-content data-lang="en">📰 Annex of Verifiable Evidence (SDG 5)</h2>
+          <div class="section-rule"></div>
+
+          <p data-lang-content data-lang="es" style="color:var(--text-secondary); line-height:1.7; margin-bottom:18px; text-align:justify;">A continuación presentamos una recopilación de evidencias verificables relacionadas con las acciones de la UDES para el ODS 5. Haga clic en cada tarjeta para abrir la noticia en una nueva pestaña.</p>
+          <p data-lang-content data-lang="en" style="color:var(--text-secondary); line-height:1.7; margin-bottom:18px; text-align:justify;">Below we present a compilation of verifiable evidence related to UDES actions for SDG 5. Click any card to open the article in a new tab.</p>
+
+          <!-- Lucha contra la Violencia de Género -->
+          <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-top:18px;" data-lang-content data-lang="es">Lucha contra la Violencia de Género</h3>
+          <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-top:18px;" data-lang-content data-lang="en">Fight Against Gender-Based Violence</h3>
+          <div class="grid-5" style="margin-top:12px; margin-bottom:18px;">
+            <a class="card" href="https://www.youtube.com/watch?v=rTSXUo6Xa-o" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/rTSXUo6Xa-o/hqdefault.jpg" alt="Al final del silencio (YouTube)" onerror="this.onerror=null;this.src='https://placehold.co/480x320/FF3A21/ffffff?text=No+image'" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;" />
+              <div style="font-weight:700; color:var(--text-primary);">Video: Canal UTV estrenó el documental ‘Al final del silencio’ — (YouTube)</div>
+            </a>
+          </div>
+
+          <!-- Promoción del Liderazgo y Empoderamiento -->
+          <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-top:18px;" data-lang-content data-lang="es">Promoción del Liderazgo y Empoderamiento</h3>
+          <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-top:18px;" data-lang-content data-lang="en">Promotion of Leadership and Empowerment</h3>
+          <div class="grid-5" style="margin-top:12px; margin-bottom:18px;">
+            <a class="card" href="https://udes.edu.co/extension/noticias/janeth-viviescas-la-santandereana-que-transforma-la-fibra-de-platano-en-piezas-de-arte-comparte-su-experiencia-en-la-udes" target="_blank" rel="noopener noreferrer">
+              <img src="https://udes.edu.co/media/k2/items/cache/fce4e1263d416771d1679cd278498c39_XL.jpg?t=20240405_152128" alt="Janeth Viviescas" onerror="this.onerror=null;this.src='https://placehold.co/480x320/FF3A21/ffffff?text=Janeth'" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;" />
+              <div style="font-weight:700; color:var(--text-primary);">Janeth Viviescas, la santandereana que transforma la fibra de plátano en piezas de arte — comparte su experiencia en la UDES</div>
+            </a>
+
+            <a class="card" href="https://udes.edu.co/comunicaciones/noticias/fotos-los-rostros-de-las-mujeres-que-hacen-grande-a-la-universidad-de-santander" target="_blank" rel="noopener noreferrer">
+              <img src="https://udes.edu.co/media/k2/items/cache/d0eb8d418942adccfef144b4900e4d40_XL.jpg?t=20240308_231043" alt="Los rostros de las mujeres" onerror="this.onerror=null;this.src='https://placehold.co/480x320/FF3A21/ffffff?text=Fotos'" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;" />
+              <div style="font-weight:700; color:var(--text-primary);">Fotos: Los rostros de las mujeres que hacen grande a la Universidad de Santander</div>
+            </a>
+          </div>
+
+          <!-- Inclusión, Equidad y Proyección Social -->
+          <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-top:18px;" data-lang-content data-lang="es">Inclusión, Equidad y Proyección Social</h3>
+          <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-top:18px;" data-lang-content data-lang="en">Inclusion, Equity and Social Outreach</h3>
+          <div class="grid-5" style="margin-top:12px; margin-bottom:28px;">
+            <a class="card" href="https://udes.edu.co/extension/noticias/enfermeria-udes-celebro-el-dia-internacional-de-la-mujer-con-cuidadores-de-personas-en-situacion-de-cronicidad-en-bucaramanga" target="_blank" rel="noopener noreferrer">
+              <img src="https://udes.edu.co/media/k2/items/cache/19a14b5e65677e11c2277fac821d2141_XL.jpg" alt="Cuidadores - Enfermería UDES" onerror="this.onerror=null;this.src='https://placehold.co/480x320/FF3A21/ffffff?text=Cuidadores'" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;" />
+              <div style="font-weight:700; color:var(--text-primary);">Enfermería UDES celebró el Día Internacional de la Mujer con cuidadores de personas en situación de cronicidad en Bucaramanga</div>
+            </a>
+
+            <a class="card" href="https://udes.edu.co/institucional/noticias/udes-implementa-recursos-para-la-inclusion-y-la-excelencia-academica" target="_blank" rel="noopener noreferrer">
+              <img src="https://placehold.co/480x320/FF3A21/ffffff?text=Inclusi%C3%B3n" alt="UDES implementa recursos para la inclusión" onerror="this.onerror=null;this.src='https://placehold.co/480x320/FF3A21/ffffff?text=No+image'" style="width:100%; height:160px; object-fit:cover; border-radius:10px; margin-bottom:12px;" />
+              <div style="font-weight:700; color:var(--text-primary);">UDES implementa recursos para la inclusión y la excelencia académica</div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
   <footer role="contentinfo"><div class="container"><div data-lang-content data-lang="es">© 2025 · Informe ODS 5 · Versión para uso académico.</div><div data-lang-content data-lang="en">© 2025 · SDG 5 Report · Academic use version.</div></div></footer>
   <script>
     (function(){
