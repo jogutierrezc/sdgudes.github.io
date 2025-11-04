@@ -23,9 +23,41 @@
     html[lang="en"] .lang-es { display: none !important; }
     /* Paleta ODS */
     .sdg-1{background:#E5243B}.sdg-2{background:#DDA63A}.sdg-3{background:#4C9F38}.sdg-4{background:#C5192D}.sdg-5{background:#FF3A21}.sdg-6{background:#26BDE2}.sdg-7{background:#FCC30B}.sdg-8{background:#A21942}.sdg-9{background:#FD6925}.sdg-10{background:#DD1367}.sdg-11{background:#FD9D24}.sdg-12{background:#BF8B2E}.sdg-13{background:#3F7E44}.sdg-14{background:#0A97D9}.sdg-15{background:#56C02B}.sdg-16{background:#00689D}.sdg-17{background:#19486A}
-    /* Utilidad bilingüe genérica */
-    [data-lang-content]{display:none} [data-lang-content][data-visible="true"]{display:block}
-    @media (max-width:768px){.sdg-nav-item:hover{height:280px}.sdg-card-image{height:180px;padding:6px}.sdg-card-content{padding:12px}.sdg-card-number{font-size:11px}.sdg-card-title{font-size:12px}}
+  /* Utilidad bilingüe genérica */
+  [data-lang-content]{display:none} [data-lang-content][data-visible="true"]{display:block}
+
+  /* Cápsulas de impacto (stat cards) */
+  .capsules { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:14px; margin: 18px 0 6px; align-items: stretch; }
+  .capsule { background:#fff; border:1px solid var(--border-light); padding:14px; border-radius:10px; display:flex; gap:12px; align-items:center; min-height:86px; box-shadow: var(--shadow-sm); opacity:0; transform:translateY(18px); animation: capsuleIn .55s cubic-bezier(.22,.9,.28,1) forwards; transition: transform .22s ease, box-shadow .22s ease; }
+  .capsule .icon { width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; background:var(--sdg-accent-light); color:var(--sdg-accent); flex:0 0 56px; }
+  .capsule .meta { font-size:13px; color:var(--text-secondary); margin-bottom:4px; }
+  .capsule .value { font-size:20px; font-weight:700; color:var(--text-primary); line-height:1; }
+  .capsule small { display:block; font-size:11px; color:var(--text-secondary); margin-top:4px; }
+  .capsule:hover { transform: translateY(-6px); box-shadow: 0 8px 22px rgba(0,0,0,0.08); }
+  .capsule:nth-child(1){animation-delay:0.06s}
+  .capsule:nth-child(2){animation-delay:0.12s}
+  .capsule:nth-child(3){animation-delay:0.18s}
+  .capsule:nth-child(4){animation-delay:0.24s}
+  .capsule:nth-child(5){animation-delay:0.30s}
+  .capsule:nth-child(6){animation-delay:0.36s}
+  .capsule:nth-child(7){animation-delay:0.42s}
+  .capsule:nth-child(8){animation-delay:0.48s}
+  .capsule:nth-child(9){animation-delay:0.54s}
+  .capsule:nth-child(10){animation-delay:0.60s}
+  .capsule:nth-child(11){animation-delay:0.66s}
+  .capsule:nth-child(12){animation-delay:0.72s}
+  @keyframes capsuleIn { to { opacity:1; transform: translateY(0); } }
+
+  @media (max-width:900px){ .capsules{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:520px){ .capsules{grid-template-columns:repeat(1,1fr);} .capsule{min-height:72px;} }
+
+  @media (max-width:768px){.sdg-nav-item:hover{height:280px}.sdg-card-image{height:180px;padding:6px}.sdg-card-content{padding:12px}.sdg-card-number{font-size:11px}.sdg-card-title{font-size:12px}}
+
+  /* Justified content and ODS-colored headings for better presence */
+  .justified, p.lead, p { text-align: justify; text-justify: inter-word; }
+  .justified li, figcaption, .capsule small { text-align: justify; }
+  h1, .section-title, h3 { color: var(--sdg-accent); }
+
   </style>
 </head>
 <body>
@@ -283,10 +315,350 @@
     <section id="introduccion-ods9">
       <div class="container">
         <p class="lead justified" data-lang-content data-lang="es" data-visible="true">
-          El Objetivo de Desarrollo Sostenible 9 es el motor del progreso. Exige la construcción de infraestructuras resilientes, la promoción de una industrialización inclusiva y sostenible, y el fomento de la innovación. Para la Universidad de Santander (UDES), este ODS es el núcleo de nuestra identidad. No solo participamos en la innovación,
+          El Objetivo de Desarrollo Sostenible 9 es el motor del progreso. Exige la construcción de infraestructuras resilientes, la promoción de una industrialización inclusiva y sostenible, y el fomento de la innovación. Para la Universidad de Santander (UDES), este ODS es el núcleo de nuestra identidad. No solo participamos en la innovación, sino que la lideramos y construimos activamente la "triple infraestructura" necesaria para el futuro: la infraestructura humana (el talento de vanguardia), la infraestructura física (los espacios para crear) y la infraestructura del conocimiento (la investigación que resuelve problemas).
         </p>
         <p class="lead justified" data-lang-content data-lang="en">
-          Sustainable Development Goal 9 is the engine of progress. It demands the construction of resilient infrastructure, the promotion of inclusive and sustainable industrialization, and the fostering of innovation. For the University of Santander (UDES), this SDG is at the core of our identity. We not only participate in innovation,
+          Sustainable Development Goal 9 is the engine of progress. It demands the construction of resilient infrastructure, the promotion of inclusive and sustainable industrialization, and the fostering of innovation. For the University of Santander (UDES), this SDG is at the core of our identity. We not only participate in innovation, but actively lead and build the "triple infrastructure" necessary for the future: human infrastructure (cutting-edge talent), physical infrastructure (spaces for creation), and knowledge infrastructure (research that solves problems).
+        </p>
+      </div>
+    </section>
+
+    <section id="capsulas-impacto">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es" data-visible="true">Cápsulas de Impacto</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Impact Capsules</h2>
+        <div class="section-rule"></div>
+
+        <div class="capsules" aria-hidden="false">
+          <div class="capsule">
+            <div class="icon">🧪</div>
+            <div>
+              <div class="meta"><span class="lang-es">Proyectos en RedCOLSI</span><span class="lang-en">RedCOLSI projects</span></div>
+              <div class="value" data-target="39">39</div>
+              <small><span class="lang-es">Presentados por 46 estudiantes</span><span class="lang-en">Presented by 46 students</span></small>
+            </div>
+          </div>
+
+          <div class="capsule">
+            <div class="icon">🎓</div>
+            <div>
+              <div class="meta"><span class="lang-es">Estudiantes participantes</span><span class="lang-en">Participating students</span></div>
+              <div class="value" data-target="46">46</div>
+              <small><span class="lang-es">Investigación formativa</span><span class="lang-en">Formative research</span></small>
+            </div>
+          </div>
+
+          <div class="capsule">
+            <div class="icon">👩‍🔬</div>
+            <div>
+              <div class="meta"><span class="lang-es">Visitas escolares</span><span class="lang-en">School visits</span></div>
+              <div class="value" data-target="70">70</div>
+              <small><span class="lang-es">Vocaciones tempranas inspiradas</span><span class="lang-en">Early vocations inspired</span></small>
+            </div>
+          </div>
+
+          <div class="capsule">
+            <div class="icon">📈</div>
+            <div>
+              <div class="meta"><span class="lang-es">Proyectos campus Valledupar</span><span class="lang-en">Valledupar campus projects</span></div>
+              <div class="value" data-target="10">10+</div>
+              <small><span class="lang-es">En encuentro departamental</span><span class="lang-en">At departmental meeting</span></small>
+            </div>
+          </div>
+
+          <div class="capsule">
+            <div class="icon">🤖</div>
+            <div>
+              <div class="meta"><span class="lang-es">Nuevo pregrado</span><span class="lang-en">New undergraduate</span></div>
+              <div class="value" data-target="1">1</div>
+              <small><span class="lang-es">Ingeniería en IA</span><span class="lang-en">Computer Science & AI</span></small>
+            </div>
+          </div>
+
+          <div class="capsule">
+            <div class="icon">🧰</div>
+            <div>
+              <div class="meta"><span class="lang-es">Tote Lab</span><span class="lang-en">Tote Lab</span></div>
+              <div class="value" data-target="1">1</div>
+              <small><span class="lang-es">Laboratorio de co-creación</span><span class="lang-en">Co-creation lab</span></small>
+            </div>
+          </div>
+
+          <div class="capsule">
+            <div class="icon">🏛️</div>
+            <div>
+              <div class="meta"><span class="lang-es">Centros de Excelencia</span><span class="lang-en">Centers of Excellence</span></div>
+              <div class="value" data-target="3">3</div>
+              <small><span class="lang-es">MASIRA · XERIRA · Hidrógeno</span><span class="lang-en">MASIRA · XERIRA · Hydrogen</span></small>
+            </div>
+          </div>
+
+          <div class="capsule">
+            <div class="icon">🔁</div>
+            <div>
+              <div class="meta"><span class="lang-es">Renovación Maestría</span><span class="lang-en">Master's renewal</span></div>
+              <div class="value" data-target="7">7</div>
+              <small><span class="lang-es">Años de acreditación</span><span class="lang-en">Years renewed</span></small>
+            </div>
+          </div>
+
+          <div class="capsule">
+            <div class="icon">🏆</div>
+            <div>
+              <div class="meta"><span class="lang-es">Ranking SCImago</span><span class="lang-en">SCImago rank</span></div>
+              <div class="value" data-target="17">17</div>
+              <small><span class="lang-es">Top 20 investigación</span><span class="lang-en">Top 20 research</span></small>
+            </div>
+          </div>
+
+          <div class="capsule">
+            <div class="icon">💸</div>
+            <div>
+              <div class="meta"><span class="lang-es">Convocatorias internas</span><span class="lang-en">Internal calls</span></div>
+              <div class="value" data-target="2024-2025">2024-2025</div>
+              <small><span class="lang-es">Financiación intercampus</span><span class="lang-en">Intercampus funding</span></small>
+            </div>
+          </div>
+
+          <div class="capsule">
+            <div class="icon">🔬</div>
+            <div>
+              <div class="meta"><span class="lang-es">Proyecto Re-HOPE</span><span class="lang-en">Re-HOPE project</span></div>
+              <div class="value" data-target="Re-HOPE">Re-HOPE</div>
+              <small><span class="lang-es">Financiado por SGR</span><span class="lang-en">SGR-funded</span></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="cultura-curiosidad">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">La Creación de una "Cultura de la Curiosidad"</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Creating a "Culture of Curiosity"</h2>
+        <div class="section-rule"></div>
+
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">
+          La innovación en la UDES no nace en un laboratorio de posgrado; se siembra como una política institucional desde la base. Fomentamos una cultura donde la curiosidad es el principal activo.
+        </p>
+        <p class="lead justified" data-lang-content data-lang="en">
+          Innovation at UDES does not begin in a postgraduate laboratory; it is sown as an institutional policy from the ground up. We foster a culture where curiosity is the primary asset.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Semilleros como Ecosistema</h3>
+        <h3 data-lang-content data-lang="en">Seedbeds as an Ecosystem</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Nuestro programa de semilleros es la prueba de una estrategia masiva y articulada. El éxito de esta política se mide en resultados contundentes: en el XXVII Encuentro Nacional de RedCOLSI, la UDES participó con 39 proyectos de investigación presentados por 46 estudiantes. Este esfuerzo se replica en nuestros campus, con el campus Valledupar destacándose con más de 10 proyectos en el encuentro departamental, y eventos consolidados como la Geoferia en la XVI Semana Técnica de Geología.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          Our seedbed program is proof of a broad, articulated strategy. The success of this policy is measured in striking results: at the 27th RedCOLSI National Meeting, UDES participated with 39 research projects presented by 46 students. This effort is replicated across our campuses, with the Valledupar campus standing out with more than 10 projects at the departmental meeting, and established events such as the GeoFair during the 16th Technical Week of Geology.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Atracción de Vocaciones Tempranas</h3>
+        <h3 data-lang-content data-lang="en">Attracting Early Vocations</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Abrimos nuestras puertas para inspirar a la próxima generación. Jornadas como la visita de 70 estudiantes de colegios a Ingeniería Petroquímica, el DigitalFest y el primer curso vacacional de robótica son la primera fase de nuestra infraestructura humana.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          We open our doors to inspire the next generation. Events such as the visit of 70 school students to Petrochemical Engineering, the DigitalFest, and the first robotics summer course are the first phase of our human infrastructure.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">La Innovación como Humanismo (Investigación-Creación)</h3>
+        <h3 data-lang-content data-lang="en">Innovation as Humanism (Research-Creation)</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Demostramos que la innovación trasciende lo técnico. En la UDES, la innovación también es social y cultural. Fomentamos la "Investigación-Creación" a través de la Convocatoria Interna de Creación, exposiciones como "Entre Arte y Ciencia", proyectos de divulgación cultural como "La Maleta Viajera de la Cultura Guane" y apoyando el impacto social directo, como la beca otorgada a nuestra graduada para un proyecto de Clown Hospitalario.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          We show that innovation transcends the technical. At UDES, innovation is also social and cultural. We promote "Research-Creation" through the Internal Creation Call, exhibitions such as "Between Art and Science", cultural outreach projects like "The Traveling Suitcase of Guane Culture", and by supporting direct social impact — for example, the scholarship awarded to our graduate for a Hospital Clowning project.
+        </p>
+      </div>
+    </section>
+
+    <section id="infraestructura-humana">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">La "Infraestructura Humana" de Vanguardia</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">The Cutting-edge "Human Infrastructure"</h2>
+        <div class="section-rule"></div>
+
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">
+          Una vez sembrada la curiosidad, la canalizamos hacia la excelencia académica. No reaccionamos al mercado; anticipamos las necesidades del futuro, construyendo el talento de vanguardia que la industria requerirá.
+        </p>
+        <p class="lead justified" data-lang-content data-lang="en">
+          Once curiosity is sown, we channel it toward academic excellence. We do not react to the market; we anticipate the needs of the future, building the cutting-edge talent industry will require.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Programas Pioneros</h3>
+        <h3 data-lang-content data-lang="en">Pioneering Programs</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Hemos lanzado el nuevo pregrado en Ingeniería en Ciencias de la Computación e Inteligencia Artificial, respondiendo directamente a la cuarta revolución industrial.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          We have launched the new undergraduate program in Computer Science and Artificial Intelligence Engineering, directly responding to the fourth industrial revolution.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">La Cima del Conocimiento</h3>
+        <h3 data-lang-content data-lang="en">The Summit of Knowledge</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Nos consolidamos como la única universidad en la región con la ruta completa de Maestría y Doctorado en Recursos Energéticos Renovables, atrayendo docentes-investigadores de alto nivel.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          We are consolidated as the only university in the region with a full Master's and Doctoral pathway in Renewable Energy Resources, attracting high-level teacher-researchers.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Gestión Estratégica de la Innovación</h3>
+        <h3 data-lang-content data-lang="en">Strategic Innovation Management</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Formamos a los líderes que gestionarán el cambio, como lo demuestra la renovación de la Maestría en Gestión de Ciencia, Tecnología e Innovación por siete años más.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          We train the leaders who will manage change, as demonstrated by the seven-year renewal of the Master's in Science, Technology and Innovation Management.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Calidad Verificada</h3>
+        <h3 data-lang-content data-lang="en">Verified Quality</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Nuestra excelencia es tal, que nuestros docentes, como la profesora de Ingeniería Civil, son seleccionados como pares académicos a nivel nacional, ayudando a definir los estándares de calidad del país.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          Our excellence is such that our faculty, like the Civil Engineering professor, are selected as national academic peers, helping to define the country's quality standards.
+        </p>
+      </div>
+    </section>
+
+    <section id="infraestructura-fisica-conocimiento">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">La Infraestructura Física y del Conocimiento</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Physical and Knowledge Infrastructure</h2>
+        <div class="section-rule"></div>
+
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">
+          El talento de vanguardia requiere herramientas de clase mundial. La UDES invierte estratégicamente en los espacios físicos, digitales y financieros donde se gesta la innovación.
+        </p>
+        <p class="lead justified" data-lang-content data-lang="en">
+          Cutting-edge talent requires world-class tools. UDES strategically invests in the physical, digital and financial spaces where innovation is fostered.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Espacios Físicos para la Co-Creación</h3>
+        <h3 data-lang-content data-lang="en">Physical Spaces for Co-Creation</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Hemos inaugurado el Tote Lab, un laboratorio de inteligencia creativa diseñado para la resolución de desafíos complejos y la co-creación.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          We inaugurated the Tote Lab, a creative intelligence laboratory designed for solving complex challenges and co-creation.
+        </p>
+        <figure style="margin:14px 0; text-align:center;">
+          <img src="https://udes.edu.co/media/k2/items/cache/bf4317c8e42b0ed7c78d9b17f9e68c62_XL.jpg?t=20250819_212334" alt="Tote Lab - laboratorio de innovación" style="max-width:100%;border-radius:10px;"/>
+          <figcaption class="justified" style="font-size:12px;color:var(--text-secondary);">Tote Lab</figcaption>
+        </figure>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Centros de Excelencia (El Motor)</h3>
+        <h3 data-lang-content data-lang="en">Centers of Excellence (The Engine)</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Nuestra investigación se concentra en institutos de alto rendimiento como MASIRA, que lidera el proyecto Re-HOPE financiado por el SGR; el Instituto XERIRA, que participa en la definición del Plan Geocientífico Nacional; y el Centro de Investigación del Hidrógeno.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          Our research focuses on high-performance institutes such as MASIRA, which leads the Re-HOPE project funded by the SGR; the XERIRA Institute, which participates in defining the National Geoscientific Plan; and the Hydrogen Research Center.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Sistemas Digitales y Tecnológicos</h3>
+        <h3 data-lang-content data-lang="en">Digital and Technological Systems</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Modernizamos nuestra propia infraestructura, adoptando la metodología Open BIM en Supervisión de Obras Civiles y optimizando la eficiencia con plataformas de pago PSE.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          We modernize our infrastructure, adopting the Open BIM methodology in Civil Works Supervision and optimizing efficiency with payment platforms such as PSE.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">El Combustible (Financiación)</h3>
+        <h3 data-lang-content data-lang="en">The Fuel (Financing)</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Mantenemos el motor en marcha a través de convocatorias internas (2024-2025), asegurando la financiación de proyectos interdisciplinarios e intercampus.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          We keep the engine running through internal calls (2024-2025), ensuring funding for interdisciplinary and intercampus projects.
+        </p>
+      </div>
+    </section>
+
+    <section id="innovacion-solucion-real">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">La Innovación como Solución Real</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Innovation as Real-World Solutions</h2>
+        <div class="section-rule"></div>
+
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">
+          Esta es la fase de impacto. Nuestra innovación sale del campus y se convierte en soluciones tangibles para los problemas de la sociedad y la industria, conectando el ODS 9 con todos los demás.
+        </p>
+        <p class="lead justified" data-lang-content data-lang="en">
+          This is the impact phase. Our innovation leaves campus and becomes tangible solutions for society and industry, connecting SDG 9 with all the others.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Al Servicio del ODS 6 (Agua)</h3>
+        <h3 data-lang-content data-lang="en">Serving SDG 6 (Water)</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Desarrollamos y transferimos tecnología innovadora de desinfección de aguas residuales para la sostenibilidad del Río Fonce.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          We develop and transfer innovative wastewater disinfection technology for the sustainability of the Fonce River.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Al Servicio del ODS 11 y 13 (Ciudades y Clima)</h3>
+        <h3 data-lang-content data-lang="en">Serving SDG 11 & 13 (Cities & Climate)</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Ingeniería Civil completó con éxito un proyecto pionero para transformar lodos de relave minero en placa huella para vías rurales. Ingeniería Ambiental presentó una propuesta modelo para la viabilidad ambiental de la industria calera en Santander. En la Serranía de los Yariguíes, trabajamos con ASOYARIGUIES (MinCiencias) para convertir residuos orgánicos en biogás. En "Maquilando Felicidad", promovemos la economía circular y la reducción de la contaminación.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          Civil Engineering successfully completed a pioneering project to transform mine tailings sludge into paving slabs for rural roads. Environmental Engineering presented a model proposal for the environmental viability of the lime industry in Santander. In the Serranía de los Yariguíes, we work with ASOYARIGUIES (MinCiencias) to convert organic waste into biogas. In "Maquilando Felicidad", we promote the circular economy and pollution reduction.
+        </p>
+      </div>
+    </section>
+
+    <section id="ecosistema-reconocido">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">El Ecosistema Reconocido y Conectado</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">The Recognized and Connected Ecosystem</h2>
+        <div class="section-rule"></div>
+
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">
+          El resultado de este ciclo de vida deliberado es un liderazgo reconocido que nos posiciona como el nexo central de la innovación regional y nacional.
+        </p>
+        <p class="lead justified" data-lang-content data-lang="en">
+          The result of this deliberate lifecycle is a recognized leadership that positions us as the central nexus of regional and national innovation.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">La Validación Externa (SCImago)</h3>
+        <h3 data-lang-content data-lang="en">External Validation (SCImago)</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Nuestro ecosistema no es una autopercepción. El Ranking SCImago 2024 nos ubica en el puesto 17 (Top 20) de las mejores universidades de Colombia en investigación e innovación.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          Our ecosystem is not self-perception. The SCImago Ranking 2024 places us at 17 (Top 20) among the best universities in Colombia for research and innovation.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Definiendo la Agenda Nacional</h3>
+        <h3 data-lang-content data-lang="en">Defining the National Agenda</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          La UDES es el escenario para el diálogo estratégico. La visita de la Ministra de Ciencia, Yesenia Olaya, a nuestros campus de Valledupar y Bucaramanga para priorizar proyectos y discutir el futuro de las energías limpias lo confirma.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          UDES is the stage for strategic dialogue. The visit of the Minister of Science, Yesenia Olaya, to our Valledupar and Bucaramanga campuses to prioritize projects and discuss the future of clean energies confirms this.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Anfitriones del Diálogo Global</h3>
+        <h3 data-lang-content data-lang="en">Hosts of Global Dialogue</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Somos sede del Encuentro de la Red de Investigación en Neurociencias Alemania-Colombia y del I Congreso Internacional de Ingeniería y Transición Energética.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          We host the Meeting of the Germany-Colombia Neuroscience Research Network and the I International Congress on Engineering and Energy Transition.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Alianzas Estratégicas (La Conexión)</h3>
+        <h3 data-lang-content data-lang="en">Strategic Partnerships (The Connection)</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Nuestra innovación se valida en colaboración con los gigantes de la industria, como Ecopetrol (ICP), AGROSAVIA, y nuestra participación fundacional en el Clúster de Innovación en Soluciones Basadas en la Naturaleza.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          Our innovation is validated in collaboration with industry giants such as Ecopetrol (ICP), AGROSAVIA, and our foundational participation in the Innovation Cluster in Nature-Based Solutions.
         </p>
       </div>
     </section>
@@ -322,6 +694,49 @@
       document.querySelectorAll('.sdg-nav-item').forEach(a=>{
         a.classList.toggle('active', a.getAttribute('data-sdg')===current);
       });
+    })();
+  </script>
+
+  <script>
+    // Animación de conteo para las cápsulas (se dispara al entrar en viewport)
+    (function(){
+      const easeOutQuad = t => t*(2-t);
+      function animate(el, from, to, duration){
+        const start = performance.now();
+        function frame(now){
+          const t = Math.min(1, (now - start)/duration);
+          const v = Math.round(from + (to - from) * easeOutQuad(t));
+          el.textContent = v.toLocaleString();
+          if(t < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      }
+
+      const observer = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(!entry.isIntersecting) return;
+          const container = entry.target;
+          const values = container.querySelectorAll('.value');
+          values.forEach(vEl=>{
+            if(vEl.getAttribute('data-animated')) return;
+            const raw = vEl.getAttribute('data-target') || vEl.textContent.replace(/\D/g,'');
+            const target = parseInt(raw,10) || 0;
+            // Handle '10+' label: if non-numeric, skip animation and keep text
+            if(/\D/.test(vEl.getAttribute('data-target'))) {
+              vEl.textContent = vEl.getAttribute('data-target');
+              vEl.setAttribute('data-animated','true');
+              return;
+            }
+            animate(vEl, 0, target, 1100);
+            vEl.setAttribute('data-animated','true');
+          });
+          observer.unobserve(container);
+        });
+      }, { threshold: 0.25 });
+
+      // Observe the capsules container
+      const caps = document.querySelectorAll('.capsules');
+      caps.forEach(c => observer.observe(c));
     })();
   </script>
 </body>
