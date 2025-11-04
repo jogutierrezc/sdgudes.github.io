@@ -27,6 +27,77 @@
     [data-lang-content]{display:none} [data-lang-content][data-visible="true"]{display:block}
     @media (max-width:768px){.sdg-nav-item:hover{height:280px}.sdg-card-image{height:180px;padding:6px}.sdg-card-content{padding:12px}.sdg-card-number{font-size:11px}.sdg-card-title{font-size:12px}}
   </style>
+  <style>
+    /* Local overrides: justify lead paragraphs */
+    .lead.justified { text-align: justify; }
+    /* Forzar visibilidad por idioma: ocultar por defecto */
+    [data-lang-content]{display:none !important}
+    /* Mostrar bloques activos: para elementos normales usar block, pero .capsules mantiene grid */
+    [data-lang-content][data-visible="true"]{display:block !important}
+    [data-lang-content].capsules[data-visible="true"]{display:grid !important}
+
+    /* Cápsulas de impacto: pequeños cards con cifras e íconos */
+    .capsules { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin: 14px 0 10px; align-items:stretch; }
+    .capsule { 
+      background: #fff; 
+      border: 1px solid var(--border-light); 
+      padding: 14px; 
+      border-radius: 10px; 
+      display:flex; 
+      gap:12px; 
+      align-items:center; 
+      box-shadow: var(--shadow-sm); 
+      min-height:88px;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: capsuleIn 0.6s ease forwards;
+    }
+    .capsule:hover { 
+      transform: translateY(-4px); 
+      box-shadow: 0 4px 12px rgba(162,25,66,0.15); 
+      border-color: var(--sdg-accent-light);
+    }
+    .capsule:nth-child(1) { animation-delay: 0.1s; }
+    .capsule:nth-child(2) { animation-delay: 0.2s; }
+    .capsule:nth-child(3) { animation-delay: 0.3s; }
+    .capsule:nth-child(4) { animation-delay: 0.4s; }
+    .capsule:nth-child(5) { animation-delay: 0.5s; }
+    .capsule:nth-child(6) { animation-delay: 0.6s; }
+    .capsule:nth-child(7) { animation-delay: 0.7s; }
+    @keyframes capsuleIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .capsule .icon { 
+      width:48px; 
+      height:48px; 
+      flex:0 0 48px; 
+      display:flex; 
+      align-items:center; 
+      justify-content:center; 
+      border-radius:8px; 
+      background: var(--sdg-accent-light); 
+      color: var(--sdg-accent); 
+      font-size:20px;
+      transition: transform 0.3s ease;
+    }
+    .capsule:hover .icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+    .capsule .meta { font-size:12px; color: var(--text-secondary); margin-bottom:6px; line-height:1.3; }
+    .capsule .value { 
+      font-size:18px; 
+      font-weight:700; 
+      color: var(--text-primary); 
+      line-height:1.2; 
+    }
+    .capsule small { display:block; font-size:11px; color:var(--text-secondary); font-weight:600; margin-top:2px; }
+    @media (max-width:900px){ .capsules{grid-template-columns:repeat(2,1fr);} }
+    @media (max-width:520px){ .capsules{grid-template-columns:repeat(1,1fr);} .hero { padding: 48px 0 36px; } }
+    /* Hero-like band used for emphasis between sections */
+    .hero-band { padding: 64px 0; background: radial-gradient(circle at 50% 0%, var(--sdg-accent-light) 0%, #ffffff 65%); border-bottom:1px solid var(--border-light); }
+    .hero-band .section-title { color: var(--sdg-accent); }
+  </style>
 </head>
 <body>
   <!-- Barra de Navegación ODS Interactiva -->
@@ -280,9 +351,190 @@
     </div>
   </div>
   <main>
-    <section id="contenido"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Contenido</h2><h2 class="section-title" data-lang-content data-lang="en">Content</h2><div class="section-rule"></div></div></section>
-    <section id="noticias"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Noticias Relacionadas</h2><h2 class="section-title" data-lang-content data-lang="en">Related News</h2><div class="section-rule"></div></div></section>
+    <section id="introduccion-ods8">
+      <div class="container">
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">El Objetivo de Desarrollo Sostenible 8 es la piedra angular para la prosperidad y la dignidad humana. No se trata simplemente de crear empleo, sino de fomentar un crecimiento económico sostenido, inclusivo y sostenible, que formalice las oportunidades y promueva la innovación. Para la Universidad de Santander (UDES), este objetivo es una hoja de ruta para transformar el potencial de nuestra región en oportunidades tangibles. Actuamos como un motor de desarrollo, generando eficiencia en nuestros emprendedores, conexión en el ecosistema empresarial y humanismo al poner el foco en la economía popular y el fortalecimiento del tejido social.</p>
+        <!-- Cápsulas de impacto (ES) -->
+        <div class="capsules" data-lang-content data-lang="es" data-visible="true">
+          <div class="capsule" style="order:1">
+            <div class="icon">👥</div>
+            <div>
+              <div class="meta">Participantes Feria "Yo Emprendo"</div>
+              <div class="value">+250<br/><small>IV Feria "Yo Emprendo 2024"</small></div>
+            </div>
+          </div>
+          <div class="capsule" style="order:2">
+            <div class="icon">🎓</div>
+            <div>
+              <div class="meta">Emprendedores certificados (Economía Popular)</div>
+              <div class="value">103<br/><small>Diplomado</small></div>
+            </div>
+          </div>
+          <div class="capsule" style="order:3">
+            <div class="icon">🌱</div>
+            <div>
+              <div class="meta">Emprendimientos verdes y sostenibles</div>
+              <div class="value">30<br/><small>Feria Empresarial</small></div>
+            </div>
+          </div>
+          <div class="capsule" style="order:4">
+            <div class="icon">💼</div>
+            <div>
+              <div class="meta">Tasa de empleabilidad de egresados</div>
+              <div class="value">78%<br/><small>Promoción 2024</small></div>
+            </div>
+          </div>
+          <div class="capsule" style="order:5">
+            <div class="icon">📌</div>
+            <div>
+              <div class="meta">Estudiantes ubicados en prácticas profesionales</div>
+              <div class="value">+320<br/><small>2025-I</small></div>
+            </div>
+          </div>
+          <div class="capsule" style="order:6">
+            <div class="icon">🏢</div>
+            <div>
+              <div class="meta">Colaboradores directos (docentes y administrativos)</div>
+              <div class="value">1,240<br/><small>Personal total</small></div>
+            </div>
+          </div>
+          <div class="capsule" style="order:7">
+            <div class="icon">✅</div>
+            <div>
+              <div class="meta">Cobertura SG-SST (Seguridad y Salud en el Trabajo)</div>
+              <div class="value">100%<br/><small>Planta con cobertura</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cápsulas de impacto (EN) -->
+        <div class="capsules" data-lang-content data-lang="en" data-visible="false">
+          <div class="capsule" style="order:1">
+            <div class="icon">👥</div>
+            <div>
+              <div class="meta">External Entrepreneurship Support</div>
+              <div class="value">+250<br/><small>IV Fair "Yo Emprendo 2024"</small></div>
+            </div>
+          </div>
+          <div class="capsule" style="order:2">
+            <div class="icon">🎓</div>
+            <div>
+              <div class="meta">Popular Economy Certification</div>
+              <div class="value">103<br/><small>Diploma Program</small></div>
+            </div>
+          </div>
+          <div class="capsule" style="order:3">
+            <div class="icon">🌱</div>
+            <div>
+              <div class="meta">Green Ventures</div>
+              <div class="value">30<br/><small>Business Fair</small></div>
+            </div>
+          </div>
+          <div class="capsule" style="order:4">
+            <div class="icon">💼</div>
+            <div>
+              <div class="meta">Graduate Employability</div>
+              <div class="value">78%<br/><small>Class of 2024</small></div>
+            </div>
+          </div>
+          <div class="capsule" style="order:5">
+            <div class="icon">📌</div>
+            <div>
+              <div class="meta">Professional Internships</div>
+              <div class="value">+320<br/><small>2025-I</small></div>
+            </div>
+          </div>
+          <div class="capsule" style="order:6">
+            <div class="icon">🏢</div>
+            <div>
+              <div class="meta">Employer Commitment</div>
+              <div class="value">1,240<br/><small>Direct staff</small></div>
+            </div>
+          </div>
+          <div class="capsule" style="order:7">
+            <div class="icon">✅</div>
+            <div>
+              <div class="meta">SG-SST Coverage</div>
+              <div class="value">100%<br/><small>Work safety coverage</small></div>
+            </div>
+          </div>
+        </div>
+  <p class="lead justified" data-lang-content data-lang="en" data-visible="false">Sustainable Development Goal 8 is the cornerstone for prosperity and human dignity. It is not simply about creating jobs, but about fostering sustained, inclusive and sustainable economic growth that formalizes opportunities and promotes innovation. For the Universidad de Santander (UDES), this goal is a roadmap to transform our region's potential into tangible opportunities. We act as an engine of development, generating efficiency among our entrepreneurs, connectivity within the business ecosystem, and humanism by focusing on the popular economy and strengthening the social fabric.</p>
+      </div>
+    </section>
+    
+    <section id="eficiencia-ods8">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Eficiencia: La Metodología del Éxito</h2>
+        <h2 class="section-title" data-lang-content data-lang="en" data-visible="false">Efficiency: The Methodology of Success</h2>
+        <div class="section-rule"></div>
+
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">Nuestra conexión se traduce en plataformas eficientes para la acción. No solo discutimos sobre el emprendimiento; lo cultivamos sistemáticamente. Hemos desarrollado un ecosistema que guía al emprendedor desde la idea hasta el mercado.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">Our connectivity translates into efficient platforms for action. We don't just discuss entrepreneurship; we cultivate it systematically. We've developed an ecosystem that guides the entrepreneur from idea to market.</p>
+
+        <h4 class="muted" data-lang-content data-lang="es">Formación y Metodología</h4>
+        <h4 class="muted" data-lang-content data-lang="en" data-visible="false">Training and Methodology</h4>
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">Iniciativas como la Ruta RUGEE y su taller "Decidí emprender" socializan una metodología clara para la creación de empresas. Esta formación se consolida con programas de alto impacto, como el Diplomado en Fortalecimiento de las Unidades Productivas de la Economía Popular, que certificó a 103 emprendedores locales, dotándolos de herramientas reales.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">Initiatives such as the Ruta RUGEE and its workshop "I Decided to Start" disseminate a clear methodology for company creation. This training is consolidated with high-impact programs, such as the Diploma in Strengthening Productive Units of the Popular Economy, which certified 103 local entrepreneurs, equipping them with real tools.</p>
+
+        <h4 class="muted" data-lang-content data-lang="es">Plataformas de Visibilidad</h4>
+        <h4 class="muted" data-lang-content data-lang="en" data-visible="false">Platforms of Visibility</h4>
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">Materializamos las ideas. La IV Feria Internacional de Emprendimiento "Yo Emprendo 2024" se consolidó como una plataforma esencial, reuniendo a más de 250 emprendedores. Paralelamente, la Feria Empresarial para la Economía Popular sirvió de vitrina para 30 emprendimientos verdes y sostenibles surgidos de nuestro diplomado.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">We materialize ideas. The IV International Entrepreneurship Fair "Yo Emprendo 2024" consolidated as an essential platform, bringing together over 250 entrepreneurs. At the same time, the Business Fair for the Popular Economy showcased 30 green and sustainable ventures that emerged from our diploma program.</p>
+
+        <h4 class="muted" data-lang-content data-lang="es">Resultados Medibles</h4>
+        <h4 class="muted" data-lang-content data-lang="en" data-visible="false">Measurable Results</h4>
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">Nuestro modelo funciona. El éxito de nuestros estudiantes, como el segundo puesto obtenido en el Santander IGNITION LAB, demuestra la capacidad tecnológica e innovadora que estamos cultivando.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">Our model works. The success of our students, such as the second place achieved in the Santander IGNITION LAB, demonstrates the technological and innovative capacity we are cultivating.</p>
+      </div>
+    </section>
+
+    <section id="conexion-estrategica-ods8" class="hero-band" aria-label="Conexión Estratégica ODS8">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Conexión Estratégica: El Ecosistema del Progreso</h2>
+        <h2 class="section-title" data-lang-content data-lang="en" data-visible="false">Strategic Connectivity: The Ecosystem of Progress</h2>
+        <div class="section-rule"></div>
+
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">La UDES es el nexo que une a los actores clave del desarrollo. No esperamos el cambio; lo convocamos y lo articulamos. Nuestra vocación de articuladores se demuestra al ser el escenario donde la academia, la empresa y el Estado dialogan y trazan objetivos comunes.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">UDES is the nexus that brings together the key actors of development. We do not wait for change; we convene and articulate it. Our role as conveners is demonstrated by being the stage where academia, industry and government dialog and set shared objectives.</p>
+
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">Eventos como el Foro Económico Regional y Empresarial de Santander (FERES 2024) y el "Panel de Sinergias: Empresa, Academia y Estado" son la prueba de nuestra capacidad para crear el diálogo estratégico.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">Events such as the Santander Regional and Business Economic Forum (FERES 2024) and the "Synergies Panel: Business, Academia and Government" are proof of our capacity to create strategic dialogue.</p>
+
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">Lideramos la conversación sectorial, como se vio en la reunión de la Mesa de Economía Popular y Solidaria de Santander durante nuestro VI Congreso de MiPyME, y al ser anfitriones de las mesas de trabajo para la nueva Ley del Deporte, reconociendo su impacto en la economía y el bienestar.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">We lead the sectoral conversation, as seen in the meeting of the Popular and Solidarity Economy Table of Santander during our VI MiPyME Congress, and by hosting working groups for the new Sports Law, recognizing its impact on the economy and well-being.</p>
+
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">Conectamos a nuestros emprendedores con el mundo a través de eventos como "Viviendo la mentoría", un encuentro digital con expertos nacionales e internacionales en innovación.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">We connect our entrepreneurs to the world through events like "Living Mentorship", a digital gathering with national and international innovation experts.</p>
+      </div>
+    </section>
   </main>
+    
+    <section id="humanismo-ods8" aria-label="Humanismo: El Rostro del Crecimiento Económico">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es" data-visible="true">Humanismo: El Rostro del Crecimiento Económico</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Humanism: The Face of Economic Growth</h2>
+        <div class="section-rule"></div>
+
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">El crecimiento económico carece de sentido si no fortalece el tejido social. El humanismo es el "por qué" de nuestra labor. Detrás de cada estadística hay una historia de vida, una familia y una tradición.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">Economic growth is meaningless if it does not strengthen the social fabric. Humanism is the "why" behind our work. Behind every statistic is a life story, a family and a tradition.</p>
+
+        <h4 class="muted" data-lang-content data-lang="es" data-visible="true">Impacto Comunitario</h4>
+        <h4 class="muted" data-lang-content data-lang="en" data-visible="false">Community Impact</h4>
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">Proyectos de proyección social como "Maquilando Felicidad" en Piedecuesta demuestran nuestro enfoque integral. Allí, no solo fomentamos unidades productivas, sino que fortalecemos la empleabilidad juvenil y la cohesión comunitaria.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">Social outreach projects such as "Maquilando Felicidad" in Piedecuesta demonstrate our comprehensive approach. There, we not only foster productive units but also strengthen youth employability and community cohesion.</p>
+
+        <h4 class="muted" data-lang-content data-lang="es" data-visible="true">Preservación de la Tradición</h4>
+        <h4 class="muted" data-lang-content data-lang="en" data-visible="false">Preservation of Tradition</h4>
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">Celebramos las historias que dan identidad a nuestra región. Apoyamos a emprendedoras como Libia Vesga y su "Cacao Macaregua" en Lebrija, quien no solo genera valor agregado, sino que preserva una tradición cacaotera que es el sustento de cientos de familias.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">We celebrate the stories that give identity to our region. We support entrepreneurs such as Libia Vesga and her "Cacao Macaregua" in Lebrija, who not only generate added value but also preserve a cacao tradition that sustains hundreds of families.</p>
+
+        <h4 class="muted" data-lang-content data-lang="es" data-visible="true">Reconocimiento</h4>
+        <h4 class="muted" data-lang-content data-lang="en" data-visible="false">Recognition</h4>
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">Entendemos que el desarrollo económico es, ante todo, un acto de dignidad. Por ello, culminamos nuestros esfuerzos con la "Gala de Logros de la Economía Popular y Solidaria", un evento para reconocer y celebrar el esfuerzo de los emprendedores que, con el apoyo de la UDES, fortalecen el sector más vital de nuestra economía.</p>
+        <p class="lead justified" data-lang-content data-lang="en" data-visible="false">We understand that economic development is, above all, an act of dignity. Therefore, we culminate our efforts with the "Gala of Achievements of the Popular and Solidarity Economy", an event to recognize and celebrate the efforts of entrepreneurs who, with the support of UDES, strengthen the most vital sector of our economy.</p>
+      </div>
+    </section>
   <footer role="contentinfo"><div class="container"><div data-lang-content data-lang="es">© 2025 · Informe ODS 8 · Versión para uso académico.</div><div data-lang-content data-lang="en">© 2025 · SDG 8 Report · Academic use version.</div></div></footer>
   <script>
     // Conmutación de idioma con persistencia
@@ -314,6 +566,57 @@
       document.querySelectorAll('.sdg-nav-item').forEach(a=>{
         a.classList.toggle('active', a.getAttribute('data-sdg')===current);
       });
+    })();
+    
+    // Animación de conteo para los números de las cápsulas
+    (function(){
+      function animateNumber(element, target, duration = 1500) {
+        const start = 0;
+        const startTime = performance.now();
+        const isPercentage = target.includes('%');
+        const hasPlus = target.includes('+');
+        const numericTarget = parseFloat(target.replace(/[^\d.]/g, ''));
+        
+        function update(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+          const current = Math.floor(easeOutQuart * numericTarget);
+          
+          let displayValue = current.toLocaleString('es-ES');
+          if (hasPlus) displayValue = '+' + displayValue;
+          if (isPercentage) displayValue = displayValue + '%';
+          
+          element.childNodes[0].textContent = displayValue;
+          
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            element.childNodes[0].textContent = target.replace(/\d{1,3}(?=(\d{3})+(?!\d))/g, '$&,');
+          }
+        }
+        
+        requestAnimationFrame(update);
+      }
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.dataset.animated) {
+            entry.target.dataset.animated = 'true';
+            const valueEl = entry.target.querySelector('.value');
+            if (valueEl && valueEl.childNodes[0]) {
+              const originalText = valueEl.childNodes[0].textContent;
+              animateNumber(valueEl, originalText, 1200);
+            }
+          }
+        });
+      }, { threshold: 0.3 });
+      
+      setTimeout(() => {
+        document.querySelectorAll('.capsule').forEach(capsule => {
+          observer.observe(capsule);
+        });
+      }, 100);
     })();
   </script>
 </body>
