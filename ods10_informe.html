@@ -23,8 +23,44 @@
     html[lang="en"] .lang-es { display: none !important; }
     /* Paleta ODS */
     .sdg-1{background:#E5243B}.sdg-2{background:#DDA63A}.sdg-3{background:#4C9F38}.sdg-4{background:#C5192D}.sdg-5{background:#FF3A21}.sdg-6{background:#26BDE2}.sdg-7{background:#FCC30B}.sdg-8{background:#A21942}.sdg-9{background:#FD6925}.sdg-10{background:#DD1367}.sdg-11{background:#FD9D24}.sdg-12{background:#BF8B2E}.sdg-13{background:#3F7E44}.sdg-14{background:#0A97D9}.sdg-15{background:#56C02B}.sdg-16{background:#00689D}.sdg-17{background:#19486A}
-    /* Utilidad bilingüe genérica */
-    [data-lang-content]{display:none} [data-lang-content][data-visible="true"]{display:block}
+  /* Utilidad bilingüe genérica */
+  [data-lang-content]{display:none}
+  [data-lang-content][data-visible="true"]{display:block}
+
+  /* Texto justificado (scope: main) */
+  main p,
+  main li,
+  main figcaption,
+  .lead,
+  .justified { text-align: justify; text-justify: inter-word; }
+
+  /* Noticias relacionadas - mini cards */
+  .news-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0}
+  .news-card{display:flex;gap:10px;align-items:flex-start;padding:8px;border-radius:8px;border:1px solid var(--border-light);background:#fff}
+  .news-card img{width:120px;height:72px;object-fit:cover;border-radius:6px;flex:0 0 120px}
+  .news-card .meta{font-size:13px;color:var(--text-primary);font-weight:600}
+  .news-card a{color:var(--text-primary);text-decoration:none}
+  .news-card small{display:block;color:var(--text-secondary);font-size:12px;margin-top:6px}
+  @media (max-width:1000px){.news-grid{grid-template-columns:repeat(3,1fr)}}
+  @media (max-width:720px){.news-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:480px){.news-grid{grid-template-columns:repeat(1,1fr)}}
+
+    /* Cápsulas de impacto - estilo reutilizable */
+    .capsules{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px;align-items:stretch}
+    .capsule{display:flex;gap:12px;padding:18px;border-radius:12px;background:#fff;border:1px solid var(--border-light);box-shadow:var(--shadow-sm);align-items:center;min-height:98px}
+    .capsule .icon{font-size:28px;line-height:1.1;flex:0 0 46px;display:flex;align-items:center;justify-content:center}
+    .capsule .meta{font-weight:700;color:var(--text-secondary);font-size:13px}
+    .capsule .value{font-size:20px;font-weight:700;color:var(--sdg-accent);margin-top:6px}
+    .capsule small{display:block;color:var(--text-secondary);font-size:12px;margin-top:6px}
+    @media (max-width:900px){.capsules{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:520px){.capsules{grid-template-columns:repeat(1,1fr)}}
+
+    /* ensure visible language blocks that are grids use grid display when shown */
+    [data-lang-content][data-visible="true"].capsules,
+    .capsules[data-visible="true"]{
+      display:grid !important;
+      grid-template-columns:repeat(3,1fr);
+    }
     @media (max-width:768px){.sdg-nav-item:hover{height:280px}.sdg-card-image{height:180px;padding:6px}.sdg-card-content{padding:12px}.sdg-card-number{font-size:11px}.sdg-card-title{font-size:12px}}
   </style>
 </head>
@@ -280,9 +316,334 @@
     </div>
   </div>
   <main>
-    <section id="contenido"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Contenido</h2><h2 class="section-title" data-lang-content data-lang="en">Content</h2><div class="section-rule"></div></div></section>
-    <section id="noticias"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Noticias Relacionadas</h2><h2 class="section-title" data-lang-content data-lang="en">Related News</h2><div class="section-rule"></div></div></section>
-  </main>
+    
+    <!-- Secciones ODS10: Reducción de Desigualdades -->
+    <section id="ods10_intro">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">ODS 10: Reducción de las Desigualdades</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">SDG 10: Reduced Inequalities</h2>
+        <div class="section-rule"></div>
+
+        <p class="lead justified" data-lang-content data-lang="es" data-visible="true">
+          El Objetivo de Desarrollo Sostenible 10, que busca reducir las desigualdades, es el eje transversal que da sentido a la misión de la Universidad de Santander. Más allá de la excelencia académica, la UDES asume un rol de liderazgo en la construcción de una sociedad justa, equitativa e inclusiva. Entendemos la reducción de las desigualdades no como una acción caritativa, sino como un imperativo estratégico para el desarrollo regional.
+        </p>
+        <p class="lead justified" data-lang-content data-lang="en">
+          Sustainable Development Goal 10, which seeks to reduce inequalities, is the cross-cutting axis that gives meaning to the mission of the University of Santander. Beyond academic excellence, UDES assumes a leadership role in building a just, equitable and inclusive society. We understand reducing inequalities not as a charitable action, but as a strategic imperative for regional development.
+        </p>
+
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Nuestra filosofía se basa en que el acceso al conocimiento y a las oportunidades debe ser universal. Por ello, hemos implementado una robusta Política de Inclusión, Equidad y Diversidad que no se queda en el papel, sino que se traduce en una eficiencia institucional para derribar barreras, una conexión profunda con las necesidades de la comunidad y un humanismo que pone la dignidad de la persona en el centro de todas nuestras acciones.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          Our philosophy is based on the belief that access to knowledge and opportunities must be universal. Therefore, we have implemented a robust Inclusion, Equity and Diversity Policy that does not remain on paper but translates into institutional efficiency to break down barriers, a deep connection with community needs and a humanism that places the dignity of the person at the center of all our actions.
+        </p>
+
+        <!-- Cápsulas de datos ODS10 -->
+        <div class="capsules" aria-hidden="false">
+          <div class="capsule">
+            <div class="icon">📊</div>
+            <div>
+              <div class="meta"><span class="lang-es">Eventos formación (semestre)</span><span class="lang-en">Training events (semester)</span></div>
+              <div class="value" data-target="27">27</div>
+              <small><span class="lang-es">Ofrecidos por Educación Continua</span><span class="lang-en">Offered by Continuing Education</span></small>
+            </div>
+          </div>
+
+          <div class="capsule">
+            <div class="icon">🎯</div>
+            <div>
+              <div class="meta"><span class="lang-es">Estudiantes beneficiados</span><span class="lang-en">Students benefited</span></div>
+              <div class="value" data-target="100">100+</div>
+              <small><span class="lang-es">Diplomado Economía Popular</span><span class="lang-en">Popular Economy diploma</span></small>
+            </div>
+          </div>
+
+          <div class="capsule">
+            <div class="icon">🤝</div>
+            <div>
+              <div class="meta"><span class="lang-es">Nodo Santander</span><span class="lang-en">Nodo Santander partners</span></div>
+              <div class="value" data-target="3">3</div>
+              <small><span class="lang-es">Universidades involucradas</span><span class="lang-en">Universities involved</span></small>
+            </div>
+          </div>
+
+          <div class="capsule">
+            <div class="icon">🧭</div>
+            <div>
+              <div class="meta"><span class="lang-es">Programas inclusivos</span><span class="lang-en">Inclusive programs</span></div>
+              <div class="value" data-target="VIRTUDES">VIRTUDES</div>
+              <small><span class="lang-es">Estrategia de campus seguro</span><span class="lang-en">Safe campus strategy</span></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <figure style="max-width:1160px;margin:8px auto;border-radius:10px;overflow:hidden;">
+      <img src="https://udes.edu.co/media/k2/items/cache/07c73e94168890d2c8fcf905b9eff9fd_XL.jpg" alt="Placeholder ODS10" style="width:100%;display:block;"/>
+    </figure>
+
+    <section id="ods10_eficiencia">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Eficiencia: La Infraestructura Estratégica de la Equidad</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Efficiency: The Strategic Infrastructure of Equity</h2>
+        <div class="section-rule"></div>
+
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          En la UDES, la inclusión es un proyecto de alta dirección, gestionado con la misma rigurosidad que nuestra excelencia académica. Hemos construido una infraestructura institucional diseñada para garantizar la equidad de manera sistemática y medible.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          At UDES, inclusion is a top-management project, managed with the same rigor as our academic excellence. We have built an institutional infrastructure designed to guarantee equity in a systematic and measurable way.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Gobernanza y Liderazgo</h3>
+        <h3 data-lang-content data-lang="en">Governance and Leadership</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Nuestro Comité de Inclusión, Equidad y Diversidad, presidido por Bienestar Institucional y con la participación de Vicerrectores, sesiona periódicamente para asegurar la implementación y ejecución de la política.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          Our Inclusion, Equity and Diversity Committee, chaired by Institutional Welfare and with the participation of Vice-Rectors, meets periodically to ensure the implementation and execution of the policy.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Marco de Referencia Global</h3>
+        <h3 data-lang-content data-lang="en">Global Reference Framework</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Fuimos seleccionados para el programa Fulbright Specialist con el proyecto "Building an institutional framework for inclusion and diversity in Higher Education", colaborando con expertas de NC State University.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          We were selected for the Fulbright Specialist program with the project "Building an institutional framework for inclusion and diversity in Higher Education", collaborating with experts from NC State University.
+        </p>
+      </div>
+    </section>
+
+    <figure style="max-width:1160px;margin:8px auto;border-radius:10px;overflow:hidden;">
+      <img src="https://udes.edu.co/media/k2/items/cache/972af64152bd2f89ff4ffece2e18c7c5_XL.jpg" alt="Placeholder Eficiencia" style="width:100%;display:block;"/>
+    </figure>
+
+    <section id="ods10_conexion">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Conexión: Tejiendo una Red Inclusiva Más Allá del Campus</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Connection: Weaving an Inclusive Network Beyond Campus</h2>
+        <div class="section-rule"></div>
+
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Entendemos que la desigualdad se combate en red. La UDES actúa como un conector clave, formando profesionales con una perspectiva inclusiva y convocando a instituciones para unificar esfuerzos.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          We understand that inequality is fought through networks. UDES acts as a key connector, training professionals with an inclusive perspective and convening institutions to unify efforts.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Liderazgo Sectorial</h3>
+        <h3 data-lang-content data-lang="en">Sectoral Leadership</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Fuimos anfitriones de la jornada del Nodo Santander para la inclusión, convocando a otras universidades para avanzar en procesos de certificación de discapacidad.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          We hosted the Nodo Santander inclusion workshop, convening other universities to advance disability certification processes.
+        </p>
+      </div>
+    </section>
+
+    <figure style="max-width:1160px;margin:8px auto;border-radius:10px;overflow:hidden;">
+      <img src="https://udes.edu.co/media/k2/items/cache/b51591ca857563cae3bb372497cd7e2c_XL.jpg?t=20240521_205012" alt="Placeholder Conexión" style="width:100%;display:block;"/>
+    </figure>
+
+    <section id="ods10_humanismo">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Humanismo: El Rostro de la Oportunidad y la Dignidad</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Humanism: The Face of Opportunity and Dignity</h2>
+        <div class="section-rule"></div>
+
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          El fin último de nuestra estrategia es el impacto humano. La reducción de la desigualdad se mide en las oportunidades creadas y en la dignidad fomentada.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          The ultimate goal of our strategy is human impact. The reduction of inequality is measured in the opportunities created and the dignity fostered.
+        </p>
+
+        <h3 data-lang-content data-lang="es" data-visible="true">Acceso Financiero y Empoderamiento</h3>
+        <h3 data-lang-content data-lang="en">Financial Access & Empowerment</h3>
+        <p class="justified" data-lang-content data-lang="es" data-visible="true">
+          Promovemos oportunidades financieras y la Escuela Empresarial Udeista ha impactado a más de 100 estudiantes y emprendedores a través del Diplomado de Economía Popular.
+        </p>
+        <p class="justified" data-lang-content data-lang="en">
+          We promote financial opportunities and the Udeista Business School has impacted more than 100 students and entrepreneurs through the Popular Economy Diploma.
+        </p>
+      </div>
+    </section>
+    <!-- Noticias relacionadas: mini-tarjetas -->
+    <section id="ods10_noticias">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es" data-visible="true">Noticias relacionadas</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Related news</h2>
+        <div class="section-rule"></div>
+
+        <div class="news-grid" role="list" aria-label="Noticias relacionadas UDES">
+          <!-- Card 1 -->
+          <a class="news-card" role="listitem" href="https://udes.edu.co/institucional/noticias/udes-implementa-recursos-para-la-inclusion-y-la-excelencia-academica" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://udes.edu.co/media/k2/items/cache/222ebe5ffc6b5262ac8949cd7976cdf5_XL.jpg?t=20240419_154631" alt="UDES implementa recursos para la inclusión" />
+            <div>
+              <div class="meta">UDES implementa recursos para la inclusión</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 2 -->
+          <a class="news-card" role="listitem" href="https://udes.edu.co/extension/noticias/diplomado-economia-popular" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://udes.edu.co/media/k2/items/cache/faaeb76fc0ce80c59260f57f2c72064b_XL.jpg?t=20240419_144810" alt="Diplomado de Economía Popular" />
+            <div>
+              <div class="meta">Diplomado Economía Popular</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 3 -->
+          <a class="news-card" role="listitem" href="https://udes.edu.co/comunicaciones/noticias/estudiantes-udes-aprenden-sistema-braille" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://udes.edu.co/images/inclusion-udes-sistema-braile.jpeg" alt="Estudiantes aprenden sistema braille" />
+            <div>
+              <div class="meta">Estudiantes aprenden el sistema braille</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 4 -->
+          <a class="news-card" role="listitem" href="https://udes.edu.co/institucional/noticias/nodo-santander" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://udes.edu.co/media/k2/items/cache/b51591ca857563cae3bb372497cd7e2c_XL.jpg?t=20240521_205012" alt="Nodo Santander" />
+            <div>
+              <div class="meta">Nodo Santander: jornada de inclusión</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 5 -->
+          <a class="news-card" role="listitem" href="#" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://udes.edu.co/media/k2/items/cache/07c73e94168890d2c8fcf905b9eff9fd_XL.jpg" alt="Imagen UDES" />
+            <div>
+              <div class="meta">Noticias UDES</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 6 -->
+          <a class="news-card" role="listitem" href="#" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://udes.edu.co/media/k2/items/cache/972af64152bd2f89ff4ffece2e18c7c5_XL.jpg" alt="Imagen noticia" />
+            <div>
+              <div class="meta">Noticias UDES</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 7 -->
+          <a class="news-card" role="listitem" href="#" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://placehold.co/480x320/DD1367/ffffff?text=Noticia+7" alt="Placeholder noticia 7" />
+            <div>
+              <div class="meta">Noticia sin imagen meta</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 8 -->
+          <a class="news-card" role="listitem" href="#" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://placehold.co/480x320/DD1367/ffffff?text=Noticia+8" alt="Placeholder noticia 8" />
+            <div>
+              <div class="meta">Noticia sin imagen meta</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 9 -->
+          <a class="news-card" role="listitem" href="#" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://placehold.co/480x320/DD1367/ffffff?text=Noticia+9" alt="Placeholder noticia 9" />
+            <div>
+              <div class="meta">Noticia sin imagen meta</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 10 -->
+          <a class="news-card" role="listitem" href="#" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://placehold.co/480x320/DD1367/ffffff?text=Noticia+10" alt="Placeholder noticia 10" />
+            <div>
+              <div class="meta">Noticia sin imagen meta</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 11 -->
+          <a class="news-card" role="listitem" href="#" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://placehold.co/480x320/DD1367/ffffff?text=Noticia+11" alt="Placeholder noticia 11" />
+            <div>
+              <div class="meta">Noticia sin imagen meta</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 12 -->
+          <a class="news-card" role="listitem" href="#" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://placehold.co/480x320/DD1367/ffffff?text=Noticia+12" alt="Placeholder noticia 12" />
+            <div>
+              <div class="meta">Noticia sin imagen meta</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 13 -->
+          <a class="news-card" role="listitem" href="#" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://placehold.co/480x320/DD1367/ffffff?text=Noticia+13" alt="Placeholder noticia 13" />
+            <div>
+              <div class="meta">Noticia sin imagen meta</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 14 -->
+          <a class="news-card" role="listitem" href="#" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://placehold.co/480x320/DD1367/ffffff?text=Noticia+14" alt="Placeholder noticia 14" />
+            <div>
+              <div class="meta">Noticia sin imagen meta</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 15 -->
+          <a class="news-card" role="listitem" href="#" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://placehold.co/480x320/DD1367/ffffff?text=Noticia+15" alt="Placeholder noticia 15" />
+            <div>
+              <div class="meta">Noticia sin imagen meta</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 16 -->
+          <a class="news-card" role="listitem" href="#" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://placehold.co/480x320/DD1367/ffffff?text=Noticia+16" alt="Placeholder noticia 16" />
+            <div>
+              <div class="meta">Noticia sin imagen meta</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 17 -->
+          <a class="news-card" role="listitem" href="#" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://placehold.co/480x320/DD1367/ffffff?text=Noticia+17" alt="Placeholder noticia 17" />
+            <div>
+              <div class="meta">Noticia sin imagen meta</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+
+          <!-- Card 18 -->
+          <a class="news-card" role="listitem" href="#" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="https://placehold.co/480x320/DD1367/ffffff?text=Noticia+18" alt="Placeholder noticia 18" />
+            <div>
+              <div class="meta">Noticia sin imagen meta</div>
+              <small>udes.edu.co</small>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
   <footer role="contentinfo"><div class="container"><div data-lang-content data-lang="es">© 2025 · Informe ODS 10 · Versión para uso académico.</div><div data-lang-content data-lang="en">© 2025 · SDG 10 Report · Academic use version.</div></div></footer>
   <script>
     // Conmutación de idioma con persistencia
@@ -314,6 +675,52 @@
       document.querySelectorAll('.sdg-nav-item').forEach(a=>{
         a.classList.toggle('active', a.getAttribute('data-sdg')===current);
       });
+    })();
+  </script>
+  <script>
+    // Animar contadores de las cápsulas cuando entran en vista
+    (function(){
+      const container = document.querySelector('.capsules');
+      if(!container) return;
+      const items = container.querySelectorAll('.value[data-target]');
+      let played = false;
+
+      function easeOutQuad(t){ return t*(2-t); }
+
+      function animateNumber(el, from, to, duration=1000, suffix=''){
+        const start = performance.now();
+        function frame(now){
+          const elapsed = now - start;
+          const t = Math.min(1, elapsed / duration);
+          const v = Math.round(from + (to - from) * easeOutQuad(t));
+          el.textContent = v.toLocaleString() + suffix;
+          if(t < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      }
+
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting && !played){
+            played = true;
+            items.forEach(el=>{
+              const target = el.getAttribute('data-target');
+              const orig = el.textContent || '';
+              const hasPlus = orig.includes('+');
+              if(!isNaN(Number(target))){
+                const suffix = hasPlus ? '+' : '';
+                animateNumber(el, 0, Number(target), 1100, suffix);
+              } else {
+                // no es numérico: dejar tal cual
+                el.textContent = target;
+              }
+            });
+            io.disconnect();
+          }
+        });
+      }, { threshold: 0.2 });
+
+      io.observe(container);
     })();
   </script>
 </body>
