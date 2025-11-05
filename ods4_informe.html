@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ODS 4 · Educación de Calidad | Informe</title>
@@ -8,6 +6,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root { --sdg-accent: #C5192D; --sdg-accent-light: rgba(197,25,45,0.12); --sdg-accent-dark: #9a1424; --text-primary: #2c3e50; --text-secondary: #546e7a; --bg-white: #ffffff; --border-light: #e8eaed; --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);} * { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text-primary); background: var(--bg-white); } .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; } .lang-switch { position: fixed; top: 16px; right: 16px; z-index: 110; display:flex; gap:8px; background:#f6f7f8; padding:4px; border-radius:10px; } .lang-switch button { border:0; background:transparent; padding:8px 14px; border-radius:7px; font-weight:600; color:var(--text-secondary); cursor:pointer; } .lang-switch button.active { background:#fff; color:var(--sdg-accent); box-shadow: var(--shadow-sm); } .hero { padding: 88px 0 72px; background: radial-gradient(circle at 50% 0%, var(--sdg-accent-light) 0%, #ffffff 65%); border-bottom:1px solid var(--border-light); clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%); } .grid-2 { display:grid; grid-template-columns: 1.2fr 0.8fr; gap:32px; align-items:center; } .grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap:28px; } .eyebrow { color: var(--sdg-accent); text-transform: uppercase; font-weight: 700; letter-spacing: .12em; font-size:12px; margin-bottom: 12px; display:inline-block; } h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.15; margin: 0 0 8px 0; } .hero-illustration { width:100%; height:auto; max-width:360px; margin:0 auto; display:block; border-radius:16px; } section { padding: 64px 0; } .section-title { font-size: clamp(24px, 3.5vw, 34px); margin-bottom: 8px; font-weight: 700; } .section-rule { height: 4px; background: linear-gradient(90deg, var(--sdg-accent) 0%, var(--sdg-accent-dark) 100%); margin: 16px 0 32px; border-radius: 2px; width: 64px; } .card { background: var(--bg-white); border: 1px solid var(--border-light); border-radius: 12px; padding: 32px; box-shadow: var(--shadow-sm); transition: all 0.3s ease; } .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-color: var(--sdg-accent-light); } footer { border-top:1px solid var(--border-light); padding: 28px 0; color:#6b7b86; } @media (max-width: 768px) { .grid-3 { grid-template-columns: 1fr; gap: 20px; } }
+  </style>
+  <style>
+    /* UDES en Cifras: iconos y contador */
+    .uds-icon { font-size: 28px; display:block; margin: 0 auto 8px; line-height:1; }
+    .uds-number { display:flex; align-items:center; justify-content:center; gap:10px; }
+    .uds-counter { font-variant-numeric: tabular-nums; }
+  /* spinner removed: counters display the numeric value directly */
   </style>
 </head>
 <body>
@@ -396,6 +401,101 @@
       </div>
     </section>
 
+    <!-- Tarjeta: La UDES en Cifras (debajo de Sección 1) -->
+    <section aria-labelledby="udes-cifras" style="padding: 36px 0 28px; background: linear-gradient(180deg, rgba(197,25,45,0.01) 0%, rgba(255,255,255,0));">
+      <div class="container">
+        <div id="udes-cifras" style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div style="flex:1; min-width:240px;">
+            <h3 style="font-size:20px; font-weight:700; color:var(--sdg-accent); margin-bottom:8px;" data-lang-content data-lang="es">La UDES en Cifras — Vicerrectoría de Extensión</h3>
+            <h3 style="font-size:20px; font-weight:700; color:var(--sdg-accent); margin-bottom:8px;" data-lang-content data-lang="en">UDES in Numbers — Vice-rectory of Extension</h3>
+            <p data-lang-content data-lang="es" style="color:var(--text-secondary); line-height:1.6; text-align:justify; margin:0;">Estos son los números directos que demuestran cómo la UDES, a través de su Vicerrectoría de Extensión, aporta al ODS 4 en los distintos frentes de proyección social, EIP, MIUDES y atención comunitaria.</p>
+            <p data-lang-content data-lang="en" style="color:var(--text-secondary); line-height:1.6; text-align:justify; margin:0;">These are the direct numbers demonstrating how UDES, through its Vice-rectory of Extension, contributes to SDG 4 across social outreach, IPE, MIUDES and community services.</p>
+          </div>
+          <div style="flex:0 0 220px; text-align:right; min-width:180px;">
+            <a href="https://udes.edu.co/images/micrositios/extension/informe-gestion-vicext-2024-2.pdf" class="btn-link" style="padding:8px 12px; font-size:14px;">Ver detalles de Proyección Social</a>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;">
+          <div class="grid-4" style="gap:18px;">
+            <div class="card" style="padding:18px;">
+              <div style="text-align:center;">
+                <div class="uds-icon" aria-hidden="true">👥</div>
+                <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="16030">16,030</span></div>
+                <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Personas beneficiadas</div>
+                <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">por programas de Proyección Social (Multicampus).</div>
+                <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">People benefited</div>
+                <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">by social outreach programs (multicampus).</div>
+              </div>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <div style="text-align:center;">
+                <div class="uds-icon" aria-hidden="true">🎓</div>
+                <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="3220">3,220</span></div>
+                <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Estudiantes UDES</div>
+                <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">participando en Proyección Social.</div>
+                <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">UDES students</div>
+                <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">participating in social outreach programs.</div>
+              </div>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <div style="text-align:center;">
+                <div class="uds-icon" aria-hidden="true">🩺</div>
+                <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="3213">3,213</span></div>
+                <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Pacientes beneficiados</div>
+                <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">por Programa EIP (urbanos y rurales).</div>
+                <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">Patients benefited</div>
+                <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">by the IPE Program (urban & rural).</div>
+              </div>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <div style="text-align:center;">
+                <div class="uds-icon" aria-hidden="true">🧑‍⚕️</div>
+                <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="680">680</span></div>
+                <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Estudiantes EIP</div>
+                <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">vinculados al programa EIP.</div>
+                <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">IPE students</div>
+                <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">linked to the IPE program.</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="height:18px;"></div>
+
+          <div class="grid-4" style="margin-top:12px; gap:18px;">
+            <div class="card" style="padding:18px;">
+              <div style="text-align:center;"><div class="uds-icon" aria-hidden="true">👪</div><div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="585">585</span></div><div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Familias intervenidas</div><div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">por el Programa MIUDES.</div><div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">Families reached</div><div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">by the MIUDES Program.</div></div>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <div style="text-align:center;"><div class="uds-icon" aria-hidden="true">🎓</div><div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="502">502</span></div><div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Estudiantes MIUDES</div><div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">vinculados al Programa MIUDES.</div><div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">MIUDES students</div><div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">linked to the MIUDES Program.</div></div>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <div style="text-align:center;"><div class="uds-icon" aria-hidden="true">⚖️</div><div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="593">593</span></div><div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Consultorio Jurídico</div><div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">usuarios atendidos (2024A).</div><div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">Legal Clinic</div><div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">users served (2024A).</div></div>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <div style="text-align:center;"><div class="uds-icon" aria-hidden="true">🧭</div><div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="2072">2,072</span></div><div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Asuntos Migratorios</div><div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">personas apoyadas.</div><div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">Migration support</div><div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">people supported.</div></div>
+            </div>
+          </div>
+
+          <div style="height:14px;"></div>
+
+          <div class="grid-3" style="margin-top:12px; gap:18px;">
+            <div class="card" style="padding:18px;"><div style="text-align:center;"><div class="uds-icon" aria-hidden="true">♿</div><div class="uds-number" style="font-size:28px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="170">170</span></div><div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Beneficiarios discapacidad</div><div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">programas de atención a la discapacidad.</div><div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">Disability beneficiaries</div><div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">beneficiaries of disability support programs.</div></div></div>
+
+            <div class="card" style="padding:18px;"><div style="text-align:center;"><div class="uds-icon" aria-hidden="true">🧭</div><div class="uds-number" style="font-size:28px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="150">150</span></div><div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Orientación vocacional</div><div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">jóvenes de bachillerato (Proyecto Maquilando Felicidad).</div><div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">Vocational guidance</div><div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">high-school youth (Maquilando Felicidad project).</div></div></div>
+
+            <div class="card" style="padding:18px;"><div style="text-align:center;"><div class="uds-icon" aria-hidden="true">🔬</div><div class="uds-number" style="font-size:28px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="15">15</span></div><div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Semilleros de Experiencia</div><div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">activos para estudiantes de bachillerato.</div><div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">Experience seedbeds</div><div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">active for high-school students.</div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Nueva Sección: Innovación Pedagógica y EIP -->
     <section style="padding: 64px 0; background: var(--bg-white);">
       <div class="container">
@@ -576,6 +676,140 @@
       </div>
     </section>
 
+  <!-- Sección 3: Proyección Social: El Aula Viva -->
+    <section id="proyeccion-social" style="padding: 64px 0; background: linear-gradient(135deg, rgba(197,25,45,0.03) 0%, rgba(197,25,45,0.08) 100%);">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">
+          <span style="display:inline-block;margin-right:8px;">🌱</span>Proyección Social: El Aula Viva
+        </h2>
+        <h2 class="section-title" data-lang-content data-lang="en">
+          <span style="display:inline-block;margin-right:8px;">🌱</span>Social Outreach: El Aula Viva
+        </h2>
+        <div class="section-rule"></div>
+
+        <div data-lang-content data-lang="es" style="margin-bottom:24px;">
+          <p style="font-size:17px; line-height:1.8; color:var(--text-primary); text-align:justify;">
+            El programa "El Aula Viva" es una estrategia institucional de proyección social que articula a estudiantes, docentes y comunidad para brindar formación, asistencia y transferencia de habilidades en contextos vulnerables.
+          </p>
+        </div>
+
+        <div data-lang-content data-lang="en" style="margin-bottom:24px;">
+          <p style="font-size:17px; line-height:1.8; color:var(--text-primary); text-align:justify;">
+            The "El Aula Viva" program is an institutional social outreach strategy that brings together students, faculty and the community to provide training, assistance and skills transfer in vulnerable contexts.
+          </p>
+        </div>
+
+        <div class="grid-3" style="margin-top: 20px;">
+          <!-- Card 1 -->
+          <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+            <div style="text-align:center;">
+              <div style="font-size:48px; font-weight:800; color:var(--sdg-accent); line-height:1; margin-bottom:12px;">16,030</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="es">Beneficiarios en la Comunidad</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="en">Community Beneficiaries</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="es">Personas que han recibido algún servicio, taller o intervención de El Aula Viva.</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="en">People who have received a service, workshop or intervention from El Aula Viva.</div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+            <div style="text-align:center;">
+              <div style="font-size:48px; font-weight:800; color:var(--sdg-accent); line-height:1; margin-bottom:12px;">3,220</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="es">Estudiantes en Formación</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="en">UDES Students Trained</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="es">Participantes universitarios que fueron capacitados o involucrados en las actividades de aula y campo.</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="en">University participants who were trained or involved in classroom and field activities.</div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+            <div style="text-align:center;">
+              <div style="font-size:48px; font-weight:800; color:var(--sdg-accent); line-height:1; margin-bottom:12px;">20</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="es">Programas MIUDES</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="en">MIUDES Programs</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="es">Programas académicos articulados con la estrategia (20 programas).</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="en">Academic programs articulated with the strategy (20 programs).</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-3" style="margin-top:20px;">
+          <!-- Card 4 -->
+          <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+            <div style="text-align:center;">
+              <div style="font-size:48px; font-weight:800; color:var(--sdg-accent); line-height:1; margin-bottom:12px;">502</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="es">Estudiantes MIUDES</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="en">MIUDES Students</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="es">Estudiantes participantes vinculados al programa MIUDES (502).</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="en">Student participants linked to the MIUDES program (502).</div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+            <div style="text-align:center;">
+              <div style="font-size:48px; font-weight:800; color:var(--sdg-accent); line-height:1; margin-bottom:12px;">585</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="es">Familias Intervenidas</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="en">Families Reached</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="es">Familias que recibieron intervenciones o acompañamiento (585).</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="en">Families who received interventions or support (585).</div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+            <div style="text-align:center;">
+              <div style="font-size:40px; font-weight:800; color:var(--sdg-accent); line-height:1; margin-bottom:8px;">593</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="es">Consultorio Jurídico (2024A)</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="en">Legal Clinic (2024A)</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="es">Usuarios atendidos en el Consultorio Jurídico durante el primer periodo 2024.</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="en">Users served by the Legal Clinic during the first term of 2024.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Segunda fila adicional: Asuntos Migratorios y Transferencia de Habilidades -->
+        <div class="grid-3" style="margin-top:20px;">
+          <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+            <div style="text-align:center;">
+              <div style="font-size:48px; font-weight:800; color:var(--sdg-accent); line-height:1; margin-bottom:12px;">2,072</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="es">Asuntos Migratorios</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="en">Migration Support</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="es">Personas apoyadas por iniciativas relacionadas con movilidad y atención a población migrante.</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="en">People supported by initiatives related to mobility and assistance to migrant populations.</div>
+            </div>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+            <div style="text-align:center;">
+              <div style="font-size:36px; font-weight:800; color:var(--sdg-accent); line-height:1; margin-bottom:8px;">150</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="es">Orientación Vocacional</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="en">Vocational Guidance</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="es">Jóvenes orientados en procesos de transferencia de habilidades (ODS 4.4).</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="en">Young people guided in skills transfer processes (SDG 4.4).</div>
+            </div>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, rgba(197,25,45,0.04) 100%); border-top: 4px solid var(--sdg-accent);">
+            <div style="text-align:center;">
+              <div style="font-size:36px; font-weight:800; color:var(--sdg-accent); line-height:1; margin-bottom:8px;">25</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="es">Capacitación Técnica</div>
+              <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sdg-accent-dark); margin-bottom:8px;" data-lang-content data-lang="en">Technical Training</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="es">Jóvenes y mujeres que recibieron capacitación técnica especializada (25).</div>
+              <div style="font-size:14px; color:var(--text-secondary); line-height:1.6; text-align:center;" data-lang-content data-lang="en">Young people and women who received specialized technical training (25).</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nota resumen MIUDES (combinado de cifras) -->
+        <div style="margin-top:20px; text-align:center; color:var(--text-secondary);">
+          <div data-lang-content data-lang="es">Resumen MIUDES: 20 programas · 502 estudiantes · 585 familias intervenidas.</div>
+          <div data-lang-content data-lang="en">MIUDES summary: 20 programs · 502 students · 585 families reached.</div>
+        </div>
+      </div>
+    </section>
+
     <!-- Sección 3: Internacionalización y Formación Global -->
     <section style="padding: 64px 0; background: linear-gradient(135deg, rgba(197,25,45,0.03) 0%, rgba(197,25,45,0.08) 100%);">
       <div class="container">
@@ -747,6 +981,17 @@
                 📊 Conoce todas nuestras cifras de investigación →
               </a>
             </div>
+            <!-- Adiciones: Atención a la Discapacidad, Semilleros y Formación Continua (ES) -->
+            <div style="margin-top:28px;">
+              <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-bottom:8px;">Atención a la Discapacidad</h3>
+              <p style="color:var(--text-secondary); line-height:1.7; margin-bottom:12px; text-align:justify;">A través de proyectos como "Fomento de hábitos de vida saludable para personas con discapacidad", hemos vinculado a <strong>93 estudiantes</strong> que han brindado atención y acompañamiento a <strong>170 beneficiarios</strong>, promoviendo la inclusión real.</p>
+
+              <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-bottom:8px;">Semilleros de Experiencia</h3>
+              <p style="color:var(--text-secondary); line-height:1.7; margin-bottom:12px; text-align:justify;">Llevamos la educación de calidad más allá de nuestras aulas. Con <strong>15 semilleros experienciales</strong> (como "Soy Científico UDES", "League of Leyes", "Soft-IA", etc.), "enamoramos" a estudiantes de bachillerato, permitiéndoles vivir la experiencia universitaria antes de graduarse y facilitando su transición a la educación superior.</p>
+
+              <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-bottom:8px;">Formación Continua</h3>
+              <p style="color:var(--text-secondary); line-height:1.7; margin-bottom:0; text-align:justify;">El aprendizaje no termina con el pregrado. A través de programas de la Vicerrectoría de Extensión como "Mejoramiento de la voz" (<strong>192 asesorías</strong>) o el "Curso de Cuidadores Domiciliarios" (<strong>90 beneficiarios</strong>), ofrecemos capacitación y actualización de habilidades para la vida y el trabajo.</p>
+            </div>
           </div>
         </div>
         
@@ -820,6 +1065,17 @@
                 📊 Explore all our research data →
               </a>
             </div>
+          <!-- Additions: Disability Care, Experience Seedbeds and Continuing Education (EN) -->
+          <div style="margin-top:28px;">
+            <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-bottom:8px;">Disability Care</h3>
+            <p style="color:var(--text-secondary); line-height:1.7; margin-bottom:12px; text-align:justify;">Through projects such as "Promotion of healthy lifestyle habits for people with disabilities", we have engaged <strong>93 students</strong> who provided care and accompaniment to <strong>170 beneficiaries</strong>, promoting real inclusion.</p>
+
+            <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-bottom:8px;">Experience Seedbeds</h3>
+            <p style="color:var(--text-secondary); line-height:1.7; margin-bottom:12px; text-align:justify;">We take quality education beyond our classrooms. With <strong>15 experiential seedbeds</strong> (such as "Soy Científico UDES", "League of Leyes", "Soft-IA", etc.), we "fall students in love" with the university experience, allowing high-school students to live the campus experience before graduating and easing their transition to higher education.</p>
+
+            <h3 style="font-size:18px; font-weight:700; color:var(--sdg-accent); margin-bottom:8px;">Continuing Education</h3>
+            <p style="color:var(--text-secondary); line-height:1.7; margin-bottom:0; text-align:justify;">Learning does not end with undergraduate studies. Through Vice-rectory of Extension programs such as "Voice Improvement" (<strong>192 consultations</strong>) or the "Home Caregivers Course" (<strong>90 beneficiaries</strong>), we offer training and skills-updating for life and work.</p>
+          </div>
           </div>
         </div>
       </div>
