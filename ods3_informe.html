@@ -96,7 +96,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 5px;
+      height: 8px; /* Un poco más ancha para mostrar el texto */
       display: flex;
       z-index: 1000;
       background: transparent;
@@ -104,13 +104,38 @@
 
     .sdg-nav-item {
       flex: 1;
-      height: 5px;
+      height: 8px; /* Sincronizar con navbar */
       cursor: pointer;
       position: relative;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       text-decoration: none;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
+    }
+    
+    /* Texto "ODS N" siempre visible sobre la barra de color */
+    .sdg-nav-item::before {
+      content: "ODS " attr(data-sdg);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      z-index: 2;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+    
+    /* Ocultar el texto cuando se expande la card */
+    .sdg-nav-item:hover::before {
+      opacity: 0;
     }
 
     .sdg-nav-item:hover {

@@ -1,4 +1,69 @@
   <!-- Barra de Navegación ODS Interactiva -->
+  <style>
+    /* Minimal, non-intrusive tweaks: slightly wider colored bar and a compact ODS pill.
+       This preserves the original card composition and imagery. */
+    .sdg-navbar {
+      display: flex;
+      gap: 10px;
+      padding: 8px 14px; /* a touch more horizontal space */
+      align-items: center;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .sdg-nav-item {
+      position: relative;
+      flex: 0 0 auto;
+      min-width: 160px; /* slightly longer than before */
+      text-decoration: none;
+      color: inherit;
+    }
+    /* keep .sdg-card visual styles untouched (composition preserved)
+       only ensure inner alignment so the pill doesn't break layout */
+    .sdg-card { display: flex; align-items: center; gap: 10px; }
+    .sdg-card-image { width: 60px; height: 60px; object-fit: contain; flex: 0 0 60px; }
+
+    /* Single-language white label overlay (Spanish only) */
+    .sdg-nav-item::before {
+      content: "ODS " attr(data-sdg);
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      padding: 5px 9px;
+      border-radius: 12px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 13px;
+      z-index: 2;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+      white-space: nowrap;
+    }
+
+    /* SDG color map for the overlay (keeps white text on colored pill) */
+    .sdg-nav-item.sdg-1::before  { background: #E5243B; }
+    .sdg-nav-item.sdg-2::before  { background: #DDA63A; }
+    .sdg-nav-item.sdg-3::before  { background: #4C9F38; }
+    .sdg-nav-item.sdg-4::before  { background: #C5192D; }
+    .sdg-nav-item.sdg-5::before  { background: #FF3A21; }
+    .sdg-nav-item.sdg-6::before  { background: #26BDE2; }
+    .sdg-nav-item.sdg-7::before  { background: #FCC30B; }
+    .sdg-nav-item.sdg-8::before  { background: #A21942; }
+    .sdg-nav-item.sdg-9::before  { background: #FD6925; }
+    .sdg-nav-item.sdg-10::before { background: #DD1367; }
+    .sdg-nav-item.sdg-11::before { background: #FD9D24; }
+    .sdg-nav-item.sdg-12::before { background: #BF8B2E; }
+    .sdg-nav-item.sdg-13::before { background: #3F7E44; }
+    .sdg-nav-item.sdg-14::before { background: #0A97D9; }
+    .sdg-nav-item.sdg-15::before { background: #56C02B; }
+    .sdg-nav-item.sdg-16::before { background: #00689D; }
+    .sdg-nav-item.sdg-17::before { background: #19486A; }
+
+    @media (max-width: 420px) {
+      .sdg-nav-item::before { font-size: 12px; padding: 4px 7px; }
+      .sdg-card-image { width: 48px; height: 48px; }
+      .sdg-nav-item { min-width: 130px; }
+    }
+  </style>
+
   <nav class="sdg-navbar" role="navigation" aria-label="Navegación ODS">
     <!-- ODS 1 -->
     <a href="ods1_informe.html" class="sdg-nav-item sdg-1 active" data-sdg="1">
