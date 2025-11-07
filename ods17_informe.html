@@ -7,7 +7,7 @@
   <meta name="description" content="Plantilla base para informes ODS 17. Encabezado y secciones en blanco para completar." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --sdg-accent: #19486A; --sdg-accent-light: rgba(25,72,106,0.12); --text-primary: #2c3e50; --text-secondary: #546e7a; --bg-white: #ffffff; --border-light: #e8eaed; --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);} * { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text-primary); background: var(--bg-white); } .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; } .lang-switch { position: fixed; top: 16px; right: 16px; z-index: 110; display:flex; gap:8px; background:#f6f7f8; padding:4px; border-radius:10px; } .lang-switch button { border:0; background:transparent; padding:8px 14px; border-radius:7px; font-weight:600; color:var(--text-secondary); cursor:pointer; } .lang-switch button.active { background:#fff; color:var(--sdg-accent); box-shadow: var(--shadow-sm); } .hero { padding: 88px 0 72px; background: radial-gradient(circle at 50% 0%, var(--sdg-accent-light) 0%, #ffffff 65%); border-bottom:1px solid var(--border-light); clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%); } .grid-2 { display:grid; grid-template-columns: 1.2fr 0.8fr; gap:32px; align-items:center; } .eyebrow { color: var(--sdg-accent); text-transform: uppercase; font-weight: 700; letter-spacing: .12em; font-size:12px; margin-bottom: 12px; display:inline-block; } h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.15; margin: 0 0 8px 0; } .hero-illustration { width:100%; height:auto; max-width:360px; margin:0 auto; display:block; border-radius:16px; } section { padding: 64px 0; } .section-title { font-size: clamp(24px, 3.5vw, 34px); margin-bottom: 8px; font-weight: 700; } .section-rule { height: 1px; background: var(--border-light); margin: 16px 0 24px; } footer { border-top:1px solid var(--border-light); padding: 28px 0; color:#6b7b86; }
+    :root { --sdg-accent: #19486A; --sdg-accent-light: rgba(25,72,106,0.12); --text-primary: #2c3e50; --text-secondary: #546e7a; --bg-white: #ffffff; --border-light: #e8eaed; --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);} * { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text-primary); background: var(--bg-white); } .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; } .lang-switch { position: fixed; top: 16px; right: 16px; z-index: 110; display:flex; gap:8px; background:#f6f7f8; padding:4px; border-radius:10px; } .lang-switch button { border:0; background:transparent; padding:8px 14px; border-radius:7px; font-weight:600; color:var(--text-secondary); cursor:pointer; } .lang-switch button.active { background:#fff; color:var(--sdg-accent); box-shadow: var(--shadow-sm); } .hero { padding: 88px 0 72px; background: radial-gradient(circle at 50% 0%, var(--sdg-accent-light) 0%, #ffffff 65%); border-bottom:1px solid var(--border-light); clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%); } .grid-2 { display:grid; grid-template-columns: 1.2fr 0.8fr; gap:32px; align-items:center; } .grid-4 { display:grid; grid-template-columns: repeat(4, 1fr); gap:28px; } @media (max-width:1024px){ .grid-4 { grid-template-columns: repeat(3,1fr); } } @media (max-width:768px){ .grid-4 { grid-template-columns: 1fr; } } .eyebrow { color: var(--sdg-accent); text-transform: uppercase; font-weight: 700; letter-spacing: .12em; font-size:12px; margin-bottom: 12px; display:inline-block; } h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.15; margin: 0 0 8px 0; } .hero-illustration { width:100%; height:auto; max-width:360px; margin:0 auto; display:block; border-radius:16px; } section { padding: 64px 0; } .section-title { font-size: clamp(24px, 3.5vw, 34px); margin-bottom: 8px; font-weight: 700; } .section-rule { height: 1px; background: var(--border-light); margin: 16px 0 24px; } footer { border-top:1px solid var(--border-light); padding: 28px 0; color:#6b7b86; }
 
     /* Barra de navegación ODS (v2) */
     .sdg-navbar { position: fixed; top: 0; left: 0; width: 100%; height: 8px; display: flex; z-index: 1000; background: transparent; }
@@ -288,6 +288,10 @@
         <div class="eyebrow" data-lang-content data-lang="en">Sustainable Development Goals</div>
         <h1 data-lang-content data-lang="es">ODS 17: Alianzas para lograr los objetivos</h1>
         <h1 data-lang-content data-lang="en">SDG 17: Partnerships for the Goals</h1>
+  <p data-lang-content data-lang="es" style="margin-top:12px;line-height:1.6;">El ODS 17 busca "fortalecer los medios de implementación y revitalizar la Alianza Mundial para el Desarrollo Sostenible". En esencia, es el objetivo que llama a la cooperación entre diferentes actores para asegurar el éxito de los otros 16 ODS.</p>
+  <p data-lang-content data-lang="en" style="margin-top:12px;line-height:1.6;">SDG 17 seeks to "strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development." Essentially, it is the goal that calls for cooperation among different actors to ensure the success of the other 16 SDGs.</p>
+  <p data-lang-content data-lang="es" style="margin-top:8px;line-height:1.6;">Este objetivo se centra en la necesidad de crear alianzas multisectoriales (entre el sector público, el privado, la academia y la sociedad civil) y globales para movilizar e intercambiar conocimientos, experiencia, tecnología y recursos financieros.</p>
+  <p data-lang-content data-lang="en" style="margin-top:8px;line-height:1.6;">This goal focuses on the need to create multisectoral partnerships (between the public sector, the private sector, academia and civil society) and global partnerships to mobilize and exchange knowledge, experience, technology and financial resources.</p>
       </div>
       <div style="display:flex;align-items:center;justify-content:center;">
   <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/17.png" alt="Logo ODS 17" class="hero-illustration" onerror="this.onerror=null; this.src='https://placehold.co/320x320/19486A/ffffff?text=ODS+17';"/>
@@ -295,8 +299,242 @@
     </div>
   </div>
   <main>
-    <section id="contenido"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Contenido</h2><h2 class="section-title" data-lang-content data-lang="en">Content</h2><div class="section-rule"></div></div></section>
-    <section id="noticias"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Noticias Relacionadas</h2><h2 class="section-title" data-lang-content data-lang="en">Related News</h2><div class="section-rule"></div></div></section>
+    <section id="apropiacion-17">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">APROPIACIÓN DEL ODS 17 EN LA UNIVERSIDAD DE SANTANDER</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">UDES' Adoption of SDG 17</h2>
+        <div class="section-rule"></div>
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;">La UDES no solo comprende el ODS 17, sino que lo ejerce activamente. Las noticias e iniciativas recientes demuestran que la colaboración es un pilar estratégico de la universidad. Este compromiso se evidencia en cuatro frentes principales:</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;">UDES not only understands SDG 17, it actively practices it. Recent news and initiatives show that collaboration is a strategic pillar of the university. This commitment is evidenced in four main fronts:</p>
+      </div>
+    </section>
+
+    <section id="udes-cifras-17">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">La UDES y las cifras de impacto (ODS 17)</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">UDES impact figures (SDG 17)</h2>
+        <div class="section-rule"></div>
+
+  <div class="grid-4" style="margin-top:20px;">
+          <div class="card" style="padding:18px; text-align:center;">
+            <div class="uds-icon" aria-hidden="true">🏆</div>
+            <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="47">47</span></div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Puesto UI GreenMetric</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">Posición mundial entre 1,477 universidades (2024)</div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">UI GreenMetric Rank</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">Global rank among 1,477 universities (2024)</div>
+          </div>
+
+          <div class="card" style="padding:18px; text-align:center;">
+            <div class="uds-icon" aria-hidden="true">🥼</div>
+            <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="10">10</span></div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Medicina (QS)</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">Programa entre los 10 mejores de Colombia (QS)</div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">Medicine (QS)</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">Program ranked among top 10 in Colombia (QS)</div>
+          </div>
+
+          <div class="card" style="padding:18px; text-align:center;">
+            <div class="uds-icon" aria-hidden="true">📜</div>
+            <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="3">3</span></div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Acreditaciones internacionales</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">EQUAA, ARCUSUR-CNA, PMI</div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">International accreditations</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">EQUAA, ARCUSUR-CNA, PMI</div>
+          </div>
+
+          <div class="card" style="padding:18px; text-align:center;">
+            <div class="uds-icon" aria-hidden="true">🤝</div>
+            <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="11">11</span></div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Universidades internacionales</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">Participan en ACT4SDGS</div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">International partners</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">Participating in ACT4SDGS</div>
+          </div>
+
+          <div class="card" style="padding:18px; text-align:center;">
+            <div class="uds-icon" aria-hidden="true">💼</div>
+            <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="250">250</span></div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Emprendedores</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">Participaron en "Yo Emprendo 2024"</div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">Entrepreneurs</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">Participated in "Yo Emprendo 2024"</div>
+          </div>
+
+          <div class="card" style="padding:18px; text-align:center;">
+            <div class="uds-icon" aria-hidden="true">🎓</div>
+            <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="600">600</span></div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Estudiantes participantes</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">En la III Práctica Interprofesional Internacional</div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">Participating students</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">In the III International Interprofessional Practice</div>
+          </div>
+
+          <div class="card" style="padding:18px; text-align:center;">
+            <div class="uds-icon" aria-hidden="true">👩‍🏫</div>
+            <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="50">50</span></div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Profesores participantes</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">Participating faculty</div>
+          </div>
+
+          <div class="card" style="padding:18px; text-align:center;">
+            <div class="uds-icon" aria-hidden="true">📘</div>
+            <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="80">80</span></div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Cohorte - Salud, Paz y Posconflicto</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">Cohort - Health, Peace & Post-conflict</div>
+          </div>
+
+          <div class="card" style="padding:18px; text-align:center;">
+            <div class="uds-icon" aria-hidden="true">🏛️</div>
+            <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="70">70</span></div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Cohorte - Ciudadanía y Gobernanza</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">Cohort - Citizenship and Governance</div>
+          </div>
+
+          <div class="card" style="padding:18px; text-align:center;">
+            <div class="uds-icon" aria-hidden="true">🛂</div>
+            <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="400">400</span></div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Citas de pasaporte</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">Passport appointments managed on campus</div>
+          </div>
+
+          <div class="card" style="padding:18px; text-align:center;">
+            <div class="uds-icon" aria-hidden="true">🚕</div>
+            <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="78">78</span></div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Taxistas capacitados</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">Taxi drivers trained</div>
+          </div>
+
+          <div class="card" style="padding:18px; text-align:center;">
+            <div class="uds-icon" aria-hidden="true">🔪</div>
+            <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="1000">1000</span></div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Cirugías (Fundación Dibujando Alegría)</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">Surgeries performed with student collaboration</div>
+          </div>
+
+          <div class="card" style="padding:18px; text-align:center;">
+            <div class="uds-icon" aria-hidden="true">🎒</div>
+            <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="38">38</span></div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Estudiantes de movilidad</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="en">Mobility students hosted (B2024)</div>
+          </div>
+
+          <div class="card" style="padding:18px; text-align:center;">
+            <div class="uds-icon" aria-hidden="true">🌍</div>
+            <div class="uds-number" style="font-size:34px; font-weight:800; color:var(--sdg-accent);"><span class="uds-counter" data-target="10">10</span></div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="es">Países con alianzas</div>
+            <div style="font-size:12px; color:var(--text-secondary);" data-lang-content data-lang="es">Alemania, España, Italia, Perú, México, Argentina, Panamá, USA, Canadá, Francia</div>
+            <div style="font-size:12px; font-weight:700; color:var(--sdg-accent-dark); text-transform:uppercase; margin-top:8px;" data-lang-content data-lang="en">Countries with partnerships</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Secciones de Alianzas (sin numeración) -->
+    <section id="alianzas-internacionales">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Alianzas Internacionales y Acreditación Global</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">International Partnerships and Global Accreditation</h2>
+        <div class="section-rule"></div>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;">La UDES ha trascendido las fronteras para construir una red de conocimiento global. Esto no solo eleva su prestigio, sino que garantiza que su comunidad académica esté conectada con los más altos estándares mundiales.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;">UDES has transcended borders to build a global knowledge network. This not only raises its prestige but also ensures its academic community is connected to the highest international standards.</p>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;"><strong>Acreditación y Reconocimiento:</strong> La obtención de la Acreditación Institucional Internacional Multicampus de EQUAA y la renovación de la acreditación internacional ARCUSUR-CNA para Enfermería son testimonios de alianzas exitosas con organismos evaluadores globales. Además, ser clasificada por firmas como Quacquarelli Symonds (QS) y el UI GreenMetric (puesto 47 mundial) nos sitúa en el mapa global de la sostenibilidad y la calidad.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;"><strong>Accreditation and Recognition:</strong> The obtainment of the EQUAA Multicampus International Institutional Accreditation and the renewal of the ARCUSUR-CNA international accreditation for Nursing are evidence of successful alliances with global evaluation bodies. Additionally, being ranked by organizations such as Quacquarelli Symonds (QS) and UI GreenMetric (ranked 47 worldwide) places us on the global map for sustainability and quality.</p>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;"><strong>Cooperación Interuniversitaria:</strong> Las alianzas con la Universidad para la Paz de las Naciones Unidas (UPEACE) para certificaciones internacionales en Paz y Conflicto, el proyecto SanGo con la Universidad de Goethe-Frankfurt (Alemania), y el proyecto ACT4SDGS con un consorcio de 11 universidades internacionales liderado desde Alemania, son ejemplos claros de colaboración para el desarrollo de capacidades.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;"><strong>Inter-university Cooperation:</strong> Partnerships with the University for Peace (UPEACE) for international certifications in Peace and Conflict, the SanGo project with Goethe University Frankfurt (Germany), and the ACT4SDGS project with a consortium of 11 international universities led from Germany, are clear examples of collaboration to build capacity.</p>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;"><strong>Movilidad y Redes:</strong> La participación de profesores y estudiantes en eventos en Chile, Brasil, Argentina, México, Perú y España; la recepción de estudiantes de México (U. Politécnica de Pachuca) y el envío de estudiantes a Italia (U. de Pisa); y la participación en redes como FELAFACS y el Consejo Mundial de Energía fortalecen la transferencia de tecnología y conocimiento.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;"><strong>Mobility and Networks:</strong> Faculty and student participation in events in Chile, Brazil, Argentina, Mexico, Peru and Spain; hosting students from Mexico (U. Politécnica de Pachuca) and sending students to Italy (U. di Pisa); and participation in networks such as FELAFACS and the World Energy Council strengthen technology and knowledge transfer.</p>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;"><strong>Atracción de Talento Global:</strong> La visita de expertos como el consultor alemán York Roessler, la clase magistral del profesor José Luis Galdón (U. Politécnica de Valencia) y la participación en congresos internacionales (Neurocirugía, Hipertensión, Logística) demuestran la capacidad de la UDES para ser anfitriona del diálogo mundial.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;"><strong>Attracting Global Talent:</strong> Visits by experts such as German consultant York Roessler, the masterclass by Professor José Luis Galdón (Polytechnic University of Valencia), and participation in international conferences (Neurosurgery, Hypertension, Logistics) demonstrate UDES' capacity to host global dialogue.</p>
+      </div>
+    </section>
+
+    <section id="alianzas-publico">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Alianzas con el Sector Público y Gubernamental</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Partnerships with Public and Governmental Sector</h2>
+        <div class="section-rule"></div>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;"><strong>Gobierno y Territorio:</strong> Se han firmado acuerdos y memorandos de entendimiento con la Gobernación de Santander (para el Plan de Desarrollo y jornadas de pasaportes), la Alcaldía de Bucaramanga (manuales de convivencia), la Alcaldía de Girón y la Alcaldía de Piedecuesta para el desarrollo local.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;"><strong>Government and Territory:</strong> Agreements and memoranda of understanding have been signed with the Government of Santander (for the Development Plan and passport days), the Mayor's Office of Bucaramanga (regulation manuals), the Mayor's Office of Girón and the Mayor's Office of Piedecuesta for local development.</p>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;"><strong>Entidades Nacionales:</strong> La alianza estratégica con el DANE para el fortalecimiento estadístico y el convenio con el SENA para la homologación de programas demuestran un compromiso con la educación y la empleabilidad a nivel nacional.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;"><strong>National Entities:</strong> Strategic alliance with DANE for statistical strengthening and the agreement with SENA for program recognition demonstrate commitment to education and employability at the national level.</p>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;"><strong>Salud y Sociedad:</strong> Las alianzas con hospitales públicos (San Juan de Dios, Hospital Universitario Comuneros) y la Secretaría de Salud de Bucaramanga (Estrategia Engace TB) son vitales para la formación e intervención en salud pública.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;"><strong>Health and Society:</strong> Alliances with public hospitals (San Juan de Dios, Hospital Universitario Comuneros) and the Bucaramanga Health Secretariat (Engace TB Strategy) are vital for training and intervention in public health.</p>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;"><strong>Ciencia y Educación:</strong> La colaboración con el Ministerio de Educación Nacional (MEN) y el ICBF-ICETEX para programas de posgrado demuestra una alineación con las políticas públicas de fomento a la educación.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;"><strong>Science and Education:</strong> Collaboration with the Ministry of Education (MEN) and ICBF-ICETEX for graduate programs demonstrates alignment with public policies that promote education.</p>
+      </div>
+    </section>
+
+    <section id="alianzas-privado">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Alianzas con el Sector Privado y Productivo</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Partnerships with the Private and Productive Sector</h2>
+        <div class="section-rule"></div>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;"><strong>Innovación y Sostenibilidad:</strong> Destacan convenios con empresas como Veolia ("Comunidades Sostenibles"), AGI Ambiental ("Comunidad Cero"), Energía y Ambiente, y la EMAB (aprovechamiento energético de residuos), todos enfocados en la sostenibilidad.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;"><strong>Innovation and Sustainability:</strong> Notable agreements include Veolia ("Sustainable Communities"), AGI Ambiental ("Community Zero"), Energía y Ambiente, and EMAB (energy recovery from waste), all focused on sustainability.</p>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;"><strong>Desarrollo Empresarial:</strong> Las alianzas con Kahu (bienestar animal y emprendimiento), Campuslands (cooperación académica), Ingenia Soluciones SAS (capacitaciones SENA) y FUNDEGLOB (sector productivo) fortalecen el ecosistema empresarial.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;"><strong>Business Development:</strong> Partnerships with Kahu (animal welfare and entrepreneurship), Campuslands (academic cooperation), Ingenia Soluciones SAS (SENA training) and FUNDEGLOB (productive sector) strengthen the business ecosystem.</p>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;"><strong>Gremios y Sectores Clave:</strong> La colaboración con la Federación Nacional de Cacaoteros (FEDECACAO) para mejorar la calidad del cacao, con CORDEINCALS (sector calzado), y con el Fondo Nacional de Garantías (FNG) para la educación financiera, muestra un impacto directo en la economía regional.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;"><strong>Guilds and Key Sectors:</strong> Collaboration with the National Cocoa Federation (FEDECACAO) to improve cocoa quality, with CORDEINCALS (footwear sector), and with the National Guarantee Fund (FNG) for financial education shows direct impact on the regional economy.</p>
+      </div>
+    </section>
+
+    <section id="alianzas-academicas">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Alianzas Académicas Nacionales y con la Sociedad Civil</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">National Academic Partnerships and Civil Society</h2>
+        <div class="section-rule"></div>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;"><strong>Redes Académicas:</strong> La universidad es un miembro activo del Clúster de Educación Superior en Santander, la Red de Investigación en Neurociencias Alemania-Colombia, la Red Colombiana IES para la Discapacidad y RedCOLSI, fomentando la investigación colaborativa.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;"><strong>Academic Networks:</strong> The university is an active member of the Higher Education Cluster in Santander, the Germany-Colombia Neurosciences Research Network, the Colombian HEIs Network for Disability and RedCOLSI, promoting collaborative research.</p>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;"><strong>Colaboración Interuniversitaria Nacional:</strong> Se mantienen proyectos activos con la UNAB, USTA, UNIMINUTO, UMB, UPC, entre otras, demostrando un espíritu de cooperación regional.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;"><strong>National Inter-university Collaboration:</strong> Active projects are maintained with UNAB, USTA, UNIMINUTO, UMB, UPC, among others, demonstrating a spirit of regional cooperation.</p>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;"><strong>Sociedad Civil y ONG:</strong> El trabajo con la ONG World Vision (programas "AIRE" y "Sin Quemaduras Vivo Feliz"), la Fundación Marie Poussepin ("Maquilando Felicidad"), la Fundación Dibujando Alegría (misión en la Orinoquía), y la Fundación Pintando Huellas (inclusión) demuestra el compromiso social de la UDES con las poblaciones vulnerables.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;"><strong>Civil Society and NGOs:</strong> Work with World Vision ("AIRE" and "Sin Quemaduras Vivo Feliz" programs), Fundación Marie Poussepin ("Maquilando Felicidad"), Fundación Dibujando Alegría (mission in the Orinoquía), and Fundación Pintando Huellas (inclusion) demonstrates UDES' social commitment to vulnerable populations.</p>
+      </div>
+    </section>
+
+    <section id="impacto-cruzado">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Impacto cruzado: El ODS 17 como habilitador de otros ODS</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Cross‑cutting impact: SDG 17 as an enabler of other SDGs</h2>
+        <div class="section-rule"></div>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;">El ODS 17 es un objetivo multiplicador. Las alianzas de la UDES son el vehículo para generar impacto directo en otros Objetivos de Desarrollo Sostenible, demostrando una estrategia integral:</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;">SDG 17 is a multiplier goal. UDES partnerships are the vehicle to generate direct impact on other Sustainable Development Goals, demonstrating an integrated strategy:</p>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.6em;line-height:1.6;"><strong>ODS 3 — Salud y Bienestar:</strong> Las alianzas con hospitales, la participación en el Congreso de la Sociedad Internacional de Hipertensión, el liderazgo del Rector UDES en este campo, y los programas de extensión como "AIRE" y "Sin Quemaduras Vivo Feliz" (en alianza con World Vision) y las jornadas de salud en Piedecuesta, impactan directamente la salud comunitaria.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.6em;line-height:1.6;"><strong>SDG 3 — Good Health and Well‑being:</strong> Partnerships with hospitals, participation in the International Society of Hypertension Congress, leadership by the UDES Rector in this field, and outreach programs such as "AIRE" and "Sin Quemaduras Vivo Feliz" (in partnership with World Vision) and health campaigns in Piedecuesta directly impact community health.</p>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.6em;line-height:1.6;"><strong>ODS 4 — Educación de Calidad:</strong> Todas las alianzas de acreditación (EQUAA, ARCUSUR), los proyectos de cooperación internacional (SanGo con Alemania, ACT4SDGS), las certificaciones con UPEACE y las misiones académicas a Europa y Latinoamérica fortalecen la calidad educativa, la internacionalización y la formación docente.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.6em;line-height:1.6;"><strong>SDG 4 — Quality Education:</strong> Accreditation alliances (EQUAA, ARCUSUR), international cooperation projects (SanGo with Germany, ACT4SDGS), UPEACE certifications and academic missions to Europe and Latin America strengthen educational quality, internationalization and teacher training.</p>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.6em;line-height:1.6;"><strong>ODS 11 — Ciudades y Comunidades Sostenibles:</strong> El lanzamiento del Observatorio Urbano para Bucaramanga es una acción directa. A esto se suman las alianzas con las alcaldías (Bucaramanga, Girón, Piedecuesta), el proyecto "Maquilando Felicidad" para la transformación social en Barro Blanco, y la alianza con Veolia para "Comunidades Sostenibles".</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.6em;line-height:1.6;"><strong>SDG 11 — Sustainable Cities and Communities:</strong> The launch of the Urban Observatory for Bucaramanga is a direct action. This is complemented by partnerships with municipal governments (Bucaramanga, Girón, Piedecuesta), the "Maquilando Felicidad" project for social transformation in Barro Blanco, and the Veolia partnership for "Sustainable Communities".</p>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.6em;line-height:1.6;"><strong>ODS 7 y 13 — Energía y Acción por el Clima:</strong> La UDES se posiciona como líder a través de alianzas estratégicas con la EMAB (aprovechamiento energético de El Carrasco), su ingreso al Consejo Mundial de Energía, la innovación de la "estufa de hidrógeno" presentada en la COP16, y el proyecto de biogás en la Serranía de los Yariguíes.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.6em;line-height:1.6;"><strong>SDG 7 & 13 — Affordable and Clean Energy & Climate Action:</strong> UDES positions itself as a leader through strategic alliances with EMAB (energy recovery at El Carrasco), membership in the World Energy Council, the hydrogen‑stove innovation presented at COP16, and the biogas project in the Serranía de los Yariguíes.</p>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.6em;line-height:1.6;"><strong>ODS 16 — Paz, Justicia e Instituciones Sólidas:</strong> Las certificaciones en "Paz y Conflicto" y "Ciudadanía y Gobernanza" con la Universidad para la Paz (UPEACE) de la ONU, y el trabajo con la Alcaldía de Bucaramanga para la actualización de manuales de convivencia, contribuyen a la construcción de una sociedad más pacífica.</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.6em;line-height:1.6;"><strong>SDG 16 — Peace, Justice and Strong Institutions:</strong> Certifications in "Peace and Conflict" and "Citizenship and Governance" with the University for Peace (UPEACE, UN), and collaboration with the Bucaramanga Mayor's Office to update conduct manuals, contribute to building a more peaceful society.</p>
+      </div>
+    </section>
+
   </main>
   <footer role="contentinfo"><div class="container"><div data-lang-content data-lang="es">© 2025 · Informe ODS 17 · Versión para uso académico.</div><div data-lang-content data-lang="en">© 2025 · SDG 17 Report · Academic use version.</div></div></footer>
   <script>
