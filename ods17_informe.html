@@ -29,6 +29,12 @@
     /* Utilidad bilingüe genérica */
     [data-lang-content]{display:none} [data-lang-content][data-visible="true"]{display:block}
     @media (max-width:768px){.sdg-nav-item:hover{height:280px}.sdg-card-image{height:180px;padding:6px}.sdg-card-content{padding:12px}.sdg-card-number{font-size:11px}.sdg-card-title{font-size:12px}}
+
+    /* Variante visual: secciones con tonos azules del ODS */
+    .section-blue { background: linear-gradient(180deg, rgba(25,72,106,0.06), rgba(25,72,106,0.03)); border-radius: 8px; }
+    .section-blue .section-title { color: var(--sdg-accent); }
+    .section-blue p { color: var(--text-primary); }
+    .section-blue .section-rule { background: rgba(25,72,106,0.08); }
   </style>
 </head>
 <body>
@@ -432,7 +438,7 @@
     </section>
 
     <!-- Secciones de Alianzas (sin numeración) -->
-    <section id="alianzas-internacionales">
+  <section id="alianzas-internacionales" class="section-blue">
       <div class="container">
         <h2 class="section-title" data-lang-content data-lang="es">Alianzas Internacionales y Acreditación Global</h2>
         <h2 class="section-title" data-lang-content data-lang="en">International Partnerships and Global Accreditation</h2>
@@ -455,7 +461,7 @@
       </div>
     </section>
 
-    <section id="alianzas-publico">
+  <section id="alianzas-publico" class="section-blue">
       <div class="container">
         <h2 class="section-title" data-lang-content data-lang="es">Alianzas con el Sector Público y Gubernamental</h2>
         <h2 class="section-title" data-lang-content data-lang="en">Partnerships with Public and Governmental Sector</h2>
@@ -475,7 +481,7 @@
       </div>
     </section>
 
-    <section id="alianzas-privado">
+  <section id="alianzas-privado" class="section-blue">
       <div class="container">
         <h2 class="section-title" data-lang-content data-lang="es">Alianzas con el Sector Privado y Productivo</h2>
         <h2 class="section-title" data-lang-content data-lang="en">Partnerships with the Private and Productive Sector</h2>
@@ -492,7 +498,7 @@
       </div>
     </section>
 
-    <section id="alianzas-academicas">
+  <section id="alianzas-academicas" class="section-blue">
       <div class="container">
         <h2 class="section-title" data-lang-content data-lang="es">Alianzas Académicas Nacionales y con la Sociedad Civil</h2>
         <h2 class="section-title" data-lang-content data-lang="en">National Academic Partnerships and Civil Society</h2>
@@ -509,7 +515,7 @@
       </div>
     </section>
 
-    <section id="impacto-cruzado">
+  <section id="impacto-cruzado" class="section-blue">
       <div class="container">
         <h2 class="section-title" data-lang-content data-lang="es">Impacto cruzado: El ODS 17 como habilitador de otros ODS</h2>
         <h2 class="section-title" data-lang-content data-lang="en">Cross‑cutting impact: SDG 17 as an enabler of other SDGs</h2>
