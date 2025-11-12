@@ -29,6 +29,17 @@
     /* Utilidad bilingüe genérica */
     [data-lang-content]{display:none} [data-lang-content][data-visible="true"]{display:block}
     @media (max-width:768px){.sdg-nav-item:hover{height:280px}.sdg-card-image{height:180px;padding:6px}.sdg-card-content{padding:12px}.sdg-card-number{font-size:11px}.sdg-card-title{font-size:12px}}
+    /* Grid and cards for cifras */
+    .grid-4 { display:grid; grid-template-columns: repeat(4, 1fr); gap:24px; }
+    @media (max-width:1024px){ .grid-4 { grid-template-columns: repeat(3,1fr); } }
+    @media (max-width:768px){ .grid-4 { grid-template-columns: 1fr; } }
+    .card { background:#fff; border:1px solid var(--border-light); border-radius:12px; padding:18px; text-align:center; box-shadow: var(--shadow-sm); }
+    .uds-icon { font-size:28px; margin-bottom:8px; }
+    .uds-number { font-size:34px; font-weight:800; color:var(--sdg-accent); margin-bottom:8px; }
+    .uds-counter { font-variant-numeric: tabular-nums; }
+    .card small { display:block; font-size:12px; color:var(--text-secondary); }
+    /* Justify long text blocks */
+    section p, section li, .container p { text-align: justify; text-justify: inter-word; }
   </style>
 </head>
 <body>
@@ -288,6 +299,8 @@
         <div class="eyebrow" data-lang-content data-lang="en">Sustainable Development Goals</div>
         <h1 data-lang-content data-lang="es">ODS 15: Vida de ecosistemas terrestres</h1>
         <h1 data-lang-content data-lang="en">SDG 15: Life on Land</h1>
+        <p data-lang-content data-lang="es" style="margin-top:12px;line-height:1.6;">La Universidad de Santander (UDES) reafirma su compromiso misional con el entorno, asumiendo un rol de liderazgo en la implementación de los Objetivos de Desarrollo Sostenible (ODS) en la región. Como una de las instituciones líderes en sostenibilidad ambiental en el país, la UDES integra la protección del planeta en su quehacer diario.</p>
+        <p data-lang-content data-lang="en" style="margin-top:12px;line-height:1.6;">The University of Santander (UDES) reaffirms its mission-driven commitment to the environment, taking a leadership role in implementing the Sustainable Development Goals (SDGs) in the region. As one of the country's leading institutions in environmental sustainability, UDES integrates planet protection into its daily work.</p>
       </div>
       <div style="display:flex;align-items:center;justify-content:center;">
   <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/15.png" alt="Logo ODS 15" class="hero-illustration" onerror="this.onerror=null; this.src='https://placehold.co/320x320/56C02B/ffffff?text=ODS+15';"/>
@@ -295,8 +308,112 @@
     </div>
   </div>
   <main>
-    <section id="contenido"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Contenido</h2><h2 class="section-title" data-lang-content data-lang="en">Content</h2><div class="section-rule"></div></div></section>
-    <section id="noticias"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Noticias Relacionadas</h2><h2 class="section-title" data-lang-content data-lang="en">Related News</h2><div class="section-rule"></div></div></section>
+    <section id="cifras-sostenibles">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Cifras sostenibles</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Sustainable figures</h2>
+        <div class="section-rule"></div>
+        <p data-lang-content data-lang="es">En línea con nuestra política de transparencia y gestión basada en resultados, destacamos las siguientes cifras clave que resumen nuestro impacto directo en la promoción del ODS 15:</p>
+        <p data-lang-content data-lang="en">In line with our policy of transparency and results-based management, we highlight the following key figures that summarise our direct impact in promoting SDG 15:</p>
+
+        <div class="grid-4" style="margin-top:18px;">
+          <div class="card">
+            <div class="uds-icon">🌍</div>
+            <div class="uds-number"><span class="uds-counter" data-target="4758">4.758</span> <small>KG</small></div>
+            <div data-lang-content data-lang="es">Reducidos durante la jornada del "día sin carro y sin moto" en Bucaramanga, gracias a la participación activa de nuestra comunidad universitaria.</div>
+            <div data-lang-content data-lang="en">Reduced during the "car and motorcycle free day" in Bucaramanga, thanks to the active participation of our university community.</div>
+          </div>
+
+          <div class="card">
+            <div class="uds-icon">♻️</div>
+            <div class="uds-number"><span class="uds-counter" data-target="300">300</span> <small>KG</small></div>
+            <div data-lang-content data-lang="es">Recolectados en la 19ª jornada de recolección de residuos pos consumo en Bucaramanga, liderada por la UDES para promover la sostenibilidad.</div>
+            <div data-lang-content data-lang="en">Collected during the 19th post-consumption waste collection day in Bucaramanga, led by UDES to promote sustainability.</div>
+          </div>
+
+          <div class="card">
+            <div class="uds-icon">🌱</div>
+            <div class="uds-number"><span class="uds-counter" data-target="52">52</span></div>
+            <div data-lang-content data-lang="es">Líderes comunales de Girón formados como promotores del cuidado del medio ambiente gracias a la alianza "Comunidades Sostenibles" entre la UDES y Veolia.</div>
+            <div data-lang-content data-lang="en">Community leaders from Girón trained as promoters of environmental care thanks to the "Sustainable Communities" alliance between UDES and Veolia.</div>
+          </div>
+
+          <div class="card">
+            <div class="uds-icon">🔬</div>
+            <div class="uds-number"><span class="uds-counter" data-target="19">19</span> <small>AÑOS</small></div>
+            <div data-lang-content data-lang="es">De investigación del Laboratorio de Tejidos Vegetales UDES, protegiendo la biodiversidad agrícola y luchando contra la extinción de especies nativas de Santander mediante biotecnología.</div>
+            <div data-lang-content data-lang="en">Years of research by the UDES Plant Tissue Laboratory, protecting agricultural biodiversity and combating the extinction of native Santander species through biotechnology.</div>
+          </div>
+
+          <div class="card">
+            <div class="uds-icon">🐾</div>
+            <div class="uds-number"><span class="uds-counter" data-target="16">16</span></div>
+            <div data-lang-content data-lang="es">Nuevos pasantes del programa de Medicina Veterinaria entregados al país, fortaleciendo el capital humano dedicado al bienestar animal.</div>
+            <div data-lang-content data-lang="en">New interns from the Veterinary Medicine program delivered to the country, strengthening human capital dedicated to animal welfare.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proteccion-biodiversidad">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Protección de la Biodiversidad y Ecosistemas Estratégicos</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Protection of Biodiversity and Strategic Ecosystems</h2>
+        <div class="section-rule"></div>
+        <p data-lang-content data-lang="es">La UDES enfoca sus esfuerzos en la conservación activa de la riqueza natural de la región:</p>
+        <p data-lang-content data-lang="en">UDES focuses its efforts on the active conservation of the region's natural wealth:</p>
+        <ul>
+          <li data-lang-content data-lang="es">Defensa de Ecosistemas Clave: La UDES reafirmó su compromiso con el medio ambiente participando activamente en la Cumbre de Páramos 2024 en Bucaramanga, un espacio vital para la protección de estos ecosistemas estratégicos.</li>
+          <li data-lang-content data-lang="en">Defense of Key Ecosystems: UDES reaffirmed its commitment to the environment by actively participating in the 2024 Páramos Summit in Bucaramanga, a vital space for protecting these strategic ecosystems.</li>
+          <li data-lang-content data-lang="es">Conservación de Flora Nativa: Ante la amenaza de extinción de especies como las orquídeas santandereanas, el Laboratorio de Tejidos Vegetales UDES (con 19 años de trayectoria) utiliza la biotecnología para propagar in vitro especies de interés y proteger la biodiversidad.</li>
+          <li data-lang-content data-lang="en">Conservation of Native Flora: Facing the threat of extinction of species such as Santander orchids, the UDES Plant Tissue Laboratory (with 19 years of experience) uses biotechnology to propagate in vitro species of interest and protect biodiversity.</li>
+          <li data-lang-content data-lang="es">Acción por el Agua: En alianza con la UPC, se desarrolla un diagnóstico sobre la calidad del agua en el Caño El Pital (Aguachica), fundamental para la salud del ecosistema local.</li>
+          <li data-lang-content data-lang="en">Action for Water: In partnership with UPC, a diagnosis of water quality is being developed in Caño El Pital (Aguachica), fundamental for the health of the local ecosystem.</li>
+          <li data-lang-content data-lang="es">Restauración y Siembra: La universidad participó activamente en la jornada de siembra en conmemoración del Día del Árbol en el Batallón de Servicios #5 Mercedes Ábrego.</li>
+          <li data-lang-content data-lang="en">Restoration and Planting: The university actively participated in the planting day commemorating Tree Day at Battalion of Services #5 Mercedes Ábrego.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="bienestar-animal">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Bienestar Animal como pilar del Ecosistema</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Animal Welfare as an Ecosystem Pillar</h2>
+        <div class="section-rule"></div>
+        <p data-lang-content data-lang="es">Reconociendo que la fauna es parte integral de los ecosistemas, la UDES ha consolidado una robusta estrategia de bienestar animal a través de la academia y la extensión:</p>
+        <p data-lang-content data-lang="en">Recognising that fauna is an integral part of ecosystems, UDES has consolidated a robust animal welfare strategy through academia and outreach:</p>
+        <ul>
+          <li data-lang-content data-lang="es">Alianzas Estratégicas: La Clínica Veterinaria UDES ha fortalecido su servicio a la comunidad mediante alianzas clave con Kahu, para ampliar los servicios al sector externo, y con Cajasan, consolidando una colaboración de más de un año para ofrecer descuentos y asistencia.</li>
+          <li data-lang-content data-lang="en">Strategic Alliances: The UDES Veterinary Clinic has strengthened its community service through key alliances with Kahu, to expand services to the external sector, and with Cajasan, consolidating a collaboration of over a year to offer discounts and assistance.</li>
+          <li data-lang-content data-lang="es">Formación de Alta Calidad: Se entregaron 16 nuevos pasantes de Medicina Veterinaria en la conmemoración de su día. Además, se promueve la excelencia académica con movilidades internacionales de estudiantes a instituciones de prestigio como la Universidad de Pisa en Italia.</li>
+          <li data-lang-content data-lang="en">High-quality Training: 16 new Veterinary Medicine interns were delivered on their day of commemoration. In addition, academic excellence is promoted with international student mobilities to prestigious institutions such as the University of Pisa in Italy.</li>
+          <li data-lang-content data-lang="es">Sensibilización y Extensión: Se lideran iniciativas como el proyecto "Capacita tu barrio" para promover la tenencia responsable de mascotas. Adicionalmente, se lanzó el programa "Cuidado Animal" en el Canal UTV, un espacio de asesoría experta emitido semanalmente, y se inauguró la exposición fotográfica “Vínculos 2024” en honor a los animales.</li>
+          <li data-lang-content data-lang="en">Awareness and Outreach: Initiatives such as the "Capacita tu barrio" project are led to promote responsible pet ownership. Additionally, the "Animal Care" programme was launched on UTV Channel, an expert advice space broadcast weekly, and the “Vínculos 2024” photographic exhibition was inaugurated in honour of animals.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="sostenibilidad-innovacion">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Sostenibilidad, Innovación y Acción Climática</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Sustainability, Innovation and Climate Action</h2>
+        <div class="section-rule"></div>
+        <p data-lang-content data-lang="es">La UDES aplica el conocimiento científico y la innovación para crear soluciones sostenibles que reduzcan el impacto negativo en el medio ambiente:</p>
+        <p data-lang-content data-lang="en">UDES applies scientific knowledge and innovation to create sustainable solutions that reduce negative environmental impact:</p>
+        <ul>
+          <li data-lang-content data-lang="es">Innovación en Energías Limpias: La UDES presenta sus revolucionarios desarrollos en hidrógeno verde en la COP16, demostrando el potencial de la academia para transformar industrias y reducir emisiones.</li>
+          <li data-lang-content data-lang="en">Innovation in Clean Energies: UDES presents its revolutionary developments in green hydrogen at COP16, demonstrating academia's potential to transform industries and reduce emissions.</li>
+          <li data-lang-content data-lang="es">Investigación Aplicada: Se impulsa la investigación en "salud planetaria" (Convocatoria SCOPUS/WOS) y se desarrollan soluciones como el innovador desinfectante respetuoso con el medio ambiente para la industria avícola, evaluado por el programa de Microbiología Industrial.</li>
+          <li data-lang-content data-lang="en">Applied Research: Research in "planetary health" (SCOPUS/WOS call) is promoted and solutions such as an innovative environmentally friendly disinfectant for the poultry industry are developed, evaluated by the Industrial Microbiology program.</li>
+          <li data-lang-content data-lang="es">Acción Comunitaria Sostenible: A través de la alianza con Veolia, se graduaron 52 líderes en el proyecto "Comunidades Sostenibles". Paralelamente, el proyecto "El Recolector" (del programa de Instrumentación Quirúrgica) implementa huertas caseras en Hogares Crea, cultivando cambio social y ambiental.</li>
+          <li data-lang-content data-lang="en">Sustainable Community Action: Through the alliance with Veolia, 52 leaders graduated in the "Sustainable Communities" project. Meanwhile, the "El Recolector" project (from the Surgical Instrumentation program) implements home gardens in Hogares Crea, cultivating social and environmental change.</li>
+          <li data-lang-content data-lang="es">Cultura de Reducción: La UDES lidera jornadas de recolección de residuos pos consumo (logrando 300 kg) y fomenta la movilidad sostenible, logrando una reducción de 4.758 kg de CO₂ en el "día sin carro".</li>
+          <li data-lang-content data-lang="en">Culture of Reduction: UDES leads post-consumption waste collection days (achieving 300 kg) and promotes sustainable mobility, achieving a reduction of 4,758 kg of CO₂ on the "car-free day".</li>
+        </ul>
+      </div>
+    </section>
+  
+    
   </main>
   <footer role="contentinfo"><div class="container"><div data-lang-content data-lang="es">© 2025 · Informe ODS 15 · Versión para uso académico.</div><div data-lang-content data-lang="en">© 2025 · SDG 15 Report · Academic use version.</div></div></footer>
   <script>
@@ -329,6 +446,34 @@
       document.querySelectorAll('.sdg-nav-item').forEach(a=>{
         a.classList.toggle('active', a.getAttribute('data-sdg')===current);
       });
+    })();
+  </script>
+  <script>
+    // Animación de contadores para .uds-counter (copiado del patrón existente)
+    (function(){
+      function animateCounter(el, target, duration=1200){
+        const startTime = performance.now();
+        const numericTarget = Number(String(target).replace(/[^0-9.-]+/g, '')) || 0;
+        function step(now){
+          const t = Math.min((now - startTime)/duration, 1);
+          const ease = 1 - Math.pow(1 - t, 4);
+          const current = Math.floor(ease * numericTarget);
+          el.textContent = current.toLocaleString('es-ES');
+          if(t < 1) requestAnimationFrame(step);
+          else el.textContent = Number(numericTarget).toLocaleString('es-ES');
+        }
+        requestAnimationFrame(step);
+      }
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(en=>{
+          if(en.isIntersecting){
+            const node = en.target;
+            if(node.classList && node.classList.contains('uds-counter') && !node.dataset.animated){ node.dataset.animated='true'; animateCounter(node, node.getAttribute('data-target')); }
+            node.querySelectorAll && node.querySelectorAll('.uds-counter').forEach(c=>{ if(!c.dataset.animated){ c.dataset.animated='true'; animateCounter(c, c.getAttribute('data-target')); } });
+          }
+        });
+      }, { threshold: 0.25 });
+      setTimeout(()=>{ document.querySelectorAll('.card, .uds-counter').forEach(el=> io.observe(el)); }, 120);
     })();
   </script>
 </body>

@@ -29,6 +29,19 @@
     /* Utilidad bilingüe genérica */
     [data-lang-content]{display:none} [data-lang-content][data-visible="true"]{display:block}
     @media (max-width:768px){.sdg-nav-item:hover{height:280px}.sdg-card-image{height:180px;padding:6px}.sdg-card-content{padding:12px}.sdg-card-number{font-size:11px}.sdg-card-title{font-size:12px}}
+  /* Justificar textos para bloques largos (párrafos y listas) */
+  section p, section li, .container p { text-align: justify; text-justify: inter-word; }
+  </style>
+  <style>
+    /* Grid-4 and cards for animated cifra containers */
+    .grid-4 { display:grid; grid-template-columns: repeat(4, 1fr); gap:24px; }
+    @media (max-width:1024px){ .grid-4 { grid-template-columns: repeat(3,1fr); } }
+    @media (max-width:768px){ .grid-4 { grid-template-columns: 1fr; } }
+    .card { background:#fff; border:1px solid var(--border-light); border-radius:12px; padding:18px; text-align:center; box-shadow: var(--shadow-sm); }
+    .uds-icon { font-size:28px; margin-bottom:8px; }
+    .uds-number { font-size:34px; font-weight:800; color:var(--sdg-accent); margin-bottom:8px; }
+    .uds-counter { font-variant-numeric: tabular-nums; }
+    .card small { display:block; font-size:12px; color:var(--text-secondary); }
   </style>
 </head>
 <body>
@@ -314,6 +327,131 @@
         <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;">This report focuses on SDG 16: Peace, Justice and Strong Institutions, analysing its definition and then demonstrating the strategic appropriation that UDES has made of this goal, evidenced by the actions and partnerships reported through our institutional channels.</p>
       </div>
     </section>
+    
+    <section id="investigacion-extension" aria-labelledby="investigacion-title">
+      <div class="container">
+        <h2 class="section-title" id="investigacion-title" data-lang-content data-lang="es">Investigación y Extensión: Construyendo Paz en el Territorio</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Research & Outreach: Building Peace in the Territory</h2>
+        <div class="section-rule"></div>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;">La UDES demuestra que la paz se construye desde las bases, vinculando la investigación y la acción comunitaria:</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;">UDES shows that peace is built from the ground up, linking research and community action:</p>
+
+        <ul style="margin:12px 0 8px 1.2em;">
+          <li>
+            <span data-lang-content data-lang="es">Visibilización de la Violencia: A través de análisis como el informe Forensis, la UDES alerta sobre realidades que atentan contra la paz, reportando <strong>64 muertes violentas</strong> de niños menores de 5 años en los primeros dos meses del año 2024 en Colombia, una cifra que interpela directamente a la sociedad y a las instituciones.</span>
+            <span data-lang-content data-lang="en">Making Violence Visible: Through analyses such as the Forensis report, UDES alerts about realities that threaten peace, reporting <strong>64 violent deaths</strong> of children under 5 in the first two months of 2024 in Colombia — a figure that directly challenges society and institutions.</span>
+          </li>
+
+          <li>
+            <span data-lang-content data-lang="es">Acción Comunitaria (MIUDES): El programa MIUDES es un brazo ejecutor de la paz en el territorio, llevando jornadas lúdico-pedagógicas sobre la paz a niños del barrio Colorados ("Unidos Tejiendo Lazos para la Paz") y promoviendo la vida a través de comparsas ("Por la vida y por la paz").</span>
+            <span data-lang-content data-lang="en">Community Action (MIUDES): The MIUDES programme is an implementing arm of peace in the territory, bringing play-educational peace activities to children in the Colorados neighbourhood ("United We Weave Ties for Peace") and promoting life through parades ("For life and for peace").</span>
+          </li>
+
+          <li>
+            <span data-lang-content data-lang="es">Comunicación para la Paz: Estudiantes de Comunicación Social y Periodismo implementan proyectos de tejido social en el norte de Bucaramanga, como "Paz por mí y por todos mis amigos", beneficiando a <strong>28 niños</strong> del barrio Colorados.</span>
+            <span data-lang-content data-lang="en">Communication for Peace: Social Communication and Journalism students implement social-weaving projects in northern Bucaramanga, such as "Peace for me and for all my friends", benefiting <strong>28 children</strong> from the Colorados neighbourhood.</span>
+          </li>
+
+          <li>
+            <span data-lang-content data-lang="es">Cultura y Memoria: Se honra a las víctimas y se promueve la reconciliación a través de actos simbólicos como la exposición fotográfica ‘Aromas de Paz’ (en alianza con Fedecacao) y el II Festival de Cine Enfocados, centrado en la paz y el postconflicto.</span>
+            <span data-lang-content data-lang="en">Culture and Memory: Victims are honoured and reconciliation is promoted through symbolic acts such as the photographic exhibition 'Aromas de Paz' (in partnership with Fedecacao) and the II Enfocados Film Festival, focused on peace and the post-conflict.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+    
+    <section id="formacion-justicia" aria-labelledby="formacion-title">
+      <div class="container">
+        <h2 class="section-title" id="formacion-title" data-lang-content data-lang="es">Formando para la Justicia y el Fortalecimiento Institucional</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Training for Justice and Institutional Strengthening</h2>
+        <div class="section-rule"></div>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;">El ODS 16 requiere profesionales capaces de fortalecer el estado de derecho. La UDES, especialmente desde su programa de Derecho, contribuye activamente a esta meta:</p>
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;">SDG 16 requires professionals able to strengthen the rule of law. UDES, particularly through its Law program, actively contributes to this goal:</p>
+
+        <ul style="margin:12px 0 8px 1.2em;">
+          <li>
+            <span data-lang-content data-lang="es">Liderazgo en lo Público: Nuestros graduados asumen roles de alta responsabilidad institucional, como el caso de Camilo Andrés Pinto Morón (Derecho 2020), actual Secretario de Educación de Valledupar.</span>
+            <span data-lang-content data-lang="en">Leadership in Public Office: Our graduates take on high-responsibility institutional roles, such as Camilo Andrés Pinto Morón (Law 2020), current Secretary of Education of Valledupar.</span>
+          </li>
+          <li>
+            <span data-lang-content data-lang="es">Participación en la Gobernanza Local: La UDES ha sido escogida como miembro del Consejo Territorial de Planeación (CTP) de Bucaramanga hasta 2030, representando a la academia. Estudiantes de Derecho participan activamente en la construcción del Plan de Desarrollo de la ciudad.</span>
+            <span data-lang-content data-lang="en">Participation in Local Governance: UDES has been selected as a member of the Territorial Planning Council (CTP) of Bucaramanga until 2030, representing academia. Law students actively participate in drafting the city's Development Plan.</span>
+          </li>
+          <li>
+            <span data-lang-content data-lang="es">Escenario de Debate Crítico: La UDES facilita sus espacios para diálogos cruciales sobre justicia y derechos humanos, como la sesión plenaria del Concejo de Bucaramanga sobre la situación en centros de detención transitoria.</span>
+            <span data-lang-content data-lang="en">Critical Debate Forum: UDES provides spaces for crucial dialogues on justice and human rights, such as the plenary session of the Bucaramanga Council on the situation in temporary detention centers.</span>
+          </li>
+          <li>
+            <span data-lang-content data-lang="es">Generación de Conocimiento Jurídico: Se fomenta la investigación y el debate sobre economías criminales (lanzamiento del libro "Economías Criminales"), la gestión fiscal (conversatorio con la Contraloría) y la filosofía del derecho (ponencias en Argentina).</span>
+            <span data-lang-content data-lang="en">Generation of Legal Knowledge: Research and debate are encouraged on criminal economies (launch of the book "Criminal Economies"), fiscal management (roundtable with the Comptroller's Office) and philosophy of law (presentations in Argentina).</span>
+          </li>
+          <li>
+            <span data-lang-content data-lang="es">Acción Social desde el Derecho: Se destaca el perfil de graduados como Tatiana Vivas, cuya carrera se enfoca en el desarrollo social y el fomento de los derechos humanos.</span>
+            <span data-lang-content data-lang="en">Social Action through Law: Graduates such as Tatiana Vivas stand out, with careers focused on social development and the promotion of human rights.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="udes-alianza-upeace" aria-labelledby="alianza-title">
+      <div class="container">
+        <h2 class="section-title" id="alianza-title" data-lang-content data-lang="es">La Alianza UDES - UPEACE como Motor de Paz</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">The UDES - UPEACE Alliance as an Engine of Peace</h2>
+        <div class="section-rule"></div>
+
+        <p data-lang-content data-lang="es" style="margin-bottom:0.8em;line-height:1.6;">La apropiación más significativa del ODS 16 por parte de la UDES se materializa en su alianza estratégica con la Universidad para la Paz (UPEACE) de las Naciones Unidas. Esta colaboración ha posicionado a nuestro campus como un epicentro para la formación de alto nivel en construcción de paz, impactando a cientos de personas:</p>
+
+        <p data-lang-content data-lang="en" style="margin-bottom:0.8em;line-height:1.6;">The most significant appropriation of SDG 16 by UDES is embodied in its strategic alliance with the University for Peace (UPEACE) of the United Nations. This collaboration has positioned our campus as a hub for high-level peacebuilding training, impacting hundreds of people:</p>
+
+        <ul style="margin:12px 0 8px 1.2em;">
+          <li>
+            <span data-lang-content data-lang="es">Certificación en Paz y Conflicto: Se ha completado la primera, segunda (con cerca de 200 participantes) y tercera cohorte (con más de 70 participantes).</span>
+            <span data-lang-content data-lang="en">Certification in Peace and Conflict: The first, second (with around 200 participants) and third cohort (with more than 70 participants) have been completed.</span>
+          </li>
+          <li>
+            <span data-lang-content data-lang="es">Certificación en Salud, Paz y Posconflicto: Se inició la primera cohorte con más de 80 profesionales.</span>
+            <span data-lang-content data-lang="en">Certification in Health, Peace and Post-conflict: The first cohort was launched with over 80 professionals.</span>
+          </li>
+          <li>
+            <span data-lang-content data-lang="es">Certificación en Ciudadanía y Gobernanza: La segunda cohorte cuenta con más de 70 estudiantes.</span>
+            <span data-lang-content data-lang="en">Certification in Citizenship and Governance: The second cohort includes more than 70 students.</span>
+          </li>
+        </ul>
+
+        <p data-lang-content data-lang="es" style="margin-top:0.6em;line-height:1.6;"><strong>Impacto Institucional y Regional:</strong> Esta alianza no se limita a la academia. Se extiende a la acción directa en el territorio, buscando empoderar a gestoras sociales de Santander en colaboración con la Gobernación y participando activamente en espacios de decisión nacional, como la Tercera Audiencia Pública de Regiones Autonómicas del Senado.</p>
+
+        <p data-lang-content data-lang="en" style="margin-top:0.6em;line-height:1.6;"><strong>Institutional and Regional Impact:</strong> This alliance is not limited to academia. It extends to direct action in the territory, aiming to empower social leaders from Santander in collaboration with the Governor's Office and actively participating in national decision-making forums, such as the Third Public Hearing of Autonomous Regions of the Senate.</p>
+
+        <!-- Certification counters (replaces previous unrelated cifras) -->
+        <div style="margin-top:18px;">
+          <div class="grid-4">
+            <div class="card">
+              <div class="uds-icon">🏅</div>
+              <!-- Total approximate participants: 2ª ≈200 + 3ª >70 = ~270 (primer cohorte: dato no disponible) -->
+              <div class="uds-number"><span class="uds-counter" data-target="270">270</span></div>
+              <div data-lang-content data-lang="es">Total de participantes — Certificación en Paz y Conflicto (3 cohortes)</div>
+              <div data-lang-content data-lang="en">Total participants — Certification in Peace and Conflict (3 cohorts)</div>
+            </div>
+
+            <div class="card">
+              <div class="uds-icon">🩺</div>
+              <div class="uds-number"><span class="uds-counter" data-target="80">80</span></div>
+              <div data-lang-content data-lang="es">Certificación en Salud, Paz y Posconflicto — Participantes 1ª cohorte</div>
+              <div data-lang-content data-lang="en">Certification in Health, Peace and Post-conflict — Participants (1st cohort)</div>
+            </div>
+
+            <div class="card">
+              <div class="uds-icon">🏛️</div>
+              <div class="uds-number"><span class="uds-counter" data-target="70">70</span></div>
+              <div data-lang-content data-lang="es">Certificación en Ciudadanía y Gobernanza — Participantes 2ª cohorte</div>
+              <div data-lang-content data-lang="en">Certification in Citizenship and Governance — Participants (2nd cohort)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer role="contentinfo"><div class="container"><div data-lang-content data-lang="es">© 2025 · Informe ODS 16 · Versión para uso académico.</div><div data-lang-content data-lang="en">© 2025 · SDG 16 Report · Academic use version.</div></div></footer>
   <script>
@@ -346,6 +484,45 @@
       document.querySelectorAll('.sdg-nav-item').forEach(a=>{
         a.classList.toggle('active', a.getAttribute('data-sdg')===current);
       });
+    })();
+    
+    // Animación de contadores para .uds-counter (reutiliza patrón existente)
+    (function(){
+      function animateCounter(el, target, duration=1200){
+        const start = 0;
+        const startTime = performance.now();
+        const numericTarget = Number(String(target).replace(/[^0-9.-]+/g, '')) || 0;
+        function step(now){
+          const t = Math.min((now - startTime)/duration, 1);
+          const ease = 1 - Math.pow(1 - t, 4);
+          const current = Math.floor(ease * numericTarget);
+          el.textContent = current.toLocaleString('es-ES');
+          if(t < 1) requestAnimationFrame(step);
+          else el.textContent = Number(numericTarget).toLocaleString('es-ES');
+        }
+        requestAnimationFrame(step);
+      }
+
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(en => {
+          if(en.isIntersecting){
+            const node = en.target;
+            if(node.classList.contains('uds-counter') && !node.dataset.animated){
+              node.dataset.animated = 'true';
+              animateCounter(node, node.getAttribute('data-target'));
+            }
+            // also for counters wrapped in cards
+            node.querySelectorAll && node.querySelectorAll('.uds-counter').forEach(c=>{
+              if(!c.dataset.animated){ c.dataset.animated='true'; animateCounter(c, c.getAttribute('data-target')); }
+            });
+          }
+        });
+      }, { threshold: 0.25 });
+
+      // observe target cards and counters
+      setTimeout(()=>{
+        document.querySelectorAll('.card, .uds-counter').forEach(el=> io.observe(el));
+      }, 120);
     })();
   </script>
 </body>

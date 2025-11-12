@@ -29,6 +29,36 @@
     /* Utilidad bilingüe genérica */
     [data-lang-content]{display:none} [data-lang-content][data-visible="true"]{display:block}
     @media (max-width:768px){.sdg-nav-item:hover{height:280px}.sdg-card-image{height:180px;padding:6px}.sdg-card-content{padding:12px}.sdg-card-number{font-size:11px}.sdg-card-title{font-size:12px}}
+    /* Grid and cards for cifras */
+    .grid-4 { display:grid; grid-template-columns: repeat(4, 1fr); gap:24px; }
+    @media (max-width:1024px){ .grid-4 { grid-template-columns: repeat(3,1fr); } }
+    @media (max-width:768px){ .grid-4 { grid-template-columns: 1fr; } }
+    .card { background:#fff; border:1px solid var(--border-light); border-radius:12px; padding:18px; text-align:center; box-shadow: var(--shadow-sm); }
+    .uds-icon { font-size:28px; margin-bottom:8px; }
+    .uds-number { font-size:34px; font-weight:800; color:var(--sdg-accent); margin-bottom:8px; }
+    .uds-counter { font-variant-numeric: tabular-nums; }
+    .card small { display:block; font-size:12px; color:var(--text-secondary); }
+    /* Justify long text blocks */
+    section p, section li, .container p { text-align: justify; text-justify: inter-word; }
+    /* Centro de Hidrógeno: sección especial (fondo ODS 13) */
+    .section-sdg13 { background: linear-gradient(180deg, rgba(63,126,68,0.04), rgba(63,126,68,0.02)); }
+    .section-sdg13 .section-title { color: var(--sdg-accent); }
+    .video-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:20px; margin-top:18px; }
+    @media (max-width:768px){ .video-grid{ grid-template-columns: 1fr; } }
+  .video-card { position:relative; border-radius:12px; overflow:hidden; min-height:240px; background:#000; color:#fff; display:flex; align-items:flex-end; }
+  .video-thumb { width:100%; height:100%; display:block; border:0; padding:0; background:transparent; position:relative; cursor:pointer; }
+  .video-thumb img { width:100%; height:100%; object-fit:cover; display:block; filter:brightness(0.8); }
+  .play-overlay { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:3; width:68px; height:68px; background:rgba(0,0,0,0.5); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; color:#fff; }
+  .video-card .card-content { position:relative; z-index:2; background: linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.66) 55%); padding:18px; }
+  .video-card .card-title { font-weight:700; margin-bottom:6px; color:#fff; }
+  .video-card .card-text { font-size:14px; color:#f0f7ef; }
+  /* Modal for videos */
+  .video-modal { position:fixed; inset:0; display:none; align-items:center; justify-content:center; background: rgba(0,0,0,0.6); z-index:9999; }
+  .video-modal.open { display:flex; }
+  .video-modal-inner { width:90%; max-width:960px; background:transparent; border-radius:10px; overflow:hidden; position:relative; }
+  .video-modal .video-frame { width:100%; height:0; padding-bottom:56.25%; position:relative; }
+  .video-modal .video-frame iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+  .video-close { position:absolute; right:8px; top:8px; z-index:12; background:rgba(0,0,0,0.6); color:#fff; border:0; width:40px; height:40px; border-radius:8px; cursor:pointer; font-size:18px; }
   </style>
 </head>
 <body>
@@ -289,6 +319,11 @@
         <div class="eyebrow" data-lang-content data-lang="en">Sustainable Development Goals</div>
         <h1 data-lang-content data-lang="es">ODS 13: Acción por el clima</h1>
         <h1 data-lang-content data-lang="en">SDG 13: Climate Action</h1>
+        <p data-lang-content data-lang="es" style="margin-top:12px;line-height:1.6;">La Universidad de Santander (UDES) asume su responsabilidad como actor clave en la lucha contra el cambio climático. Más allá del compromiso académico, la UDES ha implementado una estrategia institucional robusta para reducir su propia huella de carbono e investigar y desarrollar las soluciones energéticas que definirán un futuro sostenible para Colombia y el mundo.</p>
+        <p data-lang-content data-lang="en" style="margin-top:12px;line-height:1.6;">The University of Santander (UDES) assumes its responsibility as a key actor in the fight against climate change. Beyond academic commitment, UDES has implemented a robust institutional strategy to reduce its own carbon footprint and to research and develop the energy solutions that will define a sustainable future for Colombia and the world.</p>
+
+        <p data-lang-content data-lang="es" style="margin-top:8px;line-height:1.6;">Este informe se centra en el ODS 13: Acción por el Clima, detallando nuestra estrategia de carbono neutralidad y destacando el rol de vanguardia de nuestro Centro de Investigación de Hidrógeno.</p>
+        <p data-lang-content data-lang="en" style="margin-top:8px;line-height:1.6;">This report focuses on SDG 13: Climate Action, detailing our carbon neutrality strategy and highlighting the leading role of our Hydrogen Research Center.</p>
       </div>
       <div style="display:flex;align-items:center;justify-content:center;">
   <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/13.png" alt="Logo ODS 13" class="hero-illustration" onerror="this.onerror=null; this.src='https://placehold.co/320x320/3F7E44/ffffff?text=ODS+13';"/>
@@ -296,8 +331,146 @@
     </div>
   </div>
   <main>
-    <section id="contenido"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Contenido</h2><h2 class="section-title" data-lang-content data-lang="en">Content</h2><div class="section-rule"></div></div></section>
-    <section id="noticias"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Noticias Relacionadas</h2><h2 class="section-title" data-lang-content data-lang="en">Related News</h2><div class="section-rule"></div></div></section>
+    <section id="udes-actor-clima">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">UDES: Actor Responsable con el Clima</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">UDES: Responsible Actor on Climate</h2>
+        <div class="section-rule"></div>
+        <p data-lang-content data-lang="es">Nuestra gestión se traduce en resultados medibles que demuestran un impacto tangible en la mitigación del cambio climático:</p>
+        <p data-lang-content data-lang="en">Our management translates into measurable results that demonstrate a tangible impact in mitigating climate change:</p>
+
+        <div class="grid-4" style="margin-top:18px;">
+          <div class="card">
+            <div class="uds-icon">🏆</div>
+            <div class="uds-number">CERTIFICACIÓN</div>
+            <div data-lang-content data-lang="es">CERTIFICACIÓN CARBONO NEUTRO otorgada a la UDES durante el II Foro Nacional Santander Carbono Neutro, reconociendo nuestro compromiso institucional.</div>
+            <div data-lang-content data-lang="en">CARBON NEUTRAL CERTIFICATION awarded to UDES during the II National Santander Carbon Neutral Forum, recognising our institutional commitment.</div>
+          </div>
+
+          <div class="card">
+            <div class="uds-icon">🌱</div>
+            <div class="uds-number"><span class="uds-counter" data-target="4758">4.758</span> <small>KG</small></div>
+            <div data-lang-content data-lang="es">Reducidos en una sola jornada durante el "día sin carro y sin moto" en Bucaramanga, gracias a la cultura ambiental de nuestra comunidad.</div>
+            <div data-lang-content data-lang="en">Reduced in a single day during the "car and motorcycle free day" in Bucaramanga, thanks to the environmental culture of our community.</div>
+          </div>
+
+          <div class="card">
+            <div class="uds-icon">💧</div>
+            <div class="uds-number"><span class="uds-counter" data-target="1">1</span> <small>GALÓN</small></div>
+            <div data-lang-content data-lang="es">Suficiente para que la innovadora estufa de hidrógeno UDES cocine para una familia de 5 personas durante 3 meses.</div>
+            <div data-lang-content data-lang="en">Sufficient for the innovative UDES hydrogen stove to cook for a family of 5 for 3 months.</div>
+          </div>
+
+          <div class="card">
+            <div class="uds-icon">⚡</div>
+            <div class="uds-number"><span class="uds-counter" data-target="50">50</span><span>%</span></div>
+            <div data-lang-content data-lang="es">De ahorro en gasolina logrado por el vehículo presentado en la COP16, que emplea hidrógeno como complemento de combustible.</div>
+            <div data-lang-content data-lang="en">In fuel savings achieved by the vehicle presented at COP16, which uses hydrogen as a fuel supplement.</div>
+          </div>
+
+          <div class="card">
+            <div class="uds-icon">🤝</div>
+            <div class="uds-number"><span class="uds-counter" data-target="110">110</span><small>+</small></div>
+            <div data-lang-content data-lang="es">Instituciones líderes del sector energético con las que la UDES conectará, tras ser incluida como "afiliado adherente" del Consejo Mundial de Energía Colombia (WEC).</div>
+            <div data-lang-content data-lang="en">Leading energy sector institutions that UDES will connect with, after being included as an "adherent affiliate" of the World Energy Council Colombia (WEC).</div>
+          </div>
+
+        </div>
+      </div>
+        </section>
+
+    <section id="udes-carbono">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Estrategia UDES de Carbono Neutralidad</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">UDES Carbon Neutrality Strategy</h2>
+        <div class="section-rule"></div>
+        <p data-lang-content data-lang="es"><strong>Certificación y Liderazgo:</strong> La UDES recibió la Certificación Carbono Neutro en el marco del II Foro Nacional Santander Carbono Neutro, evento del cual la universidad es uno de los principales aliados estratégicos, reuniendo a líderes empresariales, académicos y gubernamentales.</p>
+        <p data-lang-content data-lang="en"><strong>Certification & Leadership:</strong> UDES received the Carbon Neutral Certification within the framework of the II National Santander Carbon Neutral Forum, an event where the university is a principal strategic ally, bringing together business, academic and governmental leaders.</p>
+
+        <p data-lang-content data-lang="es" style="margin-top:12px;"><strong>Alianzas por el Clima:</strong> Nos hemos adherido a la "Comunidad Cero" de AGI Ambiental, una iniciativa clave para generar sinergias y compartir buenas prácticas contra el cambio climático entre las empresas santandereanas.</p>
+        <p data-lang-content data-lang="en" style="margin-top:12px;"><strong>Climate Partnerships:</strong> We have joined AGI Ambiental's "Comunidad Cero", a key initiative to create synergies and share best practices against climate change among Santander companies.</p>
+
+        <p data-lang-content data-lang="es" style="margin-top:12px;"><strong>Reducción de Emisiones:</strong> Demostramos nuestro compromiso práctico con la reducción de 4.758 kilogramos de CO₂ durante la participación activa en el "día sin carro y sin moto" de Bucaramanga.</p>
+        <p data-lang-content data-lang="en" style="margin-top:12px;"><strong>Emissions Reduction:</strong> We demonstrate our practical commitment with a reduction of 4,758 kilograms of CO₂ during active participation in Bucaramanga's "car and motorcycle free day".</p>
+      </div>
+    </section>
+
+    <section id="udes-hidrogeno" class="section-sdg13">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">El Centro de Hidrógeno UDES como Vanguardia</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">The UDES Hydrogen Center at the Forefront</h2>
+        <div class="section-rule"></div>
+        <p data-lang-content data-lang="es">El pilar de nuestra estrategia de acción climática es la innovación disruptiva. El Centro de Investigación de Hidrógeno de la UDES, apoyado por el Doctorado en Recursos Energéticos Renovables, se ha posicionado como un referente nacional e internacional.</p>
+        <p data-lang-content data-lang="en">The pillar of our climate action strategy is disruptive innovation. The UDES Hydrogen Research Center, supported by the PhD in Renewable Energy Resources, has positioned itself as a national and international benchmark.</p>
+
+        <h3 data-lang-content data-lang="es" style="margin-top:18px;">A. Innovación Presentada en la COP16</h3>
+        <h3 data-lang-content data-lang="en" style="margin-top:18px;">A. Innovation Presented at COP16</h3>
+
+        <div class="video-grid">
+          <div class="video-card">
+            <button type="button" class="video-thumb" data-video-id="ca2yygwGkg8" aria-label="Play Estufa de Hidrógeno">
+              <img src="https://img.youtube.com/vi/ca2yygwGkg8/maxresdefault.jpg" alt="Estufa de Hidrógeno - vídeo"/>
+              <span class="play-overlay">▶</span>
+            </button>
+            <div class="card-content">
+              <div class="card-title" data-lang-content data-lang="es">Estufa de Hidrógeno</div>
+              <div class="card-title" data-lang-content data-lang="en">Hydrogen Stove</div>
+              <div class="card-text" data-lang-content data-lang="es">Una innovación que capturó la atención mundial. Capaz de cocinar para una familia de cinco miembros durante tres meses usando solo un galón de agua. El Ministro de Minas y Energía, Andrés Camacho, destacó esta tecnología como "única en el mundo" y subrayó el intenso trabajo de la UDES en hidrógeno verde para sectores industrial, agroindustrial, doméstico y vehicular.</div>
+              <div class="card-text" data-lang-content data-lang="en">An innovation that captured global attention. Capable of cooking for a family of five for three months using only one gallon of water. The Minister of Mines and Energy, Andrés Camacho, highlighted this technology as "unique in the world" and underlined UDES's intensive work on green hydrogen for industrial, agroindustrial, domestic and vehicular sectors.</div>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <button type="button" class="video-thumb" data-video-id="0c5HcMMhEOk" aria-label="Play Vehículo de Hidrógeno">
+              <img src="https://img.youtube.com/vi/0c5HcMMhEOk/maxresdefault.jpg" alt="Vehículo de Hidrógeno - vídeo"/>
+              <span class="play-overlay">▶</span>
+            </button>
+            <div class="card-content">
+              <div class="card-title" data-lang-content data-lang="es">Vehículo de Hidrógeno</div>
+              <div class="card-title" data-lang-content data-lang="en">Hydrogen Vehicle</div>
+              <div class="card-text" data-lang-content data-lang="es">Se presentó un vehículo que utiliza hidrógeno como complemento, logrando un ahorro de hasta 50% en gasolina y manteniendo su eficiencia a cualquier altitud (desde el nivel del mar hasta 4.000 metros).</div>
+              <div class="card-text" data-lang-content data-lang="en">A vehicle was presented that uses hydrogen as a supplement, achieving up to 50% gasoline savings while maintaining efficiency at any altitude (from sea level up to 4,000 meters).</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reconocimiento y visión de futuro -->
+        <div style="margin-top:22px;">
+          <h3 class="section-title" data-lang-content data-lang="es">Reconocimiento y Alianzas Globales (WEC)</h3>
+          <h3 class="section-title" data-lang-content data-lang="en">Recognition and Global Alliances (WEC)</h3>
+          <div class="section-rule"></div>
+          <p data-lang-content data-lang="es">El impacto de estos proyectos ha resultado en la inclusión de la UDES en el Consejo Mundial de Energía Colombia (WEC Colombia) como "afiliado adherente".</p>
+          <p data-lang-content data-lang="en">The impact of these projects has resulted in UDES being included in the World Energy Council Colombia (WEC Colombia) as an "adherent affiliate".</p>
+
+          <p data-lang-content data-lang="es">Esta afiliación nos conecta con más de 110 instituciones líderes del sector energético colombiano.</p>
+          <p data-lang-content data-lang="en">This affiliation connects us with more than 110 leading institutions in the Colombian energy sector.</p>
+
+          <p data-lang-content data-lang="es">Como mencionó Daniel Felipe Díaz, director ejecutivo de WEC Colombia, esta red promueve la sostenibilidad basada en el "trilema energético": seguridad, equidad y sostenibilidad ambiental.</p>
+          <p data-lang-content data-lang="en">As Daniel Felipe Díaz, Executive Director of WEC Colombia, noted, this network promotes sustainability based on the "energy trilemma": security, equity and environmental sustainability.</p>
+
+          <h3 class="section-title" data-lang-content data-lang="es" style="margin-top:18px;">C. Visión de Futuro: Instituto de Plasma y Fusión Nuclear</h3>
+          <h3 class="section-title" data-lang-content data-lang="en" style="margin-top:18px;">C. Future Vision: Institute of Plasma and Nuclear Fusion</h3>
+          <div class="section-rule"></div>
+          <p data-lang-content data-lang="es"><strong>Creación del Instituto de Plasma y Fusión Nuclear:</strong> Con el objetivo de generar "energía completamente limpia" a partir de la fusión nuclear y el hidrógeno, buscando convertir a Santander en una potencia en la generación de energía.</p>
+          <p data-lang-content data-lang="en"><strong>Creation of the Institute of Plasma and Nuclear Fusion:</strong> With the goal of generating "fully clean energy" through nuclear fusion and hydrogen, aiming to make Santander a power in energy generation.</p>
+
+          <p data-lang-content data-lang="es"><strong>Liderazgo Científico:</strong> Este esfuerzo será liderado por el PhD Edbertho Leal Quirós, un científico santandereano de talla mundial, Doctor en Ingeniería Nuclear, quien también liderará el proyecto de un observatorio astrofísico en Macaravita, aprovechando la limpieza de sus cielos.</p>
+          <p data-lang-content data-lang="en"><strong>Scientific Leadership:</strong> This effort will be led by PhD Edbertho Leal Quirós, a world-class scientist from Santander and Doctor in Nuclear Engineering, who will also lead the project for an astrophysical observatory in Macaravita, taking advantage of its clear skies.</p>
+
+          <p data-lang-content data-lang="es"><strong>Expansión Internacional:</strong> La UDES ya avanza en colaboraciones para llevar esta tecnología a Perú y ha implementado proyectos en las Islas Galápagos (Ecuador) para sus naves y vehículos.</p>
+          <p data-lang-content data-lang="en"><strong>International Expansion:</strong> UDES is already advancing collaborations to bring this technology to Peru and has implemented projects in the Galápagos Islands (Ecuador) for its vessels and vehicles.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video modal -->
+    <div id="video-modal" class="video-modal" aria-hidden="true">
+      <div class="video-modal-inner" role="dialog" aria-modal="true">
+        <button class="video-close" aria-label="Cerrar vídeo">✕</button>
+        <div class="video-frame"></div>
+      </div>
+    </div>
+
   </main>
   <footer role="contentinfo"><div class="container"><div data-lang-content data-lang="es">© 2025 · Informe ODS 13 · Versión para uso académico.</div><div data-lang-content data-lang="en">© 2025 · SDG 13 Report · Academic use version.</div></div></footer>
   <script>
@@ -330,6 +503,69 @@
       document.querySelectorAll('.sdg-nav-item').forEach(a=>{
         a.classList.toggle('active', a.getAttribute('data-sdg')===current);
       });
+    })();
+  </script>
+  <script>
+    // Animación de contadores para .uds-counter (patrón reutilizado)
+    (function(){
+      function animateCounter(el, target, duration=1200){
+        const startTime = performance.now();
+        const numericTarget = Number(String(target).replace(/[^0-9.-]+/g, '')) || 0;
+        function step(now){
+          const t = Math.min((now - startTime)/duration, 1);
+          const ease = 1 - Math.pow(1 - t, 4);
+          const current = Math.floor(ease * numericTarget);
+          el.textContent = current.toLocaleString('es-ES');
+          if(t < 1) requestAnimationFrame(step);
+          else el.textContent = Number(numericTarget).toLocaleString('es-ES');
+        }
+        requestAnimationFrame(step);
+      }
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(en=>{
+          if(en.isIntersecting){
+            const node = en.target;
+            if(node.classList && node.classList.contains('uds-counter') && !node.dataset.animated){ node.dataset.animated='true'; animateCounter(node, node.getAttribute('data-target')); }
+            node.querySelectorAll && node.querySelectorAll('.uds-counter').forEach(c=>{ if(!c.dataset.animated){ c.dataset.animated='true'; animateCounter(c, c.getAttribute('data-target')); } });
+          }
+        });
+      }, { threshold: 0.25 });
+      setTimeout(()=>{ document.querySelectorAll('.card, .uds-counter').forEach(el=> io.observe(el)); }, 120);
+    })();
+  </script>
+  <script>
+    // Video modal lazy-load
+    (function(){
+      const modal = document.getElementById('video-modal');
+      const frameWrap = modal && modal.querySelector('.video-frame');
+      const closeBtn = modal && modal.querySelector('.video-close');
+
+      function openVideo(id){
+        if(!frameWrap) return;
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden','false');
+        // Use nocookie privacy-enhanced embed and autoplay. Provide a fallback link to open on YouTube.
+        const src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+        const watchUrl = 'https://www.youtube.com/watch?v=' + id;
+        frameWrap.innerHTML = '<iframe src="'+src+'" title="Vídeo UDES" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' +
+                          '<div style="padding:8px 10px;text-align:right;background:rgba(0,0,0,0.04);"><a href="'+watchUrl+'" target="_blank" rel="noopener noreferrer" style="color:#0b5;">Abrir en YouTube</a></div>';
+      }
+      function closeVideo(){
+        if(!frameWrap) return;
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden','true');
+        frameWrap.innerHTML = '';
+      }
+      document.addEventListener('click', (e)=>{
+        const btn = e.target.closest && e.target.closest('.video-thumb');
+        if(btn){
+          const id = btn.getAttribute('data-video-id');
+          openVideo(id);
+        }
+        if(e.target.closest && e.target.closest('.video-close')){ closeVideo(); }
+        if(e.target === modal) { closeVideo(); }
+      });
+      document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeVideo(); });
     })();
   </script>
 </body>
