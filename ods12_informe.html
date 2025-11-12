@@ -9,6 +9,17 @@
   <style>
     :root { --sdg-accent: #BF8B2E; --sdg-accent-light: rgba(191,139,46,0.12); --text-primary: #2c3e50; --text-secondary: #546e7a; --bg-white: #ffffff; --border-light: #e8eaed; --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);} * { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text-primary); background: var(--bg-white); } .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; } .lang-switch { position: fixed; top: 16px; right: 16px; z-index: 110; display:flex; gap:8px; background:#f6f7f8; padding:4px; border-radius:10px; } .lang-switch button { border:0; background:transparent; padding:8px 14px; border-radius:7px; font-weight:600; color:var(--text-secondary); cursor:pointer; } .lang-switch button.active { background:#fff; color:var(--sdg-accent); box-shadow: var(--shadow-sm); } .hero { padding: 88px 0 72px; background: radial-gradient(circle at 50% 0%, var(--sdg-accent-light) 0%, #ffffff 65%); border-bottom:1px solid var(--border-light); clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%); } .grid-2 { display:grid; grid-template-columns: 1.2fr 0.8fr; gap:32px; align-items:center; } .eyebrow { color: var(--sdg-accent); text-transform: uppercase; font-weight: 700; letter-spacing: .12em; font-size:12px; margin-bottom: 12px; display:inline-block; } h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.15; margin: 0 0 8px 0; } .hero-illustration { width:100%; height:auto; max-width:360px; margin:0 auto; display:block; border-radius:16px; } section { padding: 64px 0; } .section-title { font-size: clamp(24px, 3.5vw, 34px); margin-bottom: 8px; font-weight: 700; } .section-rule { height: 1px; background: var(--border-light); margin: 16px 0 24px; } footer { border-top:1px solid var(--border-light); padding: 28px 0; color:#6b7b86; }
 
+    /* New compact cards for cifras */
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; align-items:stretch; }
+    .uds-card { padding: 14px; background: #fff; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); display:flex; flex-direction:column; justify-content:center; }
+    .uds-number { font-size: 28px; font-weight: 800; color: var(--sdg-accent); line-height:1; }
+    .uds-number small { display:block; font-size:11px; font-weight:700; color:var(--text-secondary); margin-top:6px; }
+    .uds-card p, .uds-card div { color:var(--text-secondary); font-size:14px; text-align:justify; margin-top:10px; }
+    @media (max-width:640px){ .grid-4{ grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); } .uds-number{ font-size:22px; } }
+
+    /* section accent for ODS12 */
+    .section-sdg12{ background: linear-gradient(90deg, rgba(191,139,46,0.04), rgba(255,255,255,0)); }
+
     /* Barra de navegación ODS (v2) */
     .sdg-navbar { position: fixed; top: 0; left: 0; width: 100%; height: 8px; display: flex; z-index: 1000; background: transparent; }
     .sdg-nav-item { flex: 1; height: 8px; cursor: pointer; position: relative; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); text-decoration: none; display: flex; align-items: center; justify-content: center; overflow: hidden; }
@@ -289,6 +300,18 @@
         <div class="eyebrow" data-lang-content data-lang="en">Sustainable Development Goals</div>
         <h1 data-lang-content data-lang="es">ODS 12: Producción y consumo responsables</h1>
         <h1 data-lang-content data-lang="en">SDG 12: Responsible Consumption and Production</h1>
+        <p data-lang-content data-lang="es" data-visible="true" style="margin-top:18px; text-align:justify; line-height:1.5; color:var(--text-secondary);">
+          La Universidad de Santander (UDES) integra el principio de responsabilidad social y ambiental en su núcleo misional. Entendemos que la academia es un motor fundamental para transformar los patrones de producción y consumo que actualmente desafían la sostenibilidad del planeta. A través de la investigación, la innovación y la extensión, la UDES lidera iniciativas que promueven la economía circular, la gestión eficiente de recursos y la conciencia ambiental en nuestras comunidades.
+        </p>
+        <p data-lang-content data-lang="en" style="margin-top:12px; text-align:justify; line-height:1.5; color:var(--text-secondary);">
+          The University of Santander (UDES) integrates the principle of social and environmental responsibility into its core mission. We recognize that academia is a key driver in transforming production and consumption patterns that currently challenge the planet's sustainability. Through research, innovation and outreach, UDES leads initiatives that promote the circular economy, efficient resource management, and environmental awareness in our communities.
+        </p>
+        <p data-lang-content data-lang="es" data-visible="true" style="margin-top:14px; text-align:justify; line-height:1.5; color:var(--text-secondary);">
+          Este informe se centra en el ODS 12: Producción y Consumo Responsables, detallando cómo nuestras acciones fomentan un uso más eficiente de los recursos y una gestión sostenible de los residuos.
+        </p>
+        <p data-lang-content data-lang="en" style="margin-top:12px; text-align:justify; line-height:1.5; color:var(--text-secondary);">
+          This report focuses on SDG 12: Responsible Consumption and Production, detailing how our actions encourage more efficient resource use and sustainable waste management.
+        </p>
       </div>
       <div style="display:flex;align-items:center;justify-content:center;">
   <img src="https://sdgbook.com/wp-content/uploads/sites/2/2019/09/12.png" alt="Logo ODS 12" class="hero-illustration" onerror="this.onerror=null; this.src='https://placehold.co/320x320/BF8B2E/ffffff?text=ODS+12';"/>
@@ -296,8 +319,112 @@
     </div>
   </div>
   <main>
-    <section id="contenido"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Contenido</h2><h2 class="section-title" data-lang-content data-lang="en">Content</h2><div class="section-rule"></div></div></section>
-    <section id="noticias"><div class="container"><h2 class="section-title" data-lang-content data-lang="es">Noticias Relacionadas</h2><h2 class="section-title" data-lang-content data-lang="en">Related News</h2><div class="section-rule"></div></div></section>
+    <!-- Impacto UDES en la Sostenibilidad -->
+    <section id="impacto-udes" class="">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Impacto UDES en la Sostenibilidad</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">UDES Impact on Sustainability</h2>
+        <div class="section-rule"></div>
+        <p data-lang-content data-lang="es" data-visible="true" style="text-align:justify; color:var(--text-secondary); line-height:1.5; margin-bottom:18px;">Nuestra gestión en la promoción de la producción y el consumo responsables se refleja en resultados concretos y medibles:</p>
+        <p data-lang-content data-lang="en" style="text-align:justify; color:var(--text-secondary); line-height:1.5; margin-bottom:18px;">Our efforts promoting responsible production and consumption are reflected in concrete, measurable results:</p>
+
+        <div class="grid-4" style="margin-top:12px; gap:18px;">
+          <div class="uds-card" style="padding:18px; background:#fff; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.04); text-align:center;">
+            <div class="uds-number" style="font-size:28px; font-weight:700; color:var(--sdg-accent);">300 <small style="font-size:12px; font-weight:600; color:var(--text-secondary); display:block; margin-top:6px;">KILOS</small></div>
+            <div style="margin-top:10px; color:var(--text-secondary); text-align:justify;">De materiales aprovechables recolectados durante la jornada 'Reciclatón' en el Día Mundial del Reciclaje.</div>
+          </div>
+          <div class="uds-card" style="padding:18px; background:#fff; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.04); text-align:center;">
+            <div class="uds-number" style="font-size:28px; font-weight:700; color:var(--sdg-accent);">300 <small style="font-size:12px; font-weight:600; color:var(--text-secondary); display:block; margin-top:6px;">KILOGRAMOS</small></div>
+            <div style="margin-top:10px; color:var(--text-secondary); text-align:justify;">De residuos pos consumo recopilados en la 19ª campaña de recolección liderada por la UDES en Bucaramanga.</div>
+          </div>
+          <div class="uds-card" style="padding:18px; background:#fff; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.04); text-align:center;">
+            <div class="uds-number" style="font-size:28px; font-weight:700; color:var(--sdg-accent);">150 <small style="font-size:12px; font-weight:600; color:var(--text-secondary); display:block; margin-top:6px;">JÓVENES</small></div>
+            <div style="margin-top:10px; color:var(--text-secondary); text-align:justify;">De Arauca y Montería formados en producción audiovisual, empoderándolos para transformar sus realidades (programa "Jóvenes que Transforman").</div>
+          </div>
+          <div class="uds-card" style="padding:18px; background:#fff; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.04); text-align:center;">
+            <div class="uds-number" style="font-size:28px; font-weight:700; color:var(--sdg-accent);">9 <small style="font-size:12px; font-weight:600; color:var(--text-secondary); display:block; margin-top:6px;">OBRAS</small></div>
+            <div style="margin-top:10px; color:var(--text-secondary); text-align:justify;">De autores e investigadores UDES expuestas en la feria 'Vive Libro', como parte de la "Producción Intelectual UDES".</div>
+          </div>
+        </div>
+
+        <div class="grid-4" style="margin-top:16px; gap:18px;">
+          <div class="uds-card" style="padding:18px; background:#fff; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.04); text-align:center; grid-column: span 1;">
+            <div class="uds-number" style="font-size:28px; font-weight:700; color:var(--sdg-accent);">6 <small style="font-size:12px; font-weight:600; color:var(--text-secondary); display:block; margin-top:6px;">IDIOMAS</small></div>
+            <div style="margin-top:10px; color:var(--text-secondary); text-align:justify;">A los que han sido traducidos los cuatro libros de producción académica del profesor Walter Pardavé Livia (Ingeniería Ambiental).</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Liderazgo en Economía Circular y Valorización de Residuos (color ODS12) -->
+    <section id="economia-circular" class="section-sdg12">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Liderazgo en Economía Circular y Valorización de Residuos</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Leadership in Circular Economy and Waste Valorization</h2>
+        <div class="section-rule"></div>
+        <p data-lang-content data-lang="es" data-visible="true" style="text-align:justify; color:var(--text-secondary); line-height:1.5;">La UDES aplica la ciencia y la ingeniería para transformar los residuos de un problema a un recurso, cerrando el ciclo productivo:</p>
+        <p data-lang-content data-lang="en" style="text-align:justify; color:var(--text-secondary); line-height:1.5;">UDES applies science and engineering to transform waste from a problem into a resource, closing production cycles:</p>
+
+        <ul style="margin-top:10px; color:var(--text-secondary); line-height:1.5;">
+          <li><strong>Innovación Energética:</strong> Se firmó un convenio clave con la EMAB para el aprovechamiento energético de los gases producidos en El Carrasco, buscando generar energía a partir de los residuos urbanos.</li>
+          <li><strong>Del Campo a la Sostenibilidad:</strong> Campesinos de la Serranía de los Yariguíes, con apoyo UDES y MinCiencias, transforman residuos orgánicos en biogás; también se incentiva a caficultores a convertir residuos del café en abono.</li>
+          <li><strong>Infraestructura Sostenible:</strong> Ingenieros civiles UDES completaron un proyecto para transformar lodos de relave minero en placas huella para vías rurales.</li>
+          <li><strong>Soluciones para la Industria:</strong> A través de la convocatoria OPENNOVA, la UDES entregó al Acueducto Metropolitano de Bucaramanga un prototipo para el reúso de sulfato de aluminio y material de construcción a partir de residuos del filtrado de agua.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Fomento del Reciclaje y Consumo Consciente -->
+    <section id="fomento-reciclaje">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Fomento del Reciclaje y Consumo Consciente</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Promotion of Recycling and Conscious Consumption</h2>
+        <div class="section-rule"></div>
+        <p data-lang-content data-lang="es" data-visible="true" style="text-align:justify; color:var(--text-secondary); line-height:1.5;">Promovemos activamente la cultura de la reducción y la reutilización en nuestra comunidad y área de influencia:</p>
+        <p data-lang-content data-lang="en" style="text-align:justify; color:var(--text-secondary); line-height:1.5;">We actively promote a culture of reduction and reuse within our community and area of influence:</p>
+
+        <ul style="margin-top:10px; color:var(--text-secondary); line-height:1.5;">
+          <li><strong>Jornadas de Recolección:</strong> Se lideraron jornadas como la 'Reciclatón' (300 kg) y la 19ª campaña de residuos pos consumo (aprox. 300 kg), evitando que estos materiales lleguen a rellenos sanitarios.</li>
+          <li><strong>Alianzas por el Reciclaje:</strong> En Piedecuesta, estudiantes UDES se aliaron con colegios y fundaciones para jornadas de recolección y educación ambiental.</li>
+          <li><strong>Movilidad Sostenible:</strong> La UDES se adhirió al 'día sin carro y sin moto' en el área metropolitana, fomentando patrones de transporte más limpios y reafirmando nuestro compromiso con la certificación Carbono Neutro.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Sostenibilidad en Cadenas Productivas y Recurso Hídrico (color ODS12) -->
+    <section id="cadenas-productivas" class="section-sdg12">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Sostenibilidad en Cadenas Productivas y Recurso Hídrico</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Sustainability in Supply Chains and Water Resources</h2>
+        <div class="section-rule"></div>
+        <p data-lang-content data-lang="es" data-visible="true" style="text-align:justify; color:var(--text-secondary); line-height:1.5;">Apoyamos a los sectores productivos de Santander para que sus prácticas sean más eficientes, rentables y amigables con el medio ambiente:</p>
+        <p data-lang-content data-lang="en" style="text-align:justify; color:var(--text-secondary); line-height:1.5;">We support Santander's productive sectors to make their practices more efficient, profitable, and environmentally friendly:</p>
+
+        <ul style="margin-top:10px; color:var(--text-secondary); line-height:1.5;">
+          <li><strong>Calidad del Cacao:</strong> UDES participa en Hallbar Kakao 2.0 y lidera investigaciones para identificación de micotoxinas, mejorando la calidad del cacao local.</li>
+          <li><strong>Industria Responsable:</strong> Proyecto de Ingeniería Ambiental presenta un modelo de viabilidad ambiental para la industria calera en Santander.</li>
+          <li><strong>Protección del Agua:</strong> Aliados en proyectos de tecnología de desinfección física de aguas residuales vertidas en el río Fonce.</li>
+          <li><strong>Producción Agroindustrial:</strong> Egresados UDES impactan en control de calidad de productos agroindustriales para consumo animal.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Educación y Preservación del Conocimiento -->
+    <section id="educacion-preservacion">
+      <div class="container">
+        <h2 class="section-title" data-lang-content data-lang="es">Educación y Preservación del Conocimiento</h2>
+        <h2 class="section-title" data-lang-content data-lang="en">Education and Preservation of Knowledge</h2>
+        <div class="section-rule"></div>
+        <p data-lang-content data-lang="es" data-visible="true" style="text-align:justify; color:var(--text-secondary); line-height:1.5;">La base de la producción y el consumo responsables es la educación y la valoración de nuestro patrimonio cultural y científico:</p>
+        <p data-lang-content data-lang="en" style="text-align:justify; color:var(--text-secondary); line-height:1.5;">The foundation of responsible production and consumption is education and the appreciation of our cultural and scientific heritage:</p>
+
+        <ul style="margin-top:10px; color:var(--text-secondary); line-height:1.5;">
+          <li><strong>Difusión Científica:</strong> Incentivos a la producción científica y visibilidad en eventos como 'Vive Libro' (9 obras expuestas) y traducciones a 6 idiomas de las obras del profesor Walter Pardavé.</li>
+          <li><strong>Preservación Cultural:</strong> En alianza con la UPB, se promueve el museo digital 'Viaje al corazón de la panela', preservando la tradición oral.</li>
+          <li><strong>Conciencia Ambiental:</strong> Uso de fechas clave (Día de la Tierra) para reforzar la conservación del agua y los recursos naturales.</li>
+        </ul>
+      </div>
+    </section>
   </main>
   <footer role="contentinfo"><div class="container"><div data-lang-content data-lang="es">© 2025 · Informe ODS 12 · Versión para uso académico.</div><div data-lang-content data-lang="en">© 2025 · SDG 12 Report · Academic use version.</div></div></footer>
   <script>
